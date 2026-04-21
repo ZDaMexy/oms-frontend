@@ -67,6 +67,7 @@ npx serve .
 
 - 外部协作者请优先阅读本 README，了解仓库职责与当前阶段目标
 - `doc_md/` 目录仅用于内部规划、vibe coding 上下文和任务同步，不视为对外产品文档
+- 在 OMS Web 联合工作区中，前后端通信、接口约定、联调记录与验收结论还需同步更新根目录独立仓库 `dev_bridge_md/`
 - 任何开发、调研、修复或验收只要改变了计划、状态、约束或验证结论，必须同步更新对应的 `doc_md/` 文档
 - `doc_md/mainline/constraints.md`、`doc_md/mainline/dev-plan.md`、`doc_md/mainline/dev-progress.md`、`doc_md/mainline/changelog.md` 必须保持一致
 - 提交变更时请明确说明该变更属于当前宣传展示阶段，还是在为后续账号、成绩、排行榜、下载入口等能力预留结构
