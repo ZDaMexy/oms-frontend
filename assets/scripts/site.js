@@ -28,7 +28,7 @@ document.querySelectorAll("[data-link]").forEach((link) => {
 });
 
 document.querySelectorAll("[data-year]").forEach((node) => {
-  node.textContent = `Updated ${new Date().getFullYear()}`;
+  node.textContent = `更新于 ${new Date().getFullYear()}`;
 });
 
 const revealItems = document.querySelectorAll("[data-reveal]");
