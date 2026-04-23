@@ -3,256 +3,261 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OMS | osu!BMS 的 Web 入口</title>
+    <title>OMS | BMS 与 osu!mania 的现代客户端</title>
     <meta
       name="description"
-      content="OMS 是围绕 osu!BMS 生态构建的客户端与 Web 项目。当前阶段先落地静态展示与宣传页，并为未来账户、成绩、排行榜、谱面数据库和多人入口预留结构。"
+      content="OMS 将 BMS 与 osu!mania 汇入同一套现代客户端体验。离线优先、Windows 原生、兼容多种判定生态，并为未来账号、排行榜与谱面库入口准备好舞台。"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/styles/site.css" />
     <script defer src="assets/scripts/site.js"></script>
   </head>
   <body data-page="home">
+    <div class="site-bg">
+      <div class="site-bg__beam site-bg__beam--pink"></div>
+      <div class="site-bg__beam site-bg__beam--cyan"></div>
+      <div class="site-bg__grid"></div>
+    </div>
+
     <div class="page-shell">
       <header class="site-header">
-        <a class="brand" href="./">
+        <a class="brand" href="index.html" aria-label="OMS 首页">
           <span class="brand-mark">OMS</span>
-          <span class="brand-copy">osu!BMS web entry</span>
+          <span class="brand-copy">BMS + mania</span>
         </a>
+
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          Menu
+          导航
         </button>
-        <nav id="site-nav" class="site-nav">
-          <a href="./" data-link="home">首页</a>
-          <a href="download/" data-link="download">下载状态</a>
-          <a href="hub/" data-link="hub">未来入口</a>
+
+        <nav id="site-nav" class="site-nav" aria-label="主导航">
+          <a href="index.html" data-link="home">首页</a>
+          <a href="download.html" data-link="download">下载</a>
+          <a href="index.html#features" data-link="features">功能介绍</a>
+          <a href="hub.html" data-link="hub">未来规划</a>
         </nav>
       </header>
 
       <main>
-        <section class="hero hero-home">
+        <section class="hero hero-home" data-reveal>
           <div class="hero-copy">
-            <p class="eyebrow">OMS // phase 1 showcase</p>
-            <h1>为 BMS 而生的 lazer 分支，先从一个说得准的 Web 入口开始。</h1>
+            <p class="eyebrow">Windows native rhythm platform</p>
+            <h1>BMS 与 osu!mania 的现代客户端</h1>
             <p class="hero-text">
-              OMS 当前优先落地 Windows 桌面客户端与配套 Web 展示。客户端默认离线优先，游戏内更新默认关闭；账号、聊天、好友 presence、观战、多人、元数据和分数提交等在线接点已经保留，但默认发行配置还未连接到可用远端。
+              OMS 面向熟悉 IIDX、LR2、beatoraja 与 osu!mania 生态的玩家，统一谱面、判定、分数与 Web 入口。首发阶段聚焦 Windows 原生、离线优先与便携发布体验，并为账号、排行榜、谱面库与多人功能预留入口。
             </p>
+
             <div class="hero-actions">
-              <a class="button primary" href="download/">查看下载状态</a>
-              <a class="button secondary" href="hub/">查看未来入口</a>
+              <a class="button button-primary" href="download.html">立即查看下载</a>
+              <a class="button button-ghost" href="#features">浏览功能亮点</a>
             </div>
-            <ul class="status-strip">
-              <li>Windows Only</li>
-              <li>Offline-First Build</li>
-              <li>In-App Update Disabled</li>
-              <li>BMS ShortName: bms</li>
+
+            <ul class="hero-tags">
+              <li>BMS + osu!mania</li>
+              <li>EX-SCORE</li>
+              <li>Six Gauges</li>
+              <li>Windows Native</li>
             </ul>
           </div>
 
-          <aside class="hero-panel stack-panel">
-            <article class="stack-card accent-card">
-              <p class="card-label">Current posture</p>
-              <h2>静态宣传页先把事实说准，再给完整 Web 产品留出入口。</h2>
-              <p>
-                当前这版不是“官服已上线”的包装页，而是一个明确标识现状、能力方向和未来入口结构的公开门面。
-              </p>
-            </article>
-            <article class="stack-card">
-              <p class="card-label">Safe public facts</p>
-              <ul class="bullet-list compact">
-                <li>默认构建关闭在线功能，默认 endpoint 为空。</li>
-                <li>客户端内部保留账号、聊天、好友、观战、多人和元数据入口。</li>
-                <li>BMS 已是正式 ruleset，但在线 score 流程仍需额外改造。</li>
-              </ul>
-            </article>
+          <aside class="hero-stage" aria-label="OMS 核心能力概览">
+            <div class="stage-display">
+              <div class="stage-display__header">
+                <span class="display-chip display-chip--live">Launch Focus</span>
+                <span class="display-chip">Offline First</span>
+              </div>
+
+              <div class="stage-waveform" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="stage-columns">
+                <article class="stage-column stage-column--accent">
+                  <p class="card-label">Modes</p>
+                  <h2>BMS / mania</h2>
+                  <p>双模式放在同一客户端里，而不是分散到两套体验。</p>
+                </article>
+                <article class="stage-column">
+                  <p class="card-label">Judge Ecosystem</p>
+                  <p>兼容 OD / BEATORAJA / LR2 / IIDX 判定生态。</p>
+                </article>
+                <article class="stage-column">
+                  <p class="card-label">Launch Spec</p>
+                  <p>六种 Gauge、EX-SCORE、难度表入口、Windows 原生与便携发布。</p>
+                </article>
+              </div>
+            </div>
           </aside>
         </section>
 
-        <section class="section">
-          <div class="section-heading">
-            <p class="eyebrow">Project shape</p>
-            <h2>OMS 不是一次性的落地页，而是完整客户端、私服和 Web 入口的公共外壳。</h2>
-          </div>
-          <div class="card-grid feature-grid">
-            <article class="feature-card">
-              <p class="card-label">Client</p>
-              <h3>Windows 桌面优先</h3>
-              <p>当前公开口径聚焦桌面客户端，避免给出误导性的跨平台承诺。</p>
-            </article>
-            <article class="feature-card">
-              <p class="card-label">Ruleset</p>
-              <h3>BMS 原生接入</h3>
-              <p>项目围绕 BMS 模式、原生解析、keysound 与独立判定体系构建。</p>
-            </article>
-            <article class="feature-card">
-              <p class="card-label">Server</p>
-              <h3>在线能力先收边界</h3>
-              <p>客户端有联机接点，但当前发行配置还没有接入 OMS 私服的可用远端。</p>
-            </article>
-            <article class="feature-card">
-              <p class="card-label">Web</p>
-              <h3>为未来入口留位</h3>
-              <p>账户、主页、成绩、排行榜、谱面数据库和多人入口都在这套结构里提前预留。</p>
-            </article>
+        <section class="signal-strip" data-reveal>
+          <div class="signal-strip__track">
+            <span>BMS Native Parsing</span>
+            <span>LR2 / beatoraja Compatibility</span>
+            <span>Satellite / Stella / 発狂BMS</span>
+            <span>Offline First</span>
+            <span>Portable Release</span>
+            <span>Future Account & Rankings</span>
           </div>
         </section>
 
-        <section class="section section-dark">
-          <div class="section-heading split-heading">
+        <section id="features" class="section section-feature" data-reveal>
+          <div class="section-heading">
             <div>
-              <p class="eyebrow">Current factual state</p>
-              <h2>这几条已经能写进展示页，不需要继续猜。</h2>
+              <p class="eyebrow">Core features</p>
+              <h2>核心特性</h2>
             </div>
-            <p class="section-note">以下内容均来自已导入的客户端读码快照。</p>
+            <p class="section-copy">
+              OMS 的重点不只是支持 BMS，还包括统一判定、Gauge、难度表生态，以及后续 Web 入口。
+            </p>
           </div>
-          <div class="card-grid fact-grid">
-            <article class="fact-card">
-              <p class="card-label">Build state</p>
-              <h3>默认离线优先</h3>
-              <p>当前构建默认关闭在线功能，默认 endpoint 配置为空，不应把现状描述成“已经可直接连上 OMS 私服”。</p>
+
+          <div class="feature-grid">
+            <article class="feature-card feature-card--primary">
+              <p class="card-label">Dual modes</p>
+              <h3>BMS + osu!mania 双模式</h3>
+              <p>熟悉的 mania 入口与 BMS 体验放在统一客户端里，减少切换成本，保留现代 UI 与整体一致性。</p>
             </article>
-            <article class="fact-card">
-              <p class="card-label">Update channel</p>
-              <h3>游戏内更新默认关闭</h3>
-              <p>当前桌面端没有启用游戏内更新通道，因此下载与版本说明页要走明确的外部发布路径。</p>
+
+            <article class="feature-card">
+              <p class="card-label">Judge compatibility</p>
+              <h3>兼容多种判定生态</h3>
+              <p>面向 OD、BEATORAJA、LR2 与 IIDX 语境组织玩法口径，让老玩家迁移时不需要重新理解整套语言。</p>
             </article>
-            <article class="fact-card">
-              <p class="card-label">Online surfaces</p>
-              <h3>在线接点仍保留</h3>
-              <p>账号、聊天、好友 presence、观战、多人、元数据、分数提交和回放下载等入口都还在客户端内部。</p>
+
+            <article class="feature-card">
+              <p class="card-label">Scoring</p>
+              <h3>六种 Gauge + EX-SCORE</h3>
+              <p>在现代客户端里保留硬核玩法习惯，同时为后续 Web 成绩展示和排行榜准备统一表达。</p>
             </article>
-            <article class="fact-card">
-              <p class="card-label">Ruleset identity</p>
-              <h3>BMS 已经是正式 ruleset</h3>
-              <p>当前可安全公开的规则集事实是：BMS 已存在独立玩法与配置体系，短名为 <span class="inline-tag">bms</span>。</p>
+
+            <article class="feature-card">
+              <p class="card-label">Tables</p>
+              <h3>难度表集成</h3>
+              <p>Satellite、Stella 与発狂BMS 等难度表将作为用户可感知的核心入口，而不是藏在附属工具里。</p>
+            </article>
+
+            <article class="feature-card">
+              <p class="card-label">Desktop focus</p>
+              <h3>离线优先，可便携发布</h3>
+              <p>首发聚焦 Windows 原生体验。即使未来账户与联网能力上线，启动方式与本地使用手感仍然会保持轻量。</p>
             </article>
           </div>
         </section>
 
-        <section class="section">
+        <section class="section section-showcase" data-reveal>
+          <div class="showcase-panel showcase-panel--visual">
+            <div class="visual-sim" aria-hidden="true">
+              <div class="visual-sim__screen">
+                <div class="visual-sim__lane visual-sim__lane--cyan"></div>
+                <div class="visual-sim__lane visual-sim__lane--pink"></div>
+                <div class="visual-sim__lane visual-sim__lane--amber"></div>
+                <div class="visual-sim__note visual-sim__note--a"></div>
+                <div class="visual-sim__note visual-sim__note--b"></div>
+                <div class="visual-sim__note visual-sim__note--c"></div>
+                <div class="visual-sim__hud">EX SCORE / GROOVE / TIMING</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase-panel showcase-panel--copy">
+            <p class="eyebrow">Launch message</p>
+            <h2>首发定位</h2>
+            <p>
+              当前公开站点会明确说明能力边界。首发阶段主打 Windows 原生与离线优先，账号、排行榜、谱面库与多人入口将在后续阶段开放。
+            </p>
+
+            <div class="fact-stack">
+              <article class="fact-card">
+                <p class="card-label">Current release stance</p>
+                <h3>本地体验优先</h3>
+                <p>默认离线优先、默认不启用游戏内更新，适合作为可便携的 Windows 客户端发布形态。</p>
+              </article>
+              <article class="fact-card">
+                <p class="card-label">What already exists</p>
+                <h3>在线入口预留</h3>
+                <p>客户端内部保留了账号、聊天、观战、多人、分数提交和回放下载等接点，为后续私服与 Web 展示预留了产品面。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-cta" data-reveal>
+          <div class="cta-copy">
+            <p class="eyebrow">Download CTA</p>
+            <h2>下载 OMS</h2>
+            <p>
+              下载页提供发布包、版本说明与系统要求。正式下载链接将在后续补充。
+            </p>
+          </div>
+
+          <div class="cta-actions">
+            <a class="button button-primary" href="download.html">前往下载页</a>
+            <a class="button button-ghost" href="hub.html">查看未来规划</a>
+          </div>
+        </section>
+
+        <section class="section section-coming" data-reveal>
           <div class="section-heading">
-            <p class="eyebrow">Future web surface</p>
-            <h2>这套首页会引向多个未来页面，而不是把所有事情塞进同一块长图。</h2>
-          </div>
-          <div class="card-grid horizon-grid">
-            <a class="horizon-card" href="hub/#accounts">
-              <span class="phase-chip">Phase 2</span>
-              <h3>账户与登录</h3>
-              <p>注册、登录、二次验证、通知和基础账户设置。</p>
-            </a>
-            <a class="horizon-card" href="hub/#profiles">
-              <span class="phase-chip">Phase 3</span>
-              <h3>玩家主页与成绩</h3>
-              <p>个人页、成绩展示、EX-SCORE、回放与统计视图。</p>
-            </a>
-            <a class="horizon-card" href="hub/#rankings">
-              <span class="phase-chip">Phase 4</span>
-              <h3>排行榜</h3>
-              <p>全站榜、曲目榜、难度维度和筛选跳转结构。</p>
-            </a>
-            <a class="horizon-card" href="hub/#charts">
-              <span class="phase-chip">Phase 5</span>
-              <h3>谱面数据库</h3>
-              <p>谱面入口、搜索、元数据和下载跳转层。</p>
-            </a>
-            <a class="horizon-card" href="hub/#live">
-              <span class="phase-chip">Phase 5</span>
-              <h3>多人与观战</h3>
-              <p>multiplayer、playlists、spectator 和实时 presence。</p>
-            </a>
-            <a class="horizon-card" href="hub/#services">
-              <span class="phase-chip">Phase 5+</span>
-              <h3>服务入口</h3>
-              <p>奖章、统计、版本通知、私服配套能力与其他 Web 服务。</p>
-            </a>
-          </div>
-        </section>
-
-        <section class="section split-section">
-          <div class="split-panel roadmap-panel">
-            <div class="section-heading tight">
-              <p class="eyebrow">Roadmap</p>
-              <h2>路线先摆清楚，再逐段填实现。</h2>
+            <div>
+              <p class="eyebrow">Coming soon</p>
+              <h2>后续功能</h2>
             </div>
-            <ol class="roadmap-list">
-              <li>
-                <span class="roadmap-index">01</span>
-                <div>
-                  <h3>宣传展示</h3>
-                  <p>完成静态宣传页、下载说明、状态表达和未来入口预留。</p>
-                </div>
-              </li>
-              <li>
-                <span class="roadmap-index">02</span>
-                <div>
-                  <h3>账户系统</h3>
-                  <p>把客户端已有账号入口真正接到可用服务端能力。</p>
-                </div>
-              </li>
-              <li>
-                <span class="roadmap-index">03</span>
-                <div>
-                  <h3>成绩与个人页</h3>
-                  <p>补齐成绩展示、回放和个人主页入口。</p>
-                </div>
-              </li>
-              <li>
-                <span class="roadmap-index">04</span>
-                <div>
-                  <h3>排行榜</h3>
-                  <p>建立稳定的榜单视图、筛选和跳转路径。</p>
-                </div>
-              </li>
-              <li>
-                <span class="roadmap-index">05</span>
-                <div>
-                  <h3>谱面与私服入口</h3>
-                  <p>扩展到谱面数据库、多人服务和其他私服配套能力。</p>
-                </div>
-              </li>
-            </ol>
+            <p class="section-copy">
+              现阶段仅展示已确认的后续方向，不把未上线功能描述为已可用。
+            </p>
           </div>
 
-          <div class="split-panel pending-panel">
-            <div class="section-heading tight">
-              <p class="eyebrow">Content pending</p>
-              <h2>以下内容等你给我，我再把它们替换成正式文案。</h2>
-            </div>
-            <div class="pending-stack">
-              <article class="pending-card">
-                <p class="card-label">Need from you</p>
-                <h3>项目一句话主定位</h3>
-                <p>当前首页标题已经能工作，但还缺你想公开使用的正式 slogan 和副标题。</p>
-              </article>
-              <article class="pending-card">
-                <p class="card-label">Need from you</p>
-                <h3>展示媒体</h3>
-                <p>截图、PV、logo、颜色偏好和你愿意公开展示的界面素材仍待补充。</p>
-              </article>
-              <article class="pending-card">
-                <p class="card-label">Need from you</p>
-                <h3>下载信息</h3>
-                <p>发行渠道、下载链接、版本命名、更新节奏、最低系统要求和 checksum 仍待确认。</p>
-              </article>
-              <article class="pending-card">
-                <p class="card-label">Need from you</p>
-                <h3>对外外链</h3>
-                <p>GitHub、社群、开发日志、路线图地址和反馈入口都还需要你给出最终链接。</p>
-              </article>
-            </div>
+          <div class="coming-grid">
+            <article class="coming-card">
+              <span class="phase-chip">Soon</span>
+              <h3>账户与玩家主页</h3>
+              <p>注册、登录、个人资料、最近成绩与更完整的玩家展示页。</p>
+            </article>
+            <article class="coming-card">
+              <span class="phase-chip">Soon</span>
+              <h3>排行榜与成绩页</h3>
+              <p>面向 BMS 与 mania 的成绩展示、EX-SCORE 排序与模式入口。</p>
+            </article>
+            <article class="coming-card">
+              <span class="phase-chip">Soon</span>
+              <h3>谱面库与下载入口</h3>
+              <p>统一的谱面数据库、搜索视图、难度表入口与下载跳转层。</p>
+            </article>
+            <article class="coming-card">
+              <span class="phase-chip">Soon</span>
+              <h3>多人、观战与社区面</h3>
+              <p>multiplayer、spectator、社交与更多围绕玩家的 Web 入口。</p>
+            </article>
           </div>
         </section>
       </main>
 
       <footer class="site-footer">
-        <p>OMS Web Phase 1 Skeleton</p>
-        <p>Windows desktop first. Public copy will be refined with confirmed facts only.</p>
-        <p data-year></p>
+        <div>
+          <p class="footer-title">OMS</p>
+          <p>Modern desktop rhythm experience for BMS and osu!mania.</p>
+        </div>
+        <nav class="footer-nav" aria-label="页脚导航">
+          <a href="index.html">首页</a>
+          <a href="download.html">下载</a>
+          <a href="index.html#features">功能介绍</a>
+          <a href="hub.html">未来规划</a>
+        </nav>
+        <p class="footer-meta" data-year></p>
       </footer>
     </div>
   </body>
