@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OMS | 未来入口</title>
+    <meta
+      name="description"
+      content="OMS 未来 Web 入口占位页。这里为账户、主页、排行榜、谱面数据库、多人和服务入口预留结构。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles/site.css" />
+    <script defer src="../assets/scripts/site.js"></script>
+  </head>
+  <body data-page="hub">
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="../">
+          <span class="brand-mark">OMS</span>
+          <span class="brand-copy">osu!BMS web entry</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+        <nav id="site-nav" class="site-nav">
+          <a href="../" data-link="home">首页</a>
+          <a href="../download/" data-link="download">下载状态</a>
+          <a href="./" data-link="hub">未来入口</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero hero-subpage">
+          <div class="hero-copy">
+            <p class="eyebrow">Future hub</p>
+            <h1>这里不是空白页，而是未来完整 OMS Web 的入口骨架。</h1>
+            <p class="hero-text">
+              账户、玩家主页、排行榜、谱面数据库、多人、观战、统计和服务入口都将在这里逐步落位。当前阶段先把页面层级、命名和跳转方向定住。
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-heading">
+            <p class="eyebrow">Phase map</p>
+            <h2>按产品阶段预留页面，不靠一个超长首页硬塞未来能力。</h2>
+          </div>
+          <div class="card-grid portal-grid">
+            <article id="accounts" class="portal-card">
+              <span class="phase-chip">Phase 2</span>
+              <h3>账户中心</h3>
+              <p>注册、登录、二次验证、通知与基础账户设置。</p>
+            </article>
+            <article id="profiles" class="portal-card">
+              <span class="phase-chip">Phase 3</span>
+              <h3>玩家主页</h3>
+              <p>玩家卡片、最近成绩、回放和统计概览。</p>
+            </article>
+            <article id="rankings" class="portal-card">
+              <span class="phase-chip">Phase 4</span>
+              <h3>排行榜</h3>
+              <p>全站榜、模式榜、曲目榜和难度维度筛选。</p>
+            </article>
+            <article id="charts" class="portal-card">
+              <span class="phase-chip">Phase 5</span>
+              <h3>谱面数据库</h3>
+              <p>谱面元数据、搜索、标签和下载跳转。</p>
+            </article>
+            <article id="live" class="portal-card">
+              <span class="phase-chip">Phase 5</span>
+              <h3>多人与观战</h3>
+              <p>multiplayer、playlists、spectator、presence 和实时状态。</p>
+            </article>
+            <article id="services" class="portal-card">
+              <span class="phase-chip">Phase 5+</span>
+              <h3>统计与服务</h3>
+              <p>PP、奖章、版本通知、活动信息和其他私服服务能力。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section split-section">
+          <div class="split-panel">
+            <div class="section-heading tight">
+              <p class="eyebrow">Server implications</p>
+              <h2>未来入口的页面结构已经能反向约束后端边界。</h2>
+            </div>
+            <ul class="bullet-list">
+              <li>账户、聊天、好友和通知不能被压扁成单一 REST 入口。</li>
+              <li>BMS 的 `ruleset_id` 与 score 流程要先解决映射与 legacy gate 问题。</li>
+              <li>谱面数据库和下载入口需要严格区分元数据层与大文件承载层。</li>
+            </ul>
+          </div>
+
+          <div class="split-panel pending-panel">
+            <div class="section-heading tight">
+              <p class="eyebrow">Still pending</p>
+              <h2>这些入口名称和排序之后还会继续收敛。</h2>
+            </div>
+            <div class="pending-stack">
+              <article class="pending-card small">
+                <p class="card-label">Need from you</p>
+                <h3>最终导航命名</h3>
+                <p>账户中心、游戏下载、谱面数据库、开发日志等名称还可以继续打磨。</p>
+              </article>
+              <article class="pending-card small">
+                <p class="card-label">Need from you</p>
+                <h3>社区入口</h3>
+                <p>Discord、QQ群、GitHub、开发博客或论坛入口尚未挂上真实链接。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>OMS Future Hub Skeleton</p>
+        <p>Page names and ordering can still change before content lock.</p>
+        <p data-year></p>
+      </footer>
+    </div>
+  </body>
+</html>
