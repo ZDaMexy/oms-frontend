@@ -9,6 +9,15 @@
 - `assets/`：共享样式与脚本
 - `doc_md/`：内部规划文档
 
+## 部署（push 即上线）
+
+- `origin` → GitHub `ZDaMexy/oms-frontend`（源码真相）
+- `deploy` → 服务器裸仓库 `zdamexy-srv:/www/wwwroot/oms.git`
+- 纯静态：`git push deploy main` → 服务器 `post-receive` `checkout -f` 到网站根 `/www/wwwroot/oms` → `chown www`（无构建步骤）。
+- **连服务器只用别名 `ssh zdamexy-srv`**（`~/.ssh/config`，IdentityFile `id_ed25519_zdamexy`；勿用 `ssh root@39.105.55.78` 直连，会用错密钥）。
+- 站点 `oms.zdamexy.work`（与 `zdamexy.work` homepage 共用同一台 ECS）。备案通过前阿里云拦截未备案域名（403），用裸 IP + Host 头验证。
+- BT 的 nginx 重载用 `/etc/init.d/nginx reload`，勿用 `/usr/sbin/nginx`。
+
 ## doc_md 索引
 
 三条线，每条维护五大文档（README / constraints / dev-plan / dev-progress / changelog）：
