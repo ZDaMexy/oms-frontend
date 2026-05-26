@@ -1,324 +1,426 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh" data-accent="blue">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OMS | BMS 与 osu!mania 的现代客户端</title>
-    <meta
-      name="description"
-      content="OMS 提供 BMS 与 osu!mania 的现代客户端，支持离线优先、Windows 原生、多种判定生态，并预留账号、排行榜与谱面库入口。"
-    />
-    <meta name="theme-color" content="#05060c" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff4fa6'/%3E%3Crect x='7' y='16' width='4' height='9' rx='2' fill='%23fff'/%3E%3Crect x='14' y='10' width='4' height='15' rx='2' fill='%23fff'/%3E%3Crect x='21' y='13' width='4' height='12' rx='2' fill='%23fff'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="assets/styles/site.css?v=20260523-12" />
-    <script defer src="assets/scripts/chart-stargazer.js?v=20260523-12"></script>
-    <script defer src="assets/scripts/site.js?v=20260523-12"></script>
+    <title>OMS · osu!lazer fork · BMS ruleset</title>
+    <meta name="description" content="OMS — 一个基于 osu!lazer 的 fork client，以 ruleset 的形式增加了对 BMS 谱面的原生支持。支持 OD / RAJA / LR2 / 类IIDX 判定窗切换、Gauge 点灯记录、难度表。" />
+    <meta name="theme-color" content="#050608" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles/site.css?v=20260526-1" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050608'/%3E%3Cpath d='M4 16 L4 26 L9 26 L9 16 Z M13 7 L13 26 L18 26 L18 7 Z M22 12 L22 26 L27 26 L27 12 Z' fill='%2300d9ff'/%3E%3C/svg%3E" />
+    <script defer src="assets/scripts/chart-stargazer.js?v=20260526-1"></script>
+    <script defer src="assets/scripts/i18n.js?v=20260526-1"></script>
+    <script defer src="assets/scripts/site.js?v=20260526-1"></script>
   </head>
-  <body data-page="home">
-    <div class="site-bg">
-      <div class="site-bg__beam site-bg__beam--pink"></div>
-      <div class="site-bg__beam site-bg__beam--cyan"></div>
-      <div class="site-bg__grid"></div>
-    </div>
-
-    <div class="page-shell">
-      <header class="site-header">
-        <a class="brand" href="index.html" aria-label="OMS 首页">
-          <span class="brand-logo" aria-hidden="true">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="16" width="5" height="11" rx="2.5" fill="#05060b" />
-              <rect x="13.5" y="7" width="5" height="20" rx="2.5" fill="#05060b" />
-              <rect x="23" y="12" width="5" height="15" rx="2.5" fill="#05060b" />
-            </svg>
-          </span>
-          <span class="brand-text">
-            <span class="brand-mark">OMS</span>
-            <span class="brand-copy">BMS + mania</span>
-          </span>
-        </a>
-
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          导航
-        </button>
-
-        <nav id="site-nav" class="site-nav" aria-label="主导航">
-          <a href="index.html" data-link="home">首页</a>
-          <a href="download.html" data-link="download">下载</a>
-          <a href="index.html#features" data-link="features">功能介绍</a>
-          <a href="hub.html" data-link="hub">未来规划</a>
-        </nav>
-      </header>
-
-      <main>
-        <section class="hero hero-home" data-reveal>
-          <div class="hero-copy">
-            <p class="eyebrow">Windows 原生音游客户端</p>
-            <h1>BMS 与 osu!mania 的现代客户端</h1>
-            <p class="hero-text">
-              OMS 面向熟悉 IIDX、LR2、beatoraja 与 osu!mania 生态的玩家，统一谱面、判定、分数与网页入口。首发阶段聚焦 Windows 原生、离线优先与便携发布体验，并为账号、排行榜、谱面库与多人功能预留入口。
-            </p>
-
-            <div class="hero-actions">
-              <a class="button button-primary" href="download.html">查看下载</a>
-              <a class="button button-ghost" href="#features">查看功能介绍</a>
-            </div>
-
-            <ul class="hero-tags">
-              <li>BMS + osu!mania</li>
-              <li>EX-SCORE</li>
-              <li>六种 Gauge</li>
-              <li>Windows 原生</li>
-            </ul>
-          </div>
-
-          <aside class="hero-stage" aria-label="OMS 核心能力概览">
-            <div class="stage-display">
-              <div class="stage-display__header">
-                <span class="display-chip display-chip--live">首发重点</span>
-                <span class="display-chip">离线优先</span>
-              </div>
-
-              <div class="stage-waveform" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-
-              <div class="stage-columns">
-                <article class="stage-column stage-column--accent">
-                  <p class="card-label">模式</p>
-                  <h2>BMS / mania</h2>
-                  <p>BMS 与 mania 统一集成在同一客户端中。</p>
-                </article>
-                <article class="stage-column">
-                  <p class="card-label">判定生态</p>
-                  <p>兼容 OD / BEATORAJA / LR2 / IIDX 判定生态。</p>
-                </article>
-                <article class="stage-column">
-                  <p class="card-label">首发规格</p>
-                  <p>六种 Gauge、EX-SCORE、难度表入口、Windows 原生与便携发布。</p>
-                </article>
-              </div>
-            </div>
-          </aside>
-        </section>
-
-        <section class="signal-strip" data-reveal>
-          <div class="signal-strip__track">
-            <div class="signal-strip__group">
-              <span>BMS 原生解析</span>
-              <span>LR2 / beatoraja 兼容</span>
-              <span>Satellite / Stella / 発狂BMS</span>
-              <span>离线优先</span>
-              <span>便携发布</span>
-              <span>账号与排行榜规划</span>
-            </div>
-            <div class="signal-strip__group" aria-hidden="true">
-              <span>BMS 原生解析</span>
-              <span>LR2 / beatoraja 兼容</span>
-              <span>Satellite / Stella / 発狂BMS</span>
-              <span>离线优先</span>
-              <span>便携发布</span>
-              <span>账号与排行榜规划</span>
-            </div>
-          </div>
-        </section>
-
-        <section id="features" class="section section-feature" data-reveal>
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">核心特性</p>
-              <h2>客户端核心能力</h2>
-            </div>
-            <p class="section-copy">
-              OMS 提供 BMS 支持、统一判定、Gauge、难度表生态，以及后续网页入口规划。
-            </p>
-          </div>
-
-          <div class="feature-grid">
-            <article class="feature-card feature-card--primary">
-              <p class="card-label">双模式</p>
-              <h3>BMS + osu!mania 双模式</h3>
-              <p>客户端统一提供 mania 与 BMS 入口，降低模式切换成本，并保持界面与体验一致。</p>
-            </article>
-
-            <article class="feature-card">
-              <p class="card-label">判定兼容</p>
-              <h3>兼容多种判定生态</h3>
-              <p>面向 OD、BEATORAJA、LR2 与 IIDX 语境统一组织玩法口径，便于既有玩家理解与迁移。</p>
-            </article>
-
-            <article class="feature-card">
-              <p class="card-label">计分系统</p>
-              <h3>六种 Gauge + EX-SCORE</h3>
-              <p>客户端保留六种 Gauge 与 EX-SCORE 规则，并为后续成绩展示与排行榜提供统一数据表达。</p>
-            </article>
-
-            <article class="feature-card">
-              <p class="card-label">难度表</p>
-              <h3>难度表集成</h3>
-              <p>Satellite、Stella 与発狂BMS 等难度表将作为核心入口提供。</p>
-            </article>
-
-            <article class="feature-card">
-              <p class="card-label">桌面体验</p>
-              <h3>离线优先，可便携发布</h3>
-              <p>首发聚焦 Windows 原生体验。后续补充账户与联网能力后，仍维持轻量启动方式与本地使用体验。</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section section-showcase" data-reveal>
-          <div class="showcase-panel showcase-panel--visual">
-            <div class="visual-sim" aria-hidden="true">
-              <div class="playfield playfield--iidx">
-                <div class="playfield__field">
-                  <div class="lane lane--scratch">
-                    <i class="note" style="--delay:0.2s"></i>
-                    <i class="note" style="--delay:2.1s"></i>
-                  </div>
-                  <div class="lane lane--white">
-                    <i class="note" style="--delay:1.1s"></i>
-                  </div>
-                  <div class="lane lane--blue">
-                    <i class="note note--long" style="--delay:0.5s"></i>
-                  </div>
-                  <div class="lane lane--white">
-                    <i class="note" style="--delay:1.7s"></i>
-                  </div>
-                  <div class="lane lane--blue">
-                    <i class="note" style="--delay:0.9s"></i>
-                    <i class="note" style="--delay:2.6s"></i>
-                  </div>
-                  <div class="lane lane--white">
-                    <i class="note" style="--delay:2.3s"></i>
-                  </div>
-                  <div class="lane lane--blue">
-                    <i class="note" style="--delay:1.4s"></i>
-                  </div>
-                  <div class="lane lane--white">
-                    <i class="note note--long" style="--delay:0.3s"></i>
-                  </div>
-                </div>
-                <div class="playfield__judge"></div>
-                <div class="playfield__deck" aria-hidden="true">
-                  <div class="deck-turntable"><span class="tt-disc"></span></div>
-                  <div class="deck-key deck-key--white"></div>
-                  <div class="deck-key deck-key--blue"></div>
-                  <div class="deck-key deck-key--white"></div>
-                  <div class="deck-key deck-key--blue"></div>
-                  <div class="deck-key deck-key--white"></div>
-                  <div class="deck-key deck-key--blue"></div>
-                  <div class="deck-key deck-key--white"></div>
-                </div>
-                <div class="playfield__hud">
-                  <div class="hud-block">
-                    <span>EX-SCORE</span>
-                    <b>002480</b>
-                  </div>
-                  <div class="hud-block hud-block--combo">
-                    <span>COMBO</span>
-                    <b>328</b>
-                  </div>
-                  <div class="hud-gauge"><i></i></div>
-                </div>
-              </div>
-            </div>
-            <p class="chart-credit">演示谱面 · <span>Stargazer [SAETHER]</span>　曲 Lime ／ obj saaa</p>
-          </div>
-
-          <div class="showcase-panel showcase-panel--copy">
-            <p class="eyebrow">首发说明</p>
-            <h2>首发定位</h2>
-            <p>
-              当前官网会明确说明能力边界。首发阶段主打 Windows 原生与离线优先，账号、排行榜、谱面库与多人入口将在后续阶段开放。
-            </p>
-
-            <div class="fact-stack">
-              <article class="fact-card">
-                <p class="card-label">当前状态</p>
-                <h3>本地体验优先</h3>
-                <p>默认离线优先、默认不启用游戏内更新，适合作为可便携的 Windows 客户端发布形态。</p>
-              </article>
-              <article class="fact-card">
-                <p class="card-label">现有接口</p>
-                <h3>在线入口预留</h3>
-                <p>客户端已保留账号、聊天、观战、多人、分数提交和回放下载等接口，为后续服务接入与网页展示提供支持。</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="section section-cta" data-reveal>
-          <div class="cta-copy">
-            <p class="eyebrow">下载入口</p>
-            <h2>下载 OMS</h2>
-            <p>
-              下载页提供发布包、版本说明与系统要求。正式下载链接将在后续补充。
-            </p>
-          </div>
-
-          <div class="cta-actions">
-            <a class="button button-primary" href="download.html">前往下载页</a>
-            <a class="button button-ghost" href="hub.html">查看未来规划</a>
-          </div>
-        </section>
-
-        <section class="section section-coming" data-reveal>
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">后续功能</p>
-              <h2>后续功能方向</h2>
-            </div>
-            <p class="section-copy">
-              现阶段展示已确认的后续方向，相关功能将在后续开放。
-            </p>
-          </div>
-
-          <div class="coming-grid">
-            <article class="coming-card">
-              <span class="phase-chip">计划中</span>
-              <h3>账户与玩家主页</h3>
-              <p>注册、登录、个人资料、最近成绩与更完整的玩家展示页。</p>
-            </article>
-            <article class="coming-card">
-              <span class="phase-chip">计划中</span>
-              <h3>排行榜与成绩页</h3>
-              <p>面向 BMS 与 mania 的成绩展示、EX-SCORE 排序与模式入口。</p>
-            </article>
-            <article class="coming-card">
-              <span class="phase-chip">计划中</span>
-              <h3>谱面库与下载入口</h3>
-              <p>统一的谱面数据库、搜索视图、难度表入口与下载跳转层。</p>
-            </article>
-            <article class="coming-card">
-              <span class="phase-chip">计划中</span>
-              <h3>多人、观战与社区</h3>
-              <p>多人、观战、社交及相关网页入口。</p>
-            </article>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <div>
-          <p class="footer-title">OMS</p>
-          <p>BMS 与 osu!mania 的现代桌面音游客户端。</p>
+  <body>
+    <!-- ============================================================
+         TOP CABINET STATUS BAR
+         ============================================================ -->
+    <div class="cab-bar">
+      <div class="wrap">
+        <div class="cab-bar__row">
+          <span><span class="led led--on"></span><span data-i18n="bar.system">SYSTEM</span>&nbsp;<strong data-i18n="bar.ready">READY</strong></span>
+          <span><span data-i18n="bar.build">BUILD</span>&nbsp;<strong>0.1.0-DEV</strong></span>
+          <span>WIN-X64</span>
+          <span class="cab-bar__rule"></span>
+          <span><span data-i18n="bar.host">HOST</span>&nbsp;<strong>39.105.55.78</strong></span>
+          <span><span class="led led--amber"></span><span data-i18n="bar.online">ONLINE STUBBED</span></span>
+          <span class="cab-bar__rule"></span>
+          <span><span class="led led--live"></span><span data-i18n="bar.cabinet">CABINET</span>&nbsp;<strong data-i18n="bar.live">LIVE</strong></span>
+          <span><span data-i18n="bar.filed">FILED</span>&nbsp;<strong data-now="iso">—</strong></span>
         </div>
-        <nav class="footer-nav" aria-label="页脚导航">
-          <a href="index.html">首页</a>
-          <a href="download.html">下载</a>
-          <a href="index.html#features">功能介绍</a>
-          <a href="hub.html">未来规划</a>
-        </nav>
-        <p class="footer-meta" data-year></p>
-      </footer>
+      </div>
     </div>
+
+    <!-- ============================================================
+         MARQUEE / PRIMARY NAV
+         ============================================================ -->
+    <header class="marquee">
+      <div class="wrap">
+        <div class="marquee__row">
+          <a class="brand" href="index.html" aria-label="OMS — Home">
+            <span class="brand__mark">O<em>M</em>S</span>
+            <span class="brand__jp">オーエムエス</span>
+            <span class="brand__sub" data-i18n="brand.sub">BMS · OSU!LAZER FORK</span>
+          </a>
+          <div class="marquee__right">
+            <div class="lang-switch" role="group" aria-label="Language">
+              <button data-lang-set="zh" type="button">中</button>
+              <button data-lang-set="en" type="button">EN</button>
+              <button data-lang-set="ja" type="button">日</button>
+            </div>
+            <nav aria-label="主导航">
+              <ul class="nav">
+              <li><a data-n="01" href="index.html" aria-current="page" data-i18n="nav.home">HOME</a></li>
+              <li><a data-n="02" href="download.html" data-i18n="nav.download">DOWNLOAD</a></li>
+              <li><a data-n="03" href="#capabilities" data-i18n="nav.specs">SPECS</a></li>
+              <li><a data-n="04" href="#timing" data-i18n="nav.judge">JUDGE</a></li>
+              <li><a data-n="05" href="#phases" data-i18n="nav.roadmap">ROADMAP</a></li>
+            </ul>
+          </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         HERO — marquee title + full-bleed playfield
+         ============================================================ -->
+    <section class="hero">
+      <div class="wrap" style="padding: 0;">
+        <div class="hero__inner">
+
+          <!-- LEFT: marquee title -->
+          <div class="hero__left">
+            <div>
+              <div class="hero__no"><span class="led led--on"></span><span data-i18n="hero.stage">STAGE 01 · INTRO ATTRACT</span></div>
+              <h1 class="hero__title" data-i18n="hero.title" data-i18n-html="1">现代 BMS<br/><em>播放器。</em></h1>
+              <div class="hero__kana" data-i18n="hero.kana">osu!lazer fork · BMS ruleset</div>
+              <p class="hero__lede" data-i18n="hero.lede" data-i18n-html="1"><strong>OMS</strong> 是一个基于 osu!lazer 的 fork client，以 ruleset 的形式增加了对 BMS 谱面的原生支持，支持 OD / RAJA / LR2 / 类IIDX 判定窗自由切换，支持 Gauge 点灯记录，支持难度表。更多现代 mod 跟进开发中，未来 OMS-IR、谱面社区跟进开发中。</p>
+            </div>
+            <div class="hero__cta">
+              <span class="btn btn--soft"><span class="dot"></span><span data-i18n="cta.win_soon">PORTABLE · COMING SOON</span></span>
+              <a class="btn btn--ghost" href="#capabilities"><span data-i18n="cta.view_specs">VIEW SPECS</span><span class="arr">→</span></a>
+            </div>
+          </div>
+
+          <!-- MIDDLE: full-bleed playfield window -->
+          <div class="hero__mid">
+            <div class="field-window">
+              <div class="field-top">
+                <span class="slate">
+                  <strong>Stargazer</strong>
+                  <span class="slate__diff">[SAETHER]</span>
+                  <i></i>Lime / obj:saaa
+                  <i></i>BPM <span data-stat="bpm">87</span>
+                  <i></i><span data-progress>0:00</span> <span class="slate__sep">/</span> <span data-stat="length">2:28</span>
+                </span>
+              </div>
+
+              <div class="field" data-field>
+                <div class="lane lane--scratch"></div>
+                <div class="lane lane--white"></div>
+                <div class="lane lane--blue"></div>
+                <div class="lane lane--white"></div>
+                <div class="lane lane--blue"></div>
+                <div class="lane lane--white"></div>
+                <div class="lane lane--blue"></div>
+                <div class="lane lane--white"></div>
+                <div class="judge"></div>
+              </div>
+
+              <div class="deck" data-deck>
+                <div class="deck-tt"></div>
+                <div class="deck-key deck-key--white"></div>
+                <div class="deck-key deck-key--blue"></div>
+                <div class="deck-key deck-key--white"></div>
+                <div class="deck-key deck-key--blue"></div>
+                <div class="deck-key deck-key--white"></div>
+                <div class="deck-key deck-key--blue"></div>
+                <div class="deck-key deck-key--white"></div>
+              </div>
+
+              <div class="field-hud">
+                <div class="field-hud__cell">
+                  <span class="k" data-i18n="hud.score">EX-SCORE</span>
+                  <span class="v" data-hud="score">000000</span>
+                </div>
+                <div class="field-hud__cell">
+                  <span class="k" data-i18n="hud.combo">COMBO</span>
+                  <span class="v combo" data-hud="combo">0</span>
+                </div>
+                <div class="field-hud__cell">
+                  <span class="k" data-i18n="hud.judge">JUDGE</span>
+                  <span class="v judge-tag">PGREAT</span>
+                </div>
+                <div class="field-hud__cell">
+                  <span class="k" data-i18n="hud.gauge">GAUGE · GROOVE</span>
+                  <div class="gauge"><i></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CAPABILITIES
+         ============================================================ -->
+    <main class="wrap">
+      <section class="section" id="capabilities">
+        <div class="section__head">
+          <div>
+            <div class="section__no" data-i18n="sec02.no">02 · CAPABILITIES</div>
+            <h2 class="section__title" data-i18n="sec02.title" data-i18n-html="1">Spec<br/><em>sheet.</em></h2>
+          </div>
+        </div>
+
+        <div class="cap">
+          <div class="cap__row">
+            <div class="cap__no">01</div>
+            <div class="cap__name"><span data-i18n="cap.01.name">Dual mode</span><small data-i18n="cap.01.sub">BMS · OSU!MANIA</small></div>
+            <div class="cap__body" data-i18n="cap.01.body" data-i18n-html="1">std / taiko / catch 等非 VSRG 模式已删除，保留 mania 游玩体验，与 bms 组成双 mode 规格。</div>
+            <div class="cap__status is-live"><span class="led led--on"></span><span data-i18n="cap.status.shipped">SHIPPED</span></div>
+          </div>
+
+          <div class="cap__row">
+            <div class="cap__no">02</div>
+            <div class="cap__name"><span data-i18n="cap.02.name">Judge compat</span><small data-i18n="cap.02.sub">COMPAT · LAYER</small></div>
+            <div class="cap__body" data-i18n="cap.02.body" data-i18n-html="1"><code>OD</code>（osu! 原生判定）/ <code>RAJA</code>（Beatoraja）/ <code>LR2</code>（LunaticRave2）/ <code>IIDX</code>（类 IIDX）判定类型和判定难度切换支持。</div>
+            <div class="cap__status is-live"><span class="led led--on"></span><span data-i18n="cap.status.shipped">SHIPPED</span></div>
+          </div>
+
+          <div class="cap__row">
+            <div class="cap__no">03</div>
+            <div class="cap__name"><span data-i18n="cap.03.name">Six gauges</span><small data-i18n="cap.03.sub">6 GAUGES + LAMP RECORD</small></div>
+            <div class="cap__body" data-i18n="cap.03.body" data-i18n-html="1">AC / EC / NC / HC / EXHC / FC 全支持。</div>
+            <div class="cap__status is-live"><span class="led led--on"></span><span data-i18n="cap.status.shipped">SHIPPED</span></div>
+          </div>
+
+          <div class="cap__row">
+            <div class="cap__no">04</div>
+            <div class="cap__name"><span data-i18n="cap.04.name">Difficulty tables</span><small data-i18n="cap.04.sub">DIFFICULTY TABLE</small></div>
+            <div class="cap__body" data-i18n="cap.04.body" data-i18n-html="1">社区难度表规范支持，内置常用难度表一键启用。</div>
+            <div class="cap__status is-live"><span class="led led--on"></span><span data-i18n="cap.status.shipped">SHIPPED</span></div>
+          </div>
+
+          <div class="cap__row">
+            <div class="cap__no">05</div>
+            <div class="cap__name"><span data-i18n="cap.05.name">Offline-first</span><small data-i18n="cap.05.sub">LOCAL-ONLY · DEFAULT</small></div>
+            <div class="cap__body" data-i18n="cap.05.body" data-i18n-html="1">默认离线优先…</div>
+            <div class="cap__status is-hot"><span class="led led--amber"></span><span data-i18n="cap.status.shipped_off">SHIPPED · OFF DEFAULT</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           TIMING WINDOWS
+           ============================================================ -->
+      <section class="section" id="timing">
+        <div class="section__head">
+          <div>
+            <div class="section__no" data-i18n="sec03.no">03 · JUDGEMENT</div>
+            <h2 class="section__title" data-i18n="sec03.title" data-i18n-html="1">Timing<br/><em>windows.</em></h2>
+          </div>
+          <p class="section__lede" data-i18n="sec03.lede">下面的判定窗口按 BEATORAJA EASY 标的，客户端里能切到 LR2 / IIDX / OD 看对应数值。</p>
+        </div>
+
+        <div class="timing">
+          <div class="timing__row">
+            <span class="timing__name is-pgreat">PGREAT</span>
+            <div class="timing__bar is-pgreat">
+              <i style="left: 42%; right: 42%;"></i>
+              <span class="timing__center"></span>
+            </div>
+            <span class="timing__val">±20 MS</span>
+          </div>
+          <div class="timing__row">
+            <span class="timing__name is-great">GREAT</span>
+            <div class="timing__bar is-great">
+              <i style="left: 34%; right: 34%;"></i>
+              <span class="timing__center"></span>
+            </div>
+            <span class="timing__val">±40 MS</span>
+          </div>
+          <div class="timing__row">
+            <span class="timing__name is-good">GOOD</span>
+            <div class="timing__bar is-good">
+              <i style="left: 19%; right: 19%;"></i>
+              <span class="timing__center"></span>
+            </div>
+            <span class="timing__val">±84 MS</span>
+          </div>
+          <div class="timing__row">
+            <span class="timing__name is-bad">BAD</span>
+            <div class="timing__bar is-bad">
+              <i style="left: 0%; right: 0%;"></i>
+              <span class="timing__center"></span>
+            </div>
+            <span class="timing__val">±125 MS</span>
+          </div>
+
+          <div class="timing__scale">
+            <span></span>
+            <div class="ticks">
+              <span>−125</span><span>−84</span><span>−40</span><span>−20</span><span>0</span><span>+20</span><span>+40</span><span>+84</span><span>+125</span>
+            </div>
+            <span class="timing__val" data-i18n="sec03.ms">MS</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================================
+         DOWNLOAD BLOCK
+         ============================================================ -->
+    <section class="dl" id="download">
+      <div class="wrap">
+        <div class="dl__grid">
+          <div class="dl__head">
+            <div class="dl__no" data-i18n="sec04.no">04 · DOWNLOAD</div>
+            <h1 class="dl__title" data-i18n="sec04.title" data-i18n-html="1">Insert<br/><em>cabinet.</em></h1>
+            <p class="dl__lede" data-i18n="sec04.lede">发行包、版本说明、运行说明都放在下载页。</p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px;">
+              <span class="btn btn--soft"><span class="dot"></span><span data-i18n="cta.win_soon">PORTABLE · COMING SOON</span></span>
+              <a class="btn btn--ghost" href="download.html"><span data-i18n="nav.download">DOWNLOAD</span><span class="arr">→</span></a>
+            </div>
+          </div>
+
+          <div class="dl__meta">
+            <div class="dl__row">
+              <span class="dl__k" data-i18n="dl.version">VERSION</span>
+              <span class="dl__v" data-i18n="dl.version.v" data-i18n-html="1">0.1.0-DEV</span>
+            </div>
+            <div class="dl__row">
+              <span class="dl__k" data-i18n="dl.platform">PLATFORM</span>
+              <span class="dl__v" data-i18n="dl.platform.v" data-i18n-html="1">WIN 10 / 11 · X64</span>
+            </div>
+            <div class="dl__row">
+              <span class="dl__k" data-i18n="dl.package">PACKAGE</span>
+              <span class="dl__v" data-i18n="dl.package.v" data-i18n-html="1">PORTABLE .ZIP</span>
+            </div>
+            <div class="dl__row">
+              <span class="dl__k" data-i18n="dl.updater">UPDATER</span>
+              <span class="dl__v" data-i18n="dl.updater.v" data-i18n-html="1">OFF</span>
+            </div>
+            <div class="dl__row">
+              <span class="dl__k" data-i18n="dl.online">ONLINE</span>
+              <span class="dl__v" data-i18n="dl.online.v" data-i18n-html="1">STUBBED</span>
+            </div>
+            <div class="dl__row">
+              <span class="dl__k" data-i18n="dl.filed">FILED</span>
+              <span class="dl__v"><span data-now="stamp">—</span><small data-i18n="dl.filed.small">本页生成时间戳</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ROADMAP
+         ============================================================ -->
+    <main class="wrap">
+      <section class="section" id="phases">
+        <div class="section__head">
+          <div>
+            <div class="section__no" data-i18n="sec05.no">05 · ROADMAP</div>
+            <h2 class="section__title" data-i18n="sec05.title" data-i18n-html="1">Five<br/><em>phases.</em></h2>
+          </div>
+          <p class="section__lede" data-i18n="sec05.lede">OMS-bms 网站分五段推进。</p>
+        </div>
+
+        <div class="phases">
+          <div class="phase">
+            <div class="phase__no"><strong>P1</strong></div>
+            <div class="phase__name"><span data-i18n="phase.1.name">Static promo</span><small data-i18n="phase.1.sub">STATIC SITE</small></div>
+            <div class="phase__id">P1-A · P1-B</div>
+            <div class="phase__body" data-i18n="phase.1.body">纯静态 HTML/CSS/JS …</div>
+            <div class="phase__status is-now"><span class="led led--live"></span><span data-i18n="phase.status.current">CURRENT</span></div>
+          </div>
+          <div class="phase">
+            <div class="phase__no"><strong>P2</strong></div>
+            <div class="phase__name"><span data-i18n="phase.2.name">Accounts</span><small data-i18n="phase.2.sub">AUTH</small></div>
+            <div class="phase__id">P2-A</div>
+            <div class="phase__body" data-i18n="phase.2.body">注册、登录…</div>
+            <div class="phase__status"><span class="led led--dim"></span><span data-i18n="phase.status.planned">PLANNED</span></div>
+          </div>
+          <div class="phase is-future">
+            <div class="phase__no"><strong>P3</strong></div>
+            <div class="phase__name"><span data-i18n="phase.3.name">Profile / score</span><small data-i18n="phase.3.sub">PROFILE · SCORE</small></div>
+            <div class="phase__id">P3-A</div>
+            <div class="phase__body" data-i18n="phase.3.body">玩家个人主页…</div>
+            <div class="phase__status"><span class="led led--dim"></span><span data-i18n="phase.status.planned">PLANNED</span></div>
+          </div>
+          <div class="phase is-future">
+            <div class="phase__no"><strong>P4</strong></div>
+            <div class="phase__name"><span data-i18n="phase.4.name">Leaderboard</span><small data-i18n="phase.4.sub">LEADERBOARD</small></div>
+            <div class="phase__id">P4-A</div>
+            <div class="phase__body" data-i18n="phase.4.body">面向 BMS 与 mania 的统一榜单…</div>
+            <div class="phase__status"><span class="led led--dim"></span><span data-i18n="phase.status.planned">PLANNED</span></div>
+          </div>
+          <div class="phase is-future">
+            <div class="phase__no"><strong>P5</strong></div>
+            <div class="phase__name"><span data-i18n="phase.5.name">Charts / server</span><small data-i18n="phase.5.sub">CHART · SERVER</small></div>
+            <div class="phase__id">P5-A</div>
+            <div class="phase__body" data-i18n="phase.5.body">统一的谱面数据库…</div>
+            <div class="phase__status"><span class="led led--dim"></span><span data-i18n="phase.status.planned">PLANNED</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <div class="hazard"></div>
+    <footer class="foot">
+      <div class="wrap">
+        <div class="foot__row">
+          <div>
+            <div class="foot__brand">OMS</div>
+            <div style="margin-top:6px;color:var(--ink-3);" data-i18n="foot.tag">BMS · osu!lazer fork · 现代 BMS 播放器</div>
+            <div style="margin-top:14px;text-transform:uppercase;letter-spacing:0.18em;font-size:10px;color:var(--ink-4);">© <span data-now="year">2026</span> OMS · <span data-i18n="foot.copy">ALL RIGHTS RESERVED</span></div>
+          </div>
+          <div>
+            <div style="margin-bottom:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-4);font-size:9px;" data-i18n="foot.nav">NAV</div>
+            <div class="foot__nav">
+              <a href="index.html" data-i18n="nav.home">HOME</a>
+              <a href="download.html" data-i18n="nav.download">DOWNLOAD</a>
+              <a href="#capabilities" data-i18n="nav.specs">SPECS</a>
+              <a href="#timing" data-i18n="nav.judge">JUDGE</a>
+              <a href="#phases" data-i18n="nav.roadmap">ROADMAP</a>
+            </div>
+            <div style="margin-top:18px;line-height:1.7;color:var(--ink-3);max-width:54ch;font-size:11px;" data-i18n="foot.note">本页为内部 BULLETIN 设计稿…</div>
+          </div>
+          <div class="foot__sig">
+            <div><span data-i18n="bar.filed">FILED</span> · <span data-now="iso">—</span></div>
+            <div><span data-i18n="bar.build">BUILD</span> · 0.1.0-DEV</div>
+            <div><span data-i18n="bar.host">HOST</span> · 39.105.55.78</div>
+            <div class="eof" data-i18n="foot.eof">— END OF FILE</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================================
+         TWEAKS
+         ============================================================ -->
+    <button class="tweaks-fab" data-tweaks-fab type="button"><span class="led"></span><span data-i18n="tw.title">Tweaks</span></button>
+
+    <aside class="tweaks" data-tweaks aria-label="Tweaks">
+      <div class="tweaks__head">
+        <span><span class="led"></span>&nbsp; <span data-i18n="tw.title">Tweaks</span></span>
+        <button class="tweaks__close" data-tweaks-close type="button" aria-label="Close">×</button>
+      </div>
+      <div class="tweaks__group">
+        <span class="tweaks__label" data-i18n="tw.accent">SIGNAL · ACCENT</span>
+        <div class="tweaks__seg is-4col">
+          <button data-set="accent:red" type="button"><i class="sw" style="background:#ff2e46"></i>Red</button>
+          <button data-set="accent:yellow" type="button"><i class="sw" style="background:#ffd633"></i>Yellow</button>
+          <button data-set="accent:blue" class="is-active" type="button"><i class="sw" style="background:#00d9ff"></i>Blue</button>
+          <button data-set="accent:green" type="button"><i class="sw" style="background:#39e58c"></i>Green</button>
+        </div>
+      </div>
+      <div class="tweaks__group">
+        <span class="tweaks__label" data-i18n="tw.speed">HI-SPEED · SPEED</span>
+        <div class="tweaks__seg">
+          <button data-set="hi-speed:slow" type="button">×0.6</button>
+          <button data-set="hi-speed:normal" class="is-active" type="button">×1.0</button>
+          <button data-set="hi-speed:fast" type="button">×1.6</button>
+        </div>
+      </div>
+      <div class="tweaks__group">
+        <span class="tweaks__label" data-i18n="tw.field">PLAYFIELD</span>
+        <div class="tweaks__seg is-2col">
+          <button data-set="playfield:on" class="is-active" type="button"><span data-i18n="tw.live">Live</span></button>
+          <button data-set="playfield:off" type="button"><span data-i18n="tw.pause">Pause</span></button>
+        </div>
+      </div>
+    </aside>
   </body>
 </html>

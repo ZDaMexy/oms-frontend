@@ -6,7 +6,9 @@
 - 仓库已初始化为独立 Git 仓库
 - 当前已完成第一轮官网前端重写，站点视觉与内容组织已从“开发状态看板”切换为产品官网表达
 - 当前已完成第二轮视觉系统重做：修复了上一版 `site.css` 的结构性损坏，并将整套暗色霓虹视觉升级为统一的设计令牌体系
-- 当前采用根级多页面结构：`index.html`、`download.html`、`hub.html`
+- 当前已完成第三轮视觉系统重做（Claude Design 设计稿落地）：推翻暗色霓虹方向，改为 **Cabinet Mode**（街机机台 / 电竞转播视觉语言）；同步把产品定位由「BMS／mania 桌面客户端」重定位为 **OMS = 基于 osu!lazer 的 fork client，以 ruleset 形式增加 BMS 原生支持**
+- 当前采用根级两页结构：`index.html`、`download.html`（原 `hub.html` 已删除，规格 / 判定 / 路线图改为首页内锚点 `#capabilities` / `#timing` / `#phases`）
+- 当前站点为中文默认 + 中/英/日三语切换（`assets/scripts/i18n.js`，选择持久化到 `localStorage`），专有名词保留原文
 - 页面正式内容、截图、下载说明和部分客户端相关事实仍待逐项确认
 
 ## 已完成
@@ -32,7 +34,14 @@
 - 已新增内联 SVG 站标与 favicon、`theme-color`，并去除各页 eyebrow 与标题重复的文案
 - 已加入 `prefers-reduced-motion` 降级与 `:focus-visible` 焦点环，提升可访问性
 - 已让首页演奏区可读取真实 BMS 谱面：用 Node 离线解析器（`parse-bms.cjs`，位于工作区根、不随前端发布；支持通道 11-19/16/18-19、5x 长条与 `#LNOBJ`）把 7key BMS 谱解析为「仅含音符列+节拍位置」的紧凑数据 `assets/scripts/chart-stargazer.js`（不含任何 `.wav`/`.bmp` 等版权素材），`site.js` 用 rAF 滚动渲染器消费它
-- 演奏区渲染器的时序模型（已修正并定稿）：**播放速度按谱面真实 BPM**（`BPS = bpm/60 × RATE`，`RATE` 默认 1=真实曲速），与**视觉 hi-speed**（`VISIBLE_BEATS`，仅控制音符下落快慢/间距）解耦；当前定稿参数 `RATE=1` + `VISIBLE_BEATS=0.72`，即在 87 BPM 下单音符约 0.5s 落到判定线；静音；窗口化只渲染屏幕内音符，离屏/切后台自动暂停；解析失败或 reduced-motion 时回退到 CSS 循环；HUD 的 COMBO/EX-SCORE 随音符经过判定线实时累加并在循环时归零；判定线下方控制台（转盘+7 键钮）随对应轨道命中点亮
+- 演奏区渲染器的时序模型（已修正并定稿）：**播放速度按谱面真实 BPM**（`BPS = bpm/60 × RATE`，`RATE` 默认 1=真实曲速），与**视觉 hi-speed**（`VISIBLE_BEATS`，仅控制音符下落快慢/间距）解耦；静音；离屏/切后台自动暂停（仅信任 IntersectionObserver 与真正的 visibilitychange，避免 iframe 预览里 `document.hidden` 恒为 true 导致谱面不渲染）；解析失败或 reduced-motion 时回退；HUD 的 COMBO/EX-SCORE 随音符经过判定线实时累加并在循环时归零；判定线上方为键钮控制台、下方为 EX-SCORE / COMBO / JUDGE / GAUGE 大数字 HUD
+- 已落地第三轮 Cabinet Mode 设计稿（来自 Claude Design handoff bundle）：
+  - 视觉：纯黑底 `#050608` + 扫描线叠加 + vignette；信号青/红/lime live LED 系统；Big Shoulders Display + JetBrains Mono + Noto Sans JP/SC 字体；硬角、hazard 条
+  - 首页：cab 状态栏 / marquee（品牌 + 三语切换 + 导航）/ 两栏 Hero（左 marquee 标题 + 右全幅 playfield，playfield 上方单行 slate 显示曲名·难度名·曲师·BPM·实时进度/总时长）/ capabilities 规格表 / 判定窗口可视化条形图 / 下载块 / 五段路线图 / 页脚
+  - 下载页（`download.html` + `assets/scripts/download.js`）：打开即 `fetch` GitHub `ZDaMexy/oms/releases/latest`，三态渲染（loading / has-release 列出 assets+notes+主包★直链 / no-release 或失败退回跳转 GitHub releases 页，并露出 `ERR · http_xxx` 短码）；未认证 API 每 IP 每小时 60 次，限流时优雅退回
+  - Tweaks 面板（右下）：信号色红/黄/蓝/绿四色（默认蓝）· Hi-Speed ×0.6/×1.0/×1.6 · Playfield Live/Pause
+  - 平台口径按本仓库硬约束**收回为 Windows-only**（设计稿原写 WIN/MAC/LINUX，未采纳）：`dl.platform` = WIN 10/11 · X64、安装步骤只讲 `OMS.exe`
+  - 文件：样式落到 `assets/styles/site.css`、脚本 `assets/scripts/site.js`（i18n + playfield + tweaks）、新增 `assets/scripts/i18n.js`（三语词典）与 `assets/scripts/download.js`；复用既有 `assets/scripts/chart-stargazer.js`（`window.OMS_CHART`）；资源版本 `v=20260526-1`
 
 ## 下一步
 
@@ -55,7 +64,8 @@
 - 当前前端对客户端事实的引用需要经过 `oms_client_bridge_md/` 的快照确认，避免口径漂移
 - 当前已具备一批可直接写入宣传页状态说明的客户端事实，但仍不应把联网能力描述成已可用
 - 当前静态页面骨架已经可本地直接预览，页面结构、导航与分区具备继续填充内容的基础
-- 当前三页已经形成统一的暗色霓虹产品官网视觉语言，可继续直接填充正式内容
+- 当前两页（首页 + 下载页）已统一为 Cabinet Mode 视觉语言，可继续直接填充正式内容
+- 当前第三轮 Cabinet Mode 已通过本地静态服务器 + 预览工具验证：首页 i18n（中/英/日切换）、四色信号强调切换、playfield 实时下落（COMBO 累加、进度跳秒）、Windows-only 平台口径均正常，控制台无报错；下载页在 GitHub API 403（本机 IP 限流）时正确退回 no-release 态并显示 `ERR · http_403`
 - 当前视觉系统已通过本地静态服务器（`python -m http.server`）+ 预览工具验证：桌面英雄区为双栏、移动端单栏并切换汉堡导航、当前页导航高亮、滚动渐显与无缝 marquee 均正常，控制台无报错；此前损坏的下载页/未来规划页样式经计算样式核对已恢复
 - 当前截图后端在本环境不稳定（大视口超时），视觉正确性主要通过预览工具的 inspect/eval 计算样式核对确认
 

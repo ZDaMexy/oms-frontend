@@ -5,8 +5,9 @@
 
 ## 仓库内容
 
-- 根级三页：`index.html`、`download.html`、`hub.html`
-- `assets/`：共享样式与脚本
+- 根级两页：`index.html`、`download.html`（规格/判定/路线图为首页内锚点 `#capabilities`/`#timing`/`#phases`，无独立 hub 页）
+- `assets/styles/site.css`：Cabinet Mode 样式
+- `assets/scripts/`：`site.js`（i18n + playfield 渲染器 + tweaks）、`i18n.js`（中/英/日词典）、`download.js`（GitHub release 拉取）、`chart-stargazer.js`（`window.OMS_CHART` 谱面数据）
 - `doc_md/`：内部规划文档
 
 ## 部署（push 即上线）
@@ -29,7 +30,14 @@
 
 ## 当前状态（以 dev-progress.md 为准）
 
-Phase 1 宣传展示。根级三页 + 统一暗色霓虹视觉、用户向导航（首页/下载/功能介绍/未来规划）。已完成第二轮视觉系统重做：修复上一版 `site.css` 结构性损坏（多条规则被错误嵌套而失效），基于设计令牌重写样式表，新增首页演奏区（beatmania IIDX SP 7+1K，白/蓝/红 IIDX 配色）：可由离线解析的真实 BMS 谱面数据（`assets/scripts/chart-stargazer.js`，仅音符位置、无音频素材；解析工具 `parse-bms.cjs` 在工作区根、不发布，支持 5x 长条与 `#LNOBJ`）经 `site.js` 的 rAF 渲染器驱动下落：**播放按真实 BPM**（`BPS=bpm/60×RATE`，RATE 默认 1），**视觉 hi-speed** 由 `VISIBLE_BEATS` 独立控制（定稿 `RATE=1`+`VISIBLE_BEATS=0.72`，87 BPM 下约 0.5s 落速）；静音/窗口化/离屏暂停/HUD 实时计分；判定线下方控制台（转盘+7 键钮）随命中点亮；解析失败或 reduced-motion 回退 CSS 循环。资源版本 `v=20260523-12`。**版权待确认**：当前用第三方谱面 Stargazer [SAETHER]/Lime·saaa 的音符数据,发布前需替换或授权。另有均衡器视觉、无缝 marquee、SVG 站标与 favicon，并加入 `prefers-reduced-motion` 降级与 `:focus-visible` 焦点环。资源版本号 `v=20260523-1`。主标题、副标题、展示媒体、下载渠道、外链、FAQ 等正式文案待逐项确认。
+Phase 1 宣传展示。已完成第三轮视觉系统重做（落地 Claude Design 设计稿）：推翻暗色霓虹，改为 **Cabinet Mode**（街机机台/电竞转播视觉语言，纯黑底 + 扫描线 + 信号青/红/lime LED + Big Shoulders Display/JetBrains Mono/Noto JP·SC）。产品重定位为 **OMS = 基于 osu!lazer 的 fork client，以 ruleset 形式增加 BMS 原生支持**。
+
+- 根级两页：首页（cab 状态栏 / marquee 含三语切换 + 导航 / 两栏 Hero：左标题 + 右全幅 playfield，slate 显示曲名·难度名·曲师·BPM·进度 / capabilities 规格表 / 判定窗口条形图 / 下载块 / 五段路线图）；下载页（`fetch` GitHub `ZDaMexy/oms/releases/latest`，loading/有发行版/无发行版三态，失败退回跳转 releases 页）。`hub.html` 已删除。
+- 中文默认 + 中/英/日切换（`assets/scripts/i18n.js`，持久化 localStorage），专有名词保留原文。
+- Playfield：复用 `assets/scripts/chart-stargazer.js`（`window.OMS_CHART`，仅音符位置无音频；解析工具 `parse-bms.cjs` 在工作区根、不发布），`site.js` rAF 渲染器驱动，播放按真实 BPM、视觉 hi-speed 由 `VISIBLE_BEATS` 独立控制；离屏/切后台暂停（仅信任 IntersectionObserver + visibilitychange）；reduced-motion 回退。
+- Tweaks 面板：信号色红/黄/蓝/绿（默认蓝）· Hi-Speed ×0.6/×1.0/×1.6 · Playfield Live/Pause。
+- **平台口径收回为 Windows-only**（设计稿原写 WIN/MAC/LINUX，按硬约束未采纳）：`dl.platform` = WIN 10/11 · X64，安装步骤只讲 `OMS.exe`。
+- 资源版本 `v=20260526-1`。**版权待确认**：当前用第三方谱面 Stargazer [SAETHER]/Lime·saaa 的音符数据，发布前需替换或授权。正式文案、展示媒体、下载渠道、外链等仍待逐项确认。
 
 ## 关键硬约束
 

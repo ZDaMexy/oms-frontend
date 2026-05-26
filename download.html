@@ -1,193 +1,248 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh" data-accent="blue">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OMS | 下载</title>
-    <meta
-      name="description"
-      content="OMS 下载页：说明首发定位、发布形态与系统要求，并预留正式下载链接位置。"
-    />
-    <meta name="theme-color" content="#05060c" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff4fa6'/%3E%3Crect x='7' y='16' width='4' height='9' rx='2' fill='%23fff'/%3E%3Crect x='14' y='10' width='4' height='15' rx='2' fill='%23fff'/%3E%3Crect x='21' y='13' width='4' height='12' rx='2' fill='%23fff'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="assets/styles/site.css?v=20260523-12" />
-    <script defer src="assets/scripts/site.js?v=20260523-12"></script>
+    <title>下载 · OMS · osu!lazer fork · BMS ruleset</title>
+    <meta name="description" content="OMS 下载 — 从 GitHub Releases 拉取最新发行包，下载、解压、运行。" />
+    <meta name="theme-color" content="#050608" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles/site.css?v=20260526-1" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050608'/%3E%3Cpath d='M4 16 L4 26 L9 26 L9 16 Z M13 7 L13 26 L18 26 L18 7 Z M22 12 L22 26 L27 26 L27 12 Z' fill='%2300d9ff'/%3E%3C/svg%3E" />
+    <script defer src="assets/scripts/i18n.js?v=20260526-1"></script>
+    <script defer src="assets/scripts/site.js?v=20260526-1"></script>
+    <script defer src="assets/scripts/download.js?v=20260526-1"></script>
   </head>
-  <body data-page="download">
-    <div class="site-bg">
-      <div class="site-bg__beam site-bg__beam--pink"></div>
-      <div class="site-bg__beam site-bg__beam--cyan"></div>
-      <div class="site-bg__grid"></div>
-    </div>
-
-    <div class="page-shell">
-      <header class="site-header">
-        <a class="brand" href="index.html" aria-label="OMS 首页">
-          <span class="brand-logo" aria-hidden="true">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="16" width="5" height="11" rx="2.5" fill="#05060b" />
-              <rect x="13.5" y="7" width="5" height="20" rx="2.5" fill="#05060b" />
-              <rect x="23" y="12" width="5" height="15" rx="2.5" fill="#05060b" />
-            </svg>
-          </span>
-          <span class="brand-text">
-            <span class="brand-mark">OMS</span>
-            <span class="brand-copy">BMS + mania</span>
-          </span>
-        </a>
-
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          导航
-        </button>
-
-        <nav id="site-nav" class="site-nav" aria-label="主导航">
-          <a href="index.html" data-link="home">首页</a>
-          <a href="download.html" data-link="download">下载</a>
-          <a href="index.html#features" data-link="features">功能介绍</a>
-          <a href="hub.html" data-link="hub">未来规划</a>
-        </nav>
-      </header>
-
-      <main>
-        <section class="hero hero-subpage hero-subpage--download" data-reveal>
-          <div class="hero-copy">
-            <p class="eyebrow">下载</p>
-            <h1>OMS 下载</h1>
-            <p class="hero-text">
-              OMS 的公开下载页用于发布下载包、版本说明、系统要求与后续更新记录。当前阶段先说明首发形态、平台范围与体验边界，正式发布后补充下载入口。
-            </p>
-
-            <div class="hero-actions">
-              <span class="button button-disabled">Windows 下载即将开放</span>
-              <a class="button button-ghost" href="index.html#features">查看功能介绍</a>
-            </div>
-          </div>
-
-          <aside class="subhero-panel">
-            <article class="split-box split-box--accent">
-              <p class="card-label">首发形态</p>
-              <h2>桌面优先</h2>
-              <p>首发包围绕 Windows 桌面本地体验展开。后续补充账号、排行榜与联网入口时，继续保持轻量发布方式。</p>
-            </article>
-            <article class="split-box">
-              <p class="card-label">当前状态</p>
-              <p>当前客户端默认关闭在线功能与游戏内更新，下载页统一按照当前状态提供说明。</p>
-            </article>
-          </aside>
-        </section>
-
-        <section class="section" data-reveal>
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">首发信息</p>
-              <h2>首发信息一览</h2>
-            </div>
-            <p class="section-copy">下载页需要明确平台、发行方式与更新方式。</p>
-          </div>
-
-          <div class="launch-grid">
-            <article class="download-card">
-              <p class="card-label">平台</p>
-              <h3>Windows 原生体验</h3>
-              <p>现阶段公开范围仅包含 Windows 桌面客户端。</p>
-            </article>
-            <article class="download-card">
-              <p class="card-label">发布方式</p>
-              <h3>便携发布</h3>
-              <p>OMS 采用轻量、可携带的桌面客户端发布形态，降低安装门槛并保留本地使用体验。</p>
-            </article>
-            <article class="download-card">
-              <p class="card-label">更新方式</p>
-              <h3>外部分发</h3>
-              <p>当前游戏内更新默认关闭。正式发布阶段通过外部版本入口与更新说明页提供更新信息。</p>
-            </article>
-            <article class="download-card">
-              <p class="card-label">联网状态</p>
-              <h3>联网入口预留</h3>
-              <p>客户端已保留在线接点。首发阶段以离线优先和本地体验为中心，账号与排行榜等入口将在后续开放。</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section section-download-panels" data-reveal>
-          <div class="panel-column">
-            <div class="section-heading section-heading--stacked">
-              <p class="eyebrow">下载入口</p>
-              <h2>下载入口与版本</h2>
-            </div>
-
-            <div class="channel-grid">
-              <article class="channel-card channel-card--primary">
-                <p class="card-label">主版本</p>
-                <h3>Windows 客户端</h3>
-                <p>正式下载链接即将公布。本区域用于展示首个公开发行包与版本标识。</p>
-                <span class="phase-chip">计划中</span>
-              </article>
-              <article class="channel-card">
-                <p class="card-label">便携版</p>
-                <h3>便携版入口</h3>
-                <p>如提供安装版与便携版，将在此说明二者区别。</p>
-              </article>
-              <article class="channel-card">
-                <p class="card-label">版本说明</p>
-                <h3>版本说明</h3>
-                <p>首发说明、更新日志、已知问题和校验信息将集中在此提供。</p>
-              </article>
-            </div>
-          </div>
-
-          <div class="panel-column">
-            <div class="section-heading section-heading--stacked">
-              <p class="eyebrow">当前边界</p>
-              <h2>当前能力边界</h2>
-            </div>
-
-            <div class="system-grid">
-              <article class="system-card">
-                <p class="card-label">已确认</p>
-                <h3>默认离线优先</h3>
-                <p>当前构建默认服务器地址为空，下载页按实际连接状态提供说明。</p>
-              </article>
-              <article class="system-card">
-                <p class="card-label">已确认</p>
-                <h3>游戏内更新默认关闭</h3>
-                <p>下载与版本更新将先通过外部发布路径进行说明与分发。</p>
-              </article>
-              <article class="system-card">
-                <p class="card-label">已确认</p>
-                <h3>BMS 已为正式模式</h3>
-                <p>BMS 已纳入当前客户端体验，并作为正式模式提供。</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="section section-cta" data-reveal>
-          <div class="cta-copy">
-            <p class="eyebrow">后续入口</p>
-            <h2>后续开放</h2>
-            <p>账号、排行榜、谱面库和多人能力的后续入口可在未来规划页查看。</p>
-          </div>
-          <div class="cta-actions">
-            <a class="button button-primary" href="hub.html">查看未来规划</a>
-            <a class="button button-ghost" href="index.html">返回首页</a>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <div>
-          <p class="footer-title">OMS 下载</p>
-          <p>Windows 优先。首个公开版本发布后，此处提供正式下载链接。</p>
+  <body>
+    <!-- ============================================================
+         TOP CABINET STATUS BAR
+         ============================================================ -->
+    <div class="cab-bar">
+      <div class="wrap">
+        <div class="cab-bar__row">
+          <span><span class="led led--on"></span><span data-i18n="bar.system">SYSTEM</span>&nbsp;<strong data-i18n="bar.ready">READY</strong></span>
+          <span><span data-i18n="bar.build">BUILD</span>&nbsp;<strong>0.1.0-DEV</strong></span>
+          <span>GITHUB · ZDaMexy/oms</span>
+          <span class="cab-bar__rule"></span>
+          <span><span data-i18n="bar.host">HOST</span>&nbsp;<strong>39.105.55.78</strong></span>
+          <span><span class="led led--amber" data-rel-led></span><span data-i18n="bar.online">ONLINE STUBBED</span></span>
+          <span class="cab-bar__rule"></span>
+          <span><span class="led led--live"></span><span data-i18n="bar.cabinet">CABINET</span>&nbsp;<strong data-i18n="bar.live">LIVE</strong></span>
+          <span><span data-i18n="bar.filed">FILED</span>&nbsp;<strong data-now="iso">—</strong></span>
         </div>
-        <nav class="footer-nav" aria-label="页脚导航">
-          <a href="index.html">首页</a>
-          <a href="download.html">下载</a>
-          <a href="index.html#features">功能介绍</a>
-          <a href="hub.html">未来规划</a>
-        </nav>
-        <p class="footer-meta" data-year></p>
-      </footer>
+      </div>
     </div>
+
+    <!-- ============================================================
+         MARQUEE / PRIMARY NAV
+         ============================================================ -->
+    <header class="marquee">
+      <div class="wrap">
+        <div class="marquee__row">
+          <a class="brand" href="index.html" aria-label="OMS — Home">
+            <span class="brand__mark">O<em>M</em>S</span>
+            <span class="brand__jp">オーエムエス</span>
+            <span class="brand__sub" data-i18n="brand.sub">BMS · OSU!LAZER FORK</span>
+          </a>
+          <div class="marquee__right">
+            <div class="lang-switch" role="group" aria-label="Language">
+              <button data-lang-set="zh" type="button">中</button>
+              <button data-lang-set="en" type="button">EN</button>
+              <button data-lang-set="ja" type="button">日</button>
+            </div>
+            <nav aria-label="主导航">
+              <ul class="nav">
+                <li><a data-n="01" href="index.html" data-i18n="nav.home">HOME</a></li>
+                <li><a data-n="02" href="download.html" aria-current="page" data-i18n="nav.download">DOWNLOAD</a></li>
+                <li><a data-n="03" href="index.html#capabilities" data-i18n="nav.specs">SPECS</a></li>
+                <li><a data-n="04" href="index.html#timing" data-i18n="nav.judge">JUDGE</a></li>
+                <li><a data-n="05" href="index.html#phases" data-i18n="nav.roadmap">ROADMAP</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================================
+         DOWNLOAD HERO
+         ============================================================ -->
+    <section class="dl-hero">
+      <div class="wrap">
+        <div class="dl-hero__no"><span class="led led--amber"></span><span data-i18n="dlp.stage">STAGE 04 · RELEASE MANIFEST</span></div>
+        <h1 class="dl-hero__title" data-i18n="dlp.title" data-i18n-html="1">发行<br/><em>清单。</em></h1>
+        <div class="dl-hero__kana" data-i18n="dlp.kana">GitHub Releases · 最新版直链</div>
+        <p class="dl-hero__lede" data-i18n="dlp.lede">页面打开即从 GitHub 拉取最新一版 OMS 发行包。下载、解压、运行。尚未发公开版时，本页指向 GitHub release 页以便跟进。</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         RELEASE MANIFEST PANEL
+         ============================================================ -->
+    <main class="wrap">
+      <section class="rel" aria-live="polite">
+        <!-- loading state -->
+        <div class="rel__loading" data-rel-loading>
+          <span class="led"></span>
+          <span data-i18n="dlp.fetching">FETCHING github.com/ZDaMexy/oms/releases/latest …</span>
+        </div>
+
+        <!-- HAS RELEASE state -->
+        <div data-rel-has hidden>
+          <header class="rel__head">
+            <div>
+              <div class="rel__label" data-i18n="dlp.k.latest">LATEST RELEASE</div>
+              <h2 class="rel__tag" data-rel-tag>—</h2>
+              <div class="rel__title" data-rel-title></div>
+            </div>
+            <div class="rel__meta">
+              <div class="rel__meta-row"><span data-i18n="dlp.k.filed">PUBLISHED</span><strong data-rel-date>—</strong></div>
+              <div class="rel__meta-row"><span data-i18n="dlp.k.author">AUTHOR</span><strong data-rel-author>—</strong></div>
+              <div class="rel__meta-row"><span data-i18n="dlp.k.assets">ASSETS</span><strong data-rel-asset-count>0</strong></div>
+            </div>
+          </header>
+
+          <div class="rel__cta">
+            <a class="btn btn--primary" data-rel-primary hidden>
+              <span data-i18n="dlp.cta.dl">DOWNLOAD</span>
+              <span class="file" data-rel-primary-file>—</span>
+              <span class="arr">↓</span>
+            </a>
+            <a class="btn btn--ghost" data-rel-github href="https://github.com/ZDaMexy/oms/releases" target="_blank" rel="noopener">
+              <span data-i18n="dlp.cta.github">VIEW ON GITHUB</span>
+              <span class="arr">↗</span>
+            </a>
+          </div>
+
+          <div class="rel__sec" data-rel-assets-section>
+            <div class="rel__sec-label" data-i18n="dlp.k.assets-h">ASSETS · downloadables</div>
+            <div class="rel__asset-list" data-rel-assets></div>
+          </div>
+
+          <div class="rel__sec">
+            <div class="rel__sec-label" data-i18n="dlp.k.notes-h">RELEASE NOTES</div>
+            <pre class="rel__notes-body" data-rel-notes hidden></pre>
+            <div class="rel__notes-empty" data-rel-notes-empty hidden>— no notes filed —</div>
+          </div>
+        </div>
+
+        <!-- NO RELEASE / ERROR state -->
+        <div class="rel__none" data-rel-none hidden>
+          <div class="rel__none-no">
+            <span class="led"></span>
+            <span data-i18n="dlp.none.no">NO PUBLIC RELEASE FILED YET</span>
+            <span data-rel-reason hidden style="margin-left:14px;color:var(--ink-4);font-size:10px;letter-spacing:0.18em;"></span>
+          </div>
+          <h2 class="rel__none-title" data-i18n="dlp.none.title" data-i18n-html="1">还在<br/><em>备料。</em></h2>
+          <p class="rel__none-lede" data-i18n="dlp.none.lede">公开下载入口要等到 Phase 1 收尾才开。在 GitHub 上盯一眼就能知道什么时候有新的包。</p>
+          <div class="rel__none-cta">
+            <a class="btn btn--primary" data-rel-github-fallback href="https://github.com/ZDaMexy/oms/releases" target="_blank" rel="noopener">
+              <span data-i18n="dlp.none.cta">OPEN GITHUB · ZDaMexy/oms/releases</span>
+              <span class="arr">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+           INSTALL STEPS
+           ============================================================ -->
+      <section class="install">
+        <div class="install__head">
+          <div>
+            <div class="install__no" data-i18n="dlp.ins.no">05 · RUN IT</div>
+            <h2 class="install__title" data-i18n="dlp.ins.title" data-i18n-html="1">解压<br/><em>开玩。</em></h2>
+          </div>
+          <p class="install__lede" data-i18n="dlp.ins.lede">下载、解压、运行——三步开玩。</p>
+        </div>
+
+        <ol class="install__steps">
+          <li>
+            <div class="install__step-no">01</div>
+            <div class="install__step-body">
+              <strong data-i18n="dlp.ins.1.h">下载发行包</strong>
+              <p data-i18n="dlp.ins.1.b" data-i18n-html="1">在上面的 ASSETS 列表里挑主包（带 ★ 的那个），点一下就开始下载。</p>
+            </div>
+          </li>
+          <li>
+            <div class="install__step-no">02</div>
+            <div class="install__step-body">
+              <strong data-i18n="dlp.ins.2.h">解压到独立目录</strong>
+              <p data-i18n="dlp.ins.2.b" data-i18n-html="1">选位置解压。建议单独一个文件夹，与其他游戏目录分开。</p>
+            </div>
+          </li>
+          <li>
+            <div class="install__step-no">03</div>
+            <div class="install__step-body">
+              <strong data-i18n="dlp.ins.3.h">启动 OMS</strong>
+              <p data-i18n="dlp.ins.3.b" data-i18n-html="1">双击 <code>OMS.exe</code> 启动。首次启动会在系统数据目录里建自己的存档。</p>
+            </div>
+          </li>
+          <li>
+            <div class="install__step-no">04</div>
+            <div class="install__step-body">
+              <strong data-i18n="dlp.ins.4.h">把谱面拖进来</strong>
+              <p data-i18n="dlp.ins.4.b" data-i18n-html="1">把 BMS 谱面文件夹拖到 OMS 窗口，或在设置里指定根目录。难度表（Satellite / Stella / 発狂）可稍后接入。</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <div class="hazard"></div>
+    <footer class="foot">
+      <div class="wrap">
+        <div class="foot__row">
+          <div>
+            <div class="foot__brand">OMS</div>
+            <div style="margin-top:6px;color:var(--ink-3);" data-i18n="foot.tag">BMS · osu!lazer fork · 现代 BMS 播放器</div>
+            <div style="margin-top:14px;text-transform:uppercase;letter-spacing:0.18em;font-size:10px;color:var(--ink-4);">© <span data-now="year">2026</span> OMS · <span data-i18n="foot.copy">ALL RIGHTS RESERVED</span></div>
+          </div>
+          <div>
+            <div style="margin-bottom:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-4);font-size:9px;" data-i18n="foot.nav">NAV</div>
+            <div class="foot__nav">
+              <a href="index.html" data-i18n="nav.home">HOME</a>
+              <a href="download.html" data-i18n="nav.download">DOWNLOAD</a>
+              <a href="index.html#capabilities" data-i18n="nav.specs">SPECS</a>
+              <a href="index.html#timing" data-i18n="nav.judge">JUDGE</a>
+              <a href="index.html#phases" data-i18n="nav.roadmap">ROADMAP</a>
+            </div>
+            <div style="margin-top:18px;line-height:1.7;color:var(--ink-3);max-width:54ch;font-size:11px;" data-i18n="foot.note">这页是 BULLETIN 内部稿。正式文案、下载入口、演示谱面、版权信息都以正式发布版为准。</div>
+          </div>
+          <div class="foot__sig">
+            <div><span data-i18n="bar.filed">FILED</span> · <span data-now="iso">—</span></div>
+            <div><span data-i18n="bar.build">BUILD</span> · 0.1.0-DEV</div>
+            <div>GITHUB · ZDaMexy/oms</div>
+            <div class="eof" data-i18n="foot.eof">— END OF FILE</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================================
+         TWEAKS
+         ============================================================ -->
+    <button class="tweaks-fab" data-tweaks-fab type="button"><span class="led"></span><span data-i18n="tw.title">Tweaks</span></button>
+
+    <aside class="tweaks" data-tweaks aria-label="Tweaks">
+      <div class="tweaks__head">
+        <span><span class="led"></span>&nbsp; <span data-i18n="tw.title">Tweaks</span></span>
+        <button class="tweaks__close" data-tweaks-close type="button" aria-label="Close">×</button>
+      </div>
+      <div class="tweaks__group">
+        <span class="tweaks__label" data-i18n="tw.accent">SIGNAL · ACCENT</span>
+        <div class="tweaks__seg is-4col">
+          <button data-set="accent:red" type="button"><i class="sw" style="background:#ff2e46"></i>Red</button>
+          <button data-set="accent:yellow" type="button"><i class="sw" style="background:#ffd633"></i>Yellow</button>
+          <button data-set="accent:blue" class="is-active" type="button"><i class="sw" style="background:#00d9ff"></i>Blue</button>
+          <button data-set="accent:green" type="button"><i class="sw" style="background:#39e58c"></i>Green</button>
+        </div>
+      </div>
+    </aside>
   </body>
 </html>

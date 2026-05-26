@@ -1,5 +1,17 @@
 # Frontend Mainline Changelog
 
+## 2026-05-26
+
+- 落地 Claude Design 设计稿 handoff bundle：第三轮视觉系统重做，推翻暗色霓虹方向，改为 **Cabinet Mode**（街机机台 / 电竞转播视觉语言）
+- 产品重定位：由「BMS／mania 桌面客户端」改为 **OMS = 基于 osu!lazer 的 fork client，以 ruleset 形式增加 BMS 原生支持**（品牌副标 BMS · osu!lazer fork）
+- 删除 `hub.html`：规格 / 判定 / 路线图改为首页内锚点 `#capabilities` / `#timing` / `#phases`，导航与页脚同步
+- 新增中/英/日三语切换（中文默认），新增 `assets/scripts/i18n.js`（三语词典）；专有名词保留原文
+- 重写下载页：`download.html` + 新增 `assets/scripts/download.js`，打开即 `fetch` GitHub `ZDaMexy/oms/releases/latest`，三态渲染（loading / 有发行版列 assets+notes+★主包直链 / 无发行版或失败退回跳转 GitHub releases 页）
+- 重写 `assets/styles/site.css`（Cabinet Mode 设计令牌）与 `assets/scripts/site.js`（i18n + playfield 渲染器 + tweaks 面板）；复用既有 `assets/scripts/chart-stargazer.js`
+- Tweaks 面板：信号色红/黄/蓝/绿四色（默认蓝）· Hi-Speed · Playfield Live/Pause
+- **平台口径按硬约束收回为 Windows-only**：设计稿原写 WIN/MAC/LINUX，未采纳；`dl.platform` = WIN 10/11 · X64，安装步骤只讲 `OMS.exe`
+- 资源版本号 `v=20260526-1`
+
 ## 2026-04-21
 
 - 将 `oms-frontend/` 初始化为独立 Git 仓库
