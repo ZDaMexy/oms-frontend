@@ -1,5 +1,16 @@
 # Frontend Subline P1-A Changelog
 
+## 2026-05-26
+
+- 落地 Claude Design 设计稿：第三轮视觉重做，推翻暗色霓虹，改为 Cabinet Mode（街机/电竞转播视觉）
+- 产品重定位为 OMS = osu!lazer fork client（BMS ruleset）
+- 页面由三页收敛为两页，删除 `hub.html`，规格/判定/路线图改为首页内锚点
+- 新增中/英/日三语切换（`assets/scripts/i18n.js`）与四色信号强调切换
+- 重写下载页 + 新增 `assets/scripts/download.js`：从 GitHub `ZDaMexy/oms/releases/latest` 拉取并三态渲染
+- 重写 `assets/styles/site.css`（Cabinet Mode 设计令牌）与 `assets/scripts/site.js`（i18n + playfield + tweaks），复用 `chart-stargazer.js`
+- 平台口径按硬约束收回为 Windows-only（设计稿原写 WIN/MAC/LINUX 未采纳）
+- 已提交并双端推送上线，资源版本 `v=20260526-1`
+
 ## 2026-04-21
 
 - 新增 `subline/P1-A/` 目录，作为前端 Phase 1 的首个支线功能方向占位
