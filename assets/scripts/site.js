@@ -157,11 +157,13 @@
     let RATE = 1;
     let BPS = ((c.bpm || 130) / 60) * RATE;
 
-    // hi-speed tweak — adjusts visible beats only (speed of fall, not playback)
+    // hi-speed tweak — adjusts fall speed (visible beats) only, not playback.
+    // Accepts a numeric multiplier (0.6 / 0.8 / 1.0 / 1.2 / 1.4); higher = faster
+    // fall = fewer beats on screen. VISIBLE_BEATS is inverse to the multiplier.
+    const HS_BASE = 0.78; // beats visible at ×1.0
     window.__omsSetHiSpeed = (mode) => {
-      if (mode === "slow")   VISIBLE_BEATS = 1.25;
-      else if (mode === "fast") VISIBLE_BEATS = 0.5;
-      else                   VISIBLE_BEATS = 0.78;
+      const mult = parseFloat(mode);
+      VISIBLE_BEATS = (isFinite(mult) && mult > 0) ? HS_BASE / mult : HS_BASE;
     };
     window.__omsTogglePlay = (on) => { if (on) start(); else stop(); };
     const LEAD = VISIBLE_BEATS;
@@ -323,7 +325,8 @@
     });
 
     const html = document.documentElement;
-    panel.querySelectorAll("[data-set]").forEach((btn) => {
+    // bind ALL [data-set] controls (tweaks panel + in-field Hi-Speed/Playfield)
+    document.querySelectorAll("[data-set]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const [key, value] = btn.dataset.set.split(":");
         // dispatch to the right place

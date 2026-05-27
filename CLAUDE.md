@@ -37,8 +37,8 @@ Phase 1 宣传展示。已完成第三轮视觉系统重做（落地 Claude Desi
 - Playfield：复用 `assets/scripts/chart-stargazer.js`（`window.OMS_CHART`，仅音符位置无音频；解析工具 `parse-bms.cjs` 在工作区根、不发布），`site.js` rAF 渲染器驱动，播放按真实 BPM、视觉 hi-speed 由 `VISIBLE_BEATS` 独立控制；离屏/切后台暂停（仅信任 IntersectionObserver + visibilitychange）；reduced-motion 回退。
 - Tweaks 面板：信号色红/黄/蓝/绿（默认蓝）· Hi-Speed ×0.6/×1.0/×1.6 · Playfield Live/Pause。
 - **平台口径收回为 Windows-only**（设计稿原写 WIN/MAC/LINUX，按硬约束未采纳）：`dl.platform` = WIN 10/11 · X64，安装步骤只讲 `OMS.exe`。
-- 上线后视觉打磨轮（2026-05-27）：删除两页顶部 cab 状态栏与 brand 日文 kana；缩放适配（移动端导航可见+可横滚、cab→按需换行、跨 320–2560/横屏无溢出）；Hero 标题中/日文降字号 `clamp(44px,4.6vw,88px)` 解决窄栏重叠；HUD 改为 EX-SCORE / COMBO（三语统一英文）/ GROOVE GAUGE（IIDX 分段条 + 大号百分比，随 combo 填充），删除判定 PGREAT。
-- 资源版本 `v=20260526-5`。**版权待确认**：当前用第三方谱面 Stargazer [SAETHER]/Lime·saaa 的音符数据，发布前需替换或授权。正式文案、展示媒体、下载渠道、外链等仍待逐项确认。
+- 上线后视觉打磨轮（2026-05-27）：删除两页顶部 cab 状态栏与 brand 日文 kana；缩放适配（移动端导航可见+可横滚、cab→按需换行、跨 320–2560/横屏无溢出）；Hero 标题中/日文降字号 `clamp(44px,4.6vw,88px)` 解决窄栏重叠；HUD 改为 EX-SCORE / COMBO（三语统一英文）/ GROOVE GAUGE（IIDX 分段条 + 大号百分比，随 combo 填充），删除判定 PGREAT。GROOVE GAUGE 血条随信号色同步；Hi-Speed（5 档 ×0.6–×1.4）与 Playfield Live/Pause 移到 playfield slate 同行右侧，tweaks 面板仅留信号色。
+- 资源版本 `v=20260526-9`。**版权待确认**：当前用第三方谱面 Stargazer [SAETHER]/Lime·saaa 的音符数据，发布前需替换或授权。正式文案、展示媒体、下载渠道、外链等仍待逐项确认。
 
 ## 关键硬约束
 

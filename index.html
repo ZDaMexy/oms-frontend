@@ -9,11 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/styles/site.css?v=20260526-5" />
+    <link rel="stylesheet" href="assets/styles/site.css?v=20260526-9" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050608'/%3E%3Cpath d='M4 16 L4 26 L9 26 L9 16 Z M13 7 L13 26 L18 26 L18 7 Z M22 12 L22 26 L27 26 L27 12 Z' fill='%2300d9ff'/%3E%3C/svg%3E" />
-    <script defer src="assets/scripts/chart-stargazer.js?v=20260526-5"></script>
-    <script defer src="assets/scripts/i18n.js?v=20260526-5"></script>
-    <script defer src="assets/scripts/site.js?v=20260526-5"></script>
+    <script defer src="assets/scripts/chart-stargazer.js?v=20260526-9"></script>
+    <script defer src="assets/scripts/i18n.js?v=20260526-9"></script>
+    <script defer src="assets/scripts/site.js?v=20260526-9"></script>
   </head>
   <body>
     <!-- ============================================================
@@ -78,6 +78,19 @@
                   <i></i>BPM <span data-stat="bpm">87</span>
                   <i></i><span data-progress>0:00</span> <span class="slate__sep">/</span> <span data-stat="length">2:28</span>
                 </span>
+                <div class="field-ctrl">
+                  <div class="field-ctrl__seg" role="group" aria-label="Hi-Speed">
+                    <button data-set="hi-speed:0.6" type="button">×0.6</button>
+                    <button data-set="hi-speed:0.8" type="button">×0.8</button>
+                    <button data-set="hi-speed:1.0" class="is-active" type="button">×1.0</button>
+                    <button data-set="hi-speed:1.2" type="button">×1.2</button>
+                    <button data-set="hi-speed:1.4" type="button">×1.4</button>
+                  </div>
+                  <div class="field-ctrl__seg" role="group" aria-label="Playfield">
+                    <button data-set="playfield:on" class="is-active" type="button" data-i18n="tw.live">Live</button>
+                    <button data-set="playfield:off" type="button" data-i18n="tw.pause">Pause</button>
+                  </div>
+                </div>
               </div>
 
               <div class="field" data-field>
@@ -383,21 +396,6 @@
           <button data-set="accent:yellow" type="button"><i class="sw" style="background:#ffd633"></i>Yellow</button>
           <button data-set="accent:blue" class="is-active" type="button"><i class="sw" style="background:#00d9ff"></i>Blue</button>
           <button data-set="accent:green" type="button"><i class="sw" style="background:#39e58c"></i>Green</button>
-        </div>
-      </div>
-      <div class="tweaks__group">
-        <span class="tweaks__label" data-i18n="tw.speed">HI-SPEED · SPEED</span>
-        <div class="tweaks__seg">
-          <button data-set="hi-speed:slow" type="button">×0.6</button>
-          <button data-set="hi-speed:normal" class="is-active" type="button">×1.0</button>
-          <button data-set="hi-speed:fast" type="button">×1.6</button>
-        </div>
-      </div>
-      <div class="tweaks__group">
-        <span class="tweaks__label" data-i18n="tw.field">PLAYFIELD</span>
-        <div class="tweaks__seg is-2col">
-          <button data-set="playfield:on" class="is-active" type="button"><span data-i18n="tw.live">Live</span></button>
-          <button data-set="playfield:off" type="button"><span data-i18n="tw.pause">Pause</span></button>
         </div>
       </div>
     </aside>

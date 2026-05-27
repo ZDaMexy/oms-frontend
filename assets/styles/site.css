@@ -558,8 +558,9 @@ img, svg { display: block; max-width: 100%; }
 
 .field-top {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
+  gap: 14px;
   padding: 0 14px;
   border-bottom: 1px solid var(--rule);
   background: linear-gradient(180deg, rgba(0,217,255,0.04), transparent);
@@ -576,9 +577,41 @@ img, svg { display: block; max-width: 100%; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
+  overflow: hidden;
   font-family: var(--mono);
   color: var(--ink-2);
 }
+
+/* in-field controls (Hi-Speed + Live/Pause) parked in the slate row's right gap */
+.field-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.field-ctrl__seg {
+  display: flex;
+  border: 1px solid var(--rule-2);
+}
+.field-ctrl__seg button {
+  background: transparent;
+  border: 0;
+  border-right: 1px solid var(--rule-2);
+  height: 22px;
+  padding: 0 9px;
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  cursor: pointer;
+  transition: background 80ms linear, color 80ms linear;
+}
+.field-ctrl__seg button:last-child { border-right: 0; }
+.field-ctrl__seg button:hover { background: var(--bg-3); color: var(--ink); }
+.field-ctrl__seg button.is-active { background: var(--cyan); color: #000; }
 .field-top .slate strong {
   color: var(--ink);
   font-weight: 700;
@@ -752,8 +785,8 @@ img, svg { display: block; max-width: 100%; }
   position: relative;
   flex: 1 1 auto;
   height: 18px;
-  background: #160a08;
-  border: 1px solid #4a6b2e;            /* green frame, IIDX cabinet feel */
+  background: #0c0f16;
+  border: 1px solid var(--cyan-2);      /* frame follows the signal accent (dark variant) */
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.7), 0 0 0 1px rgba(0,0,0,0.4);
   overflow: hidden;
 }
@@ -761,8 +794,9 @@ img, svg { display: block; max-width: 100%; }
   position: absolute;
   left: 1px; top: 1px; bottom: 1px;
   width: 72%;
-  background: linear-gradient(180deg, #ff8a3c 0%, #ff3a2e 55%, #c20d1a 100%);
-  box-shadow: 0 0 10px rgba(255,60,46,0.65);
+  /* fill colour syncs with the tweaks signal accent (--cyan = current accent) */
+  background: linear-gradient(180deg, var(--cyan) 0%, var(--cyan-2) 100%);
+  box-shadow: 0 0 10px var(--cyan);
   transition: width 120ms linear;
 }
 /* notch the fill into discrete LED segments */
@@ -780,8 +814,8 @@ img, svg { display: block; max-width: 100%; }
   font-size: 30px;
   line-height: 1;
   letter-spacing: -0.03em;
-  color: var(--lime);
-  text-shadow: 0 0 12px rgba(200,255,57,0.45);
+  color: var(--cyan);
+  text-shadow: 0 0 12px var(--cyan);
   font-variant-numeric: tabular-nums;
   display: inline-flex;
   align-items: baseline;
@@ -1476,9 +1510,12 @@ img, svg { display: block; max-width: 100%; }
   .hero__mid { min-height: 440px; }
   .timing__row { grid-template-columns: 70px 1fr 70px; gap: 12px; font-size: 11px; }
   .timing__scale { grid-template-columns: 70px 1fr 70px; gap: 12px; }
-  /* slate wraps gracefully on narrow viewports */
-  .field-top { white-space: normal; height: auto; padding: 8px 12px; }
+  /* narrow viewports: slate wraps, in-field controls drop to their own line.
+     The field-top grid row must grow (it's locked to 34px by default). */
+  .field-window { grid-template-rows: auto 1fr 60px 50px; }
+  .field-top { white-space: normal; height: auto; padding: 8px 12px; flex-wrap: wrap; row-gap: 8px; }
   .field-top .slate { flex-wrap: wrap; row-gap: 4px; }
+  .field-ctrl { flex-wrap: wrap; }
 }
 
 /* =================================================================

@@ -47,7 +47,10 @@
   - Hero 标题 CJK 适配：原 `clamp(64,10vw,156)` 为英文短词调的，中文全角字在窄左栏会撑成 4 行重叠；中/日文单独降为 `clamp(44px,4.6vw,88px)` + 行高 0.95，各档两行
   - HUD 改造：EX-SCORE / COMBO 三语统一英文，删除「判定 PGREAT」格，GROOVE GAUGE 接管其位置并改为 IIDX 风格分段 LED 条 + 大号百分比（随 combo 实时填充）
   - 顶部 cab 状态栏（系统/主机/机台信号灯）两页全删；brand 旁不随语言变化的日文 kana（オーエムエス）移除；移动端 header 收紧（语言+导航并一行紧贴 brand）；修复删 kana 后 brand__sub 绝对定位换行压到大字的重合（加 `white-space:nowrap`）
-  - 资源版本迭代至 `v=20260526-5`（破缓存）
+  - GROOVE GAUGE 血条/数字改用 `--cyan` 信号色变量，随 tweaks 红/黄/蓝/绿同步
+  - Hi-Speed 与 Playfield Live/Pause 控件从 tweaks 面板移到 playfield slate 同行右侧（field-top），tweaks 面板仅留信号色；JS 改全局绑定 `[data-set]`；移动端 field-top grid 行改 auto，控件换行不溢出
+  - Hi-Speed 改 5 档 ×0.6/×0.8/×1.0/×1.2/×1.4（按倍率算 `VISIBLE_BEATS = 0.78 / 倍率`）
+  - 资源版本迭代至 `v=20260526-9`（破缓存）
 
 ## 下一步
 

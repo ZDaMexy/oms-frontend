@@ -2,7 +2,8 @@
 
 ## 2026-05-27
 
-- 视觉打磨轮：缩放适配（移动端导航/状态栏窄屏）、Hero 标题 CJK 降字号、HUD 改造（EX-SCORE/COMBO 统一英文、删判定、GROOVE GAUGE IIDX 分段条）、删两页 cab 状态栏与 brand 日文 kana、收紧移动端 header、修 brand 大小字重合；资源版本 `v=20260526-5`
+- 视觉打磨轮：缩放适配（移动端导航/状态栏窄屏）、Hero 标题 CJK 降字号、HUD 改造（EX-SCORE/COMBO 统一英文、删判定、GROOVE GAUGE IIDX 分段条）、删两页 cab 状态栏与 brand 日文 kana、收紧移动端 header、修 brand 大小字重合
+- 续：GROOVE GAUGE 血条随信号色同步；Hi-Speed/Playfield 控件移到 playfield slate 同行右侧（tweaks 仅留信号色）；Hi-Speed 改 5 档 ×0.6–×1.4；资源版本 `v=20260526-9`
 
 ## 2026-05-26
 

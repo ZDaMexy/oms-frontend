@@ -7,7 +7,10 @@
   - Hero 标题中/日文降字号（`clamp(44px,4.6vw,88px)`）解决全角字在窄栏撑成多行重叠
   - HUD：EX-SCORE / COMBO 三语统一英文；删除判定 PGREAT 格；GROOVE GAUGE 改 IIDX 风格分段 LED 条 + 大号百分比，随 combo 实时填充
   - 删除两页顶部 cab 状态栏（系统/主机/机台信号灯）；移除 brand 旁日文 kana；收紧移动端 header；修复 brand 大字/小字重合
-- 资源版本 `v=20260526-5`
+  - GROOVE GAUGE 血条/辉光/机框/百分比改用 `--cyan` 信号色变量，随 tweaks 红/黄/蓝/绿同步
+  - Hi-Speed 与 Playfield Live/Pause 控件从 tweaks 面板移到 playfield slate 同行右侧（field-top）；tweaks 面板只留信号色；JS 改为全局绑定 `[data-set]`；移动端 field-top grid 行改 auto 让控件换行不溢出
+  - Hi-Speed 改 5 档 ×0.6/×0.8/×1.0/×1.2/×1.4（按倍率算 `VISIBLE_BEATS = 0.78 / 倍率`）
+- 资源版本 `v=20260526-9`
 
 ## 2026-05-26
 
