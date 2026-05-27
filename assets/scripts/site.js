@@ -344,4 +344,77 @@
       });
     });
   }
+
+  /* ---------- judgement window table (type + difficulty) ---------- */
+  initTiming();
+
+  function initTiming() {
+    const root = document.querySelector("[data-judge]");
+    if (!root) return;
+    const typeSel = root.querySelector("[data-judge-type]");
+    const diffSel = root.querySelector("[data-judge-diff]");
+    const rowLabel = root.querySelector("[data-judge-rowlabel]");
+    const cells = [0, 1, 2, 3, 4].map((i) => root.querySelector(`[data-jc="${i}"]`));
+    if (!typeSel || !diffSel) return;
+
+    // OD = osu!mania hit windows: MAX 16 (eff ±16.5), then 64/97/127/151 − 3×OD.
+    // 5 osu windows (MAX/300/200/100/50) map to PG/GR/GD/BD/空PR; beyond = miss.
+    const od = (v) => "±" + Math.round(v);
+    const odDiff = (n) => ({
+      name: "OD " + n,
+      cells: ["±16", od(64 - 3 * n), od(97 - 3 * n), od(127 - 3 * n), od(151 - 3 * n)],
+    });
+
+    const DATA = {
+      IIDX: {
+        label: "IIDX",
+        diffs: [{ name: "most charts", cells: ["±16.67", "±33.33", "±116.67", "±250", "?"] }],
+      },
+      LR2: {
+        label: "LR2",
+        diffs: [
+          { name: "easy",      cells: ["±21", "±60", "±120", "±200", "+1000"] },
+          { name: "normal",    cells: ["±18", "±40", "±100", "±200", "+1000"] },
+          { name: "hard",      cells: ["±15", "±30", "±60",  "±200", "+1000"] },
+          { name: "very hard", cells: ["±8",  "±24", "±40",  "±200", "+1000"] },
+        ],
+      },
+      RAJA: {
+        label: "RAJA",
+        diffs: [
+          { name: "very easy (125%)", cells: ["±25", "±75", "±187", "+275 / −350", "+500 / −150"] },
+          { name: "easy (100%)",      cells: ["±20", "±60", "±150", "+220 / −280", "+500 / −150"] },
+          { name: "normal (75%)",     cells: ["±15", "±45", "±112", "+165 / −210", "+500 / −150"] },
+          { name: "hard (50%)",       cells: ["±10", "±30", "±75",  "+110 / −140", "+500 / −150"] },
+          { name: "very hard (25%)",  cells: ["±5",  "±15", "±37",  "+55 / −70",   "+500 / −150"] },
+        ],
+      },
+      OD: {
+        label: "OD (osu!mania)",
+        diffs: [10, 9, 8, 7, 6, 5].map(odDiff),
+      },
+    };
+
+    const types = Object.keys(DATA);
+    typeSel.innerHTML = types.map((t) => `<option value="${t}">${DATA[t].label}</option>`).join("");
+    const fillDiffs = (t) => {
+      diffSel.innerHTML = DATA[t].diffs.map((d, i) => `<option value="${i}">${d.name}</option>`).join("");
+    };
+    const render = () => {
+      const t = typeSel.value;
+      const d = DATA[t] && DATA[t].diffs[+diffSel.value];
+      if (!d) return;
+      if (rowLabel) rowLabel.textContent = `${DATA[t].label} · ${d.name}`;
+      d.cells.forEach((c, i) => { if (cells[i]) cells[i].textContent = c; });
+    };
+
+    typeSel.addEventListener("change", () => { fillDiffs(typeSel.value); diffSel.value = "0"; render(); });
+    diffSel.addEventListener("change", render);
+
+    // default: RAJA · easy (100%)  (index 1 within RAJA)
+    typeSel.value = "RAJA";
+    fillDiffs("RAJA");
+    diffSel.value = "1";
+    render();
+  }
 })();

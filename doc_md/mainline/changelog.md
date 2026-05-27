@@ -12,7 +12,8 @@
   - Hi-Speed 改 5 档 ×0.6/×0.8/×1.0/×1.2/×1.4（按倍率算 `VISIBLE_BEATS = 0.78 / 倍率`）
   - 文案：「规格」概念三语统一改为「特性」（zh 规格→特性、en SPECS/Spec→FEATURES/Feature、ja 仕様/スペック→特性），含 nav / sec02 标题与序号 / 查看 CTA / 正文「双 mode 规格→特性」；锚点 id `#capabilities` 不变
   - 文案：所有大字标题去掉结尾句号（中日「。」、英文「.」）——hero / sec02–05 / dl 标题 / none / install，三语
-- 资源版本 `v=20260526-11`
+  - 判定窗口区（#timing）从条形图改为「判定类型 + 难度」两个下拉菜单 + 表格视觉（列 PG/GR/GD/BD/空PR）：IIDX（单档）/ LR2（easy~very hard）/ RAJA（very easy~very hard 5 档，含早晚不对称值）/ OD（osu!mania，按 `64/97/127/151 − 3×OD`、MAX ±16 算，档位 OD 5–10）；默认 RAJA easy(100%)；数据源 = 用户提供图片 + osu! wiki Overall Difficulty
+- 资源版本 `v=20260526-12`
 
 ## 2026-05-26
 

@@ -106,11 +106,20 @@ window.OMS_I18N = {
   "sec03.no":    { zh: "03 · 判定窗口", en: "03 · JUDGEMENT", ja: "03 · 判定ウィンドウ" },
   "sec03.title": { zh: "判定<br/><em>窗口</em>", en: "Timing<br/><em>windows</em>", ja: "判定<br/><em>ウィンドウ</em>" },
   "sec03.lede":  {
-    zh: "下面的判定窗口以 BEATORAJA EASY 为参考，客户端内可在 OD / RAJA / LR2 / 类IIDX 之间切换。数据仅供参考，以发布版为准。",
-    en: "The windows below are referenced to BEATORAJA EASY. Inside the client they can be switched between OD / RAJA / LR2 / IIDX-style. Reference values only; the shipping version is authoritative.",
-    ja: "下の判定ウィンドウは BEATORAJA EASY を参照として並べている。クライアント内では OD / RAJA / LR2 / IIDX 系に切り替え可能。参考値にとどめ、リリース版を正とする。",
+    zh: "判定窗口可按类型（IIDX / LR2 / RAJA / OD）与难度切换。下方数值单位毫秒，来自社区资料与 osu! wiki，仅供参考，以发布版为准。",
+    en: "Judgement windows switch by type (IIDX / LR2 / RAJA / OD) and difficulty. Values below are in milliseconds, drawn from community references and the osu! wiki — reference only; the shipping version is authoritative.",
+    ja: "判定ウィンドウはタイプ（IIDX / LR2 / RAJA / OD）と難易度で切り替えられる。下の数値はミリ秒、コミュニティ資料と osu! wiki に基づく参考値で、リリース版を正とする。",
   },
   "sec03.ms": { zh: "毫秒", en: "MS", ja: "ミリ秒" },
+
+  "jt.type":     { zh: "判定类型", en: "JUDGE TYPE", ja: "判定タイプ" },
+  "jt.diff":     { zh: "判定难度", en: "DIFFICULTY", ja: "判定難易度" },
+  "jt.col.kind": { zh: "类型", en: "KIND", ja: "種類" },
+  "jt.note": {
+    zh: "PG/GR/GD/BD/空PR = PGREAT / GREAT / GOOD / BAD / 空POOR · 单位 ms · OD 取 osu!mania 窗口",
+    en: "PG/GR/GD/BD/空PR = PGREAT / GREAT / GOOD / BAD / empty POOR · in ms · OD uses osu!mania windows",
+    ja: "PG/GR/GD/BD/空PR = PGREAT / GREAT / GOOD / BAD / 空POOR · 単位 ms · OD は osu!mania のウィンドウ",
+  },
 
   "sec04.no":    { zh: "04 · 下载", en: "04 · DOWNLOAD", ja: "04 · ダウンロード" },
   "sec04.title": { zh: "投币<br/><em>启动</em>", en: "Insert<br/><em>cabinet</em>", ja: "コイン<br/><em>投入</em>" },
