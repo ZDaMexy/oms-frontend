@@ -170,16 +170,25 @@ window.OMS_I18N = {
     ja: "コミュニティ難易度表の規格に準拠、主要な難易度表は内蔵済みでワンクリック有効化。",
   },
 
-  "cap.05.name": { zh: "离线优先", en: "Offline-first", ja: "オフライン優先" },
-  "cap.05.sub":  { zh: "LOCAL-ONLY · DEFAULT", en: "LOCAL-ONLY · DEFAULT", ja: "LOCAL-ONLY · DEFAULT" },
+  "cap.05.name": { zh: "便携安装", en: "Portable install", ja: "ポータブル" },
+  "cap.05.sub":  { zh: "PORTABLE · ONE PACKAGE", en: "PORTABLE · ONE PACKAGE", ja: "PORTABLE · ONE PACKAGE" },
   "cap.05.body": {
-    zh: "默认离线，自动更新默认关。OMS-IR、谱面社区、账号、聊天、观战、多人这些联网点在客户端里都写好了，未接服务器。便携包发布。",
-    en: "Offline by default; auto-update off by default. OMS-IR, chart community, account, chat, spectate and multi are all wired client-side, not yet pointed at a server. Ships as a portable bundle.",
-    ja: "既定でオフライン、自動更新も既定でオフ。OMS-IR、譜面コミュニティ、アカウント、チャット、観戦、マルチはクライアント側に実装済み、サーバー未接続。配布形態はポータブル。",
+    zh: "单便携包实现安装，覆盖即可实现更新，便携包内数据储存，无磁盘污染。",
+    en: "A single portable package: install by unzipping, update by overwriting, data kept inside the package — no disk pollution.",
+    ja: "単一のポータブルパッケージ。展開してインストール、上書きで更新、データはパッケージ内に保存、ディスクを汚さない。",
+  },
+
+  "cap.06.name": { zh: "游戏社区", en: "Game community", ja: "ゲームコミュニティ" },
+  "cap.06.sub":  { zh: "IR · CHARTS · FORUM", en: "IR · CHARTS · FORUM", ja: "IR · CHARTS · FORUM" },
+  "cap.06.body": {
+    zh: "IR、谱面库、社区论坛等中心化交流平台。",
+    en: "IR, chart library, community forum and other centralized hubs.",
+    ja: "IR、譜面ライブラリ、コミュニティフォーラムなどの中央集権的な交流プラットフォーム。",
   },
 
   "cap.status.shipped":      { zh: "已实现",            en: "SHIPPED",             ja: "実装済" },
   "cap.status.shipped_off":  { zh: "已实现 · 默认关闭", en: "SHIPPED · OFF DEFAULT", ja: "実装済 · 既定オフ" },
+  "cap.status.indev":        { zh: "开发中",            en: "IN DEV",              ja: "開発中" },
 
   /* ---------- download meta ---------- */
   "dl.version":  { zh: "版本",     en: "VERSION",   ja: "バージョン" },
