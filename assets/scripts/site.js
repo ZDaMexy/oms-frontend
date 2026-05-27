@@ -355,7 +355,42 @@
     const diffSel = root.querySelector("[data-judge-diff]");
     const rowLabel = root.querySelector("[data-judge-rowlabel]");
     const cells = [0, 1, 2, 3, 4].map((i) => root.querySelector(`[data-jc="${i}"]`));
+    const viz = root.querySelector("[data-judge-viz]");
     if (!typeSel || !diffSel) return;
+
+    // parse a window cell ("±20", "+220 / −280", "+1000", "±16.67", "?") into early/late ms
+    const parseWin = (s) => {
+      if (!s || s === "?") return null;
+      const str = String(s).replace(/\s/g, "").replace(/−/g, "-");
+      if (str[0] === "±") { const v = parseFloat(str.slice(1)); return isFinite(v) ? { early: v, late: v } : null; }
+      const parts = str.split("/");
+      let early = 0, late = 0;
+      parts.forEach((p) => { const n = Math.abs(parseFloat(p)); if (!isFinite(n)) return; if (p.indexOf("-") >= 0) early = n; else late = n; });
+      if (parts.length === 1) { const n = Math.abs(parseFloat(parts[0])); early = n; late = n; }
+      return (early || late) ? { early, late } : null;
+    };
+    // PG/GR/GD/BD bars (空PR excluded — its window dwarfs the rest and breaks the scale)
+    const VIZ_COLS = [
+      { i: 0, name: "PG", color: "var(--cyan)" },
+      { i: 1, name: "GR", color: "var(--lime)" },
+      { i: 2, name: "GD", color: "var(--amber)" },
+      { i: 3, name: "BD", color: "var(--hot)" },
+    ];
+    const renderViz = (cellStrs) => {
+      if (!viz) return;
+      const wins = VIZ_COLS.map((c) => ({ ...c, w: parseWin(cellStrs[c.i]) }));
+      const max = Math.max(1, ...wins.map((x) => (x.w ? Math.max(x.w.early, x.w.late) : 0)));
+      const rows = wins.map((x) => {
+        if (!x.w) return `<div class="timing-viz__row"><span class="timing-viz__name" style="color:${x.color}">${x.name}</span><div class="timing-viz__bar"><span class="timing-viz__center"></span></div><span class="timing-viz__val">—</span></div>`;
+        const left = 50 - (x.w.early / max) * 50;
+        const right = 50 - (x.w.late / max) * 50;
+        const val = (x.w.early === x.w.late) ? `±${x.w.late}` : `+${x.w.late} / −${x.w.early}`;
+        return `<div class="timing-viz__row"><span class="timing-viz__name" style="color:${x.color}">${x.name}</span><div class="timing-viz__bar"><i style="left:${left}%;right:${right}%;background:${x.color}"></i><span class="timing-viz__center"></span></div><span class="timing-viz__val">${val}</span></div>`;
+      }).join("");
+      const m = Math.round(max);
+      const scale = `<div class="timing-viz__scale"><span></span><div class="ticks"><span>−${m}</span><span>0</span><span>+${m}</span></div><span class="u">ms</span></div>`;
+      viz.innerHTML = rows + scale;
+    };
 
     // OD = osu!mania hit windows: MAX 16 (eff ±16.5), then 64/97/127/151 − 3×OD.
     // 5 osu windows (MAX/300/200/100/50) map to PG/GR/GD/BD/空PR; beyond = miss.
@@ -406,6 +441,7 @@
       if (!d) return;
       if (rowLabel) rowLabel.textContent = `${DATA[t].label} · ${d.name}`;
       d.cells.forEach((c, i) => { if (cells[i]) cells[i].textContent = c; });
+      renderViz(d.cells);
     };
 
     typeSel.addEventListener("change", () => { fillDiffs(typeSel.value); diffSel.value = "0"; render(); });

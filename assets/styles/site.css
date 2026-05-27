@@ -1142,6 +1142,64 @@ img, svg { display: block; max-width: 100%; }
   color: var(--ink-4);
 }
 
+/* visual bar chart of the selected windows (centred on 0, scaled to widest) */
+.timing-viz {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+}
+.timing-viz__row {
+  display: grid;
+  grid-template-columns: 64px 1fr 120px;
+  gap: 18px;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 12px;
+}
+.timing-viz__name {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.timing-viz__bar {
+  position: relative;
+  height: 20px;
+  background: var(--bg-2);
+  border: 1px solid var(--rule);
+}
+.timing-viz__bar i {
+  position: absolute;
+  top: 0; bottom: 0;
+  opacity: 0.75;
+}
+.timing-viz__center {
+  position: absolute;
+  top: -3px; bottom: -3px;
+  left: 50%;
+  width: 1px;
+  background: var(--ink);
+}
+.timing-viz__val {
+  text-align: right;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+.timing-viz__scale {
+  display: grid;
+  grid-template-columns: 64px 1fr 120px;
+  gap: 18px;
+  margin-top: 4px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--ink-4);
+}
+.timing-viz__scale .ticks { display: flex; justify-content: space-between; }
+.timing-viz__scale .u { text-align: right; color: var(--ink-3); }
+
 /* =================================================================
    DOWNLOAD BLOCK — cabinet "INSERT" feel
    ================================================================= */
