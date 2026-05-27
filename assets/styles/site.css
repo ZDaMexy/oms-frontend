@@ -156,10 +156,10 @@ img, svg { display: block; max-width: 100%; }
 .cab-bar__row {
   display: flex;
   align-items: center;
-  height: 32px;
-  gap: 18px;
-  white-space: nowrap;
-  overflow: hidden;
+  flex-wrap: wrap;          /* wrap when items don't fit instead of clipping mid-character */
+  min-height: 32px;
+  gap: 4px 18px;
+  padding: 4px 0;
 }
 .cab-bar__row > * { display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .cab-bar__rule { flex: 1 1 auto; height: 1px; background: var(--rule); flex-shrink: 1; min-width: 18px; }
@@ -221,6 +221,7 @@ img, svg { display: block; max-width: 100%; }
   position: absolute;
   bottom: -14px;
   left: 0;
+  white-space: nowrap;   /* stay one line — the absolute box would otherwise wrap to the narrow "OMS" width and overlap the mark */
   font-family: var(--mono);
   font-size: 9px;
   letter-spacing: 0.2em;
@@ -706,7 +707,7 @@ img, svg { display: block; max-width: 100%; }
 /* HUD strip */
 .field-hud {
   display: grid;
-  grid-template-columns: 1.75fr 1.7fr 1.7fr 2fr;
+  grid-template-columns: 1.75fr 1.4fr 4fr;
   align-items: center;
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
@@ -738,27 +739,62 @@ img, svg { display: block; max-width: 100%; }
   font-variant-numeric: tabular-nums;
 }
 .field-hud .v.combo { color: var(--cyan); text-shadow: 0 0 12px rgba(0,217,255,0.4); }
-.field-hud .v.judge-tag { color: var(--lime); font-size: 18px; letter-spacing: 0.04em; }
-.field-hud .gauge {
-  position: relative;
-  height: 8px;
-  background: rgba(255,255,255,0.06);
+
+/* GROOVE GAUGE — beatmania-IIDX-style segmented LED bar + big % readout */
+.field-hud__cell--gauge { padding-right: 4px; }
+.ggauge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
   margin-top: 4px;
-  border: 1px solid var(--rule);
 }
-.field-hud .gauge i {
-  position: absolute; left: 0; top: 0; bottom: 0;
-  background: linear-gradient(90deg, var(--lime), #6cff00);
+.ggauge__bar {
+  position: relative;
+  flex: 1 1 auto;
+  height: 18px;
+  background: #160a08;
+  border: 1px solid #4a6b2e;            /* green frame, IIDX cabinet feel */
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.7), 0 0 0 1px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+.ggauge__bar i {
+  position: absolute;
+  left: 1px; top: 1px; bottom: 1px;
   width: 72%;
-  box-shadow: 0 0 8px rgba(200,255,57,0.5);
+  background: linear-gradient(180deg, #ff8a3c 0%, #ff3a2e 55%, #c20d1a 100%);
+  box-shadow: 0 0 10px rgba(255,60,46,0.65);
+  transition: width 120ms linear;
 }
-.field-hud .gauge::after {
-  /* peak markers at 80% (clear) */
+/* notch the fill into discrete LED segments */
+.ggauge__bar::after {
   content: "";
   position: absolute;
-  left: 80%; top: -2px; bottom: -2px;
-  width: 1px;
-  background: var(--hot);
+  inset: 0;
+  background: repeating-linear-gradient(90deg, transparent 0 7px, rgba(0,0,0,0.88) 7px 9px);
+  pointer-events: none;
+}
+.ggauge__num {
+  flex: 0 0 auto;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--lime);
+  text-shadow: 0 0 12px rgba(200,255,57,0.45);
+  font-variant-numeric: tabular-nums;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 1px;
+  min-width: 3.2ch;
+  justify-content: flex-end;
+}
+.ggauge__num small {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--ink-3);
+  margin-left: 1px;
 }
 
 /* control deck */
@@ -1407,6 +1443,7 @@ img, svg { display: block; max-width: 100%; }
   .hero__left { border-right: 0; border-bottom: 1px solid var(--rule); }
   .hero__mid { min-height: 540px; position: relative; border-right: 0; border-bottom: 1px solid var(--rule); }
   .nav a { padding: 10px 12px; }
+  .cab-bar__rule { display: none; }   /* flexible divider is noise once the bar wraps */
   .section__head { grid-template-columns: 1fr; }
   .cap__row { grid-template-columns: 40px 1fr; gap: 12px; padding: 18px 0; }
   .cap__row > .cap__body, .cap__row > .cap__status { grid-column: 1 / -1; padding-left: 52px; justify-content: flex-start; }
@@ -1418,7 +1455,22 @@ img, svg { display: block; max-width: 100%; }
 
 @media (max-width: 640px) {
   :root { --gutter: 18px; }
-  .nav { display: none; }
+  /* compact mobile header: brand (stacked) on row 1, lang-switch + nav on row 2.
+     Note: base .marquee__right is declared LATER in the file, so these mobile
+     overrides use a higher-specificity selector to win regardless of order. */
+  .marquee { padding: 12px 0; }
+  .marquee__row { flex-wrap: wrap; row-gap: 12px; align-items: center; }
+  .brand { flex: 1 1 100%; flex-direction: column; align-items: flex-start; gap: 3px; }
+  .brand__sub { position: static; }   /* stop the absolute hang that left a gap below the brand */
+  /* lang-switch + nav share one tight row directly under the brand */
+  .marquee .marquee__right { width: 100%; flex-wrap: nowrap; justify-content: space-between; align-items: center; gap: 10px; }
+  .marquee .marquee__right > nav { flex: 1 1 auto; min-width: 0; }   /* the <nav> wrapper shrinks so its <ul> can scroll */
+  .lang-switch { flex: 0 0 auto; }
+  /* keep nav usable on mobile: compact, horizontally scrollable, no index numbers */
+  .nav { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a { padding: 9px 11px; letter-spacing: 0.1em; }
+  .nav a::before { display: none; }
   .foot__row { grid-template-columns: 1fr; gap: 18px; }
   .foot__sig { text-align: left; }
   .hero__mid { min-height: 440px; }
@@ -1484,6 +1536,15 @@ html[data-lang="ja"] .section__title[data-i18n],
 html[data-lang="zh"] .dl__title[data-i18n],
 html[data-lang="ja"] .dl__title[data-i18n] {
   letter-spacing: -0.02em;
+}
+/* CJK hero title: full-width glyphs blow out the narrow left column at the
+   Latin clamp max (156px) — at wide viewports "现代 BMS / 播放器。" wrapped to
+   4 cramped, overlapping lines. Scale down + relax line-height for zh/ja so it
+   sits as two clean lines across all widths. */
+html[data-lang="zh"] .hero__title,
+html[data-lang="ja"] .hero__title {
+  font-size: clamp(44px, 4.6vw, 88px);
+  line-height: 0.95;
 }
 /* paragraph text uses the prose-friendly CJK stack at body size */
 html[data-lang="zh"] .hero__lede,

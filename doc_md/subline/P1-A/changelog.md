@@ -1,5 +1,9 @@
 # Frontend Subline P1-A Changelog
 
+## 2026-05-27
+
+- 视觉打磨轮：缩放适配（移动端导航/状态栏窄屏）、Hero 标题 CJK 降字号、HUD 改造（EX-SCORE/COMBO 统一英文、删判定、GROOVE GAUGE IIDX 分段条）、删两页 cab 状态栏与 brand 日文 kana、收紧移动端 header、修 brand 大小字重合；资源版本 `v=20260526-5`
+
 ## 2026-05-26
 
 - 落地 Claude Design 设计稿：第三轮视觉重做，推翻暗色霓虹，改为 Cabinet Mode（街机/电竞转播视觉）

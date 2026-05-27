@@ -1,5 +1,14 @@
 # Frontend Mainline Changelog
 
+## 2026-05-27
+
+- 上线后视觉打磨轮（均经 preview 跨尺寸实测）：
+  - 缩放适配：修复移动端导航消失（≤640 原 `display:none`）、cab 状态栏窄屏裁字（改按需换行）；跨主流分辨率/竖横屏无横向溢出
+  - Hero 标题中/日文降字号（`clamp(44px,4.6vw,88px)`）解决全角字在窄栏撑成多行重叠
+  - HUD：EX-SCORE / COMBO 三语统一英文；删除判定 PGREAT 格；GROOVE GAUGE 改 IIDX 风格分段 LED 条 + 大号百分比，随 combo 实时填充
+  - 删除两页顶部 cab 状态栏（系统/主机/机台信号灯）；移除 brand 旁日文 kana；收紧移动端 header；修复 brand 大字/小字重合
+- 资源版本 `v=20260526-5`
+
 ## 2026-05-26
 
 - 落地 Claude Design 设计稿 handoff bundle：第三轮视觉系统重做，推翻暗色霓虹方向，改为 **Cabinet Mode**（街机机台 / 电竞转播视觉语言）

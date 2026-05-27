@@ -148,6 +148,8 @@
     const scoreEl = window_.querySelector("[data-hud='score']");
     const comboEl = window_.querySelector("[data-hud='combo']");
     const progressEl = window_.querySelector("[data-progress]");
+    const gaugeFill = window_.querySelector("[data-gauge-fill]");
+    const gaugeVal = window_.querySelector("[data-gauge-val]");
     const deckCells = Array.from(window_.querySelectorAll("[data-deck] > *"));
     const densityBars = document.querySelector("[data-density-chart]");
 
@@ -197,6 +199,10 @@
         const elapsed = Math.max(0, Math.min(totalSeconds, curBeat / BPS));
         progressEl.textContent = fmtTime(elapsed);
       }
+      // GROOVE GAUGE: starts at 20%, climbs with combo, clears/caps at 100%
+      const gauge = Math.min(100, Math.round(20 + combo * 0.5));
+      if (gaugeFill) gaugeFill.style.width = gauge + "%";
+      if (gaugeVal) gaugeVal.textContent = String(gauge);
     };
 
     const reset = () => {

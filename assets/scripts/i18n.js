@@ -73,10 +73,10 @@ window.OMS_I18N = {
   "field.live": { zh: "直播", en: "LIVE", ja: "ライブ" },
   "field.beat": { zh: "拍",   en: "BEAT", ja: "拍" },
 
-  "hud.score":  { zh: "EX 分数", en: "EX-SCORE", ja: "EX スコア" },
-  "hud.combo":  { zh: "连击",     en: "COMBO",    ja: "COMBO" },
+  "hud.score":  { zh: "EX-SCORE", en: "EX-SCORE", ja: "EX-SCORE" },
+  "hud.combo":  { zh: "COMBO",    en: "COMBO",    ja: "COMBO" },
   "hud.judge":  { zh: "判定",     en: "JUDGE",    ja: "判定" },
-  "hud.gauge":  { zh: "槽量 · GROOVE", en: "GAUGE · GROOVE", ja: "ゲージ · GROOVE" },
+  "hud.gauge":  { zh: "GROOVE GAUGE", en: "GROOVE GAUGE", ja: "GROOVE GAUGE" },
 
   /* ---------- now-playing panel ---------- */
   "np.label":   { zh: "当前曲目", en: "NOW PLAYING", ja: "演奏中" },

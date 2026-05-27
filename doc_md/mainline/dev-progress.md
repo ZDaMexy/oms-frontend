@@ -41,7 +41,13 @@
   - 下载页（`download.html` + `assets/scripts/download.js`）：打开即 `fetch` GitHub `ZDaMexy/oms/releases/latest`，三态渲染（loading / has-release 列出 assets+notes+主包★直链 / no-release 或失败退回跳转 GitHub releases 页，并露出 `ERR · http_xxx` 短码）；未认证 API 每 IP 每小时 60 次，限流时优雅退回
   - Tweaks 面板（右下）：信号色红/黄/蓝/绿四色（默认蓝）· Hi-Speed ×0.6/×1.0/×1.6 · Playfield Live/Pause
   - 平台口径按本仓库硬约束**收回为 Windows-only**（设计稿原写 WIN/MAC/LINUX，未采纳）：`dl.platform` = WIN 10/11 · X64、安装步骤只讲 `OMS.exe`
-  - 文件：样式落到 `assets/styles/site.css`、脚本 `assets/scripts/site.js`（i18n + playfield + tweaks）、新增 `assets/scripts/i18n.js`（三语词典）与 `assets/scripts/download.js`；复用既有 `assets/scripts/chart-stargazer.js`（`window.OMS_CHART`）；资源版本 `v=20260526-1`
+  - 文件：样式落到 `assets/styles/site.css`、脚本 `assets/scripts/site.js`（i18n + playfield + tweaks）、新增 `assets/scripts/i18n.js`（三语词典）与 `assets/scripts/download.js`；复用既有 `assets/scripts/chart-stargazer.js`（`window.OMS_CHART`）
+- 已完成上线后视觉打磨轮（2026-05-27，逐项经 preview 实测）：
+  - 缩放适配：移动端导航不再 `display:none`（marquee 换行 + nav 紧凑可横滚）、cab 状态栏改按需换行（不再裁字）；跨 320/390/768/900/1024/1366/1920/2560 及横屏验证无横向溢出
+  - Hero 标题 CJK 适配：原 `clamp(64,10vw,156)` 为英文短词调的，中文全角字在窄左栏会撑成 4 行重叠；中/日文单独降为 `clamp(44px,4.6vw,88px)` + 行高 0.95，各档两行
+  - HUD 改造：EX-SCORE / COMBO 三语统一英文，删除「判定 PGREAT」格，GROOVE GAUGE 接管其位置并改为 IIDX 风格分段 LED 条 + 大号百分比（随 combo 实时填充）
+  - 顶部 cab 状态栏（系统/主机/机台信号灯）两页全删；brand 旁不随语言变化的日文 kana（オーエムエス）移除；移动端 header 收紧（语言+导航并一行紧贴 brand）；修复删 kana 后 brand__sub 绝对定位换行压到大字的重合（加 `white-space:nowrap`）
+  - 资源版本迭代至 `v=20260526-5`（破缓存）
 
 ## 下一步
 
