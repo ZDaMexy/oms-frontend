@@ -39,9 +39,9 @@ window.OMS_I18N = {
     ja: "ステージ 01 · デモモード",
   },
   "hero.title": {
-    zh: '现代 BMS<br/><em>播放器。</em>',
-    en: 'A modern<br/>BMS <em>player.</em>',
-    ja: 'モダンな<br/>BMS <em>プレイヤー。</em>',
+    zh: '现代 BMS<br/><em>播放器</em>',
+    en: 'A modern<br/>BMS <em>player</em>',
+    ja: 'モダンな<br/>BMS <em>プレイヤー</em>',
   },
   "hero.kana": {
     zh: "osu!lazer fork · BMS ruleset",
@@ -100,11 +100,11 @@ window.OMS_I18N = {
 
   /* ---------- section heads ---------- */
   "sec02.no":    { zh: "02 · 能力特性", en: "02 · FEATURES", ja: "02 · 能力特性" },
-  "sec02.title": { zh: "特性<br/><em>清单。</em>", en: "Feature<br/><em>sheet.</em>", ja: "特性<br/><em>一覧。</em>" },
+  "sec02.title": { zh: "特性<br/><em>清单</em>", en: "Feature<br/><em>sheet</em>", ja: "特性<br/><em>一覧</em>" },
   "sec02.lede":  { zh: "", en: "", ja: "" },
 
   "sec03.no":    { zh: "03 · 判定窗口", en: "03 · JUDGEMENT", ja: "03 · 判定ウィンドウ" },
-  "sec03.title": { zh: "判定<br/><em>窗口。</em>", en: "Timing<br/><em>windows.</em>", ja: "判定<br/><em>ウィンドウ。</em>" },
+  "sec03.title": { zh: "判定<br/><em>窗口</em>", en: "Timing<br/><em>windows</em>", ja: "判定<br/><em>ウィンドウ</em>" },
   "sec03.lede":  {
     zh: "下面的判定窗口以 BEATORAJA EASY 为参考，客户端内可在 OD / RAJA / LR2 / 类IIDX 之间切换。数据仅供参考，以发布版为准。",
     en: "The windows below are referenced to BEATORAJA EASY. Inside the client they can be switched between OD / RAJA / LR2 / IIDX-style. Reference values only; the shipping version is authoritative.",
@@ -113,7 +113,7 @@ window.OMS_I18N = {
   "sec03.ms": { zh: "毫秒", en: "MS", ja: "ミリ秒" },
 
   "sec04.no":    { zh: "04 · 下载", en: "04 · DOWNLOAD", ja: "04 · ダウンロード" },
-  "sec04.title": { zh: "投币<br/><em>启动。</em>", en: "Insert<br/><em>cabinet.</em>", ja: "コイン<br/><em>投入。</em>" },
+  "sec04.title": { zh: "投币<br/><em>启动</em>", en: "Insert<br/><em>cabinet</em>", ja: "コイン<br/><em>投入</em>" },
   "sec04.lede":  {
     zh: "发行包、版本说明、运行说明都在下载页。首发形态先在此说明，正式下载入口于 Phase 1 收尾开放。",
     en: "Release packages, version notes and run instructions live on the download page. The launch form is stated here; the public download opens at the end of Phase 1.",
@@ -121,7 +121,7 @@ window.OMS_I18N = {
   },
 
   "sec05.no":    { zh: "05 · 路线图", en: "05 · ROADMAP", ja: "05 · ロードマップ" },
-  "sec05.title": { zh: "五个<br/><em>阶段。</em>", en: "Five<br/><em>phases.</em>", ja: "五つの<br/><em>段階。</em>" },
+  "sec05.title": { zh: "五个<br/><em>阶段</em>", en: "Five<br/><em>phases</em>", ja: "五つの<br/><em>段階</em>" },
   "sec05.lede":  {
     zh: "OMS 网站分五段推进。现在是 Phase 1（宣传 + 展示）。账号、个人主页、OMS-IR 排行榜、谱面社区在客户端里都已预留入口，逐段开放。",
     en: "The OMS site rolls out in five phases. Phase 1 (promo + showcase) is current. Accounts, profile pages, OMS-IR leaderboards and the chart community are reserved client-side and opened one phase at a time.",
@@ -263,9 +263,9 @@ window.OMS_I18N = {
     ja: "ステージ 04 · リリースマニフェスト",
   },
   "dlp.title": {
-    zh: '发行<br/><em>清单。</em>',
-    en: 'Release<br/><em>manifest.</em>',
-    ja: 'リリース<br/><em>マニフェスト。</em>',
+    zh: '发行<br/><em>清单</em>',
+    en: 'Release<br/><em>manifest</em>',
+    ja: 'リリース<br/><em>マニフェスト</em>',
   },
   "dlp.kana": {
     zh: "GitHub Releases · 最新版直链",
@@ -297,9 +297,9 @@ window.OMS_I18N = {
   },
   "dlp.none.no":    { zh: "暂无公开发布",     en: "NO PUBLIC RELEASE FILED YET", ja: "公開リリースなし" },
   "dlp.none.title": {
-    zh: '还在<br/><em>备料。</em>',
-    en: 'Not<br/><em>filed yet.</em>',
-    ja: 'まだ<br/><em>仕込み中。</em>',
+    zh: '还在<br/><em>备料</em>',
+    en: 'Not<br/><em>filed yet</em>',
+    ja: 'まだ<br/><em>仕込み中</em>',
   },
   "dlp.none.lede": {
     zh: "公开下载入口要等到 Phase 1 收尾才开。在 GitHub 上盯一眼就能知道什么时候有新的包。",
@@ -316,9 +316,9 @@ window.OMS_I18N = {
   /* ---- install steps ---- */
   "dlp.ins.no":    { zh: "05 · 运行", en: "05 · RUN IT", ja: "05 · 起動" },
   "dlp.ins.title": {
-    zh: '解压<br/><em>开玩。</em>',
-    en: 'Unzip<br/><em>and run.</em>',
-    ja: '解凍して<br/><em>起動。</em>',
+    zh: '解压<br/><em>开玩</em>',
+    en: 'Unzip<br/><em>and run</em>',
+    ja: '解凍して<br/><em>起動</em>',
   },
   "dlp.ins.lede": {
     zh: "下载、解压、运行——三步开玩。",
