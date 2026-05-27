@@ -106,9 +106,9 @@ window.OMS_I18N = {
   "sec03.no":    { zh: "03 · 判定窗口", en: "03 · JUDGEMENT", ja: "03 · 判定ウィンドウ" },
   "sec03.title": { zh: "判定<br/><em>窗口</em>", en: "Timing<br/><em>windows</em>", ja: "判定<br/><em>ウィンドウ</em>" },
   "sec03.lede":  {
-    zh: "判定窗口可按类型（IIDX / LR2 / RAJA / OD）与难度切换。下方数值单位毫秒，来自社区资料与 osu! wiki，仅供参考，以发布版为准。",
-    en: "Judgement windows switch by type (IIDX / LR2 / RAJA / OD) and difficulty. Values below are in milliseconds, drawn from community references and the osu! wiki — reference only; the shipping version is authoritative.",
-    ja: "判定ウィンドウはタイプ（IIDX / LR2 / RAJA / OD）と難易度で切り替えられる。下の数値はミリ秒、コミュニティ資料と osu! wiki に基づく参考値で、リリース版を正とする。",
+    zh: "判定窗口可按类型（IIDX / LR2 / RAJA / OD）与难度切换。",
+    en: "Judgement windows switch by type (IIDX / LR2 / RAJA / OD) and difficulty.",
+    ja: "判定ウィンドウはタイプ（IIDX / LR2 / RAJA / OD）と難易度で切り替えられる。",
   },
   "sec03.ms": { zh: "毫秒", en: "MS", ja: "ミリ秒" },
 

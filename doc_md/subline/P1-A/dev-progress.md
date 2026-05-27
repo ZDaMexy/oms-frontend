@@ -20,7 +20,7 @@
 - 首页新公开口径（osu!lazer fork / OD·RAJA·LR2·IIDX 判定切换 / AC·EC·NC·HC·EXHC·FC 六槽 / 难度表 / 以 `ZDaMexy/oms` 为发行源）已由客户端作者确认为事实，并写入 `oms_client_bridge_md/` 已确认快照（2026-05-26）；OMS-IR、谱面社区为开发中，对外仅"跟进开发中"
 - 下载入口结论（直连 GitHub releases、不经 Web 后端）已记入 `dev_bridge_md/`
 - 当前仍有主标题、副标题、展示媒体、下载渠道、外链等内容待逐项确认
-- 已完成上线后视觉打磨轮（2026-05-27，逐项 preview 实测）：缩放适配（移动端导航不再隐藏 + 可横滚、cab 状态栏按需换行、跨 320–2560 及横屏无溢出）；Hero 标题中/日文降为 `clamp(44px,4.6vw,88px)` 解决窄栏重叠；HUD 改造（EX-SCORE/COMBO 统一英文、删判定 PGREAT、GROOVE GAUGE 改 IIDX 分段条 + 大号百分比随 combo 填充）；删两页顶部 cab 状态栏与 brand 日文 kana、收紧移动端 header、修复删 kana 引发的 brand 大字/小字重合；GROOVE GAUGE 血条随信号色同步；Hi-Speed/Playfield 控件移到 playfield slate 同行右侧（tweaks 仅留信号色）；Hi-Speed 改 5 档 ×0.6–×1.4；「规格」三语统一改为「特性」；所有大字标题去结尾句号（三语）；判定窗口区改为「类型+难度」两下拉+表格（IIDX/LR2/RAJA/OD，OD 用 osu!mania 公式 `64/97/127/151−3×OD`），默认 RAJA easy；表格下方保留随选择实时重绘的条形可视化；资源版本 `v=20260526-13`
+- 已完成上线后视觉打磨轮（2026-05-27，逐项 preview 实测）：缩放适配（移动端导航不再隐藏 + 可横滚、cab 状态栏按需换行、跨 320–2560 及横屏无溢出）；Hero 标题中/日文降为 `clamp(44px,4.6vw,88px)` 解决窄栏重叠；HUD 改造（EX-SCORE/COMBO 统一英文、删判定 PGREAT、GROOVE GAUGE 改 IIDX 分段条 + 大号百分比随 combo 填充）；删两页顶部 cab 状态栏与 brand 日文 kana、收紧移动端 header、修复删 kana 引发的 brand 大字/小字重合；GROOVE GAUGE 血条随信号色同步；Hi-Speed/Playfield 控件移到 playfield slate 同行右侧（tweaks 仅留信号色）；Hi-Speed 改 5 档 ×0.6–×1.4；「规格」三语统一改为「特性」；所有大字标题去结尾句号（三语）；判定窗口区改为「类型+难度」两下拉+表格（IIDX/LR2/RAJA/OD，OD 用 osu!mania 公式 `64/97/127/151−3×OD`），默认 RAJA easy；表格下方保留随选择实时重绘的条形可视化；sec03 lede 去掉单位/来源/免责一句；资源版本 `v=20260526-14`
 - 当前支线成果已经回写主线文档（mainline dev-progress / changelog）
 
 ---
