@@ -50,7 +50,8 @@
   - GROOVE GAUGE 血条/数字改用 `--cyan` 信号色变量，随 tweaks 红/黄/蓝/绿同步
   - Hi-Speed 与 Playfield Live/Pause 控件从 tweaks 面板移到 playfield slate 同行右侧（field-top），tweaks 面板仅留信号色；JS 改全局绑定 `[data-set]`；移动端 field-top grid 行改 auto，控件换行不溢出
   - Hi-Speed 改 5 档 ×0.6/×0.8/×1.0/×1.2/×1.4（按倍率算 `VISIBLE_BEATS = 0.78 / 倍率`）
-  - 资源版本迭代至 `v=20260526-9`（破缓存）
+  - 文案：「规格」概念三语统一改为「特性」（nav / sec02 标题与序号 / 查看 CTA / 正文双 mode 规格）；锚点 id `#capabilities` 不变
+  - 资源版本迭代至 `v=20260526-10`（破缓存）
 
 ## 下一步
 

@@ -21,7 +21,7 @@ window.OMS_I18N = {
   /* ---------- nav ---------- */
   "nav.home":     { zh: "首页",     en: "HOME",      ja: "ホーム" },
   "nav.download": { zh: "下载",     en: "DOWNLOAD",  ja: "ダウンロード" },
-  "nav.specs":    { zh: "规格",     en: "SPECS",     ja: "仕様" },
+  "nav.specs":    { zh: "特性",     en: "FEATURES",  ja: "特性" },
   "nav.judge":    { zh: "判定",     en: "JUDGE",     ja: "判定" },
   "nav.roadmap":  { zh: "规划",     en: "ROADMAP",   ja: "計画" },
 
@@ -59,9 +59,9 @@ window.OMS_I18N = {
     ja: "PORTABLE · 近日公開",
   },
   "cta.view_specs": {
-    zh: "查看规格",
-    en: "VIEW SPECS",
-    ja: "仕様を見る",
+    zh: "查看特性",
+    en: "VIEW FEATURES",
+    ja: "特性を見る",
   },
 
   /* ---------- field overlays ---------- */
@@ -99,8 +99,8 @@ window.OMS_I18N = {
   "v.length":   { zh: "时长",      en: "LENGTH",       ja: "長さ" },
 
   /* ---------- section heads ---------- */
-  "sec02.no":    { zh: "02 · 能力规格", en: "02 · CAPABILITIES", ja: "02 · 能力スペック" },
-  "sec02.title": { zh: "规格<br/><em>清单。</em>", en: "Spec<br/><em>sheet.</em>", ja: "仕様<br/><em>一覧。</em>" },
+  "sec02.no":    { zh: "02 · 能力特性", en: "02 · FEATURES", ja: "02 · 能力特性" },
+  "sec02.title": { zh: "特性<br/><em>清单。</em>", en: "Feature<br/><em>sheet.</em>", ja: "特性<br/><em>一覧。</em>" },
   "sec02.lede":  { zh: "", en: "", ja: "" },
 
   "sec03.no":    { zh: "03 · 判定窗口", en: "03 · JUDGEMENT", ja: "03 · 判定ウィンドウ" },
@@ -132,8 +132,8 @@ window.OMS_I18N = {
   "cap.01.name": { zh: "双模式", en: "Dual mode", ja: "デュアルモード" },
   "cap.01.sub":  { zh: "BMS · OSU!MANIA", en: "BMS · OSU!MANIA", ja: "BMS · OSU!MANIA" },
   "cap.01.body": {
-    zh: "std / taiko / catch 等非 VSRG 模式已删除，保留 mania 游玩体验，与 bms 组成双 mode 规格。",
-    en: "Non-VSRG modes (std / taiko / catch) are stripped. mania stays in, paired with bms as the two-mode spec.",
+    zh: "std / taiko / catch 等非 VSRG 模式已删除，保留 mania 游玩体验，与 bms 组成双 mode 特性。",
+    en: "Non-VSRG modes (std / taiko / catch) are stripped. mania stays in, paired with bms as the two-mode feature set.",
     ja: "std / taiko / catch などの非 VSRG モードは削除済み。mania のプレイ体験を残し、bms と二モード構成。",
   },
 
