@@ -63,6 +63,11 @@ window.OMS_I18N = {
     en: "VIEW FEATURES",
     ja: "特性を見る",
   },
+  "cta.download": {
+    zh: "即刻下载",
+    en: "DOWNLOAD",
+    ja: "ダウンロード",
+  },
 
   /* ---------- field overlays ---------- */
   "field.ch_prefix": {
@@ -122,15 +127,15 @@ window.OMS_I18N = {
   },
 
   "sec04.no":    { zh: "04 · 下载", en: "04 · DOWNLOAD", ja: "04 · ダウンロード" },
-  "sec04.title": { zh: "投币<br/><em>启动</em>", en: "Insert<br/><em>cabinet</em>", ja: "コイン<br/><em>投入</em>" },
+  "sec04.title": { zh: "即刻<br/><em>下载</em>", en: "Download<br/><em>now</em>", ja: "今すぐ<br/><em>ダウンロード</em>" },
   "sec04.lede":  {
-    zh: "发行包、版本说明、运行说明都在下载页。首发形态先在此说明，正式下载入口于 Phase 1 收尾开放。",
-    en: "Release packages, version notes and run instructions live on the download page. The launch form is stated here; the public download opens at the end of Phase 1.",
-    ja: "リリースパッケージ、バージョンノート、起動手順はダウンロードページに。初回リリースの形態はここで提示、正式なダウンロード口は Phase 1 終盤で開ける。",
+    zh: "可自行选择下方下载方式。",
+    en: "Pick a download option below.",
+    ja: "下のダウンロード方法から選べる。",
   },
 
   "sec05.no":    { zh: "05 · 路线图", en: "05 · ROADMAP", ja: "05 · ロードマップ" },
-  "sec05.title": { zh: "五个<br/><em>阶段</em>", en: "Five<br/><em>phases</em>", ja: "五つの<br/><em>段階</em>" },
+  "sec05.title": { zh: "开发<br/><em>阶段</em>", en: "Development<br/><em>phases</em>", ja: "開発<br/><em>段階</em>" },
   "sec05.lede":  {
     zh: "OMS 网站分五段推进。现在是 Phase 1（宣传 + 展示）。账号、个人主页、OMS-IR 排行榜、谱面社区在客户端里都已预留入口，逐段开放。",
     en: "The OMS site rolls out in five phases. Phase 1 (promo + showcase) is current. Accounts, profile pages, OMS-IR leaderboards and the chart community are reserved client-side and opened one phase at a time.",
@@ -141,9 +146,9 @@ window.OMS_I18N = {
   "cap.01.name": { zh: "双模式", en: "Dual mode", ja: "デュアルモード" },
   "cap.01.sub":  { zh: "BMS · OSU!MANIA", en: "BMS · OSU!MANIA", ja: "BMS · OSU!MANIA" },
   "cap.01.body": {
-    zh: "std / taiko / catch 等非 VSRG 模式已删除，保留 mania 游玩体验，与 bms 组成双 mode 特性。",
-    en: "Non-VSRG modes (std / taiko / catch) are stripped. mania stays in, paired with bms as the two-mode feature set.",
-    ja: "std / taiko / catch などの非 VSRG モードは削除済み。mania のプレイ体験を残し、bms と二モード構成。",
+    zh: "std / taiko / catch 等非 VSRG 模式已删除，保留 mania 模式，与 bms 模式结合游玩，不用再切客户端啦。",
+    en: "Non-VSRG modes (std / taiko / catch) are stripped. mania mode stays, played together with bms mode — no more switching clients.",
+    ja: "std / taiko / catch などの非 VSRG モードは削除済み。mania モードを残し、bms モードと一緒に遊べる——もうクライアントを切り替えなくていい。",
   },
 
   "cap.02.name": { zh: "判定兼容", en: "Judge compat", ja: "判定互換" },
@@ -157,9 +162,9 @@ window.OMS_I18N = {
   "cap.03.name": { zh: "Gauge · 点灯记录", en: "Gauges · clear log", ja: "ゲージ · 点灯記録" },
   "cap.03.sub":  { zh: "6 GAUGES + LAMP RECORD", en: "6 GAUGES + LAMP RECORD", ja: "6 GAUGES + LAMP RECORD" },
   "cap.03.body": {
-    zh: "AC / EC / NC / HC / EXHC / FC 全支持。",
-    en: "AC / EC / NC / HC / EXHC / FC, all supported.",
-    ja: "AC / EC / NC / HC / EXHC / FC をすべてサポート。",
+    zh: '<span class="lamp lamp--ac">AC</span> / <span class="lamp lamp--ec">EC</span> / <span class="lamp lamp--nc">NC</span> / <span class="lamp lamp--hc">HC</span> / <span class="lamp lamp--exhc">EXHC</span> / <span class="lamp lamp--fc">FC</span> 全支持。',
+    en: '<span class="lamp lamp--ac">AC</span> / <span class="lamp lamp--ec">EC</span> / <span class="lamp lamp--nc">NC</span> / <span class="lamp lamp--hc">HC</span> / <span class="lamp lamp--exhc">EXHC</span> / <span class="lamp lamp--fc">FC</span>, all supported.',
+    ja: '<span class="lamp lamp--ac">AC</span> / <span class="lamp lamp--ec">EC</span> / <span class="lamp lamp--nc">NC</span> / <span class="lamp lamp--hc">HC</span> / <span class="lamp lamp--exhc">EXHC</span> / <span class="lamp lamp--fc">FC</span> をすべてサポート。',
   },
 
   "cap.04.name": { zh: "难度表", en: "Difficulty tables", ja: "難易度表" },
@@ -178,9 +183,17 @@ window.OMS_I18N = {
     ja: "単一のポータブルパッケージ。展開してインストール、上書きで更新、データはパッケージ内に保存、ディスクを汚さない。",
   },
 
-  "cap.06.name": { zh: "游戏社区", en: "Game community", ja: "ゲームコミュニティ" },
-  "cap.06.sub":  { zh: "IR · CHARTS · FORUM", en: "IR · CHARTS · FORUM", ja: "IR · CHARTS · FORUM" },
+  "cap.06.name": { zh: "外部谱库", en: "External library", ja: "外部ライブラリ" },
+  "cap.06.sub":  { zh: "DIRECTORY INDEX · MANIA/BMS", en: "DIRECTORY INDEX · MANIA/BMS", ja: "DIRECTORY INDEX · MANIA/BMS" },
   "cap.06.body": {
+    zh: "直接选定本地目录索引谱面（含 mania / BMS），无额外储存占用，无需为 OMS 单独准备谱库。",
+    en: "Point OMS at any local folder to index charts (mania / BMS included) — no extra storage footprint, no need to maintain a separate library just for OMS.",
+    ja: "任意のローカルフォルダを指定して譜面をインデックス（mania / BMS 対応）。追加のストレージ使用なし、OMS 専用の譜面ライブラリを用意する必要はない。",
+  },
+
+  "cap.07.name": { zh: "游戏社区", en: "Game community", ja: "ゲームコミュニティ" },
+  "cap.07.sub":  { zh: "IR · CHARTS · FORUM", en: "IR · CHARTS · FORUM", ja: "IR · CHARTS · FORUM" },
+  "cap.07.body": {
     zh: "IR、谱面库、社区论坛等中心化交流平台。",
     en: "IR, chart library, community forum and other centralized hubs.",
     ja: "IR、譜面ライブラリ、コミュニティフォーラムなどの中央集権的な交流プラットフォーム。",
@@ -273,7 +286,8 @@ window.OMS_I18N = {
   "tw.pause":   { zh: "暂停",   en: "Pause", ja: "停止" },
 
   /* ============================================================
-     DOWNLOAD PAGE (download.html)
+     DOWNLOAD — release manifest + install steps
+     (now part of the homepage #download section; download.html removed)
      ============================================================ */
   "dlp.stage": {
     zh: "第 04 节 · 发行清单",
@@ -308,6 +322,10 @@ window.OMS_I18N = {
   "dlp.k.notes-h":  { zh: "更新说明 · RELEASE NOTES", en: "RELEASE NOTES",          ja: "リリースノート · RELEASE NOTES" },
   "dlp.cta.dl":     { zh: "下载",            en: "DOWNLOAD",             ja: "ダウンロード" },
   "dlp.cta.github": { zh: "在 GitHub 上查看", en: "VIEW ON GITHUB",       ja: "GitHub で開く" },
+  "dlp.cta.qq":     { zh: "QQ 群 · 650530995", en: "QQ GROUP · 650530995", ja: "QQ グループ · 650530995" },
+  "dlp.m.gh":       { zh: "从 GitHub Releases 下载发行包", en: "Grab the build from GitHub Releases", ja: "GitHub Releases から発行包を入手" },
+  "dlp.m.qqh":      { zh: "QQ 群", en: "QQ Group", ja: "QQ グループ" },
+  "dlp.m.qq":       { zh: "一键加群 · 650530995", en: "One-tap join · 650530995", ja: "ワンタップ参加 · 650530995" },
   "dlp.cta.primary": {
     zh: "下载主包",
     en: "GET PRIMARY",
@@ -332,7 +350,7 @@ window.OMS_I18N = {
   },
 
   /* ---- install steps ---- */
-  "dlp.ins.no":    { zh: "05 · 运行", en: "05 · RUN IT", ja: "05 · 起動" },
+  "dlp.ins.no":    { zh: "运行", en: "RUN IT", ja: "起動" },
   "dlp.ins.title": {
     zh: '解压<br/><em>开玩</em>',
     en: 'Unzip<br/><em>and run</em>',
@@ -345,9 +363,9 @@ window.OMS_I18N = {
   },
   "dlp.ins.1.h":   { zh: "下载发行包", en: "Grab the release", ja: "リリースを取得" },
   "dlp.ins.1.b": {
-    zh: "在上面的 ASSETS 列表里挑主包（带 ★ 的那个），点一下就开始下载。",
-    en: "In the ASSETS list above, click the primary (★) bundle and the download starts.",
-    ja: "上の ASSETS 一覧から主パッケージ（★ 付き）をクリックすればダウンロードが始まる。",
+    zh: "点上面的 GitHub Releases 进去，下载最新的发行包（.zip）。",
+    en: "Open GitHub Releases above and grab the latest build (.zip).",
+    ja: "上の GitHub Releases を開いて、最新の発行包（.zip）を入手。",
   },
   "dlp.ins.2.h":   { zh: "解压到独立目录", en: "Unzip to its own folder", ja: "独立したフォルダに解凍" },
   "dlp.ins.2.b": {

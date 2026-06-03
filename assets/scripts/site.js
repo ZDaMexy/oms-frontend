@@ -153,14 +153,14 @@
     const deckCells = Array.from(window_.querySelectorAll("[data-deck] > *"));
     const densityBars = document.querySelector("[data-density-chart]");
 
-    let VISIBLE_BEATS = 0.78;
+    let VISIBLE_BEATS = 1.114;
     let RATE = 1;
     let BPS = ((c.bpm || 130) / 60) * RATE;
 
     // hi-speed tweak — adjusts fall speed (visible beats) only, not playback.
     // Accepts a numeric multiplier (0.6 / 0.8 / 1.0 / 1.2 / 1.4); higher = faster
     // fall = fewer beats on screen. VISIBLE_BEATS is inverse to the multiplier.
-    const HS_BASE = 0.78; // beats visible at ×1.0
+    const HS_BASE = 1.114; // beats visible at ×1.0 (base scroll 30% slower than the original 0.78)
     window.__omsSetHiSpeed = (mode) => {
       const mult = parseFloat(mode);
       VISIBLE_BEATS = (isFinite(mult) && mult > 0) ? HS_BASE / mult : HS_BASE;
@@ -238,25 +238,46 @@
         head++;
       }
 
-      const pxPerBeat = laneH / VISIBLE_BEATS;
+      const flash = (lane) => {
+        const cell = deckCells[lane];
+        if (cell) {
+          cell.classList.add("is-hit");
+          setTimeout(() => cell.classList.remove("is-hit"), 90);
+        }
+      };
       for (let i = active.length - 1; i >= 0; i--) {
         const a = active[i];
-        const progress = (a.beat - curBeat) / VISIBLE_BEATS;
-        if (progress < -0.06) {
+        const headProg = (a.beat - curBeat) / VISIBLE_BEATS;
+        if (a.ln > 0) {
+          // long note: draw a held bar from head to tail. While the note is
+          // being "held", the head pins to the judgment line and the bar
+          // shrinks from the bottom; it clears once the tail crosses.
+          const tailProg = (a.beat + a.ln - curBeat) / VISIBLE_BEATS;
+          if (tailProg < -0.06) {
+            a.el.remove();
+            active.splice(i, 1);
+            combo += 1;
+            score += 2;
+            flash(a.lane);
+            continue;
+          }
+          const headY = Math.min(laneH, (1 - headProg) * laneH);
+          const tailY = (1 - tailProg) * laneH;
+          a.el.style.top = tailY + "px";
+          a.el.style.height = Math.max(8, headY - tailY) + "px";
+          // keep the deck key lit for the duration of the hold
+          if (headProg <= 0) { const cell = deckCells[a.lane]; if (cell) cell.classList.add("is-hit"); }
+          continue;
+        }
+        if (headProg < -0.06) {
           a.el.remove();
           active.splice(i, 1);
           combo += 1;
           score += 2;
-          const cell = deckCells[a.lane];
-          if (cell) {
-            cell.classList.add("is-hit");
-            setTimeout(() => cell.classList.remove("is-hit"), 90);
-          }
+          flash(a.lane);
           continue;
         }
-        const h = a.ln > 0 ? Math.max(8, a.ln * pxPerBeat) : 8;
-        if (a.ln > 0) a.el.style.height = h + "px";
-        a.el.style.top = ((1 - progress) * laneH - h) + "px";
+        a.el.style.top = ((1 - headProg) * laneH - 8) + "px";
       }
       setHud();
 

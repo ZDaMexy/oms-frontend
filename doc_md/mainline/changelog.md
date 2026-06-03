@@ -1,5 +1,45 @@
 # Frontend Mainline Changelog
 
+## 2026-06-02
+
+- 首页演奏区演示谱面更换：由 Stargazer [SAETHER]（Lime / obj saaa，BPM 87）换为 **告白/告別 (BMS edit.) [Lost]**（曲 Greetea feat.ninnikuu，obj. MiyakoMeow，BG rapha & Liuyanzhi，BPM 161；来源 beatoraja Satellite sl1 `[hongun]khkb/_7_lost.bme`，7key）；用 `parse-bms.cjs` 离线解析为仅含音符位置的紧凑数据，新文件 `assets/scripts/chart-lost.js`（标题为日文，解析器 latin1 读取后手工修正回 `告白/告別 (BMS edit.)`），删除旧 `chart-stargazer.js`
+- index.html：`<script>` 引用改为 `chart-lost.js`；playfield slate 曲名/难度/署名更新为「告白/告別 (BMS edit.) · [Lost] · Greetea feat.ninnikuu / obj. MiyakoMeow」（BPM/进度/长度仍由 `site.js` 按 `window.OMS_CHART` 动态计算，实测 BPM 161、长度 2:48、1629 音符）
+- 经本地静态服务器 + preview 实测：reload 后谱面正常下落、HUD（EX-SCORE/COMBO/GROOVE GAUGE）实时累计、控制台无报错
+- 版权待确认项随之更新：演示谱面仍为第三方作品（告白/告別 [Lost]），正式发布前同样需替换为自制/授权谱面或仅留 CSS 占位
+- 同日二次调整（均经 preview 实测）：
+  - 修复长条（LN）视觉：原渲染在「头」过判定线即整段删除（`progress < -0.06`），长条只闪一下巨块就消失。改为按 head→tail 画成「保持条」——头到判定线时钉在底部、条体随尾下落从底部收缩，尾过线（`tailProg < -0.06`）才清除并记 combo；保持期间对应 deck 键位常亮。`site.js` 渲染循环重写，移除不再使用的 `pxPerBeat`
+  - 基准下落速度调慢 30%：`VISIBLE_BEATS` 初值与 `HS_BASE` 由 0.78 → 1.114（≈ 0.78 / 0.7），Hi-Speed 5 档倍率仍以此为 ×1.0 基准
+  - slate 署名：因不安排音乐播放，由「Greetea feat.ninnikuu / obj. MiyakoMeow」改为只显示谱师 **obj. MiyakoMeow**
+  - slate 曲名「告白/告別 (BMS edit.)」加外链跳转到 YouTube `https://www.youtube.com/watch?v=0ptk5HM1g8E`（新增 `.slate__title-link` 样式：虚线下边框 + hover/focus 信号色，`target=_blank` `rel=noopener`）
+- 下载区（sec04）标题由街机风「投币启动 / Insert cabinet / コイン投入」改为下载语义「即刻下载 / Download now / 今すぐダウンロード」（`i18n.js` `sec04.title` 三语 + index.html 静态兜底，保留 `<em>` 强调结构）
+- 特性卡 cap.03（Gauge · 点灯记录）的 lamp 清单上色：AC/EC/NC/HC/EXHC/FC 各 lamp 拆为带类 chip（`i18n.js` `cap.03.body` 三语 + index.html 静态兜底，lamp 缩写不翻译只随语言换后缀），新增 `.cap__body .lamp--*` 样式——AC 紫(#b07bff) · EC 绿(#3ddc84) · NC 蓝(#4d84ff) · HC 高亮白(白+双层辉光，突出) · EXHC 金(#ffcf4d+辉光) · FC 流动彩虹（gradient `background-clip:text` + `lampRainbow` 3s 动画，`prefers-reduced-motion` 下停动）
+- 特性清单新增一条 cap.06「外部谱库」（DIRECTORY INDEX · MANIA/BMS，绿灯·已实现），插在 cap.05「便携安装」与原「游戏社区」之间，原游戏社区顺延为 cap.07（i18n 键 cap.06.* 新增、原 cap.06.* 重命名为 cap.07.*，index.html 同步加行并改编号 06→07）；文案：直接选定本地目录索引谱面（含 mania / BMS），无需为 OMS 单独准备谱库——为客户端作者新声明的事实，已同步记入 `../oms_client_bridge_md/`
+- cap.06「外部谱库」文案补「无额外储存占用」（三语：zh 无额外储存占用 / en no extra storage footprint / ja 追加のストレージ使用なし）
+- 路线图区（sec05）标题由「五个阶段 / Five phases / 五つの段階」改为「开发阶段 / Development phases / 開発段階」（正文「分五段推进」未动，仍准确）
+- cap.01「双模式」正文改写（三语）：由「保留 mania 游玩体验，与 bms 组成双 mode 特性」改为「保留 mania 模式，与 bms 模式结合游玩，不用再切客户端啦」（en/ja 同步加「no more switching clients / もうクライアントを切り替えなくていい」）
+- 资源版本 `v=20260602-8`（两页全部资源引用同步破缓存）
+- **站点收敛为单页**：把 download.html 的下载功能整体并入首页 `#download` 段，删除 download.html（站点由两页变单页）：
+  - index.html `#download` 段在原静态信息面板（版本/平台/包格式/更新器/在线/时间戳）下方新增 release manifest 三态区（loading / has-release 列 assets+notes+★主包直链 / no-release 退回 GitHub）与 4 步安装步骤，均复用既有 `dlp.*` i18n 与 `.rel`/`.install` 样式；index.html 加载 `download.js`
+  - 导航与页脚「下载」由 `download.html` 改为锚点 `#download`；移除 dl__head 里指向 download.html 的 ghost 按钮（真正下载 CTA 由 manifest 的 `data-rel-primary` 承担）
+  - sec04.lede 三语改为「发行包从 GitHub Releases 实时拉取，下载/解压/运行全在这一页」；安装步骤 eyebrow `dlp.ins.no` 去掉「05 ·」（避免与路线图 05 冲突），改为「运行 / RUN IT / 起動」
+  - 下载契约不变：仍直连 GitHub releases、不经 Web 后端（与 `dev_bridge_md/` 结论一致），仅入口位置由独立页改为首页段落
+  - preview 实测：download.js 在首页跑通（本机限流时正确退回 no-release + `ERR · http_403`），安装步骤 4 步、导航锚点 `#download`、无横向溢出、控制台无报错
+- 页眉/页脚导航按页面实际滚动顺序重排：首页 → 特性(#capabilities) → 判定(#timing) → 下载(#download) → 规划(#phases)，`data-n` 编号同步改为 01–05（此前「下载」停在 02 是独立页时代遗留，下载并入首页后移到 04）
+- 删除下载块静态信息面板 `dl__meta`（版本/平台/包格式/更新器/在线/时间戳）与两栏 `dl__grid` 包裹，`dl__head`（标题+lede+PORTABLE 软标）改为独立全宽，其下保留 release manifest 三态 + 安装步骤；`dl.*` i18n 键随之闲置（保留无害）
+- sec04.lede 文案去 AI 味重写（三语）：旧「发行包从 GitHub Releases 实时拉取，下载、解压、运行——全在这一页」与下方安装步骤重复且带空话，改为克制版「发行包都在 GitHub Releases，下面同步最新一版。公开下载将在 Phase 1 收尾开放。」
+- sec04.lede 再简化（三语）→「可自行选择下方下载方式。」（en: Pick a download option below. / ja: 下のダウンロード方法から選べる。）
+- 下载区新增一个下载/加入方式：**QQ 群 · 650530995** 一键加群按钮（多平台官方分享链接 `qun.qq.com/universal-share/share`，群主提供，`busi_data` 解出群号 650530995，公开邀请链非密钥）；按钮同时加入「有发行版」`rel__cta` 与「无发行版」`rel__none-cta` 两态，保证任一状态都可见；新增 i18n 键 `dlp.cta.qq`（QQ 群 · 650530995 / QQ GROUP · / QQ グループ ·）
+- 下载区精简 + 下载方式按钮重设计：
+  - 删除 dl__head 的 `dl__lede`（「可自行选择下方下载方式。」）与「PORTABLE · 即将开放」软标（仅下载块那个；hero 区同名软标保留）；下载块只留 04 · 下载 / 即刻下载 标题
+  - 删除无发行版态（rel__none）的 `NO PUBLIC RELEASE FILED YET` 状态行 + `还在备料` 标题 + 「公开下载入口…」lede，无发行版态现在只剩下载方式按钮
+  - GitHub / QQ 群两个跳转按钮由原 `.btn` 重设计为成对 **method tile**（`.dl-methods`/`.dl-method`：图标 SVG + 名称 + 副标 + 箭头，左侧 hover 信号色条、上浮、focus 环；GitHub octocat mark + QQ 聊天气泡图标；两列等宽、≤640 单列）；有发行版态保留 `data-rel-primary` 主下载按钮在上、tiles 在下，无发行版态仅 tiles
+  - `data-rel-github` / `data-rel-github-fallback` 仍在 tile 上（download.js 行为不变，null-safe 通过）；新增 i18n `dlp.m.gh`/`dlp.m.qqh`/`dlp.m.qq`；`dlp.none.*`、`dlp.cta.qq/github` 等键随之闲置（保留无害）
+  - preview 实测：lede/软标/无发行版文案均移除，两态各 2 tile、当前无发行版态显示 GitHub+QQ tile、href 正确、SVG 图标在、无横向溢出、控制台无报错
+- **删除 GitHub 自动拉取**：移除 `download.js`（文件删除 + index.html 脚本引用删除）与整套 `.rel` 三态（loading / 有发行版 tag+meta+primary+assets+notes / 无发行版）；下载方式改为两枚**常驻静态** `.dl-method` tile（GitHub Releases 跳转 + QQ 群一键加群跳转），不再调用 GitHub API；安装步骤①文案由「在上面 ASSETS 列表挑 ★ 主包」改为「点上面 GitHub Releases 进去下最新发行包（.zip）」（三语）；`dlp.fetching`/`dlp.k.*`/`dlp.none.*`/`dlp.cta.*` 等键随之闲置（保留无害）
+- 首页 hero CTA：软标「PORTABLE · 即将开放」（`cta.win_soon`）替换为主按钮「即刻下载 ↓」（`cta.download`，新增 i18n 三语），`href="#download"` 平滑跳到下载区；`cta.win_soon` 键闲置（保留无害）
+- 删除「解压开玩」安装步骤板块（`section.install` 整段 + 4 步）；`dlp.ins.*` 键随之闲置
+- 资源版本 `v=20260602-17`（index 全部资源引用同步破缓存）
+
 ## 2026-05-27
 
 - 上线后视觉打磨轮（均经 preview 跨尺寸实测）：

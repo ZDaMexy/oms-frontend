@@ -618,6 +618,17 @@ img, svg { display: block; max-width: 100%; }
   letter-spacing: 0.02em;
   font-size: 11.5px;
 }
+.field-top .slate .slate__title-link {
+  text-decoration: none;
+  border-bottom: 1px dotted var(--ink-4);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.field-top .slate .slate__title-link:hover strong { color: var(--cyan); }
+.field-top .slate .slate__title-link:hover { border-bottom-color: var(--cyan); }
+.field-top .slate .slate__title-link:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
 .field-top .slate i {
   display: inline-block;
   width: 4px;
@@ -1032,6 +1043,31 @@ img, svg { display: block; max-width: 100%; }
   color: var(--cyan);
   border: 1px solid var(--rule-2);
 }
+/* clear-lamp chips inside the gauge capability — IIDX clear-lamp palette */
+.cap__body .lamp {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+}
+.cap__body .lamp--ac   { color: #b07bff; }                                      /* ASSIST  — purple */
+.cap__body .lamp--ec   { color: #3ddc84; }                                      /* EASY    — green  */
+.cap__body .lamp--nc   { color: #4d84ff; }                                      /* NORMAL  — blue   */
+.cap__body .lamp--hc   { color: #ffffff; text-shadow: 0 0 6px rgba(255,255,255,0.9), 0 0 13px rgba(255,255,255,0.5); }  /* HARD — prominent white */
+.cap__body .lamp--exhc { color: #ffcf4d; text-shadow: 0 0 7px rgba(255,207,77,0.6); }  /* EX-HARD — gold */
+.cap__body .lamp--fc {                                                          /* FULL COMBO — animated rainbow */
+  background: linear-gradient(90deg, #ff5560, #ffcf4d, #3ddc84, #00d9ff, #4d84ff, #b07bff, #ff5560);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: lampRainbow 3s linear infinite;
+}
+@keyframes lampRainbow { to { background-position: 200% 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .cap__body .lamp--fc { animation: none; }
+}
 .cap__status {
   font-family: var(--mono);
   font-size: 10px;
@@ -1277,6 +1313,74 @@ img, svg { display: block; max-width: 100%; }
   color: var(--ink-3);
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+/* download-method tiles — GitHub / QQ group, shared across rel states */
+.dl-methods {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.dl-method {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 20px;
+  border: 1px solid var(--rule-2);
+  background: var(--bg-2);
+  text-decoration: none;
+  color: var(--ink);
+  position: relative;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+.dl-method::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--cyan);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.dl-method:hover {
+  border-color: var(--cyan);
+  background: var(--bg-3);
+  transform: translateY(-1px);
+}
+.dl-method:hover::before { opacity: 1; }
+.dl-method:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.dl-method__icon {
+  flex-shrink: 0;
+  width: 34px; height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--cyan);
+}
+.dl-method__icon svg { width: 28px; height: 28px; display: block; }
+.dl-method__txt { display: grid; gap: 3px; min-width: 0; }
+.dl-method__txt strong {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+.dl-method__txt small {
+  font-family: var(--cn);
+  font-size: 11px;
+  color: var(--ink-3);
+  letter-spacing: 0.02em;
+}
+.dl-method__arr {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--ink-4);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+.dl-method:hover .dl-method__arr { color: var(--cyan); transform: translate(2px, -2px); }
+@media (max-width: 640px) {
+  .dl-methods { grid-template-columns: 1fr; }
 }
 
 /* =================================================================

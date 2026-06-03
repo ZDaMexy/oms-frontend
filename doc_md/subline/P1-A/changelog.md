@@ -1,5 +1,16 @@
 # Frontend Subline P1-A Changelog
 
+## 2026-06-02
+
+- 演奏区演示谱面由 Stargazer [SAETHER] 换为 **告白/告別 (BMS edit.) [Lost]**（曲 Greetea feat.ninnikuu / obj. MiyakoMeow，BPM 161，beatoraja Satellite sl1 `_7_lost.bme` 7key）；`parse-bms.cjs` 解析为 `chart-lost.js`（日文标题手工修正），删旧 `chart-stargazer.js`；index.html 改引用 + slate 署名更新；preview 实测下落/HUD/控制台均正常；版权待确认项更新为新谱面
+- 同日二次调整：修复 LN 视觉（改为 head→tail 保持条、头钉判定线、尾过线才清，保持期键位常亮）；基准下落速度调慢 30%（`VISIBLE_BEATS`/`HS_BASE` 0.78→1.114）；slate 署名改为只显示谱师 **obj. MiyakoMeow**；slate 曲名加 YouTube 外链（`.slate__title-link`，`target=_blank`）；下载区 sec04 标题由「投币启动」改为「即刻下载」（三语）；cap.03 lamp 清单上色（AC 紫/EC 绿/NC 蓝/HC 高亮白/EXHC 金/FC 流动彩虹，`.cap__body .lamp--*` + `lampRainbow` 动画）；特性清单新增 cap.06「外部谱库」（选定本地目录索引 mania/BMS 谱面，绿灯·已实现），原游戏社区顺延 cap.07；资源版本 `v=20260602-5`
+- 同日三次调整：cap.06「外部谱库」补「无额外储存占用」（三语，v=20260602-6）；路线图标题「五个阶段」→「开发阶段」（三语，v=20260602-7）；cap.01「双模式」正文改写为「保留 mania 模式，与 bms 模式结合游玩，不用再切客户端啦」（三语，v=20260602-8）
+- **站点收敛为单页**：download.html 的下载功能（release manifest 三态 + 安装步骤）整体并入首页 `#download` 段，index.html 加载 `download.js`，导航/页脚「下载」改锚点 `#download`，删除 download.html；下载契约（直连 GitHub releases、不经 Web 后端）不变；preview 实测跑通、无溢出、无报错；资源版本 `v=20260602-9`
+- 同日后续微调：导航/页脚按页面顺序重排（首页/特性/判定/下载/规划，v=-10）；删下载块静态信息面板 `dl__meta` + 两栏 `dl__grid`（v=-11）；sec04.lede 去 AI 味再简化为「可自行选择下方下载方式。」（v=-12/-13）；下载区新增 **QQ 群 · 650530995** 一键加群按钮（多平台 `qun.qq.com/universal-share` 链接，两态都放，i18n `dlp.cta.qq`，v=-14）
+- 下载区精简 + 按钮重设计（v=-15）：删 dl__lede、下载块 PORTABLE 软标、无发行版态「还在备料/公开下载…」文案；GitHub/QQ 跳转重设计为成对 method tile（`.dl-methods`/`.dl-method`，图标 SVG+名称+副标+箭头，hover 信号色），有发行版态保留主下载按钮在上、tiles 在下，无发行版态仅 tiles；新增 i18n `dlp.m.gh/qqh/qq`；preview 实测无溢出、无报错
+- 删除 GitHub 自动拉取（v=-16）：删 `download.js`（文件+引用）与 `.rel` 三态，下载方式改为两枚常驻静态 tile（GitHub Releases + QQ 群跳转），不再调 GitHub API；安装步骤①改为「点 GitHub Releases 下最新发行包」（三语）；preview 实测 tile 常显、无溢出、无报错
+- 首页 hero CTA 软标「PORTABLE · 即将开放」换成「即刻下载 ↓」主按钮跳 `#download`（`cta.download`）；删除整个「解压开玩」安装步骤板块（v=-17）
+
 ## 2026-05-27
 
 - 视觉打磨轮：缩放适配（移动端导航/状态栏窄屏）、Hero 标题 CJK 降字号、HUD 改造（EX-SCORE/COMBO 统一英文、删判定、GROOVE GAUGE IIDX 分段条）、删两页 cab 状态栏与 brand 日文 kana、收紧移动端 header、修 brand 大小字重合

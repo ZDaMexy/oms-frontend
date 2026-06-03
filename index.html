@@ -9,11 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/styles/site.css?v=20260526-15" />
+    <link rel="stylesheet" href="assets/styles/site.css?v=20260602-17" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050608'/%3E%3Cpath d='M4 16 L4 26 L9 26 L9 16 Z M13 7 L13 26 L18 26 L18 7 Z M22 12 L22 26 L27 26 L27 12 Z' fill='%2300d9ff'/%3E%3C/svg%3E" />
-    <script defer src="assets/scripts/chart-stargazer.js?v=20260526-15"></script>
-    <script defer src="assets/scripts/i18n.js?v=20260526-15"></script>
-    <script defer src="assets/scripts/site.js?v=20260526-15"></script>
+    <script defer src="assets/scripts/chart-lost.js?v=20260602-17"></script>
+    <script defer src="assets/scripts/i18n.js?v=20260602-17"></script>
+    <script defer src="assets/scripts/site.js?v=20260602-17"></script>
   </head>
   <body>
     <!-- ============================================================
@@ -35,9 +35,9 @@
             <nav aria-label="主导航">
               <ul class="nav">
               <li><a data-n="01" href="index.html" aria-current="page" data-i18n="nav.home">HOME</a></li>
-              <li><a data-n="02" href="download.html" data-i18n="nav.download">DOWNLOAD</a></li>
-              <li><a data-n="03" href="#capabilities" data-i18n="nav.specs">FEATURES</a></li>
-              <li><a data-n="04" href="#timing" data-i18n="nav.judge">JUDGE</a></li>
+              <li><a data-n="02" href="#capabilities" data-i18n="nav.specs">FEATURES</a></li>
+              <li><a data-n="03" href="#timing" data-i18n="nav.judge">JUDGE</a></li>
+              <li><a data-n="04" href="#download" data-i18n="nav.download">DOWNLOAD</a></li>
               <li><a data-n="05" href="#phases" data-i18n="nav.roadmap">ROADMAP</a></li>
             </ul>
           </nav>
@@ -62,7 +62,7 @@
               <p class="hero__lede" data-i18n="hero.lede" data-i18n-html="1"><strong>OMS</strong> 是一个基于 osu!lazer 的 fork client，以 ruleset 的形式增加了对 BMS 谱面的原生支持，支持 OD / RAJA / LR2 / 类IIDX 判定窗自由切换，支持 Gauge 点灯记录，支持难度表。更多现代 mod 跟进开发中，未来 OMS-IR、谱面社区跟进开发中。</p>
             </div>
             <div class="hero__cta">
-              <span class="btn btn--soft"><span class="dot"></span><span data-i18n="cta.win_soon">PORTABLE · COMING SOON</span></span>
+              <a class="btn btn--primary" href="#download"><span data-i18n="cta.download">即刻下载</span><span class="arr">↓</span></a>
               <a class="btn btn--ghost" href="#capabilities"><span data-i18n="cta.view_specs">VIEW FEATURES</span><span class="arr">→</span></a>
             </div>
           </div>
@@ -72,10 +72,10 @@
             <div class="field-window">
               <div class="field-top">
                 <span class="slate">
-                  <strong>Stargazer</strong>
-                  <span class="slate__diff">[SAETHER]</span>
-                  <i></i>Lime / obj:saaa
-                  <i></i>BPM <span data-stat="bpm">87</span>
+                  <a class="slate__title-link" href="https://www.youtube.com/watch?v=0ptk5HM1g8E" target="_blank" rel="noopener noreferrer"><strong>告白/告別 (BMS edit.)</strong></a>
+                  <span class="slate__diff">[Lost]</span>
+                  <i></i>obj. MiyakoMeow
+                  <i></i>BPM <span data-stat="bpm">161</span>
                   <i></i><span data-progress>0:00</span> <span class="slate__sep">/</span> <span data-stat="length">2:28</span>
                 </span>
                 <div class="field-ctrl">
@@ -156,7 +156,7 @@
           <div class="cap__row">
             <div class="cap__no">01</div>
             <div class="cap__name"><span data-i18n="cap.01.name">Dual mode</span><small data-i18n="cap.01.sub">BMS · OSU!MANIA</small></div>
-            <div class="cap__body" data-i18n="cap.01.body" data-i18n-html="1">std / taiko / catch 等非 VSRG 模式已删除，保留 mania 游玩体验，与 bms 组成双 mode 特性。</div>
+            <div class="cap__body" data-i18n="cap.01.body" data-i18n-html="1">std / taiko / catch 等非 VSRG 模式已删除，保留 mania 模式，与 bms 模式结合游玩，不用再切客户端啦。</div>
             <div class="cap__status is-live"><span class="led led--on"></span><span data-i18n="cap.status.shipped">SHIPPED</span></div>
           </div>
 
@@ -170,7 +170,7 @@
           <div class="cap__row">
             <div class="cap__no">03</div>
             <div class="cap__name"><span data-i18n="cap.03.name">Six gauges</span><small data-i18n="cap.03.sub">6 GAUGES + LAMP RECORD</small></div>
-            <div class="cap__body" data-i18n="cap.03.body" data-i18n-html="1">AC / EC / NC / HC / EXHC / FC 全支持。</div>
+            <div class="cap__body" data-i18n="cap.03.body" data-i18n-html="1"><span class="lamp lamp--ac">AC</span> / <span class="lamp lamp--ec">EC</span> / <span class="lamp lamp--nc">NC</span> / <span class="lamp lamp--hc">HC</span> / <span class="lamp lamp--exhc">EXHC</span> / <span class="lamp lamp--fc">FC</span> 全支持。</div>
             <div class="cap__status is-live"><span class="led led--on"></span><span data-i18n="cap.status.shipped">SHIPPED</span></div>
           </div>
 
@@ -190,8 +190,15 @@
 
           <div class="cap__row">
             <div class="cap__no">06</div>
-            <div class="cap__name"><span data-i18n="cap.06.name">Game community</span><small data-i18n="cap.06.sub">IR · CHARTS · FORUM</small></div>
-            <div class="cap__body" data-i18n="cap.06.body" data-i18n-html="1">IR、谱面库、社区论坛等中心化交流平台。</div>
+            <div class="cap__name"><span data-i18n="cap.06.name">External library</span><small data-i18n="cap.06.sub">DIRECTORY INDEX · MANIA/BMS</small></div>
+            <div class="cap__body" data-i18n="cap.06.body" data-i18n-html="1">直接选定本地目录索引谱面（含 mania / BMS），无额外储存占用，无需为 OMS 单独准备谱库。</div>
+            <div class="cap__status is-live"><span class="led led--on"></span><span data-i18n="cap.status.shipped">SHIPPED</span></div>
+          </div>
+
+          <div class="cap__row">
+            <div class="cap__no">07</div>
+            <div class="cap__name"><span data-i18n="cap.07.name">Game community</span><small data-i18n="cap.07.sub">IR · CHARTS · FORUM</small></div>
+            <div class="cap__body" data-i18n="cap.07.body" data-i18n-html="1">IR、谱面库、社区论坛等中心化交流平台。</div>
             <div class="cap__status is-hot"><span class="led led--live"></span><span data-i18n="cap.status.indev">IN DEV</span></div>
           </div>
         </div>
@@ -246,43 +253,23 @@
          ============================================================ -->
     <section class="dl" id="download">
       <div class="wrap">
-        <div class="dl__grid">
-          <div class="dl__head">
-            <div class="dl__no" data-i18n="sec04.no">04 · DOWNLOAD</div>
-            <h1 class="dl__title" data-i18n="sec04.title" data-i18n-html="1">Insert<br/><em>cabinet</em></h1>
-            <p class="dl__lede" data-i18n="sec04.lede">发行包、版本说明、运行说明都放在下载页。</p>
-            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px;">
-              <span class="btn btn--soft"><span class="dot"></span><span data-i18n="cta.win_soon">PORTABLE · COMING SOON</span></span>
-              <a class="btn btn--ghost" href="download.html"><span data-i18n="nav.download">DOWNLOAD</span><span class="arr">→</span></a>
-            </div>
-          </div>
+        <div class="dl__head">
+          <div class="dl__no" data-i18n="sec04.no">04 · DOWNLOAD</div>
+          <h1 class="dl__title" data-i18n="sec04.title" data-i18n-html="1">即刻<br/><em>下载</em></h1>
+        </div>
 
-          <div class="dl__meta">
-            <div class="dl__row">
-              <span class="dl__k" data-i18n="dl.version">VERSION</span>
-              <span class="dl__v" data-i18n="dl.version.v" data-i18n-html="1">0.1.0-DEV</span>
-            </div>
-            <div class="dl__row">
-              <span class="dl__k" data-i18n="dl.platform">PLATFORM</span>
-              <span class="dl__v" data-i18n="dl.platform.v" data-i18n-html="1">WIN 10 / 11 · X64</span>
-            </div>
-            <div class="dl__row">
-              <span class="dl__k" data-i18n="dl.package">PACKAGE</span>
-              <span class="dl__v" data-i18n="dl.package.v" data-i18n-html="1">PORTABLE .ZIP</span>
-            </div>
-            <div class="dl__row">
-              <span class="dl__k" data-i18n="dl.updater">UPDATER</span>
-              <span class="dl__v" data-i18n="dl.updater.v" data-i18n-html="1">OFF</span>
-            </div>
-            <div class="dl__row">
-              <span class="dl__k" data-i18n="dl.online">ONLINE</span>
-              <span class="dl__v" data-i18n="dl.online.v" data-i18n-html="1">STUBBED</span>
-            </div>
-            <div class="dl__row">
-              <span class="dl__k" data-i18n="dl.filed">FILED</span>
-              <span class="dl__v"><span data-now="stamp">—</span><small data-i18n="dl.filed.small">本页生成时间戳</small></span>
-            </div>
-          </div>
+        <!-- download methods — static link jumps (GitHub releases page + QQ group) -->
+        <div class="dl-methods">
+          <a class="dl-method" href="https://github.com/ZDaMexy/oms/releases" target="_blank" rel="noopener">
+            <span class="dl-method__icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></span>
+            <span class="dl-method__txt"><strong>GitHub Releases</strong><small data-i18n="dlp.m.gh">从 GitHub Releases 下载发行包</small></span>
+            <span class="dl-method__arr">↗</span>
+          </a>
+          <a class="dl-method" href="https://qun.qq.com/universal-share/share?ac=1&amp;authKey=2njHTFr%2B43b2R3c5e3ZBqpNBEFUNFK5b8jTOGfWarJi%2FVvuCfAEDO%2BudiaqHhHQ5&amp;busi_data=eyJncm91cENvZGUiOiI2NTA1MzA5OTUiLCJ0b2tlbiI6InBtdGh5b1p2ZHBEeGpSWDZpQi92ZWY5WlRDSU1ycnBzd1czRFhQRVVCb0o0MFhHMHk2LzJWTkV4Nk40M3ZheUsiLCJ1aW4iOiIxODA3ODIzNzAzIn0%3D&amp;data=SKTZ6J_0PncZuwFQlLXOtSEK2Vw_T5UxcqywNJ6SCt6TYH1ClmGFM97dSmi8NxhfAKv39qdiyeVaZw22EgBNeg&amp;svctype=4&amp;tempid=h5_group_info" target="_blank" rel="noopener">
+            <span class="dl-method__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.2c-4.7 0-8.5 3.1-8.5 6.9 0 2.2 1.15 4.15 3.0 5.45-.12.85-.62 2.05-1.4 3.05 0 0 2-.2 3.7-1.45.95.3 1.95.45 3.2.45 4.7 0 8.5-3.1 8.5-6.9S16.7 3.2 12 3.2z"/></svg></span>
+            <span class="dl-method__txt"><strong data-i18n="dlp.m.qqh">QQ 群</strong><small data-i18n="dlp.m.qq">一键加群 · 650530995</small></span>
+            <span class="dl-method__arr">↗</span>
+          </a>
         </div>
       </div>
     </section>
@@ -295,7 +282,7 @@
         <div class="section__head">
           <div>
             <div class="section__no" data-i18n="sec05.no">05 · ROADMAP</div>
-            <h2 class="section__title" data-i18n="sec05.title" data-i18n-html="1">Five<br/><em>phases</em></h2>
+            <h2 class="section__title" data-i18n="sec05.title" data-i18n-html="1">开发<br/><em>阶段</em></h2>
           </div>
           <p class="section__lede" data-i18n="sec05.lede">OMS-bms 网站分五段推进。</p>
         </div>
@@ -356,9 +343,9 @@
             <div style="margin-bottom:10px;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-4);font-size:9px;" data-i18n="foot.nav">NAV</div>
             <div class="foot__nav">
               <a href="index.html" data-i18n="nav.home">HOME</a>
-              <a href="download.html" data-i18n="nav.download">DOWNLOAD</a>
               <a href="#capabilities" data-i18n="nav.specs">FEATURES</a>
               <a href="#timing" data-i18n="nav.judge">JUDGE</a>
+              <a href="#download" data-i18n="nav.download">DOWNLOAD</a>
               <a href="#phases" data-i18n="nav.roadmap">ROADMAP</a>
             </div>
             <div style="margin-top:18px;line-height:1.7;color:var(--ink-3);max-width:54ch;font-size:11px;" data-i18n="foot.note">本页为内部 BULLETIN 设计稿…</div>

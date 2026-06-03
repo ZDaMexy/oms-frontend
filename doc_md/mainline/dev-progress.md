@@ -7,7 +7,7 @@
 - 当前已完成第一轮官网前端重写，站点视觉与内容组织已从“开发状态看板”切换为产品官网表达
 - 当前已完成第二轮视觉系统重做：修复了上一版 `site.css` 的结构性损坏，并将整套暗色霓虹视觉升级为统一的设计令牌体系
 - 当前已完成第三轮视觉系统重做（Claude Design 设计稿落地）：推翻暗色霓虹方向，改为 **Cabinet Mode**（街机机台 / 电竞转播视觉语言）；同步把产品定位由「BMS／mania 桌面客户端」重定位为 **OMS = 基于 osu!lazer 的 fork client，以 ruleset 形式增加 BMS 原生支持**
-- 当前采用根级两页结构：`index.html`、`download.html`（原 `hub.html` 已删除，规格 / 判定 / 路线图改为首页内锚点 `#capabilities` / `#timing` / `#phases`）
+- 当前采用根级**单页**结构：`index.html`（`download.html`、`hub.html` 均已删除；下载 / 特性 / 判定 / 路线图全部为首页内段落与锚点 `#download` / `#capabilities` / `#timing` / `#phases`；下载块在 `#download` 段内由 `download.js` 实时拉取 GitHub release）
 - 当前站点为中文默认 + 中/英/日三语切换（`assets/scripts/i18n.js`，选择持久化到 `localStorage`），专有名词保留原文
 - 页面正式内容、截图、下载说明和部分客户端相关事实仍待逐项确认
 
@@ -79,7 +79,7 @@
 - 当前前端对客户端事实的引用需要经过 `oms_client_bridge_md/` 的快照确认，避免口径漂移
 - 当前已具备一批可直接写入宣传页状态说明的客户端事实，但仍不应把联网能力描述成已可用
 - 当前静态页面骨架已经可本地直接预览，页面结构、导航与分区具备继续填充内容的基础
-- 当前两页（首页 + 下载页）已统一为 Cabinet Mode 视觉语言，可继续直接填充正式内容
+- 当前单页（首页，含 `#download` 下载块）已统一为 Cabinet Mode 视觉语言，可继续直接填充正式内容
 - 当前第三轮 Cabinet Mode 已通过本地静态服务器 + 预览工具验证：首页 i18n（中/英/日切换）、四色信号强调切换、playfield 实时下落（COMBO 累加、进度跳秒）、Windows-only 平台口径均正常，控制台无报错；下载页在 GitHub API 403（本机 IP 限流）时正确退回 no-release 态并显示 `ERR · http_403`
 - 当前视觉系统已通过本地静态服务器（`python -m http.server`）+ 预览工具验证：桌面英雄区为双栏、移动端单栏并切换汉堡导航、当前页导航高亮、滚动渐显与无缝 marquee 均正常，控制台无报错；此前损坏的下载页/未来规划页样式经计算样式核对已恢复
 - 当前截图后端在本环境不稳定（大视口超时），视觉正确性主要通过预览工具的 inspect/eval 计算样式核对确认
@@ -89,7 +89,7 @@
 - 当前尚无视觉稿、品牌资源和正式页面内容
 - 后续接口契约尚未确定，页面预留方式需要和后端计划持续对齐
 - 当前工作区与客户端工作区分离，若不通过桥文档快照同步，客户端相关事实容易在宣传文案中漂移
-- 当前首页演奏区使用的是第三方 BMS 谱面（Stargazer [SAETHER] / 曲 Lime、obj saaa）的音符位置数据，仅作演示动效，演奏区下方已加小字署名「曲 Lime ／ obj saaa」（该文件 `#ARTIST` 明确写有 `Lime / obj:saaa`）；正式公开发布前仍需确认：是否保留第三方谱面数据、换成自制/已授权谱面、或仅保留 CSS 占位演奏区，以规避版权风险
+- 当前首页演奏区使用的是第三方 BMS 谱面 **告白/告別 (BMS edit.) [Lost]**（曲 Greetea feat.ninnikuu / obj. MiyakoMeow / BG rapha & Liuyanzhi，BPM 161，来源 beatoraja Satellite sl1 `[hongun]khkb/_7_lost.bme`）的音符位置数据（文件 `assets/scripts/chart-lost.js`，仅含音符列+节拍位置、无任何音频/图形素材），仅作演示动效，slate 已署名「Greetea feat.ninnikuu / obj. MiyakoMeow」；正式公开发布前仍需确认：是否保留第三方谱面数据、换成自制/已授权谱面、或仅保留 CSS 占位演奏区，以规避版权风险（旧演示谱 Stargazer [SAETHER] / Lime·saaa 已于 2026-06-02 替换）
 
 ---
 
