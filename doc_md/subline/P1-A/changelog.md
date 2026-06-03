@@ -10,6 +10,7 @@
 - 下载区精简 + 按钮重设计（v=-15）：删 dl__lede、下载块 PORTABLE 软标、无发行版态「还在备料/公开下载…」文案；GitHub/QQ 跳转重设计为成对 method tile（`.dl-methods`/`.dl-method`，图标 SVG+名称+副标+箭头，hover 信号色），有发行版态保留主下载按钮在上、tiles 在下，无发行版态仅 tiles；新增 i18n `dlp.m.gh/qqh/qq`；preview 实测无溢出、无报错
 - 删除 GitHub 自动拉取（v=-16）：删 `download.js`（文件+引用）与 `.rel` 三态，下载方式改为两枚常驻静态 tile（GitHub Releases + QQ 群跳转），不再调 GitHub API；安装步骤①改为「点 GitHub Releases 下最新发行包」（三语）；preview 实测 tile 常显、无溢出、无报错
 - 首页 hero CTA 软标「PORTABLE · 即将开放」换成「即刻下载 ↓」主按钮跳 `#download`（`cta.download`）；删除整个「解压开玩」安装步骤板块（v=-17）
+- 删 sec05.lede；5 条阶段描述去 AI 味 + 去内部引用重写（三语，含删 P2「写在工作区桥文档里」的对外不当引用）（v=-18）
 
 ## 2026-05-27
 

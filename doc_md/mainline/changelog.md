@@ -38,7 +38,16 @@
 - **删除 GitHub 自动拉取**：移除 `download.js`（文件删除 + index.html 脚本引用删除）与整套 `.rel` 三态（loading / 有发行版 tag+meta+primary+assets+notes / 无发行版）；下载方式改为两枚**常驻静态** `.dl-method` tile（GitHub Releases 跳转 + QQ 群一键加群跳转），不再调用 GitHub API；安装步骤①文案由「在上面 ASSETS 列表挑 ★ 主包」改为「点上面 GitHub Releases 进去下最新发行包（.zip）」（三语）；`dlp.fetching`/`dlp.k.*`/`dlp.none.*`/`dlp.cta.*` 等键随之闲置（保留无害）
 - 首页 hero CTA：软标「PORTABLE · 即将开放」（`cta.win_soon`）替换为主按钮「即刻下载 ↓」（`cta.download`，新增 i18n 三语），`href="#download"` 平滑跳到下载区；`cta.win_soon` 键闲置（保留无害）
 - 删除「解压开玩」安装步骤板块（`section.install` 整段 + 4 步）；`dlp.ins.*` 键随之闲置
-- 资源版本 `v=20260602-17`（index 全部资源引用同步破缓存）
+- 路线图（sec05）：删除 `sec05.lede`（「OMS 网站分五段推进…逐段开放」整段，`section__lede` 元素移除，i18n 键闲置）；5 条 phase.N.body 全部去 AI 味 + 去内部引用重写（三语）——尤其 P2 原文「前后端联调…写在工作区的桥文档里」属内部文档引用、不应对外，已删；各条改为简短、面向访客的「这一阶段给用户什么」
+- **路线图整体重定义**（按用户指示）：5 阶段 name/sub/body 全部重写（三语）+ 状态调整——
+  - P1「底层加固」(RULESET · ENGINE)：完善 BMS ruleset、mod、游玩体验、皮肤系统、性能优化等 · **开发中**（`phase.status.current` 文案由「当前/CURRENT」改为「开发中/IN DEV/開発中」）
+  - P2「初版官网」(STATIC SITE)：无登录的 OMS 官网 · 计划中
+  - P3「OMS-IR」(LOGIN · SCORE · RANK)：注册账号，客户端内登录/传分/排行（也许支持 LR2/RAJA 本地存档分数上传）· 计划中
+  - P4「社区官网」(COMMUNITY HUB)：像 osu!(official) 那样的中心化社区官网 · 计划中
+  - P5「开放接口」(API · BOT)：API 与外部接通、QQ bot、非 OMS 客户端向 OMS-IR 传分等 · 计划中
+  - 仅 P1 开发中，P2–P5 全部 计划中（P2 加 `is-future` 类与其余对齐）
+  - ✅ **已决（用户确认）：新路线图提升为工作区权威定义**，并传播到：根 `CLAUDE.md` §2（唯一权威）、前/后端/桥的 `dev-plan` 产品阶段列表与「当前阶段」表述、前/后端/桥的 `doc_md/README` 与 mainline README/constraints/dev-progress、前/后端顶层 README、前/后端 CLAUDE 当前状态。旧模型（宣传展示→账号→主页成绩→排行榜→谱面下载）废弃。仓库映射：oms-frontend = P2 初版官网；oms-backend = P3 OMS-IR(+P5)；P1 底层加固为客户端侧。**剩余未改**：各仓库 `subline/P1-A` 命名框架说明与零散描述性「宣传展示」措辞（半历史性，由 §2「逐步对齐」说明覆盖）；changelog 历史条目不动
+- 资源版本 `v=20260602-19`（index 全部资源引用同步破缓存）
 
 ## 2026-05-27
 

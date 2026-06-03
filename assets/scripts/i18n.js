@@ -219,47 +219,47 @@ window.OMS_I18N = {
   "dl.filed.small": { zh: "页面生成时刻", en: "page generated at", ja: "ページ生成時刻" },
 
   /* ---------- roadmap phases ---------- */
-  "phase.1.name": { zh: "宣传展示", en: "Static promo", ja: "広報 · 展示" },
-  "phase.1.sub":  { zh: "STATIC SITE", en: "STATIC SITE", ja: "STATIC SITE" },
+  "phase.1.name": { zh: "底层加固", en: "Core hardening", ja: "基盤強化" },
+  "phase.1.sub":  { zh: "RULESET · ENGINE", en: "RULESET · ENGINE", ja: "RULESET · ENGINE" },
   "phase.1.body": {
-    zh: "纯静态 HTML/CSS/JS 的官网和下载入口。先把产品介绍、能力说明、下载占位写完，信息架构留给后面的动态页面和接口用。",
-    en: "Static HTML/CSS/JS site with a download entry. Get the product intro, capability statements and download placeholder shipped first; the information architecture is left in place for the dynamic pages and API hookups that come later.",
-    ja: "純粋な HTML/CSS/JS によるサイトとダウンロード入口。まずプロダクト紹介、能力説明、ダウンロードのプレースホルダーを仕上げる。情報設計は後の動的ページや API 接続に向けて残しておく。",
+    zh: "完善 BMS ruleset、mod、游玩体验、皮肤系统、性能优化等。",
+    en: "Maturing the BMS ruleset, mods, gameplay, the skin system, performance and more.",
+    ja: "BMS ruleset・mod・プレイ体験・スキンシステム・性能最適化などを作り込む。",
   },
 
-  "phase.2.name": { zh: "账号系统", en: "Accounts", ja: "アカウント" },
-  "phase.2.sub":  { zh: "AUTH", en: "AUTH", ja: "AUTH" },
+  "phase.2.name": { zh: "初版官网", en: "First site", ja: "初版サイト" },
+  "phase.2.sub":  { zh: "STATIC SITE", en: "STATIC SITE", ja: "STATIC SITE" },
   "phase.2.body": {
-    zh: "注册、登录、找回密码、基础账号设置。前后端联调的记录和字段约定写在工作区的桥文档里。",
-    en: "Register, log in, recover password, basic account settings. Front/back integration notes and field contracts sit in the workspace bridge docs.",
-    ja: "登録、ログイン、パスワード再発行、基本的なアカウント設定。フロントとバックの連携メモやフィールド定義は、ワークスペースのブリッジドキュメントに置く。",
+    zh: "无登录的 OMS 官网。",
+    en: "The OMS site — no login yet.",
+    ja: "ログインなしの OMS 公式サイト。",
   },
 
-  "phase.3.name": { zh: "主页 / 成绩", en: "Profile / score", ja: "マイページ / スコア" },
-  "phase.3.sub":  { zh: "PROFILE · SCORE", en: "PROFILE · SCORE", ja: "PROFILE · SCORE" },
+  "phase.3.name": { zh: "OMS-IR", en: "OMS-IR", ja: "OMS-IR" },
+  "phase.3.sub":  { zh: "LOGIN · SCORE · RANK", en: "LOGIN · SCORE · RANK", ja: "LOGIN · SCORE · RANK" },
   "phase.3.body": {
-    zh: "玩家个人主页、最近成绩、EX-SCORE 展示，数据结构和客户端的回放、分数面对得上。",
-    en: "Player home page, recent scores, EX-SCORE view — same data shape as the client's replay and score plane.",
-    ja: "プレイヤーマイページ、最近のスコア、EX-SCORE 表示。クライアントのリプレイやスコア面とデータ構造を揃える。",
+    zh: "注册账号，客户端内登录、传分、看排行。（也许会支持 LR2 / RAJA 本地存档分数上传）",
+    en: "Sign up, then log in from the client to submit scores and see rankings. (LR2 / RAJA local-save uploads, maybe.)",
+    ja: "アカウント登録、クライアントからログインしてスコア送信・ランキング。（LR2 / RAJA のローカル保存スコア送信も検討）",
   },
 
-  "phase.4.name": { zh: "OMS-IR", en: "OMS-IR", ja: "OMS-IR" },
-  "phase.4.sub":  { zh: "LEADERBOARD", en: "LEADERBOARD", ja: "ランキング" },
+  "phase.4.name": { zh: "社区官网", en: "Community hub", ja: "コミュニティ" },
+  "phase.4.sub":  { zh: "COMMUNITY HUB", en: "COMMUNITY HUB", ja: "COMMUNITY HUB" },
   "phase.4.body": {
-    zh: "BMS 和 mania 同台榜单，由 OMS-IR 提供数据。按 EX-SCORE 排序，可按难度表和模式筛选。",
-    en: "One leaderboard for BMS and mania, served by OMS-IR. Sorted by EX-SCORE, filterable by difficulty table and mode.",
-    ja: "BMS と mania を同一ランキングで見る。OMS-IR がデータを提供。EX-SCORE で並び、難易度表とモードで絞り込める。",
+    zh: "像 osu!(official) 那样的中心化社区官网。",
+    en: "A central community site, in the spirit of osu! (official).",
+    ja: "osu!（公式）のような中央コミュニティサイト。",
   },
 
-  "phase.5.name": { zh: "谱面社区", en: "Chart community", ja: "譜面コミュニティ" },
-  "phase.5.sub":  { zh: "COMMUNITY · CHARTS", en: "COMMUNITY · CHARTS", ja: "COMMUNITY · CHARTS" },
+  "phase.5.name": { zh: "开放接口", en: "Open API", ja: "外部接続" },
+  "phase.5.sub":  { zh: "API · BOT", en: "API · BOT", ja: "API · BOT" },
   "phase.5.body": {
-    zh: "OMS 谱面社区——统一谱面库、搜索、难度表入口、下载跳转。服务页面与客户端联网点逐段对接。",
-    en: "OMS chart community — unified chart DB, search, difficulty-table entries, download hand-off. Service pages and the client's online stubs connect piece by piece.",
-    ja: "OMS 譜面コミュニティ——統合譜面データベース、検索、難易度表入口、ダウンロード受け渡し。サービスページとクライアントのオンライン接続口を段階的に接続する。",
+    zh: "API 与外部接通、QQ bot、非 OMS 客户端向 OMS-IR 传分等。",
+    en: "Open API and integrations — a QQ bot, score submission to OMS-IR from non-OMS clients, and more.",
+    ja: "API と外部接続——QQ bot、OMS 以外のクライアントから OMS-IR へのスコア送信など。",
   },
 
-  "phase.status.current": { zh: "当前",     en: "CURRENT", ja: "現在" },
+  "phase.status.current": { zh: "开发中",   en: "IN DEV", ja: "開発中" },
   "phase.status.planned": { zh: "计划中",   en: "PLANNED", ja: "予定" },
 
   /* ---------- footer ---------- */

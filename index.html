@@ -9,11 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@500;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/styles/site.css?v=20260602-17" />
+    <link rel="stylesheet" href="assets/styles/site.css?v=20260602-19" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050608'/%3E%3Cpath d='M4 16 L4 26 L9 26 L9 16 Z M13 7 L13 26 L18 26 L18 7 Z M22 12 L22 26 L27 26 L27 12 Z' fill='%2300d9ff'/%3E%3C/svg%3E" />
-    <script defer src="assets/scripts/chart-lost.js?v=20260602-17"></script>
-    <script defer src="assets/scripts/i18n.js?v=20260602-17"></script>
-    <script defer src="assets/scripts/site.js?v=20260602-17"></script>
+    <script defer src="assets/scripts/chart-lost.js?v=20260602-19"></script>
+    <script defer src="assets/scripts/i18n.js?v=20260602-19"></script>
+    <script defer src="assets/scripts/site.js?v=20260602-19"></script>
   </head>
   <body>
     <!-- ============================================================
@@ -284,43 +284,42 @@
             <div class="section__no" data-i18n="sec05.no">05 · ROADMAP</div>
             <h2 class="section__title" data-i18n="sec05.title" data-i18n-html="1">开发<br/><em>阶段</em></h2>
           </div>
-          <p class="section__lede" data-i18n="sec05.lede">OMS-bms 网站分五段推进。</p>
         </div>
 
         <div class="phases">
           <div class="phase">
             <div class="phase__no"><strong>P1</strong></div>
-            <div class="phase__name"><span data-i18n="phase.1.name">Static promo</span><small data-i18n="phase.1.sub">STATIC SITE</small></div>
+            <div class="phase__name"><span data-i18n="phase.1.name">底层加固</span><small data-i18n="phase.1.sub">RULESET · ENGINE</small></div>
             <div class="phase__id">P1-A · P1-B</div>
-            <div class="phase__body" data-i18n="phase.1.body">纯静态 HTML/CSS/JS …</div>
-            <div class="phase__status is-now"><span class="led led--live"></span><span data-i18n="phase.status.current">CURRENT</span></div>
+            <div class="phase__body" data-i18n="phase.1.body">完善 BMS ruleset、mod、游玩体验、皮肤系统、性能优化等。</div>
+            <div class="phase__status is-now"><span class="led led--live"></span><span data-i18n="phase.status.current">开发中</span></div>
           </div>
-          <div class="phase">
+          <div class="phase is-future">
             <div class="phase__no"><strong>P2</strong></div>
-            <div class="phase__name"><span data-i18n="phase.2.name">Accounts</span><small data-i18n="phase.2.sub">AUTH</small></div>
+            <div class="phase__name"><span data-i18n="phase.2.name">初版官网</span><small data-i18n="phase.2.sub">STATIC SITE</small></div>
             <div class="phase__id">P2-A</div>
-            <div class="phase__body" data-i18n="phase.2.body">注册、登录…</div>
+            <div class="phase__body" data-i18n="phase.2.body">无登录的 OMS 官网。</div>
             <div class="phase__status"><span class="led led--dim"></span><span data-i18n="phase.status.planned">PLANNED</span></div>
           </div>
           <div class="phase is-future">
             <div class="phase__no"><strong>P3</strong></div>
-            <div class="phase__name"><span data-i18n="phase.3.name">Profile / score</span><small data-i18n="phase.3.sub">PROFILE · SCORE</small></div>
+            <div class="phase__name"><span data-i18n="phase.3.name">OMS-IR</span><small data-i18n="phase.3.sub">LOGIN · SCORE · RANK</small></div>
             <div class="phase__id">P3-A</div>
-            <div class="phase__body" data-i18n="phase.3.body">玩家个人主页…</div>
+            <div class="phase__body" data-i18n="phase.3.body">注册账号，客户端内登录、传分、看排行。（也许会支持 LR2 / RAJA 本地存档分数上传）</div>
             <div class="phase__status"><span class="led led--dim"></span><span data-i18n="phase.status.planned">PLANNED</span></div>
           </div>
           <div class="phase is-future">
             <div class="phase__no"><strong>P4</strong></div>
-            <div class="phase__name"><span data-i18n="phase.4.name">Leaderboard</span><small data-i18n="phase.4.sub">LEADERBOARD</small></div>
+            <div class="phase__name"><span data-i18n="phase.4.name">社区官网</span><small data-i18n="phase.4.sub">COMMUNITY HUB</small></div>
             <div class="phase__id">P4-A</div>
-            <div class="phase__body" data-i18n="phase.4.body">面向 BMS 与 mania 的统一榜单…</div>
+            <div class="phase__body" data-i18n="phase.4.body">像 osu!(official) 那样的中心化社区官网。</div>
             <div class="phase__status"><span class="led led--dim"></span><span data-i18n="phase.status.planned">PLANNED</span></div>
           </div>
           <div class="phase is-future">
             <div class="phase__no"><strong>P5</strong></div>
-            <div class="phase__name"><span data-i18n="phase.5.name">Charts / server</span><small data-i18n="phase.5.sub">CHART · SERVER</small></div>
+            <div class="phase__name"><span data-i18n="phase.5.name">开放接口</span><small data-i18n="phase.5.sub">API · BOT</small></div>
             <div class="phase__id">P5-A</div>
-            <div class="phase__body" data-i18n="phase.5.body">统一的谱面数据库…</div>
+            <div class="phase__body" data-i18n="phase.5.body">API 与外部接通、QQ bot、非 OMS 客户端向 OMS-IR 传分等。</div>
             <div class="phase__status"><span class="led led--dim"></span><span data-i18n="phase.status.planned">PLANNED</span></div>
           </div>
         </div>

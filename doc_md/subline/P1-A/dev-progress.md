@@ -9,7 +9,7 @@
 - 已用本地静态服务器 + 预览工具的 inspect/eval 验证三页布局、响应式与交互（含此前破损的下载页/未来规划页样式已恢复）
 - 已让首页演奏区读取真实 BMS 谱面：离线解析器把 7key 谱转成仅含音符位置的 `chart-stargazer.js`，运行时 rAF 渲染器按真实 BPM 播放（`RATE`）+ 独立 hi-speed（`VISIBLE_BEATS`，定稿约 0.5s 落速）下落、静音、窗口化、离屏暂停、HUD 实时计分、判定线下控制台命中点亮，回退到 CSS 循环
 - 已完成第三轮视觉重做（落地 Claude Design 设计稿）：推翻暗色霓虹，改为 **Cabinet Mode**（街机/电竞转播视觉，纯黑底 + 扫描线 + 信号青/红/lime LED + Big Shoulders Display/JetBrains Mono/Noto JP·SC）；产品重定位为 **OMS = osu!lazer fork client（BMS ruleset）**
-- 已将页面结构由三页 → 两页 → **单页**：当前仅 `index.html`，**已删除 `hub.html` 与 `download.html`**（下载/特性/判定/路线图全部为首页内段落与锚点 `#download`/`#capabilities`/`#timing`/`#phases`；下载块在 `#download` 段内由 `download.js` 实时拉取 GitHub release，导航/页脚「下载」指向 `#download`）
+- 已将页面结构由三页 → 两页 → **单页**：当前仅 `index.html`，**已删除 `hub.html` 与 `download.html`**（下载/特性/判定/路线图全部为首页内段落与锚点 `#download`/`#capabilities`/`#timing`/`#phases`；下载块在 `#download` 段内为两枚静态跳转 tile（GitHub Releases / QQ 群 650530995；原 `download.js` 自动拉取已删除），导航/页脚「下载」指向 `#download`）
 - 已新增中文默认 + 中/英/日三语切换（`assets/scripts/i18n.js`，持久化 localStorage），专有名词保留原文
 - 已重写下载页：新增 `assets/scripts/download.js`，打开即 `fetch` GitHub `ZDaMexy/oms/releases/latest`，三态渲染（loading / 有发行版列 assets+notes+★主包直链 / 无发行版或失败退回跳转 releases 页并露出 `ERR · http_xxx`）
 - 已把样式/脚本落到 `assets/styles/site.css` + `assets/scripts/site.js`（i18n + playfield 渲染器 + tweaks 面板：信号色红/黄/蓝/绿、Hi-Speed、Playfield Live/Pause）；复用既有 `chart-stargazer.js`

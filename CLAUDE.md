@@ -30,7 +30,7 @@
 
 ## 当前状态（以 dev-progress.md 为准）
 
-Phase 1 宣传展示。已完成第三轮视觉系统重做（落地 Claude Design 设计稿）：推翻暗色霓虹，改为 **Cabinet Mode**（街机机台/电竞转播视觉语言，纯黑底 + 扫描线 + 信号青/红/lime LED + Big Shoulders Display/JetBrains Mono/Noto JP·SC）。产品重定位为 **OMS = 基于 osu!lazer 的 fork client，以 ruleset 形式增加 BMS 原生支持**。
+产品阶段（2026-06-03 重定义，详见根 `CLAUDE.md` §2）：本仓库承载 **Phase 2「初版官网」**（无登录 OMS 官网，当前在建）；P1「底层加固」为客户端侧·开发中。已完成第三轮视觉系统重做（落地 Claude Design 设计稿）：推翻暗色霓虹，改为 **Cabinet Mode**（街机机台/电竞转播视觉语言，纯黑底 + 扫描线 + 信号青/红/lime LED + Big Shoulders Display/JetBrains Mono/Noto JP·SC）。产品重定位为 **OMS = 基于 osu!lazer 的 fork client，以 ruleset 形式增加 BMS 原生支持**。
 
 - 根级**单页**：首页（marquee 含三语切换 + 导航 / 两栏 Hero：左标题 + 右全幅 playfield，slate 显示曲名·难度名·谱师·BPM·进度 / capabilities 特性表 / 判定窗口表格+条形图 / 下载块 `#download` / 路线图）。下载块 `#download` 内为两枚常驻静态下载方式 tile（`.dl-methods`/`.dl-method`：GitHub Releases 跳转 + QQ 群 650530995 一键加群跳转，图标+名称+副标+箭头，hover 信号色）。**原 `download.js` 自动拉取 GitHub release 及「解压开玩」安装步骤板块均已删除**，下载区只留两枚链接跳转 tile。hero CTA 为「即刻下载 ↓」主按钮（跳 `#download`）+「查看特性」。`download.html`、`hub.html`、`download.js` 均已删除。
 - 中文默认 + 中/英/日切换（`assets/scripts/i18n.js`，持久化 localStorage），专有名词保留原文。
@@ -38,7 +38,7 @@ Phase 1 宣传展示。已完成第三轮视觉系统重做（落地 Claude Desi
 - Tweaks 面板：信号色红/黄/蓝/绿（默认蓝）· Hi-Speed ×0.6/×1.0/×1.6 · Playfield Live/Pause。
 - **平台口径收回为 Windows-only**（设计稿原写 WIN/MAC/LINUX，按硬约束未采纳）：`dl.platform` = WIN 10/11 · X64，安装步骤只讲 `OMS.exe`。
 - 上线后视觉打磨轮（2026-05-27）：删除两页顶部 cab 状态栏与 brand 日文 kana；缩放适配（移动端导航可见+可横滚、cab→按需换行、跨 320–2560/横屏无溢出）；Hero 标题中/日文降字号 `clamp(44px,4.6vw,88px)` 解决窄栏重叠；HUD 改为 EX-SCORE / COMBO（三语统一英文）/ GROOVE GAUGE（IIDX 分段条 + 大号百分比，随 combo 填充），删除判定 PGREAT。GROOVE GAUGE 血条随信号色同步；Hi-Speed（5 档 ×0.6–×1.4）与 Playfield Live/Pause 移到 playfield slate 同行右侧，tweaks 面板仅留信号色。「规格」概念三语统一改为「特性」；所有大字标题去结尾句号（三语）；判定窗口区（#timing）从条形图改为「判定类型 + 难度」两下拉 + 表格（PG/GR/GD/BD/空PR），类型 IIDX/LR2/RAJA/OD（OD 用 osu!mania 公式），默认 RAJA easy(100%)；表格下方保留随选择实时重绘的条形可视化（PG/GR/GD/BD）。特性清单 cap.05「便携安装」（绿灯·已实现）+ cap.06「外部谱库」（选定本地目录索引谱面，含 mania/BMS，无需为 OMS 单独建库；绿灯·已实现）+ cap.07「游戏社区」（IR/谱面库/论坛，红灯·开发中）。
-- 资源版本 `v=20260602-17`。**版权待确认**：当前用第三方谱面 告白/告別 (BMS edit.) [Lost]（Greetea feat.ninnikuu / obj. MiyakoMeow，BPM 161，beatoraja Satellite sl1 `_7_lost.bme`）的音符数据，发布前需替换或授权。slate 仅显示谱师 obj. MiyakoMeow 并将曲名链到 YouTube；基准下落速度 `HS_BASE=1.114`（比初版 0.78 慢 30%）。正式文案、展示媒体、下载渠道、外链等仍待逐项确认。
+- 资源版本 `v=20260602-19`。**版权待确认**：当前用第三方谱面 告白/告別 (BMS edit.) [Lost]（Greetea feat.ninnikuu / obj. MiyakoMeow，BPM 161，beatoraja Satellite sl1 `_7_lost.bme`）的音符数据，发布前需替换或授权。slate 仅显示谱师 obj. MiyakoMeow 并将曲名链到 YouTube；基准下落速度 `HS_BASE=1.114`（比初版 0.78 慢 30%）。正式文案、展示媒体、下载渠道、外链等仍待逐项确认。
 
 ## 关键硬约束
 

@@ -2,12 +2,12 @@
 
 ## 当前状态
 
-- 当前阶段是 Phase 1：宣传展示；后续阶段依次为账号系统、个人主页与成绩展示、排行榜、谱面下载入口与私服相关服务
+- 产品阶段（2026-06-03 重定义，以根 `CLAUDE.md` §2 为权威）：Phase 1 底层加固（客户端·开发中）→ Phase 2 初版官网（本仓库承载）→ Phase 3 OMS-IR → Phase 4 社区官网 → Phase 5 开放接口
 - 仓库已初始化为独立 Git 仓库
 - 当前已完成第一轮官网前端重写，站点视觉与内容组织已从“开发状态看板”切换为产品官网表达
 - 当前已完成第二轮视觉系统重做：修复了上一版 `site.css` 的结构性损坏，并将整套暗色霓虹视觉升级为统一的设计令牌体系
 - 当前已完成第三轮视觉系统重做（Claude Design 设计稿落地）：推翻暗色霓虹方向，改为 **Cabinet Mode**（街机机台 / 电竞转播视觉语言）；同步把产品定位由「BMS／mania 桌面客户端」重定位为 **OMS = 基于 osu!lazer 的 fork client，以 ruleset 形式增加 BMS 原生支持**
-- 当前采用根级**单页**结构：`index.html`（`download.html`、`hub.html` 均已删除；下载 / 特性 / 判定 / 路线图全部为首页内段落与锚点 `#download` / `#capabilities` / `#timing` / `#phases`；下载块在 `#download` 段内由 `download.js` 实时拉取 GitHub release）
+- 当前采用根级**单页**结构：`index.html`（`download.html`、`hub.html` 均已删除；下载 / 特性 / 判定 / 路线图全部为首页内段落与锚点 `#download` / `#capabilities` / `#timing` / `#phases`；下载块在 `#download` 段内为两枚静态跳转 tile（GitHub Releases / QQ 群 650530995 一键加群；原 `download.js` 自动拉取 release 已删除）；hero CTA「即刻下载 ↓」跳 `#download`）
 - 当前站点为中文默认 + 中/英/日三语切换（`assets/scripts/i18n.js`，选择持久化到 `localStorage`），专有名词保留原文
 - 页面正式内容、截图、下载说明和部分客户端相关事实仍待逐项确认
 
@@ -63,7 +63,7 @@
 - 向用户逐项确认首页主标题、副标题、功能卖点、下载说明、路线图、FAQ 和外链信息
 - 从 `oms_client_bridge_md/` 导入已确认的客户端事实，用于约束下载区、兼容性说明和未来功能预留文案
 - 继续迭代首版静态页面内容与视觉细节
-- 按用户确认结果替换首页、下载页和未来入口页中的占位内容
+- 按用户确认结果替换单页 `index.html` 各分区（hero / 特性 / 判定 / 下载 / 路线图）中的占位内容
 - 在 `subline/` 下按实际需求逐步增加新的功能方向目录，而不是继续平铺支线文档
 - 当出现首个真实前后端通信议题时，将其同步写入 `dev_bridge_md/`
 - 为后续账号、成绩、排行榜和下载入口保留导航与页面扩展位
