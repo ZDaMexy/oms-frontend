@@ -16,7 +16,7 @@
 - `deploy` → 服务器裸仓库 `zdamexy-srv:/www/wwwroot/oms.git`
 - 纯静态：`git push deploy main` → 服务器 `post-receive` `checkout -f` 到网站根 `/www/wwwroot/oms` → `chown www`（无构建步骤）。
 - **连服务器只用别名 `ssh zdamexy-srv`**（`~/.ssh/config`，IdentityFile `id_ed25519_zdamexy`；勿用 `ssh root@39.105.55.78` 直连，会用错密钥）。
-- 站点 `oms.zdamexy.work`（与 `zdamexy.work` homepage 共用同一台 ECS）。备案通过前阿里云拦截未备案域名（403），用裸 IP + Host 头验证。
+- 站点 `oms.zdamexy.work`（与 `zdamexy.work` homepage 共用同一台 ECS）。**已上 HTTPS**（2026-06-03：acme.sh + ZeroSSL ECC，证书在 `/www/server/panel/vhost/cert/`，cron 自动续期；vhost 同块 `listen 80+443 ssl`，域名 HTTP 301→HTTPS，裸 IP/`.well-known` 留 HTTP）。截至 2026-06-03 公网访问正常，未再见未备案 403；本机仍可 `curl -H "Host: oms.zdamexy.work" http://127.0.0.1/` 验证（裸 IP 默认出 homepage）。
 - BT 的 nginx 重载用 `/etc/init.d/nginx reload`，勿用 `/usr/sbin/nginx`。
 
 ## doc_md 索引

@@ -3,6 +3,7 @@
 - 当前仅完成 `other/` 文档占位，尚无正式调研产出
 - 已知后续需要关注的主题包括域名策略、多语言策略、隐私与统计边界
 - 目前没有需要提升到主线的调研结论
+- 运维事实（2026-06-03）：部署服务器已启用 HTTPS（`acme.sh` + ZeroSSL，oms/zdm 两站，cron 自动续期；域名 HTTP 301→HTTPS，裸 IP/`.well-known` 留 HTTP），详见 `changelog.md`。判定为运维事实、未改变 mainline 站点交付内容，故不提升主线
 
 ---
 
