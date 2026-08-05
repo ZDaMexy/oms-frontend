@@ -12,7 +12,7 @@ OMS Frontend 是 OMS Web 的公开前端仓库，用于承载 OMS 项目的官�
 
 ### 当前阶段：Phase 2 初版官网（本仓库承载）
 
-> 产品阶段 2026-06-03 重定义，以根 `CLAUDE.md` §2 为权威：Phase 1 底层加固（客户端·开发中）→ **Phase 2 初版官网（本仓库）** → Phase 3 OMS-IR → Phase 4 社区官网 → Phase 5 开放接口。
+> 产品阶段 2026-06-03 重定义，以根 `AGENTS.md` §2 为权威：Phase 1 底层加固（客户端·开发中）→ **Phase 2 初版官网（本仓库）** → Phase 3 OMS-IR → Phase 4 社区官网 → Phase 5 开放接口。
 
 - 纯静态 HTML、CSS、JavaScript 的无登录 OMS 官网
 - 优先完成产品介绍、特性、判定、路线图与下载方式

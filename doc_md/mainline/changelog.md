@@ -1,5 +1,15 @@
 # Frontend Mainline Changelog
 
+## 2026-08-03
+
+- 将 `AGENTS.md` 升级为本仓库唯一持久协作入口，等值迁入原有仓库结构、部署说明、当前状态、关键硬约束与同步纪律，并移除旧的平行入口文件
+- 将 README、mainline 五大文档及跨仓库权威路径统一改为根 `AGENTS.md` §2，消除删除旧入口后的断链
+
+## 2026-07-30
+
+- 新增 Codex `AGENTS.md` 协作入口，明确纯静态技术边界、公开口径、文档联动和生产部署授权要求
+- 新增 `.gitattributes`，统一文本为 LF，并显式标记字体、图片、压缩包等二进制资源
+
 ## 2026-06-02
 
 - 首页演奏区演示谱面更换：由 Stargazer [SAETHER]（Lime / obj saaa，BPM 87）换为 **告白/告別 (BMS edit.) [Lost]**（曲 Greetea feat.ninnikuu，obj. MiyakoMeow，BG rapha & Liuyanzhi，BPM 161；来源 beatoraja Satellite sl1 `[hongun]khkb/_7_lost.bme`，7key）；用 `parse-bms.cjs` 离线解析为仅含音符位置的紧凑数据，新文件 `assets/scripts/chart-lost.js`（标题为日文，解析器 latin1 读取后手工修正回 `告白/告別 (BMS edit.)`），删除旧 `chart-stargazer.js`
@@ -46,7 +56,7 @@
   - P4「社区官网」(COMMUNITY HUB)：像 osu!(official) 那样的中心化社区官网 · 计划中
   - P5「开放接口」(API · BOT)：API 与外部接通、QQ bot、非 OMS 客户端向 OMS-IR 传分等 · 计划中
   - 仅 P1 开发中，P2–P5 全部 计划中（P2 加 `is-future` 类与其余对齐）
-  - ✅ **已决（用户确认）：新路线图提升为工作区权威定义**，并传播到：根 `CLAUDE.md` §2（唯一权威）、前/后端/桥的 `dev-plan` 产品阶段列表与「当前阶段」表述、前/后端/桥的 `doc_md/README` 与 mainline README/constraints/dev-progress、前/后端顶层 README、前/后端 CLAUDE 当前状态。旧模型（宣传展示→账号→主页成绩→排行榜→谱面下载）废弃。仓库映射：oms-frontend = P2 初版官网；oms-backend = P3 OMS-IR(+P5)；P1 底层加固为客户端侧。**剩余未改**：各仓库 `subline/P1-A` 命名框架说明与零散描述性「宣传展示」措辞（半历史性，由 §2「逐步对齐」说明覆盖）；changelog 历史条目不动
+  - ✅ **已决（用户确认）：新路线图提升为工作区权威定义**，并传播到：根 `AGENTS.md` §2（唯一权威）、前/后端/桥的 `dev-plan` 产品阶段列表与「当前阶段」表述、前/后端/桥的 `doc_md/README` 与 mainline README/constraints/dev-progress、前/后端顶层 README、前/后端 AGENTS 当前状态。旧模型（宣传展示→账号→主页成绩→排行榜→谱面下载）废弃。仓库映射：oms-frontend = P2 初版官网；oms-backend = P3 OMS-IR(+P5)；P1 底层加固为客户端侧。**剩余未改**：各仓库 `subline/P1-A` 命名框架说明与零散描述性「宣传展示」措辞（半历史性，由 §2「逐步对齐」说明覆盖）；changelog 历史条目不动
 - 资源版本 `v=20260602-19`（index 全部资源引用同步破缓存）
 
 ## 2026-05-27

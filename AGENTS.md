@@ -1,7 +1,8 @@
-# CLAUDE.md — OMS Frontend
+# AGENTS.md — OMS Frontend
 
-本仓库是 OMS 官网前端（纯静态 HTML/CSS/JS）。需求、计划、状态、约束都写在 `doc_md/`，本文件只导航。
-开始任务前先读相关 `doc_md` 文档。工作区总索引见上级 `../CLAUDE.md`。
+本仓库是 OMS 官网前端（纯静态 HTML/CSS/JS）。需求、计划、状态、约束都写在 `doc_md/`；本文件是本仓库唯一的持久协作入口和导航。
+
+开始任务前先读上级 `../AGENTS.md`（若存在）以及任务所属的 `doc_md/` 文档。项目级持久说明只维护在 `AGENTS.md`。
 
 ## 仓库内容
 
@@ -18,6 +19,7 @@
 - **连服务器只用别名 `ssh zdamexy-srv`**（`~/.ssh/config`，IdentityFile `id_ed25519_zdamexy`；勿用 `ssh root@39.105.55.78` 直连，会用错密钥）。
 - 站点 `oms.zdamexy.work`（与 `zdamexy.work` homepage 共用同一台 ECS）。**已上 HTTPS**（2026-06-03：acme.sh + ZeroSSL ECC，证书在 `/www/server/panel/vhost/cert/`，cron 自动续期；vhost 同块 `listen 80+443 ssl`，域名 HTTP 301→HTTPS，裸 IP/`.well-known` 留 HTTP）。截至 2026-06-03 公网访问正常，未再见未备案 403；本机仍可 `curl -H "Host: oms.zdamexy.work" http://127.0.0.1/` 验证（裸 IP 默认出 homepage）。
 - BT 的 nginx 重载用 `/etc/init.d/nginx reload`，勿用 `/usr/sbin/nginx`。
+- `git push deploy main` 会直接触发生产部署；只有用户明确要求上线时才能执行。
 
 ## doc_md 索引
 
@@ -30,7 +32,7 @@
 
 ## 当前状态（以 dev-progress.md 为准）
 
-产品阶段（2026-06-03 重定义，详见根 `CLAUDE.md` §2）：本仓库承载 **Phase 2「初版官网」**（无登录 OMS 官网，当前在建）；P1「底层加固」为客户端侧·开发中。已完成第三轮视觉系统重做（落地 Claude Design 设计稿）：推翻暗色霓虹，改为 **Cabinet Mode**（街机机台/电竞转播视觉语言，纯黑底 + 扫描线 + 信号青/红/lime LED + Big Shoulders Display/JetBrains Mono/Noto JP·SC）。产品重定位为 **OMS = 基于 osu!lazer 的 fork client，以 ruleset 形式增加 BMS 原生支持**。
+产品阶段（2026-06-03 重定义，详见根 `AGENTS.md` §2）：本仓库承载 **Phase 2「初版官网」**（无登录 OMS 官网，当前在建）；P1「底层加固」为客户端侧·开发中。已完成第三轮视觉系统重做（落地 Claude Design 设计稿）：推翻暗色霓虹，改为 **Cabinet Mode**（街机机台/电竞转播视觉语言，纯黑底 + 扫描线 + 信号青/红/lime LED + Big Shoulders Display/JetBrains Mono/Noto JP·SC）。产品重定位为 **OMS = 基于 osu!lazer 的 fork client，以 ruleset 形式增加 BMS 原生支持**。
 
 - 根级**单页**：首页（marquee 含三语切换 + 导航 / 两栏 Hero：左标题 + 右全幅 playfield，slate 显示曲名·难度名·谱师·BPM·进度 / capabilities 特性表 / 判定窗口表格+条形图 / 下载块 `#download` / 路线图）。下载块 `#download` 内为两枚常驻静态下载方式 tile（`.dl-methods`/`.dl-method`：GitHub Releases 跳转 + QQ 群 650530995 一键加群跳转，图标+名称+副标+箭头，hover 信号色）。**原 `download.js` 自动拉取 GitHub release 及「解压开玩」安装步骤板块均已删除**，下载区只留两枚链接跳转 tile。hero CTA 为「即刻下载 ↓」主按钮（跳 `#download`）+「查看特性」。`download.html`、`hub.html`、`download.js` 均已删除。
 - 中文默认 + 中/英/日切换（`assets/scripts/i18n.js`，持久化 localStorage），专有名词保留原文。
@@ -51,6 +53,15 @@
 ## 同步纪律
 
 改动若改变 计划/状态/约束/事实，对应更新 dev-plan / dev-progress / constraints / changelog，并保持 mainline 五大文档一致。
+
 涉及前后端通信、接口契约、字段、错误码、下载入口、联调结论 → 同步 `../dev_bridge_md/`。
+
 涉及客户端对接事实 → 以 `../oms_client_bridge_md/` 已确认快照为准。
+
 subline 结论被采纳 → 回写 mainline。
+
+## Git 与安全
+
+- 本仓库是独立 Git 仓库；只在本目录执行 Git 操作，并保留已有工作区改动。
+- 连接生产服务器只使用 `ssh zdamexy-srv`。
+- 除非用户明确要求，不提交、不推送、不部署。
