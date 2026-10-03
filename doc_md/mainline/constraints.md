@@ -1,37 +1,24 @@
 # Frontend Mainline Constraints
 
-## 核心约束
+## 产品与公开口径
 
-- 产品阶段（2026-06-03 重定义，以根 `AGENTS.md` §2 为权威）：Phase 1 底层加固（客户端·开发中）→ Phase 2 初版官网（本仓库承载）→ Phase 3 OMS-IR → Phase 4 社区官网 → Phase 5 开放接口
-- 前端当前使用纯静态 HTML、CSS、JavaScript，不要求预先引入前端框架或构建系统
-- 当前 Phase 1 的首个可交付物是静态展示与宣传页骨架，应先完成页面结构、导航、内容分区与未来扩展位，再逐项确认正式文案、截图、下载说明和外链信息
-- 即使 Phase 1 只是宣传展示，站点信息架构也不能被设计成一次性单页，必须为未来账号、主页、成绩、排行榜和下载入口预留页面空间
-- 对外说明必须准确强调 OMS 客户端是 Windows-only，避免出现误导性的跨平台表述
-- 涉及 OMS 客户端端点配置、ruleset_id、联机能力、更新方式、协议兼容性等用户可见事实时，必须以工作区根目录 `oms_client_bridge_md/` 中已确认的客户端快照为准；未确认内容只能标为待确认
-- 当前对外可安全表述的客户端事实仅包括：默认离线优先构建、默认不启用游戏内更新、内部保留在线接点但默认发行配置未连接到可用远端、BMS 为正式 ruleset 且短名为 `bms`
-- 下载相关页面只能作为入口与说明层，真正的大文件分发由本地服务器承载，不能在文档中假定前端直接承载谱面文件服务
-- 当前部署目标固定为阿里云 ECS（Ubuntu 24.04）+ Nginx，面向公开访问地址 `39.105.55.78`
-- `subline/` 必须按功能方向拆分子目录，不再直接在根下平铺支线五件套；每个支线目录内部自行维护五大文档
-- 凡是涉及前后端通信、接口契约、字段语义、错误码、下载入口或联调结论的变更，必须同步更新工作区根目录独立仓库 `dev_bridge_md/`
-- 凡是涉及客户端与前端、后端直接对接的事实变更，必须同步更新工作区根目录 `oms_client_bridge_md/`，并将被采纳的结论回写到受影响文档
-- `doc_md/mainline/constraints.md`、`dev-plan.md`、`dev-progress.md`、`changelog.md` 必须保持一致
-- 任何开发、调研、修复或验收如果改变计划、状态、约束或验证结论，必须同步更新对应文档
+- 统一产品阶段及状态只由 [Dev Bridge dev-plan](../../../../oms-server/dev_bridge_md/doc_md/mainline/dev-plan.md) 定义。Website 可以提前准备代码与内容，不能自行推进阶段；正式交付还须完成已选定内容与来源核对。
+- 官网首页保留静态 HTML/CSS/JavaScript；2026-10-03 用户授权的独立 `ir/` 页面按 [IR v1 合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-ir/constraints.md) 接真实账号、本人记录与试验榜并已生产试运行；社区与开放接口不预建。
+- 公开平台说明必须准确表达 Windows-only；未确认的品牌文案或客户端细项不能写成正式事实。
+- 客户端端点、`ruleset_id`、联机、更新及协议兼容等事实必须来自 [Client Bridge](../../../../oms-server/oms_client_bridge_md/doc_md/mainline/README.md) 的有日期/提交来源；进入新实现或发布前复核适用性，旧快照不等于当前客户端 HEAD。
+- 默认发行边界引用 [事实登记](../../../../oms-server/oms_client_bridge_md/doc_md/mainline/facts.md#事实登记)：`client-default-offline`（默认离线优先）、`client-in-app-update-disabled`（默认不启用游戏内更新）、`client-online-entrypoints`（在线接点不代表已连接服务）。这些 ID 用于定位来源与消费者，不另立事实副本。
+- 客户端发行包入口直达 GitHub Releases；谱面等大文件由本地服务器承载，静态页面只负责入口与说明。正式公开保留第三方演示谱面前需确认授权或替代方案。
+- 部署授权及共享服务器边界由 [other/constraints](../other/constraints.md) 维护。
 
-## 当前不做的事
+## 实现与验证
 
-- 不在 Phase 1 中伪装实现账号、成绩或排行榜功能
-- 不把未来动态能力硬编码进当前静态页面逻辑
-- 不在没有明确必要前引入复杂前端工程化依赖
-- 不在品牌、功能事实或客户端细节未经确认前，把占位文案写成正式对外口径
-- 不把“客户端保留了在线代码入口”误写成“当前发行版已经可直接连上 OMS 私服”
+- DOM、词典、演示谱面是受版本管理的内部契约，由 [验证入口](verification.md) 检查；缺节点、缺译文或坏数据应暴露错误，不用假 BPM/高度、空对象、中文兜底或静默返回掩盖。
+- 持久化语言值在浏览器边界校验；禁止 `localStorage` 时仅禁用持久化、允许本页切换语言，异常处理限定在存储调用处。
+- 保留用户暂停、离屏/页面隐藏暂停和系统减少动画偏好。按实际消费者直接实现并清理失效代码，不保留已删除页面或无支持需求的旧浏览器分支。
+- 验证只覆盖本轮行为和必要回归；文档或静态文案变动不要求全站浏览器矩阵，具体证据范围如实记录。
 
----
+## 联动
 
-## 联动更新
+本轮 `client-ir-default-isolation` 与 `client-ir-comparable-fields` 经过 Client Bridge 登记和 Dev Bridge 采用。IR 页面同源消费 `/api/ir/v1`，浏览器凭据只在 HttpOnly cookie，不用 localStorage 或假数据；明确显示未经回放核验与最佳分 / 最佳灯来源差异，AT 不提供公开榜。候选客户端能力以绑定来源和有效软件证据为限，不能把合成输出写成真人成绩或完整发行签收。
 
-更新本文件时，需同步检查以保持一致：
-
-- **同目录五大文档**：`README.md` / `constraints.md` / `dev-plan.md` / `dev-progress.md` / `changelog.md` 必须围绕同一现实状态保持一致
-- **跨仓库主线**：若变更涉及前后端共同的产品阶段或边界，需对齐另一仓库的 `mainline/` 对应文档
-- **桥文档**：若涉及前后端通信 / 接口契约 / 字段语义 / 错误码 / 下载入口 / 联调结论 → 同步 `dev_bridge_md/`
-- **客户端快照**：若涉及客户端对接事实（端点 / ruleset_id / score submission / 联机 / 更新通道）→ 以 `oms_client_bridge_md/` 已确认快照为准，并回写受影响文档
+客户端事实变化先更新 Client Bridge，再经 Dev Bridge 采纳后回写 Website/Backend；接口、字段、错误码、下载或联调结论变化同步 [Dev Bridge](../../../../oms-server/dev_bridge_md/doc_md/mainline/README.md) 与受影响项目。通用读取、回写和并行规则见 [AGENTS](../../AGENTS.md)。
