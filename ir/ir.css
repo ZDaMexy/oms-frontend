@@ -1,13 +1,13 @@
 :root {
   color-scheme: dark;
-  --bg: #050608;
-  --panel: #0a0c12;
-  --raised: #11151f;
-  --line: #242c3d;
-  --cyan: #00d9ff;
-  --ink: #f3f1ea;
-  --muted: #a7aec0;
-  --dim: #707e98;
+  --bg: #101720;
+  --panel: #18222f;
+  --raised: #1d2a39;
+  --line: #2d3a4b;
+  --cyan: #62dccb;
+  --ink: #eef3f8;
+  --muted: #b3bfcc;
+  --dim: #8293a7;
   --amber: #ffbd57;
   --red: #ff6677;
   --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
@@ -31,13 +31,8 @@ h1, h2, h3, p { margin: 0; }
 .skip-link { position: fixed; top: 12px; left: 12px; padding: 12px 20px; background: var(--cyan); color: var(--bg); z-index: 10; transform: translateY(-150%); }
 .skip-link:focus { transform: translateY(0); }
 .site-header { border-bottom: 1px solid var(--line); }
-.header-row { min-height: 86px; display: flex; gap: 28px; align-items: center; }
-.brand { display: inline-flex; align-items: baseline; font: 900 34px/1 "Bahnschrift", "Arial Narrow", sans-serif; letter-spacing: -.08em; }
-.brand em { color: var(--cyan); font-style: normal; }
-.brand span { margin-left: 13px; color: var(--cyan); font: 700 18px/1 var(--mono); letter-spacing: .06em; }
-.header-caption { color: var(--dim); font: 11px/1.4 var(--mono); letter-spacing: .12em; }
-.site-link { margin-left: auto; color: var(--muted); font-size: 12px; white-space: nowrap; }
-.site-link:hover, .site-footer a:hover { color: var(--cyan); }
+.site-header .shell { width: min(1140px, calc(100% - 48px)); padding-inline: 0; }
+.site-footer a:hover { color: var(--cyan); }
 .intro { display: flex; justify-content: space-between; gap: 32px; padding: 49px 0 35px; }
 .eyebrow { color: var(--dim); font: 11px/1.6 var(--mono); letter-spacing: .12em; }
 .signal-dot { display: inline-block; width: 7px; height: 7px; margin-right: 7px; background: var(--cyan); }
@@ -167,9 +162,7 @@ tbody tr:hover { background: #0e1420; }
 
 @media (max-width: 760px) {
   .shell { padding-left: 18px; padding-right: 18px; }
-  .header-row { min-height: 72px; gap: 14px; }
-  .brand { font-size: 30px; }
-  .header-caption { display: none; }
+  .site-header .shell { width: calc(100% - 32px); }
   .intro { padding: 30px 0 25px; }
   .intro-copy { font-size: 12px; }
   .intro-label { display: none; }

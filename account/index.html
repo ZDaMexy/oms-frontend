@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101720">
+    <meta name="description" content="OMS 玩家社区：讨论 BMS 与 mania，分享游玩，交流问题，查看自己的成绩。Windows-only，离线优先。">
+    <title>登录与账号 · OMS</title><link rel="icon" href="/portal/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/portal/style.css?v=20261004-1">
+    <script defer src="/portal/site.js?v=20261004-1"></script>
+  </head>
+  <body data-page="account">
+    <a class="skip" href="#main">跳到主要内容</a>
+    <header class="site-header"><div class="shell header-inner"><a class="brand" href="/" aria-label="OMS 首页"><img src="/portal/favicon.svg" alt="" width="34" height="34"><span class="brand-word">OM<span>S</span></span><span class="brand-sub">PLAYER COMMUNITY</span></a><nav class="site-nav" aria-label="主要导航"><a href="/">首页</a><a href="/community/">社区</a><a href="/download/">下载</a><a href="/ir/">IR</a><a href="/help/">帮助</a></nav><a id="site-account" class="header-account" href="/account/">登录 / 注册</a></div></header>
+    <main id="main" class="shell">
+      <div class="auth-layout"><div class="page-intro"><p class="eyebrow">YOUR ACCOUNT</p><h1>一个账号，继续交流。</h1><p>社区与 OMS IR 共用账号。离线游玩不要求登录。</p></div><p id="account-message" class="notice" role="status" aria-live="polite" hidden></p><section id="account-guest" class="panel form-panel"><div class="auth-tabs" role="group" aria-label="账号操作"><button id="login-tab" class="auth-tab" type="button" aria-pressed="true">登录</button><button id="register-tab" class="auth-tab" type="button" aria-pressed="false">注册</button></div><form id="account-form"><div class="field"><label for="username">账号名</label><input id="username" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" minlength="3" maxlength="24" pattern="[A-Za-z0-9_]{3,24}" placeholder="3–24 位字母、数字或下划线" required></div><div class="field"><label for="password">密码</label><input id="password" name="password" type="password" autocomplete="current-password" minlength="10" maxlength="128" placeholder="至少 10 个字符" required></div><p id="register-notice" class="draft-note" hidden>注册后会自动登录。账号名不区分大小写，目前没有邮箱找回，请保存好密码。注册表示你已阅读<a class="text-link" href="/help/#rules">社区约定</a>与<a class="text-link" href="/help/#privacy">数据说明</a>。</p><div class="form-actions"><button id="account-submit" class="button button-primary" type="submit" disabled>登录</button><a class="text-link" href="/help/#contact">无法登录？</a></div></form></section><section id="account-member" class="panel form-panel account-card" hidden><h2 id="account-name"></h2><p class="muted">社区与 IR 已登录，可以继续发帖或查看成绩。</p><div class="account-links"><a href="/community/new/">发一个帖子 ↗</a><a id="account-posts" href="/community/">我的帖子 ↗</a><a href="/ir/#history">我的成绩 ↗</a></div><button id="account-logout" class="button button-quiet" type="button">退出登录</button></section><p class="draft-note">账号恢复与删除请求请通过<a class="text-link" href="/help/#contact">联系入口</a>处理。</p></div>
+    </main>
+    <footer class="shell site-footer"><span>OMS · BMS / MANIA · WINDOWS ONLY</span><div class="footer-links"><a href="/help/#rules">社区约定</a><a href="/help/#privacy">数据与隐私</a><a href="/help/#contact">联系与反馈</a><a href="https://github.com/ZDaMexy/oms" rel="noopener">客户端源码 ↗</a></div></footer>
+    <noscript><p class="shell notice">社区帖子、登录和成绩查询需要 JavaScript。下载与帮助页面仍可直接阅读。</p></noscript>
+  </body>
+</html>

@@ -580,7 +580,10 @@
     const revision = accountRevision;
     try {
       const data = await request("/user/me");
-      if (revision === accountRevision) setUser(data.user);
+      if (revision === accountRevision) {
+        setUser(data.user);
+        if (location.hash === "#history") openHistory();
+      }
     } catch (error) {
       if (revision !== accountRevision) return;
       if (error instanceof ApiError && error.status === 401) setUser(null);
