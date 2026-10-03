@@ -171,8 +171,13 @@
   channel.addEventListener("message", () => { void restore(); });
   window.addEventListener("pageshow", (event) => { if (event.persisted) void restore(); });
 
-  if (location.pathname === "/" && location.hash === "#download") location.replace("/download/");
-  if (location.pathname === "/" && ["#capabilities", "#timing", "#phases"].includes(location.hash)) location.replace("/help/");
+  function openLegacySection() {
+    if (location.pathname !== "/") return;
+    if (location.hash === "#download") location.replace("/download/");
+    if (["#capabilities", "#timing", "#phases"].includes(location.hash)) location.replace("/help/");
+  }
+  window.addEventListener("hashchange", openLegacySection);
+  openLegacySection();
 
   if (document.body.dataset.page !== "account") return;
   const form = document.getElementById("account-form");
