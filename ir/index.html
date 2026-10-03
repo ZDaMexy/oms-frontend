@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#050608" />
+    <meta name="description" content="OMS IR 试验榜：按游玩条件查看 BMS 与 mania 成绩，以及自己的游玩记录。" />
+    <title>OMS IR · 试验榜</title>
+    <link rel="stylesheet" href="ir.css" />
+    <script defer src="ir.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#ranking">跳到成绩区</a>
+    <header class="site-header">
+      <div class="shell header-row">
+        <a class="brand" href="https://oms.zdamexy.work/" aria-label="返回 OMS 官网">O<em>M</em>S<span>IR</span></a>
+        <span class="header-caption">BMS / MANIA · INTERNET RANKING</span>
+        <a class="site-link" href="https://oms.zdamexy.work/">返回官网 <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow"><span class="signal-dot" aria-hidden="true"></span> OMS IR · 本地联调版</p>
+          <h1 id="page-title">记录每次<span>进步。</span></h1>
+          <p class="intro-copy">查看同一谱面、同一条件下的最佳成绩。辅助玩法单独分组，自动游玩只留在本人记录。</p>
+        </div>
+        <div class="intro-label" aria-hidden="true"><span>EX SCORE</span><strong>BEST<br />CLEAR</strong></div>
+      </section>
+
+      <aside class="trust-notice" aria-label="试验榜说明">
+        <span class="trust-tag">试验榜</span>
+        <div>
+          <strong>客户端上报，未经回放核验</strong>
+          <p>榜单不代表成绩已获认证。当前可注册、登录和查榜；客户端自动交分与断网补交尚未接通。</p>
+        </div>
+      </aside>
+
+      <p id="page-message" class="message" role="status" aria-live="polite" hidden></p>
+
+      <div class="workspace">
+        <aside class="sidebar" aria-label="谱面与账号">
+          <section class="panel catalog" aria-labelledby="catalog-title">
+            <div class="panel-heading">
+              <div><p class="eyebrow">CHART SELECT</p><h2 id="catalog-title">谱面</h2></div>
+              <button id="reload-charts" class="icon-button" type="button" aria-label="重新读取谱面">↻</button>
+            </div>
+            <p class="section-hint">只显示已有公开成绩的谱面。</p>
+            <p id="catalog-message" class="inline-message" role="status" aria-live="polite">正在读取谱面…</p>
+            <ul id="catalog-list" class="chart-list"></ul>
+            <div class="pagination pagination--compact">
+              <button id="charts-prev" class="text-button" type="button" disabled>上一页</button>
+              <span id="charts-page" class="page-label">读取中</span>
+              <button id="charts-next" class="text-button" type="button" disabled>下一页</button>
+            </div>
+          </section>
+
+          <section class="panel account" aria-labelledby="account-title">
+            <div class="panel-heading"><div><p class="eyebrow">PLAYER ACCOUNT</p><h2 id="account-title">我的账号</h2></div><span id="account-state" class="small-label">正在确认</span></div>
+            <div id="account-logged-out">
+              <div class="auth-tabs" role="group" aria-label="账号操作">
+                <button id="login-tab" class="auth-tab is-active" type="button" aria-pressed="true">登录</button>
+                <button id="register-tab" class="auth-tab" type="button" aria-pressed="false">注册</button>
+              </div>
+              <form id="auth-form">
+                <label for="username">账号名</label>
+                <input id="username" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" minlength="3" maxlength="24" pattern="[A-Za-z0-9_]{3,24}" placeholder="3–24 位字母、数字或下划线" required />
+                <label for="password">密码</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" minlength="10" maxlength="128" placeholder="至少 10 个字符" required />
+                <p id="register-hint" class="section-hint" hidden>注册后即可登录。账号名不区分大小写；本轮没有邮箱找回入口，请保存好密码。</p>
+                <button id="auth-submit" class="primary-button" type="submit" disabled>登录</button>
+              </form>
+            </div>
+            <div id="account-logged-in" hidden>
+              <p id="account-username" class="account-name"></p>
+              <p class="section-hint">已登录。本人记录仅向当前账号开放。</p>
+              <div class="account-actions">
+                <button id="mine-button" class="primary-button" type="button">我的记录 <span aria-hidden="true">→</span></button>
+                <button id="logout-button" class="text-button" type="button">退出登录</button>
+              </div>
+            </div>
+            <p id="auth-message" class="inline-message" role="status" aria-live="polite" hidden></p>
+          </section>
+        </aside>
+
+        <section id="ranking" class="ranking panel" tabindex="-1" aria-label="成绩区">
+          <div class="view-tabs" role="group" aria-label="成绩视图">
+            <button id="board-tab" class="view-tab is-active" type="button" aria-pressed="true">谱面榜单</button>
+            <button id="history-tab" class="view-tab" type="button" aria-pressed="false" disabled>本人记录</button>
+            <span class="view-trust">CLIENT REPORTED</span>
+          </div>
+
+          <div id="board-view">
+            <div class="ranking-heading ranking-heading--with-action">
+              <div>
+                <p id="board-mode" class="eyebrow">SELECT A CHART</p>
+                <h2 id="board-title">选择一张谱面</h2>
+                <p id="board-subtitle" class="chart-subtitle">从左侧选择谱面，查看相同条件下的成绩。</p>
+              </div>
+              <button id="reload-board" class="text-button" type="button" disabled>刷新榜单 ↻</button>
+            </div>
+            <div class="group-control">
+              <label for="group-select">游玩条件</label>
+              <select id="group-select" disabled><option value="">请先选择谱面</option></select>
+            </div>
+            <div class="ranking-summary"><span id="board-total">尚未选择</span><span>同分共享名次</span></div>
+            <p id="board-message" class="empty-state" role="status" aria-live="polite">游玩条件相同的成绩才会放在一起比较。</p>
+            <div id="board-table-wrap" class="table-wrap" hidden>
+              <table>
+                <caption class="sr-only">当前谱面条件组的玩家最佳成绩</caption>
+                <thead><tr><th scope="col">名次</th><th scope="col">玩家</th><th id="board-score-heading" scope="col">最佳分数</th><th scope="col">准确率 / 连击</th><th scope="col">最佳灯</th><th scope="col">游玩时间</th><th scope="col"><span class="sr-only">成绩详情</span></th></tr></thead>
+                <tbody id="board-body"></tbody>
+              </table>
+            </div>
+            <div class="pagination">
+              <button id="board-prev" class="text-button" type="button" disabled>← 上一页</button>
+              <span id="board-page" class="page-label">—</span>
+              <button id="board-next" class="text-button" type="button" disabled>下一页 →</button>
+            </div>
+            <p class="ranking-footnote">BMS 的最佳分与最佳灯分别取最好结果，可能来自不同一局；榜单会标出最佳灯的来源。</p>
+          </div>
+
+          <div id="history-view" hidden>
+            <div class="ranking-heading ranking-heading--with-action">
+              <div><p class="eyebrow">YOUR PLAYS</p><h2>本人记录</h2><p class="chart-subtitle">每一局独立保存，不只保留最高分。</p></div>
+              <button id="reload-history" class="text-button" type="button">刷新记录 ↻</button>
+            </div>
+            <div class="ranking-summary"><span id="history-total">正在读取</span><span>仅当前账号可见</span></div>
+            <p id="history-message" class="empty-state" role="status" aria-live="polite">正在读取本人记录…</p>
+            <div id="history-table-wrap" class="table-wrap" hidden>
+              <table>
+                <caption class="sr-only">当前账号的完整游玩记录</caption>
+                <thead><tr><th scope="col">谱面 / 条件</th><th scope="col">分数</th><th scope="col">准确率 / 连击</th><th scope="col">本局灯</th><th scope="col">游玩时间</th><th scope="col"><span class="sr-only">记录操作</span></th></tr></thead>
+                <tbody id="history-body"></tbody>
+              </table>
+            </div>
+            <div class="pagination">
+              <button id="history-prev" class="text-button" type="button" disabled>← 上一页</button>
+              <span id="history-page" class="page-label">—</span>
+              <button id="history-next" class="text-button" type="button" disabled>下一页 →</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="shell site-footer"><span>OMS IR · 试验榜</span><span>按需交分与查榜 · 无持续在线状态</span><a href="https://oms.zdamexy.work/">OMS 官网 ↗</a></footer>
+
+    <dialog id="score-dialog" class="score-dialog" aria-labelledby="detail-title">
+      <div class="dialog-heading"><div><p class="eyebrow">PLAY RECORD</p><h2 id="detail-title"></h2></div><form method="dialog"><button class="icon-button" type="submit" aria-label="关闭成绩详情">×</button></form></div>
+      <p class="detail-trust">客户端上报，未经回放核验</p>
+      <p id="detail-subtitle" class="chart-subtitle"></p>
+      <dl id="detail-summary" class="detail-grid"></dl>
+      <h3>判定记录</h3>
+      <dl id="detail-statistics" class="detail-grid detail-grid--statistics"></dl>
+      <p id="detail-lamp-note" class="section-hint" hidden></p>
+      <div class="dialog-footer"><form method="dialog"><button class="text-button" type="submit">关闭详情</button></form></div>
+    </dialog>
+    <noscript><p class="shell message">需要启用 JavaScript 才能读取真实榜单与登录账号。</p></noscript>
+  </body>
+</html>
