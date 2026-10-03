@@ -1,5 +1,7 @@
 # Frontend Other
 
+- [2026-10-04 社区门户上线](community-infrastructure-20261004.md)：当前运行源码、双站与手机检查、一致备份及 schema 2 回退边界。
+
 - [2026-10-03 IR 生产试运行](ir-infrastructure-20261003.md)：共享配置备份、双站访问、独立服务预算、日备份和保留的真实验收门。
 
 

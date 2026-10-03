@@ -17,7 +17,16 @@ node scripts/verify.mjs
 
 ## 同源服务与真实闭环
 
-按 [Backend 运行与验证](../../../../oms-server/oms-backend/doc_md/mainline/verification.md) 启动本地完整服务，使 Website 页面、动态帖子地址与 `/api/ir/v1` 同源。普通 `python -m http.server` 只检查独立静态入口 / 布局，不能提供账号、帖子、动态详情或 IR 数据；也不能用静态假数据代替服务验收。
+生产由 Nginx 提供指定 release 的门户静态页、固定帖子阅读器和资源，并同源反代 `/api/ir/v1` 到 Backend。Backend 单独 `serve` 只直挂 `ir/`，不会自动挂全部门户；不能据独立服务启动声称官网完整可运行。普通 `python -m http.server` 也只检查独立静态入口 / 布局，不提供账号、帖子或动态详情。
+
+本轮本地完整浏览器门使用只允许 F 盘合成库的 loopback ASGI 预览探针 `F:\oms\artifacts\oms-community-20261004\preview-server.py`，将当前门户路由和真实 Backend 同源挂到 `http://127.0.0.1:18085`，没有读取或复制生产库。已保留脚本可按本机路径复跑：
+
+```powershell
+. F:\oms\UseDevelopmentStorage.ps1
+& F:\zdamexy-workspace\oms-server\oms-backend\.venv\Scripts\python.exe F:\oms\artifacts\oms-community-20261004\preview-server.py --backend F:\zdamexy-workspace\oms-server\oms-backend --website F:\zdamexy-workspace\websites\oms-website --database F:\oms\.dev-cache\temp\community-preview-acceptance.db
+```
+
+该探针是本轮保留的本机验收工具，不是 Backend 的公开运行能力或生产入口；Nginx 配置与实际服务器旧 / 新 runtime 验收另看 [Backend 社区报告](../../../../oms-server/oms-backend/doc_md/other/community-verification-20261004.md)。不用静态假内容代替服务。
 
 本地浏览器至少验证：
 
@@ -35,7 +44,9 @@ node scripts/verify.mjs
 
 实际浏览器视口分别为桌面 1280×800 与窄屏 390×844，先核 `innerWidth`；导航、帖子正文、长连续字符串、发帖 / 回复 / 管理控件和表单反馈可见，整页无横向溢出。表格可内部滚动。记录实际视口、控制台页面脚本错误、本地资源状态和受影响页面，不能用 HTTP 200 代签布局。
 
-2026-10-04 本轮本地实际 Edge 使用 1360×1000 / 390×844，报告明确记录此实际范围；上述 1280×800 是待生产浏览器验收的目标，不把本地桌面宽度改写成 1280。初次 `thread-mobile.png` fullpage 存在粘性页眉捕获滚动状态，只保留为初次证据，需补核顶部截图，不宣称截图完整无瑕。
+2026-10-04 本轮本地实际 Edge 使用 1360×1000 / 390×844；最终公网只读 Edge 使用 1280×800 / 390×844，两份实际范围分别记录。公开浏览器没有创建账号或帖子，写路径由本地 / 主机隔离合成门证明，真人生产使用由用户验收。初次 `thread-mobile.png` fullpage 存在粘性页眉捕获滚动状态，保留为初次证据，随后页首截图及 IR 自身加载补核记录于 `final-screenshots-report.json`；保留原截图限制，不改写首轮采样事实。
+
+最终公网资源与 release manifest 逐字节核对，固定阅读器不存在帖的页面壳可正常返回，API 为 404 并明确显示内容不可用；其他未知静态路径 404，不混同两种情况。旧 `#download` 必须覆盖初始打开和同文档 `hashchange`，不只检查带锚点直接导航；首轮失败、修复源码与独立回归记录分别保留。
 
 生产另核 HTTPS / 路径、下载旧锚点、社区固定地址、静态资源、API / 会话、原 IR 与个人主页，核对发布来源及 schema 2 / 一致备份边界。共享基础设施与双站验证归 [other](../other/README.md)。官网部署不制作 Windows 发行包；客户端实机验收由用户通过 VS Code 非调试启动当前工作区完成。
 

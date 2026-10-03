@@ -1,5 +1,11 @@
 # Frontend Other Changelog
 
+## 2026-10-04（社区门户与共享设施）
+
+- OMS 门户和社区已按不可变 release 上线；原 Homepage 内容与 TLS 正常，未触发个人主页部署。
+- 记录两次激活、原 include 备份、schema 2、最终公网页面 / 手机只读验收及一致备份外取，详细事实见 [发布记录](community-infrastructure-20261004.md)。
+- 保留首轮旧锚点和隔离探针失败及有效修复；没有公开测试帖、Windows 客户端发行包或证书续期重验。
+
 ## 2026-06-03
 
 - 部署服务器启用 HTTPS（oms.zdamexy.work + zdamexy.work/www 两站）：装 `acme.sh`（`/root/.acme.sh`，cron 每天 6:30 自动续期），签 **ZeroSSL ECC DV** 证书。当时 Let's Encrypt 生产环境异常（newAccount/newOrder 后立即 `accountDoesNotExist` / authz 404，staging 正常），默认 CA 虽设 LE 但实际 fallback 到 ZeroSSL 才签出。

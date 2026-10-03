@@ -1,36 +1,13 @@
-# Frontend Mainline
+# OMS Website Mainline
 
-`mainline/` 是 OMS Frontend 的主交付线，也是当前仓库最重要的上下文来源。
+本目录维护社区帖首页、独立下载 / 帮助 / 账号 / 帖子页面与已试运行 IR 的实现、内容和交付。首次访问无需登录，写入真实社区内容复用 IR 账号；共同边界沿 [社区合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/constraints.md)。
 
-## 主线目标
+| 文件 | 职责 |
+| --- | --- |
+| [constraints](constraints.md) | 产品、公开口径与实现边界 |
+| [dev-progress](dev-progress.md) | 当前实现、缺口及验证证据 |
+| [dev-plan](dev-plan.md) | 下一步与后续 Website 执行投影 |
+| [verification](verification.md) | 可复跑检查与按需浏览器验收 |
+| [changelog](changelog.md) | 按日期保留的变更与历史验证 |
 
-- 产品阶段（2026-06-03 重定义，以根 `AGENTS.md` §2 为权威）：Phase 1 底层加固（客户端·开发中）→ **Phase 2 初版官网（本仓库承载）** → Phase 3 OMS-IR → Phase 4 社区官网 → Phase 5 开放接口
-- 当前虽然只做宣传展示，但页面结构和信息架构必须为后续完整 OMS Web 预留空间
-
-## 文件职责
-
-- `constraints.md`：记录边界、限制与不能违背的约束
-- `dev-plan.md`：记录计划中的工作与阶段安排
-- `dev-progress.md`：记录实际进展、验证结论与当前状态
-- `changelog.md`：记录已发生的关键变更
-
-## 相关结构约定
-
-- `subline/` 是支线功能集合目录，不直接平铺五件套
-- 每个支线功能方向都应拆成独立子目录，并在该子目录下维护五大文档
-- 当前已先建立 `subline/P1-A/` 作为 Phase 1 的首个支线占位
-
-## 文档联动索引
-
-- 前端主文档线：`oms-frontend/doc_md/mainline/`
-- 后端主文档线：`oms-backend/doc_md/mainline/`
-- 工作区级桥文档主线：`dev_bridge_md/mainline/`
-
-## 同步规则
-
-- 计划变了，更新 `dev-plan.md`
-- 状态变了，更新 `dev-progress.md`
-- 约束变了，更新 `constraints.md`
-- 事实变了，更新 `changelog.md`
-- 若变化涉及前后端对接边界，必须同步更新 `dev_bridge_md/` 中对应文档
-- 以上四者必须围绕同一条主线描述同一个现实状态
+其他工作线与跨项目入口见 [文档总索引](../README.md)。

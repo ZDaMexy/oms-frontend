@@ -1,75 +1,40 @@
-# OMS Frontend
+# OMS Website
 
-OMS Frontend 是 OMS Web 的公开前端仓库，用于承载 OMS 项目的官网与未来 Web 入口。当前阶段仓库只实现宣传介绍展示，但信息架构、页面命名和文档组织从第一天起就按完整 Web 产品预留，不把项目限定成一次性的静态落地页。
+OMS 客户端官网，域名 [oms.zdamexy.work](https://oms.zdamexy.work)。采用 HTML / CSS / 原生 JavaScript，已于 2026-10-04 上线真实社区帖子首页，并提供独立下载、入门帮助、帖子与账号页面。
 
-## 项目简介
+独立 [IR 页面](https://oms.zdamexy.work/ir/) 已于 2026-10-03 公网试运行，支持真实账号、条件组单谱榜与本人记录。社区复用同一个浏览器 cookie 账号，通过按需 HTTP 持久保存帖子与回复；没有持续在线连接。新社区本轮的实际完成和发布情况见 [当前进展](doc_md/mainline/dev-progress.md)，不能由本 README 的目标结构签收。
 
-- 面向 OMS（osu!BMS）生态的官网前端仓库
-- 现阶段负责项目介绍、特性说明、下载与进展展示
-- 后续将逐步接入账号体系、玩家主页、成绩展示、排行榜、谱面下载入口和私服相关页面
+OMS 为 Windows-only、BMS / mania 双模式、离线优先。官网公开下载与开发源码分开，官网下载入口指向 GitHub Releases；本轮不生成 Windows 发行包，用户自行发行并通过 VS Code 非调试启动当前工作区验收。
 
-## 产品定位
+## 页面与源码
 
-### 当前阶段：Phase 2 初版官网（本仓库承载）
+| 地址 | 职责 |
+| --- | --- |
+| `/` | 真实近期社区帖子、产品简述与常用入口 |
+| `/download/` | 公开发行、下载和更新说明 |
+| `/help/` | 启动、谱库、IR、隐私与反馈指引 |
+| `/community/` | 分类 / 搜索 / 作者筛选及分页列表 |
+| `/community/new/` | 新帖 |
+| `/community/posts/{id}/` | 可分享的独立帖子及回复 |
+| `/account/` | 共用账号、本人帖子和 IR 入口 |
+| `/ir/` | 条件榜与本人记录 |
 
-> 产品阶段 2026-06-03 重定义，以根 `AGENTS.md` §2 为权威：Phase 1 底层加固（客户端·开发中）→ **Phase 2 初版官网（本仓库）** → Phase 3 OMS-IR → Phase 4 社区官网 → Phase 5 开放接口。
+新门户资源集中在 `portal/`，IR 资源在 `ir/`；旧 `assets/` 演奏 / 三语 / 判定源码作为历史保留，不加载到新门户，也不发布第三方谱面演示。正文只有纯文本，不执行帖子 HTML / Markdown；没有官方新闻栏目、假社区内容或活跃人数。
 
-- 纯静态 HTML、CSS、JavaScript 的无登录 OMS 官网
-- 优先完成产品介绍、特性、判定、路线图与下载方式
-- 为后续账号、主页/成绩、排行榜、社区等动态页面保留入口与扩展位
+## 预览与验证
 
-### 未来阶段：完整 OMS Web
+普通静态预览只能检查独立静态入口与布局：
 
-- Phase 3 OMS-IR：账号注册/登录、客户端内传分、个人主页与成绩（EX-SCORE）、排行榜
-- Phase 4 社区官网：像 osu!(official) 那样的中心化社区门户
-- Phase 5 开放接口：API、QQ bot、非 OMS 客户端向 OMS-IR 传分等
-- 与 OMS 客户端和后端服务联动的动态交互
-
-## 技术栈
-
-- 当前阶段：HTML5、CSS3、Vanilla JavaScript
-- 部署环境：阿里云 ECS（Ubuntu 24.04）+ Nginx
-- 目标服务器：39.105.55.78
-- 后续联动：OMS Web 后端服务（FastAPI + SQLite + Docker）
-
-## 本地预览
-
-当前仓库为纯静态站点，可使用任意静态文件服务器预览。
-
-### 方式一：Python
-
-```bash
-cd oms-frontend
-python -m http.server 8080
+```sh
+python -m http.server 8080 --bind 127.0.0.1
 ```
 
-### 方式二：Node.js
+账号、真实帖子 / 回复与动态帖子地址需要 Nginx 静态路由和 Backend API 同源提供。Backend 单独启动只挂 `ir/`；完整本机预览使用保留的隔离合成库探针，命令及验收范围见 [verification](doc_md/mainline/verification.md)，后端启动方法见 [Backend 运行与验证](../../oms-server/oms-backend/doc_md/mainline/verification.md)。
 
-```bash
-cd oms-frontend
-npx serve .
-```
+在本仓库运行 `node scripts/verify.mjs` 检查多页导航、本地资源和 JavaScript 语法；真实交互、数据持久保存、权限与窄屏另行验收。本机开发检查 shell 先执行 `. F:\oms\UseDevelopmentStorage.ps1`，临时与证据放 F 盘。
 
-启动后在浏览器访问 `http://localhost:8080`，或使用工具输出的本地地址。
+## 维护与发布
 
-## 部署方式
+统一阶段由 [Dev Bridge](../../oms-server/dev_bridge_md/doc_md/mainline/dev-plan.md) 定义，共同接口以 [社区合同](../../oms-server/dev_bridge_md/doc_md/subline/oms-community/constraints.md) 和 [IR 合同](../../oms-server/dev_bridge_md/doc_md/subline/oms-ir/constraints.md) 为准。实现、验证、提交版本和生产版本分别记录；当前缺口与下一步见 [mainline](doc_md/mainline/README.md)。
 
-推荐将仓库中的静态文件直接同步到阿里云 ECS，由 Nginx 托管。
-
-1. 将站点文件上传到服务器目录，例如 `/var/www/oms-frontend`
-2. 在 Nginx 的 `server` 块中将 `root` 指向该目录
-3. 按需配置缓存、压缩、错误页与静态资源策略
-4. 执行 `sudo nginx -t` 检查配置
-5. 执行 `sudo systemctl reload nginx` 重新加载 Nginx
-
-当前阶段没有强制构建步骤；若后续引入构建流程，本 README 会同步更新。
-
-## 贡献指南
-
-- 外部协作者请优先阅读本 README，了解仓库职责与当前阶段目标
-- `doc_md/` 目录仅用于内部规划、vibe coding 上下文和任务同步，不视为对外产品文档
-- 在 OMS Web 联合工作区中，前后端通信、接口约定、联调记录与验收结论还需同步更新根目录独立仓库 `dev_bridge_md/`
-- 任何开发、调研、修复或验收只要改变了计划、状态、约束或验证结论，必须同步更新对应的 `doc_md/` 文档
-- `doc_md/mainline/constraints.md`、`doc_md/mainline/dev-plan.md`、`doc_md/mainline/dev-progress.md`、`doc_md/mainline/changelog.md` 必须保持一致
-- 提交变更时请明确说明该变更属于当前宣传展示阶段，还是在为后续账号、成绩、排行榜、下载入口等能力预留结构
-# oms-frontend
+`origin` 为 GitHub `ZDaMexy/oms-frontend`。本轮沿不可变服务发布目录更新官网、Backend 与 OMS Nginx 扩展，不执行旧 `deploy` 远端的静态整站检出钩子，避免覆盖旧首页既有未提交工作或误发布归档资源。共享设施与双站结果见 [other](doc_md/other/README.md)。

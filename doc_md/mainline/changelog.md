@@ -1,6 +1,18 @@
 # Frontend Mainline Changelog
 
+## 2026-10-04（最终维护与截图补核）
+
+- 最终补核已从页首查看帖子顶栏与正文，等待 IR 自身加载后匿名登录可用；03:35 schema 2 日备份再成功，并外取受限 F 盘快照且 SHA256 一致。原截图采样限制、首轮失败和真人门保留，完整共享路径及备份元信息见 Website / Homepage 的 [社区发布记录](../other/community-infrastructure-20261004.md)。
+
 ## 2026-10-04
+
+### 社区官网正式上线与公开浏览器收尾
+
+- 03:18:21（UTC+8）完成一致备份、生产 schema 1→2 与 Nginx 备份 / 检查 / reload；03:25:31 切到 final current `f1f8286640c7-c1b1b7a5da7a`，配置 cmp 一致无需再次 reload。Backend `f1f8286` / Website `c1b1b7a` 已发布，03:22 的 v2 128 KiB 一致备份成功、timer enabled、服务 active / NRestarts=0。
+- 真实旧 / 新 runtime 与 loopback Nginx 的服务器合成门通过原浏览器 / desktop 会话、BMS / mania 两局保全，社区权限 / 运营 / 幂等及新空目录 v2 一致恢复；stage-a lua 路径与 stage-b 探针 Origin 失败独立保留，最终有效报告为 `server-stage-c-report.json` / `server-stage-c.txt`，不宣称初次全绿或读取真人生产内容。
+- 公网首轮发现同文档下载 hash 没有被监听；`c1b1b7a` 修复后初始下载、同文档下载和旧判定转帮助三场景独立回归通过。保留 `public-browser-attempt1-report.json`，最终 `public-browser-report.json` / `public-browser-run2.txt` 只证明修复版本。
+- 最终公网实际 Edge 1280×800 / 390×844 只读通过 14 个页面 / 资源逐字节 manifest、TLS / CSP / 重定向参数 / 404 / API、旧锚点、移动布局与脚本 / 资源，个人主页 hash 未变。公开帖子 0，没有创建公网账号或假帖子；写闭环证据来自本地 / 主机隔离门，真人社区使用和客户端成绩交用户验收。
+- 方法已明确为 Nginx 门户静态 / 固定阅读器与 Backend API 同源。Backend 本身只直挂 `ir/`，本地完整页面采用保留的 `preview-server.py` 合成库探针，不把额外挂载工具包装成产品能力。共享运维镜像由 root 维护。
 
 ### 社区帖官网开工
 
