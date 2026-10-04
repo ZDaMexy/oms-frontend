@@ -2,7 +2,7 @@
 
 ## 当前状态
 
-2026-10-04 用户授权社区帖子方向：首页从介绍 / 下载单页改为真实近期帖子流，并提供独立下载、入门帮助、社区、固定帖子地址和账号页。开工 HEAD `8e76d6a9ff71d3913e60f61dc1ecd7e34f70a922` 加原未提交工作，本轮 fetch 已成功且在线远端无新增提交。旧首页与迁移 diff 已由主执行者保全，新门户在 `portal/` 独立实现。
+2026-10-04 官网已从介绍/下载单页改为社区近期帖子首页，提供独立下载、入门帮助、固定帖地址和账号页。旧首页与迁移源码保留归档，新门户在 `portal/` 实现；开工工作区与首次验证归 [历史记录](changelog.md)，不把开工 HEAD 写成当前或生产来源。
 
 社区官网已上线，final current 为 `f1f8286640c7-c1b1b7a5da7a`（Backend `f1f8286` / Website `c1b1b7a`）。首页、独立下载 / 帮助、账号与社区帖子页面已接真实 API，原 IR 使用同一账号和导航。当前公开帖子 0，首页显示真实空状态；没有向生产写入合成社区内容。软件、本地实际 Edge、服务器隔离迁移 / 恢复和最终公网只读浏览器均通过，真人使用及客户端成绩仍由用户验收。共同边界见 [社区合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/constraints.md)，下一步见 [dev-plan](dev-plan.md#当前最近任务)，阶段只由 [Dev Bridge](../../../../oms-server/dev_bridge_md/doc_md/mainline/dev-plan.md) 定义。
 
@@ -23,6 +23,10 @@
 2026-10-03 `https://oms.zdamexy.work/ir/` 已发布，通过同源真实 API 支持注册、登录、退出、BMS / mania 条件组单谱榜及本人历史；凭据不放 localStorage，AT 只留本人历史，最佳分 / 灯可来自不同局。客户端独立主动连接、保存后交分和原账号补交沿 [Client Bridge 实现来源](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-client-implementation-snapshot-20261003.md)，默认地址仍空。页面为未经回放核验的试验榜，没有网页手动上传；合成接口输入不是设备成绩。
 
 原生产、容量与恢复结果见 [Backend IR4](../../../../oms-server/oms-backend/doc_md/other/ir4-host-verification-20261003.md)。用户真实 BMS / mania 同局、断网重启、原账号恢复与客户端发行人工门保留，通过 VS Code 非调试启动当前工作区验收，不要求额外候选包。
+
+## 待审查来源扩展
+
+2026-10-04 多播放器、来源混榜与 LR2IR 历史基础榜仅形成[待正式审查提案](../../../../oms-server/dev_bridge_md/doc_md/other/oms-ir-multisource-plan-20261004.md)。现有网页仍消费 v1 分组查询，没有来源多选、参考混榜或历史基础榜；后续职责见 [计划投影](dev-plan.md#待审查多来源-ir)。本次文档同步没有改页面代码或部署，新产品门与原证据日期不提升。
 
 ## 验证结论
 
