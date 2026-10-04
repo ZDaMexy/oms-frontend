@@ -2,6 +2,8 @@
 
 本记录在 Website 与 Homepage 的 `other/` 镜像维护，事实截至 2026-10-04（UTC+8）。产品与接口分别见 [社区进展](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/dev-progress.md) 和 [Backend 验收](../../../../oms-server/oms-backend/doc_md/other/community-verification-20261004.md)。没有发布 Homepage 源码或 Windows 客户端发行包。
 
+下方社区来源/恢复/浏览器章节保留2026-10-04当时范围；当前schema3及共享include后续变更见文末[2026-10-05多来源发布](#2026-10-05多来源发布)。
+
 ## 实际生产来源
 
 | 项目 | 当前事实 |
@@ -37,3 +39,15 @@
 schema 已升至 2，原 schema 1 运行时不能直接接受当前库。升级后的启动 / 健康失败要停止并保全候选 current、生产库和前后快照；不得只切回旧代码或以发布前快照覆盖新增用户成绩 / 内容。相同 schema 的兼容回退沿 [发布维护](../../../../oms-server/oms-backend/deploy/README.md)，同时明确新增内容的保全。
 
 长期证据位于 `F:\oms\artifacts\oms-community-20261004\`：`production-publish.txt`、`production-hash-fix.txt`、`production-final-backup.txt`、`production-final-offsite-backup.json`、`server-stage-c-report.json`、`public-browser-report.json`、`public-browser-run2.txt`、`final-screenshots-report.json` 和对应 manifest / 图像。验收日志、首轮失败与备份保留，不清理为临时构建缓存。
+
+## 2026-10-05多来源发布
+
+01:41:04（UTC+8）实际current为`/opt/oms-ir/releases/ecca50eab82c-09d7ffdf4bbb`、schema3，Backend ecca50eab82c/Website09d7ffdf4bbb，OMS产品源码b7d0f74d；状态“已部署待验收”。详细来源、全量运行/两恢复/补账、生产原列保全与公开/备份只维护于[Backend最终证据](../../../../oms-server/oms-backend/doc_md/other/multisource-host-verification-20261004.md#最终-r10-与实际发布)，后续文档HEAD不替换运行源码。
+
+共享变更只涉及OMS既有extension/oms-ir.conf：增加准确v2代理及五插件/双许可/版本文件路由，BT Nginx切换前后预检和reload成功。实际PID/cwd/argv/loopback8081 ownership已核对，timer enabled/active；没有触发Homepage部署、证书签发或续期。发布前include/vhost备份位于`/var/backups/oms-ir/nginx-20261004T174104Z/`，切换证据`/opt/oms-ir/releases/20261004T174104Z-switch/`，旧schema2一致快照`/var/backups/oms-ir/before-release-20261004T174104Z.db`保留。
+
+公开默认TLS验证、22个准确文件字节/SHA/HEAD/CSP/nosniff、保参308/404、完整历史/来源查询、原IR/社区和双站通过；两入口65,537字节匿名无效正文均JSON413/no-store/nosniff。两个主页内容hash与发布前一致，不填造公开成绩/社区。公开浏览器初次超时保留，随后同一HTTPS页实际匿名来源切换、首/第二/尾页、深链、同条件空范围及桌面/390px通过，截图/检查断言纠正见[正式浏览器补核](../../../../oms-server/oms-backend/doc_md/other/multisource-host-verification-20261004.md#正式网页实际浏览器补核)。旧截图保持原日期，公开账号/密钥/本人、DPI、OMS/宿主P/C真人仍待。
+
+首份正式schema3日备份`daily-20261004T174642Z.db.gz`及同名`.json`实际unit成功，F盘受限目录完整解压CRC/raw字节/SHA和来源绑定通过。快照包含用户数据不入Git，报告无个人行/凭据；七日对保留、至少每周受保护外取，维护串行且增长重新计账。schema1/2旧源码不能接新库，向前修复或已实际验证兼容schema3的源码回退保全同一live；灾难恢复沿[发布维护](../../../../oms-server/oms-backend/deploy/README.md)，不能用旧快照覆盖上线后新内容。
+
+长期新增证据在`F:/oms/artifacts/oms-ir-multisource-20261004/`：`deployment-r10.json`、`public-multisource-report-r10.json`、`public-body-budget-r10.json`、`public-browser-r10-report.json`、`production-first-backup-r10.json`、`production-backup-offhost-r10.json`及`production-closeout-r10.json`；母库、个人原始行和凭据不提交Git。

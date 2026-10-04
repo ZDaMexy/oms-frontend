@@ -4,9 +4,9 @@
 
 2026-10-04 官网已从介绍/下载单页改为社区近期帖子首页，提供独立下载、入门帮助、固定帖地址和账号页。旧首页与迁移源码保留归档，新门户在 `portal/` 实现；开工工作区与首次验证归 [历史记录](changelog.md)，不把开工 HEAD 写成当前或生产来源。
 
-社区官网已上线，final current 为 `f1f8286640c7-c1b1b7a5da7a`（Backend `f1f8286` / Website `c1b1b7a`）。首页、独立下载 / 帮助、账号与社区帖子页面已接真实 API，原 IR 使用同一账号和导航。当前公开帖子 0，首页显示真实空状态；没有向生产写入合成社区内容。软件、本地实际 Edge、服务器隔离迁移 / 恢复和最终公网只读浏览器均通过，真人使用及客户端成绩仍由用户验收。共同边界见 [社区合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/constraints.md)，下一步见 [dev-plan](dev-plan.md#当前最近任务)，阶段只由 [Dev Bridge](../../../../oms-server/dev_bridge_md/doc_md/mainline/dev-plan.md) 定义。
+社区官网于2026-10-04上线，当时包为`f1f8286640c7-c1b1b7a5da7a`；首页、下载/帮助、账号和社区已接真实API，原IR共用账号与导航，公开0帖不填造。软件、本地Edge、隔离迁移/恢复及当日公开只读证据保留日期，真人使用仍待；本次schema3保全社区/原账号，当前来源见下方多来源实施。共同边界取[社区合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/constraints.md)，下一步见[计划](dev-plan.md#当前最近任务)，阶段只由[Dev Bridge](../../../../oms-server/dev_bridge_md/doc_md/mainline/dev-plan.md)定义。
 
-本轮多来源 IR 已由待审查转为修订 3 采纳后的候选实施，网页范围见下方[多来源 IR 实施](#多来源-ir-实施)。当前生产仍是上述发布包/schema 2，没有部署本轮 v2 来源混榜和历史投影；本地页面、客户端源码与旧生产各自记录，社区既有证据不提升为本轮验收。
+2026-10-05 01:41:04（UTC+8）本轮v2来源混榜、全量历史和五插件已实际发布ecca50eab82c-09d7ffdf4bbb/schema3，当前 **已部署待验收**。网页范围见[多来源实施](#多来源-ir-实施)，实际主机/公开HTTP/备份取Backend，P/C和网页/OMS/固定宿主真人尚未闭环，旧社区浏览器证据不提升为本次交互验收。
 
 ## 本轮交付范围
 
@@ -28,9 +28,9 @@
 
 ## 多来源 IR 实施
 
-2026-10-04，D01～D09 已按 [正式审查修订 3](../../../../oms-server/dev_bridge_md/doc_md/other/oms-ir-multisource-plan-20261004.md#15-正式审查决定)采用。网页候选消费 [多来源正式合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-ir/multisource-contract.md)，服务全量投影/查询、资源与发布状态取 [Backend 多来源实施](../../../../oms-server/oms-backend/doc_md/mainline/dev-progress.md#多来源-ir-实施)，后续职责见 [计划投影](dev-plan.md#多来源-ir-实施)。
+D01～D09按[正式审查修订3](../../../../oms-server/dev_bridge_md/doc_md/other/oms-ir-multisource-plan-20261004.md#15-正式审查决定)采用，已部署网页消费[多来源合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-ir/multisource-contract.md)。当前Website运行源码09d7ffdf4bbb、Backend ecca50eab82c/schema3；全量投影/查询、资源、实际发布与备份只取[Backend实施](../../../../oms-server/oms-backend/doc_md/mainline/dev-progress.md#多来源-ir-实施)，后续职责见[计划](dev-plan.md#多来源-ir-实施)。
 
-候选页面已能搜索标题/作者/MD5、按 MD5 直接打开谱面，选择一个、多个、全部可用来源或主动清空；来源、参考/同条件、条件与页码保留在 URL，刷新深链可恢复。服务先筛选完整候选再决定最佳 EX、独立灯、共享名次、人数与分页；页面显示该范围结果，不抓各来源 TopN 拼榜，也不在当前页寻找或伪造本人名次。同条件由玩家主动选择已公布条件，未知条件或无匹配时明确说明；mania 原计分条件榜与本人逐局历史保留 v1 路径。
+已部署页面可搜索标题/作者/MD5、按MD5直达，选择一个、多个、全部来源或清空；来源、参考/同条件、条件与页码保留在URL。服务先筛完整范围再计算最佳EX、独立灯、共享名次、人数/分页/全榜本人，不拼各来源TopN。同条件由玩家主动选择已证明的OMS组，未知或无匹配明确说明；mania条件榜和本人逐局历史保留v1。
 
 榜行区分 OMS 新局、播放器最佳状态与历史最佳摘要，显示来源、未知条件、原身份 namespace/ID、原灯与未收录时间/最大 EX。旧 LR2IR 同名账号不合并为 OMS 本人；独立灯附来源和规则说明，不把未知灯换算成统一最好灯，不把历史摘要或外部状态称为逐局历史。
 
@@ -38,11 +38,11 @@
 
 root 的本地实际浏览器观察已覆盖来源筛选、并列名次、末页第1461页与范围人数、空选、本人落在第28901名而仍有全榜本人提示，以及刷新深链；此前候选证据保留原来源，后续账号/密钥及生成资产补核归下方报告。观察使用隔离数据，不是生产账号或目标播放器真实游玩，不签全部公开体验门。
 
-OMS [本轮客户端来源](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-multisource-client-snapshot-20261004.md)绑定已推送 `b7d0f74d77425bc47079e55f854ff93fd3c0c9a5`；默认隔离及保存后新局沿 `client-ir-default-isolation` / `client-ir-save-first`，不改变旧 UUID/body/账号归属。三份固定Java SDK插件已通过实际send/read合成软件检查，OpenLR2两架构同版MSVC/MT编译与软件入口加载通过。帮助页提供候选五插件、许可通知和版本证明路径，生成资产严格白名单共七项；本次静态检查8页/208引用/3脚本/2样式通过。真实宿主、非空跨DLL容器、全部玩法/原生界面及公开部署仍待；实际限制取 [固定播放器事实](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-multisource-player-snapshot-20261004.md)，P/C步骤取[真人验收说明](../../../../oms-server/oms-backend/adapters/ACCEPTANCE.md)。
+OMS[产品来源](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-multisource-client-snapshot-20261004.md)绑定b7d0f74d，默认隔离/保存后交分沿`client-ir-default-isolation`/`client-ir-save-first`，旧UUID/body/归属保全。最终三Java固定SDK软件/实际网络完整榜及Open两架构编译/入口/WinHTTP完整性通过，真实宿主/非空跨DLL/玩法/UI仍待；限制取[固定事实](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-multisource-player-snapshot-20261004.md)。帮助页已发布五插件、MIT/Zlib双许可及versions.json共八生成资产，实际公开字节均核对；P/C步骤取[真人说明](../../../../oms-server/oms-backend/adapters/ACCEPTANCE.md)。
 
-2026-10-04，Website `08ce0bd2247f` / Backend `9e10197e5c29` 候选在本机 `18086` 补核账号切换、密钥当次显示/重载/撤销、全来源榜、帮助页与七资产 HTTP/SHA256，具体结果及既有证据适用范围见 [浏览器补核报告](../other/multisource-browser-verification-20261004.md)，多来源尚未部署，生产交互、OMS 和目标播放器真人门仍待。
+2026-10-04，Website `08ce0bd2247f` / Backend `9e10197e5c29` 候选在本机 `18086` 补核账号切换、密钥当次显示/重载/撤销、全来源榜、帮助页与当时七资产 HTTP/SHA256，具体范围见 [浏览器补核报告](../other/multisource-browser-verification-20261004.md)；当时多来源尚未部署。该旧结果不代签生产账号操作、OMS 和目标播放器真人。
 
-公网浏览器、真实共享主机预算、两次空目录恢复/回退、线上部署及 P/C 真人矩阵都仍有未完成项。对应门通过后由 root 更新实际发布来源并给真人路径，部署后真人未完记“已部署待验收”；当前尚未部署，不能提前使用该状态。旧社区成功、十万条合成容量及 SDK 编译不证明千万级基础榜或 P/C 完整闭环。
+最终同制品/真实全量主机/两新空恢复/源码往返及外取后补账完成后已实际部署，公开22文件SHA/HEAD/响应头、全量目录/来源筛选/历史语义、原IR/社区/双站和64KiB413通过，首份正式日备份也已在受保护F盘完整核验，见[最终发布证据](../../../../oms-server/oms-backend/doc_md/other/multisource-host-verification-20261004.md#最终-r10-与实际发布)。公开浏览器初次超时后已在同一HTTPS页实际补核匿名来源切换、首/第二/尾页、深链/同条件空范围及桌面/390px，console error为0；[实际截图与检查纠正](../../../../oms-server/oms-backend/doc_md/other/multisource-host-verification-20261004.md#正式网页实际浏览器补核)单独留证，既有隔离图保留原日期。公开账号/密钥/本人、DPI/非调试OMS与P/C全部真人仍待。当前“已部署待验收”，匿名读榜和SDK软件不代签真人。
 
 ## 验证结论
 
@@ -64,4 +64,4 @@ OMS [本轮客户端来源](../../../../oms-server/oms_client_bridge_md/doc_md/o
 - 客户端真实游玩与完整发行人工门未关闭。官网发布不能把开发源码能力写入旧公开包说明。
 - 便携更新 / 存储细项、判定数值的原来源不足仍保留；本轮移出公开表面，不以文档改版刷新 Client Bridge 原来源或待复核状态。
 
-早期Website `5ac044e9d014` 本地核对：服务/网页重启后，全选29,204身份、第2/1461页仍显示本人全榜28901名；空选0身份；OMS+ED为2身份、180/175 EX，独立灯带真实规则/未知说明。本人历史仅2个OMS新局，外部最佳状态/归档未增加局数；固定宿主来源明确显示待真人验收。390×844窄屏正文无横向溢出（client/scrollWidth均375，表格在自身740宽容器内滚动），浏览器无console error；桌面与窄屏画面在F:/oms/artifacts/oms-ir-multisource-20261004/website-*.jpg。静态检查当时8页/205引用/3脚本/2样式通过，当时四插件待后续核对；现有五插件/七资产本地补核归[浏览器报告](../other/multisource-browser-verification-20261004.md)，公网仍待发布后验证。原窄屏证据不代签后续全部界面、真实宿主或OMS真人。
+早期Website `5ac044e9d014` 本地核对：服务/网页重启后，全选29,204身份、第2/1461页仍显示本人全榜28901名；空选0身份；OMS+ED为2身份、180/175 EX，独立灯带真实规则/未知说明。本人历史仅2个OMS新局，外部最佳状态/归档未增加局数；固定宿主来源明确显示待真人验收。390×844窄屏正文无横向溢出（client/scrollWidth均375，表格在自身740宽容器内滚动），浏览器无console error；桌面与窄屏画面在F:/oms/artifacts/oms-ir-multisource-20261004/website-*.jpg。静态检查当时8页/205引用/3脚本/2样式通过，当时四插件待后续核对；后续候选五插件/七资产本地补核归[浏览器报告](../other/multisource-browser-verification-20261004.md)，当时公网待发布后验证。实际当前八资产及公开补核取本页多来源实施，旧窄屏图不代签后续全部界面、真实宿主或OMS真人。

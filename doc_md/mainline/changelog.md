@@ -1,5 +1,10 @@
 # Frontend Mainline Changelog
 
+## 2026-10-05（多来源和全量历史已部署待验收）
+
+- Website实际09d7ffdf4bbb与Backend ecca/schema3已发布，全量历史/来源筛选、五插件/双许可/版本清单可按需访问；22公开文件字节、目录/来源查询、原IR/社区/双站及413通过。实际运行/恢复/补账、生产保全和首份正式备份外取只取[Backend最终证据](../../../../oms-server/oms-backend/doc_md/other/multisource-host-verification-20261004.md#最终-r10-与实际发布)，共享include来源同步两个站点other镜像，未发布Homepage源码。
+- 公开浏览器初次超时保留，同一HTTPS页随后实际匿名来源切换、首/第二/尾页、深链/同条件空范围和桌面/390px通过，截图及两条检查断言纠正留证，console error为0。当前“已部署待验收”，继续P/C真人、网页/OMS一致、本人/账号/密钥/DPI与反馈；不以读榜成功代签宿主/真人，不提升旧公开Windows包。
+
 ## 2026-10-04（五插件候选交付说明）
 
 - 帮助页加入固定OpenLR2两架构DLL及nlohmann/json许可通知路径，补实际“播放器专用密钥”、配置目录、架构匹配和重启步骤；Java SDK send/read与Open软件入口通过的范围明确，真实宿主/玩法与未知BP、并列界面限制仍待。
