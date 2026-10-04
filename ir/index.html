@@ -23,7 +23,7 @@
         <div>
           <p class="eyebrow"><span class="signal-dot" aria-hidden="true"></span> OMS IR · 试运行</p>
           <h1 id="page-title">记录每次<span>进步。</span></h1>
-          <p class="intro-copy">查看同一谱面、同一条件下的最佳成绩。辅助玩法单独分组，自动游玩只留在本人记录。</p>
+          <p class="intro-copy">按谱面选择一个、多个或全部来源，查看跨播放器的 EX 参考混榜；也能主动收窄到已确认的同条件榜。</p>
         </div>
         <div class="intro-label" aria-hidden="true"><span>EX SCORE</span><strong>BEST<br />CLEAR</strong></div>
       </section>
@@ -34,6 +34,7 @@
           <strong>客户端上报，未经回放核验</strong>
           <p>榜单不代表成绩已获认证。候选客户端可主动连接、先保存本地成绩再交分；离线待交仍绑定原账号。客户端默认关闭 IR。</p>
           <p>社区与 IR 共用账号，榜单会公开账号名；不会上传回放或谱面文件。账号与成绩删除、账号恢复请通过<a href="/help/#contact">联系入口</a>处理，目前没有邮箱找回。<a href="/help/#privacy">查看数据说明 ↗</a></p>
+          <p>LR2IR 历史来自公开归档，保留原账号 ID、行内名称和原通关灯；同名账号不会合并。未知条件如实保留，参考混榜不表示跨播放器公平性。外部播放器保存最佳状态，只有 OMS 新局进入逐局记录。</p>
         </div>
       </aside>
 
@@ -46,7 +47,8 @@
               <div><p class="eyebrow">CHART SELECT</p><h2 id="catalog-title">谱面</h2></div>
               <button id="reload-charts" class="icon-button" type="button" aria-label="重新读取谱面">↻</button>
             </div>
-            <p class="section-hint">只显示已有公开成绩的谱面。</p>
+            <p class="section-hint">查找当前成绩与全量公开历史目录。可直接输入谱面 MD5。</p>
+            <form id="chart-search" class="catalog-search"><label class="sr-only" for="chart-query">标题、作者或 MD5</label><input id="chart-query" maxlength="200" placeholder="标题、作者或 MD5" /><button class="text-button" type="submit">查找 →</button></form>
             <p id="catalog-message" class="inline-message" role="status" aria-live="polite">正在读取谱面…</p>
             <ul id="catalog-list" class="chart-list"></ul>
             <div class="pagination pagination--compact">
@@ -79,6 +81,10 @@
                 <button id="mine-button" class="primary-button" type="button">我的记录 <span aria-hidden="true">→</span></button>
                 <button id="logout-button" class="text-button" type="button">退出登录</button>
               </div>
+              <details class="integration-panel"><summary>播放器专用密钥</summary><p class="section-hint">每个来源使用独立密钥，可随时撤销。插件填写密钥，不填写 OMS 账号密码。密钥仅在创建时显示一次。</p>
+                <form id="key-form"><label for="key-source">播放器</label><select id="key-source"><option value="beatoraja">beatoraja 0.8.8</option><option value="lr2oraja">LR2oraja build11611350155</option><option value="lr2oraja_ed">LR2oraja Endless Dream v0.4.0</option><option value="openlr2">OpenLR2 v260915</option></select><label for="key-label">备注</label><input id="key-label" maxlength="60" placeholder="例如：台式机" /><button class="primary-button" type="submit">创建专用密钥</button></form>
+                <p id="key-message" class="inline-message" role="status" aria-live="polite" hidden></p><label id="key-secret-label" for="key-secret" hidden>请现在复制并保存</label><textarea id="key-secret" rows="3" readonly hidden autocomplete="off" spellcheck="false"></textarea><ul id="key-list" class="key-list"></ul>
+              </details>
             </div>
             <p id="auth-message" class="inline-message" role="status" aria-live="polite" hidden></p>
           </section>
@@ -96,20 +102,23 @@
               <div>
                 <p id="board-mode" class="eyebrow">SELECT A CHART</p>
                 <h2 id="board-title">选择一张谱面</h2>
-                <p id="board-subtitle" class="chart-subtitle">从左侧选择谱面，查看相同条件下的成绩。</p>
+                <p id="board-subtitle" class="chart-subtitle">从左侧选择或查找谱面。</p>
               </div>
               <button id="reload-board" class="text-button" type="button" disabled>刷新榜单 ↻</button>
             </div>
+            <fieldset id="source-control" class="source-control" hidden><legend>榜单来源</legend><div class="source-actions"><button id="sources-all" class="text-button" type="button">全部</button><button id="sources-none" class="text-button" type="button">清空</button></div><div id="source-choices" class="source-choices"></div></fieldset>
+            <div class="group-control"><label for="ranking-mode">比较方式</label><select id="ranking-mode" disabled><option value="reference">跨来源参考混榜 · 原 EX</option><option value="comparable">同条件榜 · 主动收窄</option></select></div>
             <div class="group-control">
               <label for="group-select">游玩条件</label>
               <select id="group-select" disabled><option value="">请先选择谱面</option></select>
             </div>
             <div class="ranking-summary"><span id="board-total">尚未选择</span><span>同分共享名次</span></div>
+            <p id="board-me" class="my-rank" role="status" hidden></p>
             <p id="board-message" class="empty-state" role="status" aria-live="polite">游玩条件相同的成绩才会放在一起比较。</p>
             <div id="board-table-wrap" class="table-wrap" hidden>
               <table>
-                <caption class="sr-only">当前谱面条件组的玩家最佳成绩</caption>
-                <thead><tr><th scope="col">名次</th><th scope="col">玩家</th><th id="board-score-heading" scope="col">最佳分数</th><th scope="col">准确率 / 连击</th><th scope="col">最佳灯</th><th scope="col">游玩时间</th><th scope="col"><span class="sr-only">成绩详情</span></th></tr></thead>
+                <caption class="sr-only">当前谱面所选来源的玩家最佳成绩</caption>
+                <thead><tr><th scope="col">名次</th><th scope="col">玩家</th><th id="board-score-heading" scope="col">最佳分数</th><th id="board-condition-heading" scope="col">来源 / 条件</th><th scope="col">独立最佳灯</th><th scope="col">记录类型 / 时间</th><th scope="col"><span class="sr-only">成绩详情</span></th></tr></thead>
                 <tbody id="board-body"></tbody>
               </table>
             </div>
@@ -118,7 +127,7 @@
               <span id="board-page" class="page-label">—</span>
               <button id="board-next" class="text-button" type="button" disabled>下一页 →</button>
             </div>
-            <p class="ranking-footnote">BMS 的最佳分与最佳灯分别取最好结果，可能来自不同一局；榜单会标出最佳灯的来源。</p>
+            <p class="ranking-footnote">来源筛选同时影响最佳分、独立灯、人数和名次。各灯按其原规则分别展示，未知规则不会换算成同一最高灯。历史摘要没有可信逐局时间。</p>
           </div>
 
           <div id="history-view" hidden>
@@ -152,7 +161,7 @@
       <p class="detail-trust">客户端上报，未经回放核验</p>
       <p id="detail-subtitle" class="chart-subtitle"></p>
       <dl id="detail-summary" class="detail-grid"></dl>
-      <h3>判定记录</h3>
+      <h3 id="detail-fields-heading">判定记录</h3>
       <dl id="detail-statistics" class="detail-grid detail-grid--statistics"></dl>
       <p id="detail-lamp-note" class="section-hint" hidden></p>
       <div class="dialog-footer"><form method="dialog"><button class="text-button" type="submit">关闭详情</button></form></div>

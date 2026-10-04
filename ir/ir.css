@@ -60,6 +60,26 @@ h1, h2, h3, p { margin: 0; }
 .inline-message { color: var(--muted); font-size: 12px; line-height: 1.8; }
 .inline-message.is-error { color: var(--red); }
 .catalog > .inline-message { margin: 0 20px 18px; }
+.catalog-search { margin: 0 20px 15px; display: flex; align-items: center; gap: 8px; }
+.catalog-search input { min-width: 0; margin: 0; }
+.source-control { margin: 0 24px 18px; padding: 12px 16px; border: 1px solid var(--line); }
+.source-control legend { color: var(--muted); font-size: 12px; padding: 0 6px; }
+.source-actions { display: flex; gap: 18px; margin-bottom: 8px; }
+.source-choices { display: flex; flex-wrap: wrap; gap: 10px 20px; }
+.source-choice { display: inline-flex; align-items: start; gap: 8px; font-size: 12px; }
+.source-choice input { width: 16px; min-height: 16px; margin: 4px 0 0; accent-color: var(--cyan); }
+.source-choice span { overflow-wrap: anywhere; }
+.my-rank { margin: 0 24px 18px; padding: 10px 12px; color: var(--cyan); background: #102d31; overflow-wrap: anywhere; }
+.integration-panel { margin: 20px 20px 0; border-top: 1px solid var(--line); padding-top: 12px; }
+.integration-panel summary { cursor: pointer; color: var(--cyan); font-size: 12px; }
+.integration-panel label { display: block; margin: 10px 0 6px; font-size: 11px; }
+.integration-panel .section-hint { margin: 10px 0; }
+.integration-panel select { font-size: 11px; }
+.integration-panel textarea { width: 100%; color: var(--ink); background: #080b11; border: 1px solid var(--cyan); padding: 8px; overflow-wrap: anywhere; resize: vertical; }
+.key-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.key-list li { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--line); overflow-wrap: anywhere; font-size: 11px; }
+.identity-note { display: block; color: var(--dim); font-size: 10px; overflow-wrap: anywhere; }
+.reference-lamp { display: block; margin-bottom: 5px; overflow-wrap: anywhere; font-size: 11px; }
 .chart-list { list-style: none; margin: 0; padding: 0; max-height: 528px; overflow-y: auto; scrollbar-color: #35415a var(--panel); scrollbar-width: thin; }
 .chart-button { position: relative; display: block; width: 100%; text-align: left; padding: 15px 20px; border: 0; border-top: 1px solid #1a2130; background: transparent; color: var(--ink); }
 .chart-button:hover { background: var(--raised); }

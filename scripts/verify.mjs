@@ -12,6 +12,13 @@ const pages = new Map([
   ["/download/", "download/index.html"], ["/help/", "help/index.html"],
   ["/account/", "account/index.html"], ["/ir/", "ir/index.html"],
 ]);
+// These assets are generated from committed Backend inputs by the release
+// exporter. Its exact whitelist and checksums are verified before deployment.
+const generatedAssets = new Set([
+  "/ir/adapters/omsir-beatoraja-0.8.8-0.1.0.jar",
+  "/ir/adapters/omsir-lr2oraja-build11611350155-0.1.0.jar",
+  "/ir/adapters/omsir-ed-v0.4.0-0.1.0.jar", "/ir/adapters/versions.json",
+]);
 
 // Check authored navigation, assets and CSP constraints. Runtime behavior and
 // layout are verified separately in a real browser against an isolated API.
@@ -38,6 +45,11 @@ export function verifyPortal(directory) {
   function checkReference(value, ownerUrl, ownerFile) {
     if (/^(?:[a-z][\w+.-]*:|\/\/)/i.test(value)) return;
     const url = new URL(value, "https://oms.invalid" + ownerUrl);
+    if (generatedAssets.has(url.pathname)) {
+      assert(!url.hash && !url.search, `${ownerFile}: generated download cannot have an unverified variant`);
+      references += 1;
+      return url.pathname.slice(1);
+    }
     const page = records.get(url.pathname);
     const file = page?.file ?? decodeURIComponent(url.pathname.slice(1));
     const target = resolve(directory, file);
@@ -94,5 +106,5 @@ export function verifyPortal(directory) {
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   assert.equal(process.argv.length, 2, "Usage: node scripts/verify.mjs");
   console.log(`PASS ${JSON.stringify(verifyPortal(root))}`);
-  console.log("Scope: static routes, shared navigation, anchors, labels, local assets, deferred script syntax and inline-CSP restrictions. Browser/API/deployment checks are separate.");
+  console.log("Scope: static routes, navigation, anchors, labels, assets, script syntax and CSP. The four fixed generated adapter downloads require exporter/provenance and deployed HTTP verification; browser/API checks are separate.");
 }

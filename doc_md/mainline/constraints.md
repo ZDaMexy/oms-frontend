@@ -29,6 +29,18 @@
 
 `client-ir-default-isolation` 与 `client-ir-comparable-fields` 沿提交绑定来源与 [IR v1](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-ir/constraints.md)。IR 仍显示未经回放核验、最佳分 / 最佳灯来源差异，AT 只留本人历史；社区没有公开个人成绩主页，也不修改传分字段 / 条件分榜 / 本人历史权限。合成输入、社区操作或页面布局通过不签收真人成绩。
 
+## 多来源 IR 与专用密钥
+
+采用 [正式审查修订 3](../../../../oms-server/dev_bridge_md/doc_md/other/oms-ir-multisource-plan-20261004.md#15-正式审查决定)与 [多来源正式合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-ir/multisource-contract.md)。本仓只记录网页候选/浏览器/公开页面范围，完整历史投影、服务资源、恢复与发布取 [Backend 多来源实施](../../../../oms-server/oms-backend/doc_md/mainline/dev-progress.md#多来源-ir-实施)。采纳合同或实现入口不等于生产开放、真实宿主或 P/C 验收。
+
+- BMS 按原 MD5 直达和目录搜索，来源可单选、多选、全部当前可用或主动空选。未开放来源如实标注并禁用；空选保留为空，不能偷偷回到全部。深链保存来源、参考/同条件、条件和页码，来源/条件变化重置分页并请求该完整范围。
+- 来源筛选同时决定最佳分、独立灯、身份人数、共享排名、本人全榜位置与分页，全部以服务返回为准。网页不拼各源 TopN、不按本页计算排名、不用比例替代原 EX 排序；本人不在当前页时仍消费同范围本人行，没有本人时明确无记录。
+- 同条件需玩家主动选择服务公布的可证明条件；跨播放器判定、TOTAL、分支、血条或长条规则未知时继续参考，不按家族名推定一致。显示未知字段、来源与旧 namespace/ID；同名旧账号不认作本人，缺日期/最大 EX/原灯不补造。独立灯保原来源与规则说明，历史摘要不冒充有局 ID 的历史。
+- 公开数据区分 OMS 保存后的 UUID 新局、外部最佳状态及 LR2IR 历史摘要。`client-ir-save-first` / `client-ir-default-isolation` 的本轮来源绑定 [OMS b7d0f74d 快照](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-multisource-client-snapshot-20261004.md)，默认离线/按需请求和旧待交归属不变；mania 与本人逐局历史保持原 v1 权限，不扩展聊天、presence、多人与官网谱包。
+- 密钥管理复用原 browser cookie、同源 Origin/JSON/`X-OMS-IR` 边界；网页密码不交播放器。专用秘密只在创建成功后当次显示，不存 localStorage/日志，也不从列表再次获取。账号切换清空私有显示与秘密，创建/撤销前核对当前账号；账号、谱面和榜请求 revision 排除晚到的旧响应，不能把密钥或本人记录留给新账号。
+- Java 固定 SDK 编译仅软件证据，Open 工具/ABI与原生未知显示限制仍保留；目标版本、资格及未证明字段取 [播放器快照](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-multisource-player-snapshot-20261004.md)。网页来源出现、密钥创建或原生探针不能被文案升级为真实播放器交分通过。
+- 本地浏览器、真实主机/全量预算、两次恢复、对应部署与真人门分开记录。未部署写候选实施，部署且真人未完写“已部署待验收”；P/C 必须按固定目标与玩法矩阵验收，不能以 ED 或单一插件签收整项，也不以旧社区成功刷新这些门。
+
 ## 验证与联动
 
 本轮验证覆盖多页入口、真实社区闭环、纯文本输入、作者权限、删除 / 隐藏、会话复用、IR 回归、持久恢复和桌面 / 窄屏布局；方法见 [verification](verification.md)。静态资源检查不能代签浏览器、持久保存或生产部署。
