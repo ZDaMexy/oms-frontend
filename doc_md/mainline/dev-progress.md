@@ -38,7 +38,7 @@
 
 root 的本地实际浏览器初步观察已覆盖来源筛选、并列名次、末页第1461页与范围人数、空选、本人落在第28901名而仍有全榜本人提示，以及刷新深链；观察使用本地隔离数据，不是生产账号或目标播放器真实游玩。最终新版浏览器 QA 与报告归档尚待 root，不将这批初步观察写成全部浏览器/公开体验门通过。
 
-OMS [本轮客户端来源](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-multisource-client-snapshot-20261004.md)绑定已推送 `b7d0f74d77425bc47079e55f854ff93fd3c0c9a5`；默认隔离及保存后新局沿 `client-ir-default-isolation` / `client-ir-save-first`，不改变旧 UUID/body/账号归属。三份固定发行 Java SDK 插件编译属于软件证据，真实配置器发现、交分及原生榜仍待验收；OpenLR2 v143 工具组件门未过。实际宿主限制取 [固定播放器事实](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-multisource-player-snapshot-20261004.md)，不宣称插件已接通或真人可用。
+OMS [本轮客户端来源](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-multisource-client-snapshot-20261004.md)绑定已推送 `b7d0f74d77425bc47079e55f854ff93fd3c0c9a5`；默认隔离及保存后新局沿 `client-ir-default-isolation` / `client-ir-save-first`，不改变旧 UUID/body/账号归属。三份固定Java SDK插件已通过实际send/read合成软件检查，OpenLR2两架构同版MSVC/MT编译与软件入口加载通过。帮助页提供候选五插件、许可通知和版本证明路径，生成资产严格白名单共七项；本次静态检查8页/208引用/3脚本/2样式通过。真实宿主、非空跨DLL容器、全部玩法/原生界面及公开部署仍待；实际限制取 [固定播放器事实](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-multisource-player-snapshot-20261004.md)，P/C步骤取[真人验收说明](../../../../oms-server/oms-backend/adapters/ACCEPTANCE.md)。
 
 最新浏览器、真实共享主机预算、两次空目录恢复/回退、线上部署及 P/C 真人矩阵都仍有未完成项。对应门通过后由 root 更新实际发布来源并给真人路径，部署后真人未完记“已部署待验收”；当前尚未部署，不能提前使用该状态。旧社区成功、十万条合成容量及 SDK 编译不证明千万级基础榜或 P/C 完整闭环。
 

@@ -1,5 +1,10 @@
 # Frontend Mainline Changelog
 
+## 2026-10-04（五插件候选交付说明）
+
+- 帮助页加入固定OpenLR2两架构DLL及nlohmann/json许可通知路径，补实际“播放器专用密钥”、配置目录、架构匹配和重启步骤；Java SDK send/read与Open软件入口通过的范围明确，真实宿主/玩法与未知BP、并列界面限制仍待。
+- 生成资产仅开放五插件、许可及versions七条严格路径，静态8页/208引用通过；部署字节与P/C真人路径沿[当前进展](dev-progress.md#多来源-ir-实施)，尚未改变生产，不提升旧公开客户端包。
+
 ## 2026-10-04（多来源 IR 候选实施同步）
 
 - D01～D09 已按修订 3 采用，网页计划从待审查转为 [多来源实施](dev-plan.md#多来源-ir-实施)，共同语义只引用 [正式合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-ir/multisource-contract.md)与 [Backend 实施](../../../../oms-server/oms-backend/doc_md/mainline/dev-progress.md#多来源-ir-实施)。
