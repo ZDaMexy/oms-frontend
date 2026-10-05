@@ -3,7 +3,7 @@
 ## 产品与公开口径
 
 - 统一阶段及状态只由 [Dev Bridge dev-plan](../../../../oms-server/dev_bridge_md/doc_md/mainline/dev-plan.md) 定义。2026-10-04 用户授权社区帖首页与独立下载 / 帮助页面，Phase 2 / Phase 4 进入开发；阶段变化不替代实现、浏览器或生产证据。
-- 2026-10-05 玩家拒绝当前视觉与文风，官网视觉验收重新打开。首页、社区、下载、帮助、账号与 IR 必须保持共同的字体、色彩、排版及控件规则；中文直接说明功能与实际状态，移除重复宣传口号和模板套话。旧站视觉材料可作参考，其历史产品说明和第三方演奏素材不因设计回用而恢复适用性。实际可见方案与对应浏览器结果先于完成结论，功能检查不代签设计质量。
+- 2026-10-05 玩家拒绝当前视觉与文风，官网视觉验收重新打开。首页、社区、下载、帮助、账号与 IR 必须保持共同的字体、色彩、排版及控件规则；中文直接说明功能与实际状态，移除重复宣传口号和模板套话。旧站视觉材料可作参考，其历史产品说明和第三方演奏素材不因设计回用而恢复适用性。实际可见方案与对应浏览器结果先于完成结论，功能检查不代签设计质量。公共 tokens、body 字体和全局控件只在 portal/style.css 维护，IR 样式仅定义榜单布局；手机视觉与 DOM 阅读顺序一致，密集表格仅在自身容器滚动。
 - Website 保持原生 HTML / CSS / JavaScript，以请求型 API 读取真实帖子 / 回复，账号复用原 IR；采用 [社区合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/constraints.md)。没有官方新闻栏目、假帖子、合成玩家动态或假活跃数，不扩张实时在线服务。
 - 平台口径准确表达 Windows-only；客户端能力来自 [Client Bridge](../../../../oms-server/oms_client_bridge_md/doc_md/mainline/README.md) 的有日期 / 提交来源，旧事实不能靠网页重构刷新为当前客户端已验证。
 - 默认发行边界引用 [事实登记](../../../../oms-server/oms_client_bridge_md/doc_md/mainline/facts.md#事实登记)：`client-default-offline`（默认离线优先）、`client-in-app-update-disabled`（历史默认更新开关）与 `client-online-entrypoints`（代码接点不证明已连服务）。公开新页面只采用本轮需要且有适用依据的口径，不把后两项旧快照包装为新版本承诺。

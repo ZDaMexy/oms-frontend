@@ -1,23 +1,101 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101720">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050608">
     <meta name="description" content="OMS 玩家社区：讨论 BMS 与 mania，分享游玩，交流问题，查看自己的成绩。Windows-only，离线优先。">
-    <title>发一个帖子 · OMS</title><link rel="icon" href="/portal/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/portal/style.css?v=20261004-1">
-    <script defer src="/portal/site.js?v=20261004-1"></script>
-    <script defer src="/portal/community.js?v=20261004-1"></script>
+    <title>发布帖子 · OMS</title>
+<link rel="icon" href="../../portal/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../portal/style.css?v=20261005-2">
+    <script defer src="../../portal/site.js?v=20261005-2">
+</script>
+    <script defer src="../../portal/community.js?v=20261005-2">
+</script>
   </head>
   <body data-page="new">
     <a class="skip" href="#main">跳到主要内容</a>
-    <header class="site-header"><div class="shell header-inner"><a class="brand" href="/" aria-label="OMS 首页"><img src="/portal/favicon.svg" alt="" width="34" height="34"><span class="brand-word">OM<span>S</span></span><span class="brand-sub">PLAYER COMMUNITY</span></a><nav class="site-nav" aria-label="主要导航"><a href="/">首页</a><a href="/community/" aria-current="page">社区</a><a href="/download/">下载</a><a href="/ir/">IR</a><a href="/help/">帮助</a></nav><a id="site-account" class="header-account" href="/account/">登录 / 注册</a></div></header>
+    <header class="site-header">
+<div class="shell header-inner">
+<a class="brand" href="/" aria-label="OMS 首页">
+<img src="../../portal/favicon.svg" alt="" width="34" height="34">
+<span class="brand-word">OM<span>S</span>
+</span>
+<span class="brand-sub">BMS / MANIA</span>
+</a>
+<nav class="site-nav" aria-label="主要导航">
+<a href="/">首页</a>
+<a href="/community/" aria-current="page">社区</a>
+<a href="/download/">下载</a>
+<a href="/ir/">IR</a>
+<a href="/help/">帮助</a>
+</nav>
+<a id="site-account" class="header-account" href="/account/">登录 / 注册</a>
+</div>
+</header>
     <main id="main" class="shell">
-      <div class="page-intro"><p class="eyebrow">START A CONVERSATION</p><h1>你想聊点什么？</h1><p>写清主题，选一个分类。帖子发布后会出现在社区与首页。</p></div><div class="page-layout"><div class="page-main"><p id="editor-message" class="notice" role="status" aria-live="polite" hidden></p><div id="editor-login" class="notice" hidden>登录后就可以发帖。<a id="editor-login-link" class="text-link" href="/account/?next=/community/new/">登录 / 注册 →</a></div><form id="post-form" class="panel form-panel"><div class="field"><label for="post-category">分类</label><select id="post-category" name="category" required><option value="discussion">讨论</option><option value="help">求助</option><option value="showcase">分享</option><option value="development">开发记录</option></select></div><div class="field"><label for="post-title">标题</label><input id="post-title" name="title" maxlength="100" placeholder="一句话说明想聊的内容" required></div><div class="field"><label for="post-body">正文</label><textarea id="post-body" name="body" rows="13" maxlength="12000" placeholder="分享你的想法；求助时可以说明版本、操作步骤和遇到的现象。" required></textarea><small>纯文本 · 可以粘贴网页链接 · 最多 12000 字符</small></div><p class="draft-note">发帖内容公开。请不要贴密码、令牌或私密日志。失败时本页会保留文字供重试；离开本页会丢失未发布内容。</p><div class="form-actions"><button id="post-submit" class="button button-primary" type="submit" disabled>发布帖子</button><a class="text-link" href="/community/">返回社区</a></div></form></div><aside class="sidebar" aria-label="常用入口">
-      <section class="panel panel-padded"><p class="sidebar-label">PLAY OMS</p><h2>下一局，从这里开始</h2><p>Windows 上的 BMS 与 mania。下载公开版本，添加自己的谱面，离线也能玩。</p><a class="button button-primary" href="/download/">下载 OMS <span aria-hidden="true">↗</span></a></section>
-      <section class="panel panel-padded"><h2>常用入口</h2><a class="side-link" href="/help/#startup"><span>第一次使用 OMS</span><span aria-hidden="true">↗</span></a><a class="side-link" href="/ir/"><span>谱面榜单与我的成绩</span><span aria-hidden="true">↗</span></a><a class="side-link" href="/help/#library"><span>添加自己的谱库</span><span aria-hidden="true">↗</span></a><a class="side-link" href="/help/#contact"><span>反馈问题 / 联系维护者</span><span aria-hidden="true">↗</span></a></section>
-      <p class="side-note">社区与 IR 正在试运行。欢迎记录遇到的问题，也欢迎分享你的下一次进步。</p>
-    </aside></div>
+      <div class="page-intro">
+<h1>发布帖子</h1>
+<p>写清主题，选一个分类。帖子发布后会出现在社区与首页。</p>
+</div>
+<div class="page-layout">
+<div class="page-main">
+<p id="editor-message" class="notice" role="status" aria-live="polite" hidden>
+</p>
+<div id="editor-login" class="notice" hidden>登录后就可以发帖。<a id="editor-login-link" class="text-link" href="/account/?next=/community/new/">登录 / 注册 →</a>
+</div>
+<form id="post-form" class="panel form-panel">
+<div class="field">
+<label for="post-category">分类</label>
+<select id="post-category" name="category" required>
+<option value="discussion">讨论</option>
+<option value="help">求助</option>
+<option value="showcase">分享</option>
+<option value="development">开发记录</option>
+</select>
+</div>
+<div class="field">
+<label for="post-title">标题</label>
+<input id="post-title" name="title" maxlength="100" placeholder="写明主题，最多 100 字符" required>
+</div>
+<div class="field">
+<label for="post-body">正文</label>
+<textarea id="post-body" name="body" rows="13" maxlength="12000" placeholder="分享你的想法；求助时可以说明版本、操作步骤和遇到的现象。" required>
+</textarea>
+<small>纯文本 · 可以粘贴网页链接 · 最多 12000 字符</small>
+</div>
+<p class="draft-note">发帖内容公开。请不要贴密码、令牌或私密日志。失败时本页会保留文字供重试；离开本页会丢失未发布内容。</p>
+<div class="form-actions">
+<button id="post-submit" class="button button-primary" type="submit" disabled>发布帖子</button>
+<a class="text-link" href="/community/">返回社区</a>
+</div>
+</form>
+</div>
+<aside class="sidebar" aria-label="相关内容">
+<section class="panel panel-padded">
+<h2>发帖前检查</h2>
+<p>标题写清问题或主题。求助时说明客户端版本、玩法、操作步骤和实际现象。</p>
+<a class="side-link" href="/help/#rules">阅读社区约定</a>
+</section>
+<section>
+<h2>文字与账号</h2>
+<p>支持纯文本与网页链接。发布失败时保留本页文字，重试前确认仍在使用原账号。</p>
+<p class="side-note">不公开密码、令牌或私密日志。</p>
+</section>
+</aside>
+</div>
     </main>
-    <footer class="shell site-footer"><span>OMS · BMS / MANIA · WINDOWS ONLY</span><div class="footer-links"><a href="/help/#rules">社区约定</a><a href="/help/#privacy">数据与隐私</a><a href="/help/#contact">联系与反馈</a><a href="https://github.com/ZDaMexy/oms" rel="noopener">客户端源码 ↗</a></div></footer>
-    <noscript><p class="shell notice">社区帖子、登录和成绩查询需要 JavaScript。下载与帮助页面仍可直接阅读。</p></noscript>
+    <footer class="shell site-footer">
+<span>OMS · BMS / MANIA · WINDOWS ONLY</span>
+<div class="footer-links">
+<a href="/help/#rules">社区约定</a>
+<a href="/help/#privacy">数据与隐私</a>
+<a href="/help/#contact">联系与反馈</a>
+<a href="https://github.com/ZDaMexy/oms" rel="noopener">客户端源码 ↗</a>
+</div>
+</footer>
+    <noscript>
+<p class="shell notice">社区帖子、登录和成绩查询需要 JavaScript。下载与帮助页面仍可直接阅读。</p>
+</noscript>
   </body>
 </html>

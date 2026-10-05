@@ -6,51 +6,77 @@
     <meta name="theme-color" content="#050608" />
     <meta name="description" content="OMS IR 试验榜：按游玩条件查看 BMS 与 mania 成绩，以及自己的游玩记录。" />
     <title>OMS IR · 试验榜</title>
-    <link rel="icon" href="/portal/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/portal/style.css?v=20261004-1" />
-    <link rel="stylesheet" href="ir.css" />
-    <script defer src="/portal/site.js?v=20261004-1"></script>
-    <script defer src="ir.js"></script>
+    <link rel="icon" href="../portal/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../portal/style.css?v=20261005-2" />
+    <link rel="stylesheet" href="ir.css?v=20261005-2" />
+    <script defer src="../portal/site.js?v=20261005-2">
+</script>
+    <script defer src="ir.js?v=20261005-2">
+</script>
   </head>
-  <body>
+  <body data-page="ir">
     <a class="skip-link" href="#ranking">跳到成绩区</a>
     <header class="site-header">
-      <div class="shell header-inner"><a class="brand" href="/" aria-label="OMS 首页"><img src="/portal/favicon.svg" alt="" width="34" height="34" /><span class="brand-word">OM<span>S</span></span><span class="brand-sub">PLAYER COMMUNITY</span></a><nav class="site-nav" aria-label="主要导航"><a href="/">首页</a><a href="/community/">社区</a><a href="/download/">下载</a><a href="/ir/" aria-current="page">IR</a><a href="/help/">帮助</a></nav><a id="site-account" class="header-account" href="/account/">登录 / 注册</a></div>
+      <div class="shell header-inner">
+<a class="brand" href="/" aria-label="OMS 首页">
+<img src="../portal/favicon.svg" alt="" width="34" height="34" />
+<span class="brand-word">OM<span>S</span>
+</span>
+<span class="brand-sub">BMS / MANIA</span>
+</a>
+<nav class="site-nav" aria-label="主要导航">
+<a href="/">首页</a>
+<a href="/community/">社区</a>
+<a href="/download/">下载</a>
+<a href="/ir/" aria-current="page">IR</a>
+<a href="/help/">帮助</a>
+</nav>
+<a id="site-account" class="header-account" href="/account/">登录 / 注册</a>
+</div>
     </header>
 
     <main class="shell">
       <section class="intro" aria-labelledby="page-title">
         <div>
-          <p class="eyebrow"><span class="signal-dot" aria-hidden="true"></span> OMS IR · 试运行</p>
-          <h1 id="page-title">记录每次<span>进步。</span></h1>
+
+          <h1 id="page-title">IR 谱面榜单</h1>
           <p class="intro-copy">按谱面选择一个、多个或全部来源，查看跨播放器的 EX 参考混榜；也能主动收窄到已确认的同条件榜。</p>
         </div>
-        <div class="intro-label" aria-hidden="true"><span>EX SCORE</span><strong>BEST<br />CLEAR</strong></div>
+
       </section>
 
-      <aside class="trust-notice" aria-label="试验榜说明">
-        <span class="trust-tag">试验榜</span>
+      <details class="trust-notice">
+<summary>试运行：客户端上报，未经回放核验。查看来源与隐私说明</summary>
         <div>
-          <strong>客户端上报，未经回放核验</strong>
-          <p>榜单不代表成绩已获认证。候选客户端可主动连接、先保存本地成绩再交分；离线待交仍绑定原账号。客户端默认关闭 IR。</p>
-          <p>社区与 IR 共用账号，榜单会公开账号名；不会上传回放或谱面文件。账号与成绩删除、账号恢复请通过<a href="/help/#contact">联系入口</a>处理，目前没有邮箱找回。<a href="/help/#privacy">查看数据说明 ↗</a></p>
+          <strong>跨播放器接入仍在试运行</strong>
+          <p>榜单保留客户端上报的成绩，未经回放核验。支持 IR 的 OMS 开发版会先保存本地成绩再交分；断网后的待交内容仍归属原账号。各外部播放器的实际游玩验证范围见<a href="/help/#players">接入说明</a>。IR 默认关闭。</p>
+          <p>社区与 IR 共用账号，榜单会公开账号名；不会上传回放或谱面文件。账号与成绩删除、账号恢复请通过<a href="/help/#contact">联系入口</a>处理，目前没有邮箱找回。<a href="/help/#privacy">查看数据说明 ↗</a>
+</p>
           <p>LR2IR 历史来自公开归档，保留原账号 ID、行内名称和原通关灯；同名账号不会合并。未知条件如实保留，参考混榜不表示跨播放器公平性。外部播放器保存最佳状态，只有 OMS 新局进入逐局记录。</p>
         </div>
-      </aside>
+      </details>
 
-      <p id="page-message" class="message" role="status" aria-live="polite" hidden></p>
+      <p id="page-message" class="message" role="status" aria-live="polite" hidden>
+</p>
 
       <div class="workspace">
-        <aside class="sidebar" aria-label="谱面与账号">
+        <aside class="catalog-sidebar" aria-label="谱面目录">
           <section class="panel catalog" aria-labelledby="catalog-title">
             <div class="panel-heading">
-              <div><p class="eyebrow">CHART SELECT</p><h2 id="catalog-title">谱面</h2></div>
+              <div>
+<h2 id="catalog-title">谱面</h2>
+</div>
               <button id="reload-charts" class="icon-button" type="button" aria-label="重新读取谱面">↻</button>
             </div>
-            <p class="section-hint">查找当前成绩与全量公开历史目录。可直接输入谱面 MD5。</p>
-            <form id="chart-search" class="catalog-search"><label class="sr-only" for="chart-query">标题、作者或 MD5</label><input id="chart-query" maxlength="200" placeholder="标题、作者或 MD5" /><button class="text-button" type="submit">查找 →</button></form>
+            <p class="section-hint">搜索标题、作者，或直接输入原谱 MD5。</p>
+            <form id="chart-search" class="catalog-search">
+<label for="chart-query">标题、作者或 MD5</label>
+<input id="chart-query" maxlength="200" placeholder="标题、作者或 MD5" />
+<button class="text-button" type="submit">查找 →</button>
+</form>
             <p id="catalog-message" class="inline-message" role="status" aria-live="polite">正在读取谱面…</p>
-            <ul id="catalog-list" class="chart-list"></ul>
+            <ul id="catalog-list" class="chart-list">
+</ul>
             <div class="pagination pagination--compact">
               <button id="charts-prev" class="text-button" type="button" disabled>上一页</button>
               <span id="charts-page" class="page-label">读取中</span>
@@ -58,73 +84,76 @@
             </div>
           </section>
 
-          <section class="panel account" aria-labelledby="account-title">
-            <div class="panel-heading"><div><p class="eyebrow">PLAYER ACCOUNT</p><h2 id="account-title">我的账号</h2></div><span id="account-state" class="small-label">正在确认</span></div>
-            <div id="account-logged-out">
-              <div class="auth-tabs" role="group" aria-label="账号操作">
-                <button id="login-tab" class="auth-tab is-active" type="button" aria-pressed="true">登录</button>
-                <button id="register-tab" class="auth-tab" type="button" aria-pressed="false">注册</button>
-              </div>
-              <form id="auth-form">
-                <label for="username">账号名</label>
-                <input id="username" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" minlength="3" maxlength="24" pattern="[A-Za-z0-9_]{3,24}" placeholder="3–24 位字母、数字或下划线" required />
-                <label for="password">密码</label>
-                <input id="password" name="password" type="password" autocomplete="current-password" minlength="10" maxlength="128" placeholder="至少 10 个字符" required />
-                <p id="register-hint" class="section-hint" hidden>注册后即可登录。账号名不区分大小写；本轮没有邮箱找回入口，请保存好密码。</p>
-                <button id="auth-submit" class="primary-button" type="submit" disabled>登录</button>
-              </form>
-            </div>
-            <div id="account-logged-in" hidden>
-              <p id="account-username" class="account-name"></p>
-              <p class="section-hint">已登录。本人记录仅向当前账号开放。</p>
-              <div class="account-actions">
-                <button id="mine-button" class="primary-button" type="button">我的记录 <span aria-hidden="true">→</span></button>
-                <button id="logout-button" class="text-button" type="button">退出登录</button>
-              </div>
-              <details class="integration-panel"><summary>播放器专用密钥</summary><p class="section-hint">每个来源使用独立密钥，可随时撤销。插件填写密钥，不填写 OMS 账号密码。密钥仅在创建时显示一次。</p>
-                <form id="key-form"><label for="key-source">播放器</label><select id="key-source"><option value="beatoraja">beatoraja 0.8.8</option><option value="lr2oraja">LR2oraja build11611350155</option><option value="lr2oraja_ed">LR2oraja Endless Dream v0.4.0</option><option value="openlr2">OpenLR2 v260915</option></select><label for="key-label">备注</label><input id="key-label" maxlength="60" placeholder="例如：台式机" /><button class="primary-button" type="submit">创建专用密钥</button></form>
-                <p id="key-message" class="inline-message" role="status" aria-live="polite" hidden></p><label id="key-secret-label" for="key-secret" hidden>请现在复制并保存</label><textarea id="key-secret" rows="3" readonly hidden autocomplete="off" spellcheck="false"></textarea><ul id="key-list" class="key-list"></ul>
-              </details>
-            </div>
-            <p id="auth-message" class="inline-message" role="status" aria-live="polite" hidden></p>
-          </section>
         </aside>
 
         <section id="ranking" class="ranking panel" tabindex="-1" aria-label="成绩区">
           <div class="view-tabs" role="group" aria-label="成绩视图">
             <button id="board-tab" class="view-tab is-active" type="button" aria-pressed="true">谱面榜单</button>
             <button id="history-tab" class="view-tab" type="button" aria-pressed="false" disabled>本人记录</button>
-            <span class="view-trust">CLIENT REPORTED</span>
+            <span class="view-trust">未经回放核验</span>
           </div>
 
           <div id="board-view">
             <div class="ranking-heading ranking-heading--with-action">
               <div>
-                <p id="board-mode" class="eyebrow">SELECT A CHART</p>
+                <p id="board-mode" class="eyebrow">尚未选择谱面</p>
                 <h2 id="board-title">选择一张谱面</h2>
-                <p id="board-subtitle" class="chart-subtitle">从左侧选择或查找谱面。</p>
+                <p id="board-subtitle" class="chart-subtitle">在谱面目录搜索标题、作者或原谱 MD5。</p>
               </div>
               <button id="reload-board" class="text-button" type="button" disabled>刷新榜单 ↻</button>
             </div>
-            <fieldset id="source-control" class="source-control" hidden><legend>榜单来源</legend><div class="source-actions"><button id="sources-all" class="text-button" type="button">全部</button><button id="sources-none" class="text-button" type="button">清空</button></div><div id="source-choices" class="source-choices"></div></fieldset>
-            <div class="group-control"><label for="ranking-mode">比较方式</label><select id="ranking-mode" disabled><option value="reference">跨来源参考混榜 · 原 EX</option><option value="comparable">同条件榜 · 主动收窄</option></select></div>
+            <fieldset id="source-control" class="source-control" hidden>
+<legend>榜单来源</legend>
+<div class="source-actions">
+<button id="sources-all" class="text-button" type="button">全部</button>
+<button id="sources-none" class="text-button" type="button">清空</button>
+</div>
+<div id="source-choices" class="source-choices">
+</div>
+</fieldset>
+            <div class="group-control">
+<label for="ranking-mode">比较方式</label>
+<select id="ranking-mode" disabled>
+<option value="reference">跨来源参考混榜 · 原 EX</option>
+<option value="comparable">同条件榜 · 主动收窄</option>
+</select>
+</div>
             <div class="group-control">
               <label for="group-select">游玩条件</label>
-              <select id="group-select" disabled><option value="">请先选择谱面</option></select>
+              <select id="group-select" disabled>
+<option value="">请先选择谱面</option>
+</select>
             </div>
-            <div class="ranking-summary"><span id="board-total">尚未选择</span><span>同分共享名次</span></div>
-            <p id="board-me" class="my-rank" role="status" hidden></p>
-            <p id="board-message" class="empty-state" role="status" aria-live="polite">游玩条件相同的成绩才会放在一起比较。</p>
-            <div id="board-table-wrap" class="table-wrap" hidden>
+            <div class="ranking-summary">
+<span id="board-total">尚未选择</span>
+<span>同分共享名次</span>
+</div>
+            <p id="board-me" class="my-rank" role="status" hidden>
+</p>
+            <p id="board-message" class="empty-state" role="status" aria-live="polite">选择谱面后读取真实成绩。参考混榜保留不同来源，只有已确认条件才能进入同条件榜。</p>
+            <div id="board-table-wrap" class="table-wrap" tabindex="0" role="region" aria-label="谱面成绩表，可横向滚动" hidden>
               <table>
                 <caption class="sr-only">当前谱面所选来源的玩家最佳成绩</caption>
-                <thead><tr><th scope="col">名次</th><th scope="col">玩家</th><th id="board-score-heading" scope="col">最佳分数</th><th id="board-condition-heading" scope="col">来源 / 条件</th><th scope="col">独立最佳灯</th><th scope="col">记录类型 / 时间</th><th scope="col"><span class="sr-only">成绩详情</span></th></tr></thead>
-                <tbody id="board-body"></tbody>
+                <thead>
+<tr>
+<th scope="col">名次</th>
+<th scope="col">玩家</th>
+<th id="board-score-heading" scope="col">最佳分数</th>
+<th id="board-condition-heading" scope="col">来源 / 条件</th>
+<th scope="col">独立最佳灯</th>
+<th scope="col">记录类型 / 时间</th>
+<th scope="col">
+<span class="sr-only">成绩详情</span>
+</th>
+</tr>
+</thead>
+                <tbody id="board-body">
+</tbody>
               </table>
             </div>
             <div class="pagination">
               <button id="board-prev" class="text-button" type="button" disabled>← 上一页</button>
-              <span id="board-page" class="page-label">—</span>
+              <span id="board-page" class="page-label">待读取</span>
               <button id="board-next" class="text-button" type="button" disabled>下一页 →</button>
             </div>
             <p class="ranking-footnote">来源筛选同时影响最佳分、独立灯、人数和名次。各灯按其原规则分别展示，未知规则不会换算成同一最高灯。历史摘要没有可信逐局时间。</p>
@@ -132,40 +161,137 @@
 
           <div id="history-view" hidden>
             <div class="ranking-heading ranking-heading--with-action">
-              <div><p class="eyebrow">YOUR PLAYS</p><h2>本人记录</h2><p class="chart-subtitle">每一局独立保存，不只保留最高分。</p></div>
+              <div>
+<h2>本人记录</h2>
+<p class="chart-subtitle">OMS 新局逐局保存；外部播放器最佳状态与历史摘要不作为逐局记录。</p>
+</div>
               <button id="reload-history" class="text-button" type="button">刷新记录 ↻</button>
             </div>
-            <div class="ranking-summary"><span id="history-total">正在读取</span><span>仅当前账号可见</span></div>
+            <div class="ranking-summary">
+<span id="history-total">正在读取</span>
+<span>仅当前账号可见</span>
+</div>
             <p id="history-message" class="empty-state" role="status" aria-live="polite">正在读取本人记录…</p>
-            <div id="history-table-wrap" class="table-wrap" hidden>
+            <div id="history-table-wrap" class="table-wrap" tabindex="0" role="region" aria-label="本人记录表，可横向滚动" hidden>
               <table>
                 <caption class="sr-only">当前账号的完整游玩记录</caption>
-                <thead><tr><th scope="col">谱面 / 条件</th><th scope="col">分数</th><th scope="col">准确率 / 连击</th><th scope="col">本局灯</th><th scope="col">游玩时间</th><th scope="col"><span class="sr-only">记录操作</span></th></tr></thead>
-                <tbody id="history-body"></tbody>
+                <thead>
+<tr>
+<th scope="col">谱面 / 条件</th>
+<th scope="col">分数</th>
+<th scope="col">准确率 / 连击</th>
+<th scope="col">本局灯</th>
+<th scope="col">游玩时间</th>
+<th scope="col">
+<span class="sr-only">记录操作</span>
+</th>
+</tr>
+</thead>
+                <tbody id="history-body">
+</tbody>
               </table>
             </div>
             <div class="pagination">
               <button id="history-prev" class="text-button" type="button" disabled>← 上一页</button>
-              <span id="history-page" class="page-label">—</span>
+              <span id="history-page" class="page-label">待读取</span>
               <button id="history-next" class="text-button" type="button" disabled>下一页 →</button>
             </div>
           </div>
         </section>
+          <section class="panel account" aria-labelledby="account-title">
+            <div class="panel-heading">
+<div>
+<h2 id="account-title">我的账号</h2>
+</div>
+<span id="account-state" class="small-label">正在确认</span>
+</div>
+            <div id="account-logged-out">
+              <div class="auth-tabs" role="group" aria-label="账号操作">
+                <button id="login-tab" class="auth-tab is-active" type="button" aria-pressed="true">登录</button>
+                <button id="register-tab" class="auth-tab" type="button" aria-pressed="false">注册</button>
+              </div>
+              <form id="auth-form">
+                <label for="username">账号名</label>
+                <input id="username" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" minlength="3" maxlength="24" pattern="[A-Za-z0-9_]{3,24}" placeholder="3-24 位字母、数字或下划线" required />
+                <label for="password">密码</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" minlength="10" maxlength="128" placeholder="至少 10 个字符" required />
+                <p id="register-hint" class="section-hint" hidden>注册后即可登录。账号名不区分大小写；目前没有邮箱找回入口，请保存好密码。</p>
+                <button id="auth-submit" class="primary-button" type="submit" disabled>登录</button>
+              </form>
+            </div>
+            <div id="account-logged-in" hidden>
+              <p id="account-username" class="account-name">
+</p>
+              <p class="section-hint">已登录。本人记录仅向当前账号开放。</p>
+              <div class="account-actions">
+                <button id="mine-button" class="primary-button" type="button">我的记录 <span aria-hidden="true">→</span>
+</button>
+                <button id="logout-button" class="text-button" type="button">退出登录</button>
+              </div>
+              <details class="integration-panel">
+<summary>播放器专用密钥</summary>
+<p class="section-hint">每个来源使用独立密钥，可随时撤销。插件填写密钥，不填写 OMS 账号密码。密钥仅在创建时显示一次。</p>
+                <form id="key-form">
+<label for="key-source">播放器</label>
+<select id="key-source">
+<option value="beatoraja">beatoraja 0.8.8</option>
+<option value="lr2oraja">LR2oraja build11611350155</option>
+<option value="lr2oraja_ed">LR2oraja Endless Dream v0.4.0</option>
+<option value="openlr2">OpenLR2 v260915</option>
+</select>
+<label for="key-label">备注</label>
+<input id="key-label" maxlength="60" placeholder="例如：台式机" />
+<button class="primary-button" type="submit">创建专用密钥</button>
+</form>
+                <p id="key-message" class="inline-message" role="status" aria-live="polite" hidden>
+</p>
+<label id="key-secret-label" for="key-secret" hidden>请现在复制并保存</label>
+<textarea id="key-secret" rows="3" readonly hidden autocomplete="off" spellcheck="false">
+</textarea>
+<ul id="key-list" class="key-list">
+</ul>
+              </details>
+            </div>
+            <p id="auth-message" class="inline-message" role="status" aria-live="polite" hidden>
+</p>
+          </section>
       </div>
     </main>
 
-    <footer class="shell site-footer"><span>OMS IR · 试验榜</span><span>按需交分与查榜 · 无持续在线状态</span><a href="https://oms.zdamexy.work/">OMS 官网 ↗</a></footer>
+    <footer class="shell site-footer">
+<span>OMS IR · 试验榜</span>
+<span>按需交分与查榜 · 无持续在线状态</span>
+<a href="https://oms.zdamexy.work/">OMS 官网 ↗</a>
+</footer>
 
     <dialog id="score-dialog" class="score-dialog" aria-labelledby="detail-title">
-      <div class="dialog-heading"><div><p class="eyebrow">PLAY RECORD</p><h2 id="detail-title"></h2></div><form method="dialog"><button class="icon-button" type="submit" aria-label="关闭成绩详情">×</button></form></div>
+      <div class="dialog-heading">
+<div>
+<h2 id="detail-title">
+</h2>
+</div>
+<form method="dialog">
+<button class="icon-button" type="submit" aria-label="关闭成绩详情">×</button>
+</form>
+</div>
       <p class="detail-trust">客户端上报，未经回放核验</p>
-      <p id="detail-subtitle" class="chart-subtitle"></p>
-      <dl id="detail-summary" class="detail-grid"></dl>
+      <p id="detail-subtitle" class="chart-subtitle">
+</p>
+      <dl id="detail-summary" class="detail-grid">
+</dl>
       <h3 id="detail-fields-heading">判定记录</h3>
-      <dl id="detail-statistics" class="detail-grid detail-grid--statistics"></dl>
-      <p id="detail-lamp-note" class="section-hint" hidden></p>
-      <div class="dialog-footer"><form method="dialog"><button class="text-button" type="submit">关闭详情</button></form></div>
+      <dl id="detail-statistics" class="detail-grid detail-grid--statistics">
+</dl>
+      <p id="detail-lamp-note" class="section-hint" hidden>
+</p>
+      <div class="dialog-footer">
+<form method="dialog">
+<button class="text-button" type="submit">关闭详情</button>
+</form>
+</div>
     </dialog>
-    <noscript><p class="shell message">需要启用 JavaScript 才能读取真实榜单与登录账号。</p></noscript>
+    <noscript>
+<p class="shell message">需要启用 JavaScript 才能读取真实榜单与登录账号。</p>
+</noscript>
   </body>
 </html>

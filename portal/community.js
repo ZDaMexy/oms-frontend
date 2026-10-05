@@ -113,7 +113,7 @@
     function updateMine() {
       const mine = get("my-posts");
       if (mine) mine.href = site.user ? authorUrl(site.user.id) : "/account/?next=/community/";
-      get("feed-title").textContent = authorId ? (site.user && String(site.user.id) === authorId ? "我的帖子" : "这位玩家的帖子") : "最近的讨论";
+      get("feed-title").textContent = authorId ? (site.user && String(site.user.id) === authorId ? "我的帖子" : "这位玩家的帖子") : "近期帖子";
     }
 
     async function load() {
@@ -151,13 +151,13 @@
         get("feed-count").textContent = data.total + " 个帖子";
         get("feed-empty").hidden = data.items.length !== 0;
         if (data.items.length === 0 && (query || category || authorId)) {
-          get("feed-empty").querySelector("h3").textContent = "这个筛选下还没有帖子。";
-          get("feed-empty").querySelector("p").textContent = "换一个分类或关键词，或者发起新的讨论。";
-          get("feed-empty").querySelector("a").textContent = "发一个帖子";
+          get("feed-empty").querySelector("h3").textContent = "没有符合筛选条件的帖子";
+          get("feed-empty").querySelector("p").textContent = "试试其他分类或关键词，或返回社区查看全部帖子。";
+          get("feed-empty").querySelector("a").textContent = "发布帖子";
         } else {
-          get("feed-empty").querySelector("h3").textContent = "还没有帖子，先打个招呼吧。";
-          get("feed-empty").querySelector("p").textContent = "分享一次游玩、问一个问题，或者写下对 OMS 的想法。";
-          get("feed-empty").querySelector("a").textContent = "发第一个帖子";
+          get("feed-empty").querySelector("h3").textContent = "社区暂无帖子";
+          get("feed-empty").querySelector("p").textContent = "发布的讨论、求助、分享和开发记录会显示在这里。";
+          get("feed-empty").querySelector("a").textContent = "发布帖子";
         }
         notice(get("feed-message"), "");
         pagination("feed", data);
@@ -167,7 +167,7 @@
         get("feed-count").textContent = "暂未读取";
         notice(get("feed-message"), site.errorText(error), true);
         get("feed-retry-wrap").hidden = false;
-        get("feed-page").textContent = "—";
+        get("feed-page").textContent = "待读取";
       }
     }
 
@@ -372,7 +372,7 @@
       if (atStart !== replyRevision) return;
       get("replies-list").replaceChildren(...data.items.map(renderReply));
       get("replies-title").textContent = "回复 · " + data.total;
-      notice(get("replies-message"), data.total === 0 ? "还没有回复。说说你的想法吧。" : "");
+      notice(get("replies-message"), data.total === 0 ? "暂无回复。" : "");
       pagination("replies", data);
       const parameters = new URLSearchParams();
       if (replyPage > 1) parameters.set("reply_page", replyPage);

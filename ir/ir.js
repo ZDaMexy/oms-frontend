@@ -210,7 +210,7 @@
   }
 
   function resetPagination(prefix) {
-    dom[`${prefix}-page`].textContent = "—";
+    dom[`${prefix}-page`].textContent = "待读取";
     dom[`${prefix}-prev`].disabled = true;
     dom[`${prefix}-next`].disabled = true;
   }
@@ -326,7 +326,7 @@
     boardPage = restore?.page || 1;
     boardConditions = [];
     setView("board");
-    dom["board-mode"].textContent = `${item.ruleset.toUpperCase()} / REFERENCE RANKING`;
+    dom["board-mode"].textContent = `${item.ruleset.toUpperCase()} / 谱面成绩`;
     dom["board-title"].textContent = title(item.chart);
     dom["board-subtitle"].textContent = chartSubtitle(item.chart);
     dom["source-control"].hidden = item.ruleset !== "bms";

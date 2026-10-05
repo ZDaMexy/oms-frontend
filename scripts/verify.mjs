@@ -19,7 +19,7 @@ const generatedAssets = new Set([
   "/ir/adapters/omsir-lr2oraja-build11611350155-0.1.0.jar",
   "/ir/adapters/omsir-ed-v0.4.0-0.1.0.jar",
   "/ir/adapters/OmsIR-v260915.x64.dll", "/ir/adapters/OmsIR-v260915.x86.dll",
-  "/ir/adapters/nlohmann-json-LICENSE.MIT.txt", "/ir/adapters/versions.json",
+  "/ir/adapters/nlohmann-json-LICENSE.MIT.txt", "/ir/adapters/zlib-LICENSE.txt", "/ir/adapters/versions.json",
 ]);
 
 // Check authored navigation, assets and CSP constraints. Runtime behavior and
@@ -108,5 +108,5 @@ export function verifyPortal(directory) {
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   assert.equal(process.argv.length, 2, "Usage: node scripts/verify.mjs");
   console.log(`PASS ${JSON.stringify(verifyPortal(root))}`);
-  console.log("Scope: static routes, navigation, anchors, labels, assets, script syntax and CSP. The seven fixed generated adapter assets require exporter/provenance and deployed HTTP verification; browser/API checks are separate.");
+  console.log("Scope: static routes, navigation, anchors, labels, assets, script syntax and CSP. The eight fixed generated adapter assets require exporter/provenance and deployed HTTP verification; browser/API checks are separate.");
 }

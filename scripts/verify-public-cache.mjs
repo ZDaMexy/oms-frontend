@@ -12,10 +12,11 @@ const routes = new Map([
 ]);
 // Follow the versions actually referenced by the authored pages; a later
 // asset revision must not leave this check exercising only a retired URL.
-for (const file of [...routes.values()]) {
+for (const [route, file] of [...routes]) {
   const html = readFileSync(new URL("../" + file, import.meta.url), "utf8");
-  for (const [, asset] of html.matchAll(/(?:href|src)="(\/portal\/[^\"]+)"/g)) {
-    const url = new URL(asset, origin);
+  for (const [, asset] of html.matchAll(/(?:href|src)="([^\"]+)"/g)) {
+    const url = new URL(asset, origin + route);
+    if (url.origin !== origin || !url.pathname.startsWith("/portal/")) continue;
     routes.set(url.pathname + url.search, url.pathname.slice(1));
   }
 }
