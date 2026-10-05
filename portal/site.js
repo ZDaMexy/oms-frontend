@@ -33,8 +33,8 @@
     }
     let response;
     try {
-      response = await fetch(root + path, {
-        method, headers, credentials: "same-origin", cache: "no-store",
+      response = await fetch((options.apiRoot || root) + path, {
+        method, headers, credentials: "same-origin", cache: "no-store", signal: options.signal,
         body: method === "POST" ? JSON.stringify(options.body) : undefined,
       });
     } catch (error) {

@@ -1,0 +1,423 @@
+{
+  "repository": "https://github.com/ppy/osu-web",
+  "commit": "2c596022a1345fbed288978e7fa5304df0359f50",
+  "licence": "AGPL-3.0-or-later",
+  "files": [
+    {
+      "upstream": "resources/css/bem/beatmapsets.less",
+      "sha256": "60248f6aa013423411602da10e8f8c8dba6ee26fa4825121e51d3121ded8b33d",
+      "local": "src/osu-web/css/bem/beatmapsets.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/beatmapsets-search.less",
+      "sha256": "8a06e5453b66e66724a197f38cb1de6a9006e039c8ccc47e11ef5682dafdcb95",
+      "local": "src/osu-web/css/bem/beatmapsets-search.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/beatmapsets-search-filter.less",
+      "sha256": "3fc12da948c76fc24e001fbe474f2d5d7a4a192615959ecf516c4b602fc7db5f",
+      "local": "src/osu-web/css/bem/beatmapsets-search-filter.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/beatmapset-panel.less",
+      "sha256": "4ef8013483f165961de60f5eef587f9099c99b58dd1cb5cd519a7119e941cfe3",
+      "local": "src/osu-web/css/bem/beatmapset-panel.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/beatmapset-header.less",
+      "sha256": "d191dd2be87acd71cc9e45a02974f41640853b7d6713bf0de661f83c19721ad2",
+      "local": "src/osu-web/css/bem/beatmapset-header.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/beatmapset-info.less",
+      "sha256": "36f595c2740494f96986332270ecba6468de54cb01695f477a6b4a5fdcff4f85",
+      "local": "src/osu-web/css/bem/beatmapset-info.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/beatmapset-stats.less",
+      "sha256": "2f57e9389d2f3dc4d483536524e5be1a4f39fdaa3f52652c50688c9e9a2d5c3e",
+      "local": "src/osu-web/css/bem/beatmapset-stats.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/beatmapset-beatmap-picker.less",
+      "sha256": "8a4e39160c25f7aa8a62b493c188effc1005a317d959e98c949588336c93d587",
+      "local": "src/osu-web/css/bem/beatmapset-beatmap-picker.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/beatmapset-scoreboard.less",
+      "sha256": "0204d44f899bbe591c3050b6093d5580c86adb721dea771bc72d26ba72a06466",
+      "local": "src/osu-web/css/bem/beatmapset-scoreboard.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/beatmap-scoreboard-table.less",
+      "sha256": "428c2ea552d44b6745ea46d62d57baf74f50f52f2bdd33fbc691a904f9938af4",
+      "local": "src/osu-web/css/bem/beatmap-scoreboard-table.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/beatmap-stats-table.less",
+      "sha256": "545cd888569b9541f468013b3d985822f1625a0d22dac8fee83cbfba475cb8e4",
+      "local": "src/osu-web/css/bem/beatmap-stats-table.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/profile-info.less",
+      "sha256": "ad395c472cbfaf31170df154750478a70d1de3777421f7f366ea4691c845de02",
+      "local": "src/osu-web/css/bem/profile-info.less",
+      "modifications": "Preserve actual BEM; remove unverified image URL dependency. OMS supplies actual layout/data overrides separately."
+    },
+    {
+      "upstream": "resources/css/bem/profile-detail.less",
+      "sha256": "66caafc692885ae3a91888a97c57a7ac6ab0e331ffdbe1aaabf798ae57b19b47",
+      "local": "src/osu-web/css/bem/profile-detail.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/profile-detail-stats.less",
+      "sha256": "721284dd6b9d8a83ae610d9de233d355749c8c26cfcb76514a183f17b04d8e4d",
+      "local": "src/osu-web/css/bem/profile-detail-stats.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/profile-stats.less",
+      "sha256": "fc57bb323ff484fe68d3eb80ed2dd1eb3bce4ae752a0d028222345bad60fbfbe",
+      "local": "src/osu-web/css/bem/profile-stats.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/profile-links.less",
+      "sha256": "dd9b4ab45ae7597c41d95c5b6f7ea030db345f7cd1541b2897cd01fabaeb7db4",
+      "local": "src/osu-web/css/bem/profile-links.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/play-detail.less",
+      "sha256": "cac33163f87b1d486517240b3b91368bcbd822f5efcb7763bc71e4e1d5bb9381",
+      "local": "src/osu-web/css/bem/play-detail.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/page-extra.less",
+      "sha256": "a7d7109123ee94e78de053e4d6a185f7382aac2944baeff6ed8f2d26098944a1",
+      "local": "src/osu-web/css/bem/page-extra.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/page-tabs.less",
+      "sha256": "ab8f5ec1ca521af624dad6c4c7ab95db62cadfb80a65daf957da11512346c7ce",
+      "local": "src/osu-web/css/bem/page-tabs.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/ranking-page.less",
+      "sha256": "de4aa756498709512b133a228b48923c5ebbfc8228ab8c25a37be3826585880d",
+      "local": "src/osu-web/css/bem/ranking-page.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/ranking-page-table.less",
+      "sha256": "cfea0569daeee68416c1279377077b363d49c635256e41968512afb8aa343591",
+      "local": "src/osu-web/css/bem/ranking-page-table.less",
+      "modifications": "Preserve ranking BEM; omit unused rank-change icon/state iteration requiring Font Awesome. OMS renders actual service ranks and ties."
+    },
+    {
+      "upstream": "resources/css/bem/ranking-page-table-main.less",
+      "sha256": "72214221d53e0a76ffb668019ce86c066400c7405cbf6d7d868b06bba73e4d89",
+      "local": "src/osu-web/css/bem/ranking-page-table-main.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/ranking-filter.less",
+      "sha256": "a96d7f42496d115a653c8abad9b0edd161613b0bf7f5da57aefe0b72dba9edd9",
+      "local": "src/osu-web/css/bem/ranking-filter.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/pagination-v2.less",
+      "sha256": "d36de65c964a8f6a2332a525d6c3243abf8ed8278db08297b67725252a0c8c48",
+      "local": "src/osu-web/css/bem/pagination-v2.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/user-home.less",
+      "sha256": "54d4bbe67d2640a72c33c101ceb2b8bcd86d75e99a61e39a9e28705ad84fa4a3",
+      "local": "src/osu-web/css/bem/user-home.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/nav2.less",
+      "sha256": "9236121357efa0ede334d17da34f330c65f000b49e463b3cca2e73c70df51a79",
+      "local": "src/osu-web/css/bem/nav2.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/bem/header-v4.less",
+      "sha256": "37a4c9bbacd3feb68fcf822bec4ab4d19163ee9a5b18e70b75e4498958b504a8",
+      "local": "src/osu-web/css/bem/header-v4.less",
+      "modifications": "Preserve actual BEM layout; omit at2x image callbacks for default/page-theme headers because no licensed cover is provided."
+    },
+    {
+      "upstream": "resources/css/bem/header-nav-v4.less",
+      "sha256": "857826d4bab6ed14a55d3d3e7730cac7c9b307f9753c14bf62c21bf406c3314e",
+      "local": "src/osu-web/css/bem/header-nav-v4.less",
+      "modifications": "Preserve BEM navigation; replace Font Awesome breadcrumb mixin and glyph with a plain Unicode arrow."
+    },
+    {
+      "upstream": "resources/css/bem/osu-page.less",
+      "sha256": "3b5be456a6d102853209733b4c6e3ffd6657255e4d45b61705686c6b76ffd1b5",
+      "local": "src/osu-web/css/bem/osu-page.less",
+      "modifications": "Copy actual upstream BEM with normalized local line endings; OMS system-font/layout overrides are separate in css/player-site.less. Original raw Git blob SHA256 is recorded here, not a claim of identical local bytes."
+    },
+    {
+      "upstream": "resources/css/variables.less",
+      "sha256": "4964e49c21c3e613e1a4ee2b4ec6f9cce69f6d2d2d8ec1d70555593ff9e88602",
+      "local": "src/osu-web/css/foundation.less",
+      "modifications": "Only required transitive variable declarations; no app.less import, proprietary font families or unused runtime styles."
+    },
+    {
+      "upstream": "resources/css/colors.less",
+      "sha256": "a2c89a48a5fac24ba44def2aaad2cfa0064349f64a2e2f6f482caa8d7cd43383",
+      "local": "src/osu-web/css/foundation.less",
+      "modifications": "Only required transitive variable declarations; no app.less import, proprietary font families or unused runtime styles."
+    },
+    {
+      "upstream": "resources/css/bootstrap-variables.less",
+      "sha256": "011ba0929b667bbc281258e47cea273e26b46d806a7be207d049173605663e18",
+      "local": "src/osu-web/css/foundation.less",
+      "modifications": "Only required transitive variable declarations; no app.less import, proprietary font families or unused runtime styles."
+    },
+    {
+      "upstream": "resources/css/functions.less",
+      "sha256": "ba1cad9d4a6bea4ece83e75eb39ca6f8f05773f6c43e2582b3109ff9dd2f7b89",
+      "local": "src/osu-web/css/foundation.less",
+      "modifications": "Only non-image mixin bodies actually needed by selected BEM; app/image helper imports omitted. OMS radius constants and ellipsis utility mixin replace dependency on complete Bootstrap/utilities styles."
+    },
+    {
+      "upstream": "resources/js/components/header-v4.tsx",
+      "sha256": "dad71dd0e77eb1190f02b8df050a80baf622f06352798c2afe05f611fcbe5ebf",
+      "local": "src/osu-web/components/header-v4.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/views/objects/_pagination_v2.blade.php",
+      "sha256": "904a2668df1ffe55524386d4dae3f5eea17d28f2ce9461d21fa26f693ab407af",
+      "local": "src/osu-web/components/pagination.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/views/layout/_nav2.blade.php",
+      "sha256": "97dd23bd2c2fec485ca200942743f843a280aa2ed067c86a106b27ad76ad7d75",
+      "local": "src/osu-web/layout/nav.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "app/helpers.php",
+      "sha256": "6d2c47d081d388e2ad639df5fa3a320f566000b40982b6ca7afa95bd59a435f0",
+      "local": "src/osu-web/layout/nav.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/views/home/user.blade.php",
+      "sha256": "a602fa0f2021b084e3a254f1ee90367731efc2e4460a620e986e6b7b7998b41b",
+      "local": "src/osu-web/home/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/beatmaps/search-filter.tsx",
+      "sha256": "817f80a7d50a013ccfc309fed1f71743448e2bbd1d2a0e99569e34990b282e55",
+      "local": "src/osu-web/beatmaps/search-filter.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/beatmaps/main.tsx",
+      "sha256": "f78eab2ba96895d63ffa5d663e886bc01d299bd2dd839c73e626112ac4a42b78",
+      "local": "src/osu-web/beatmaps/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/beatmaps/search-content.tsx",
+      "sha256": "c7d79800b8c10f7eb80192baa2098b948c09af2e141c2896cf59593d18da927e",
+      "local": "src/osu-web/beatmaps/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/beatmaps/search-panel.tsx",
+      "sha256": "2709e2fa8a2fc29bc345b5bdc3e1da11eb1da28db336d4102b5d9397529dbfbc",
+      "local": "src/osu-web/beatmaps/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/beatmapset-panel/index.tsx",
+      "sha256": "48b585e329378b98245a0a84cdcdaf699877769c6c4bf30b16df4b634dd19f3d",
+      "local": "src/osu-web/beatmapset-panel/index.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/beatmapsets-show/main.tsx",
+      "sha256": "bbbb6c9d988d5781de60173effad18c9ca3da290f5d0b41bd7263e1f5a0bf4fa",
+      "local": "src/osu-web/beatmapsets-show/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/beatmapsets-show/header.tsx",
+      "sha256": "2c76191b58541711d1dc3c5c170984814c1fbd225a628001afeb712cc6270860",
+      "local": "src/osu-web/beatmapsets-show/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/beatmapsets-show/beatmap-picker.tsx",
+      "sha256": "b60c8ee0327fc1f15863000c51f17b33c4a277b0ddda465b2524574f3512a2b3",
+      "local": "src/osu-web/beatmapsets-show/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/beatmapsets-show/info.tsx",
+      "sha256": "c7b17acd157ce037ea5bd911400e321e4b70519d75b8da6fba3a3d8351be4b86",
+      "local": "src/osu-web/beatmapsets-show/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/beatmapsets-show/stats.tsx",
+      "sha256": "dbe749ded13f8022685377b6ddf16bdc32f687c60358018923e44fe3f075bf00",
+      "local": "src/osu-web/beatmapsets-show/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/beatmapsets-show/scoreboard/main.tsx",
+      "sha256": "0e75e5356126965f4bccbd3d0b16910b37980095c205797c60417fac7b98773b",
+      "local": "src/osu-web/scoreboard/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/beatmapsets-show/scoreboard/table.tsx",
+      "sha256": "0d5835284050c16fdf78d9091adffd01199d9ff250b8ae3a45c76b5331bae587",
+      "local": "src/osu-web/scoreboard/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/beatmapsets-show/scoreboard/table-row.tsx",
+      "sha256": "4060e815c687e067cae6ef2ad21204c3f49517ce791494cde29463c032c69eba",
+      "local": "src/osu-web/scoreboard/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/profile-page/main.tsx",
+      "sha256": "461c3e013bb18db346abfbbb6eb651d55f08f09ae97cdee55f4422d0b1963fac",
+      "local": "src/osu-web/profile-page/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/profile-page/top-scores.tsx",
+      "sha256": "4dc1c6e0bd012e5c3a3ca8332fa869e6d2ff9a271dc7a38bb8ca0688ec4c0373",
+      "local": "src/osu-web/profile-page/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/profile-page/historical.tsx",
+      "sha256": "ae7671ee9ba005fe58b2f75a15a9ee85d010beccbe2afbed2c4da6978fa57261",
+      "local": "src/osu-web/profile-page/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/profile-page/detail-stats.tsx",
+      "sha256": "59880abc22014cc09aafbf2389d2470b2d6602fada3a6c784818df496b36bfb6",
+      "local": "src/osu-web/profile-page/detail-stats.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/profile-page/stats.tsx",
+      "sha256": "35e339539238a2206c450ea2e488bfd999e8865abf43e3b86c440455636bc76e",
+      "local": "src/osu-web/profile-page/detail-stats.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/js/profile-page/play-detail.tsx",
+      "sha256": "56cd77bc0e8ffbe2031ea9c0f24084cb12e0dfda92ff2dc18e248a85bb38b1c5",
+      "local": "src/osu-web/profile-page/play-detail.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/views/rankings/index.blade.php",
+      "sha256": "fdcd42ba86474e8f182756891fa7d1c9803e6b245c74232ba4c724aec14da275",
+      "local": "src/osu-web/rankings/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/views/rankings/global.blade.php",
+      "sha256": "5d6aec1eb98218edf7675da7b300d031ce52b037b175801977585a0d3b051ada",
+      "local": "src/osu-web/rankings/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "resources/views/rankings/_main_column.blade.php",
+      "sha256": "db83a1d53f6928ac074b02fa0b6f9352fc232898575af9f39975e461e7d9436e",
+      "local": "src/osu-web/rankings/main.tsx",
+      "modifications": "JSX retained/adapted or actual Blade DOM ported to JSX. Replace ppy types, global core/routes/requests, private/full statistics and absent features with adopted OMS data and on-demand state. No proprietary assets or inline style."
+    },
+    {
+      "upstream": "webpack.config.js",
+      "sha256": "5a80c78a9ec141bcaa0a999e5226511cff804e46f44361f8530b56b933e173da",
+      "local": "webpack.config.cjs",
+      "modifications": "Narrow the real Webpack/TypeScript/Less/extracted-CSS toolchain to one fixed OMS entry; replace LaravelMix/Turbo and multiple ppy bundles with deterministic player-site.js/css output and no dynamic chunks or source maps."
+    },
+    {
+      "upstream": "resources/views/home/_user_news_post_preview.blade.php",
+      "sha256": "4eb02e2bc0bb7dc48a5723eebb6c0ce2591a661082fde5cb1aed0b97b8ab0d0f",
+      "local": "src/osu-web/home/news-post-preview.tsx",
+      "modifications": "Port actual preview date/body/title/content DOM to JSX; supply maintained OMS publication-day metadata/text/state and safe links. No absent cover node or inline background."
+    },
+    {
+      "upstream": "resources/js/news-index/main.tsx",
+      "sha256": "a875e42f47b36e491718e13a58a36a756755a7c22699b026e1ed272856b6382b",
+      "local": "src/osu-web/news-index/main.tsx",
+      "modifications": "Preserve actual list/item composition and BEM; replace core/admin/cursor service and unavailable years sidebar with a single committed OMS publication list."
+    },
+    {
+      "upstream": "resources/js/news-index/post-item.tsx",
+      "sha256": "0a0cf5a5ff2561b4e43eeed6e8e0365464fea5e1fd72c587e8b768a4cb355353",
+      "local": "src/osu-web/news-index/post-item.tsx",
+      "modifications": "Preserve news-card main/title/preview/time DOM; omit cover/container and unavailable author. Move publication day into real text metadata, render safe text and use OMS article URLs."
+    },
+    {
+      "upstream": "resources/js/news-show/main.tsx",
+      "sha256": "af57bdde7c99be07afc686858b87f598a0f665cb7ba4367a431de2cf3dfd3636",
+      "local": "src/osu-web/news-show/main.tsx",
+      "modifications": "Preserve article info/title/content/navigation composition; replace ppy core, raw HTML, absent cover/author/comment/admin APIs with maintained OMS paragraphs and safe local article links."
+    },
+    {
+      "upstream": "resources/css/bem/news-post-preview.less",
+      "sha256": "9d8d72b5945d5cb61bcc339f6b610a83d9274ba1bcee7f80d3f9e46eaf393ddc",
+      "local": "src/osu-web/css/bem/news-post-preview.less",
+      "modifications": "Preserve actual BEM. Omit at2x image mixin dependency where present; no cover DOM is rendered for these text publications. OMS overrides time position and spacing in player-site.less."
+    },
+    {
+      "upstream": "resources/css/bem/news-card.less",
+      "sha256": "5899386c6ea23959f5abd512497bd692d46e597f5e7ffc0c31a105c88783f2f0",
+      "local": "src/osu-web/css/bem/news-card.less",
+      "modifications": "Preserve actual BEM. Omit at2x image mixin dependency where present; no cover DOM is rendered for these text publications. OMS overrides time position and spacing in player-site.less."
+    },
+    {
+      "upstream": "resources/css/bem/news-index.less",
+      "sha256": "a7b27743b6df578c82cdf7404e6a000f59bf0cb9e2913f256fe3604eed400156",
+      "local": "src/osu-web/css/bem/news-index.less",
+      "modifications": "Preserve actual BEM. Omit at2x image mixin dependency where present; no cover DOM is rendered for these text publications. OMS overrides time position and spacing in player-site.less."
+    },
+    {
+      "upstream": "resources/css/bem/news-show.less",
+      "sha256": "a084ae11907db1fe245fd01c19ef1778f794b755ce5d9e11346db8d6cff0a9b5",
+      "local": "src/osu-web/css/bem/news-show.less",
+      "modifications": "Preserve actual BEM. Omit at2x image mixin dependency where present; no cover DOM is rendered for these text publications. OMS overrides time position and spacing in player-site.less."
+    }
+  ],
+  "new_oms_files": "src/oms/* including single-source news.ts, src/player-site.tsx, css/player-site.less, components/status.tsx, components/condition-details.tsx and build instructions are OMS integrations, not claimed as upstream copies",
+  "hash_basis": "SHA256 of raw git show <fixedCommit>:<path> byte output, captured via subprocess.check_output; local adapted file and working-tree line endings are not the upstream hash basis."
+}

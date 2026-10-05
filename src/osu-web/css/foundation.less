@@ -1,0 +1,247 @@
+// Copyright (c) ppy Pty Ltd. AGPL-3.0-or-later.
+// Actual variable/mixin closure from fixed 2c596022a1; see ../upstream.json and /credits/.
+@beatmap-picker-size: 38px;
+@beatmap-score--hsl-perfect: var(--hsl-lime-1);
+@beatmapset-float-box-width: 275px;
+@beatmapset-panel-bg: hsl(var(--hsl-b2));
+@beatmapset-panel-extra-height-desktop: 140px;
+@beatmapset-panel-height: 120px;
+@beatmapset-panel-normal-height-desktop: 100px;
+@border-radius--large: 10px;
+@box-shadow-color: fade(#000, 25%);
+@box-shadow-radius: 3px;
+@container-sm: @container-tablet;
+@container-tablet: 1000px;
+@desktop: ~"(min-width: @{screen-sm-min})";
+@flag-size-medium: 20px;
+@font-size--large: 20px;
+@font-size--normal: 12px;
+@font-size--normal-2: 13px;
+@font-size--small: 10px;
+@font-size--small-2: 11px;
+@font-size--title: 24px;
+@font-size--title-small: 14px;
+@font-size--title-small-3: 16px;
+@font-size--title-small-4: 18px;
+@font-size--wiki: 14px;
+@green-dark: #668800;
+@grid-gutter-width: 20px;
+@gutter-beatmapset: @gutter-v2;
+@gutter-beatmapset-desktop: 40px;
+@gutter-small-desktop: 20px;
+@gutter-v2: 10px;
+@gutter-v2-desktop: 50px;
+@header-container-min-height: @nav2-height + 70px;
+@header-title-height: 55px;
+@mobile: ~"(max-width: @{screen-mobile-max})";
+@mod-height-small: 18px;
+@nav2-avatar-height: 60px;
+@nav2-avatar-height--pinned: 40px;
+@nav2-height: 90px;
+@nav2-height--pinned: 50px;
+@navbar-height: @nav2-height--pinned;
+@osu-colour-b1: hsl(var(--hsl-b1));
+@osu-colour-b2: hsl(var(--hsl-b2));
+@osu-colour-b3: hsl(var(--hsl-b3));
+@osu-colour-b4: hsl(var(--hsl-b4));
+@osu-colour-b5: hsl(var(--hsl-b5));
+@osu-colour-b6: hsl(var(--hsl-b6));
+@osu-colour-c1: hsl(var(--hsl-c1));
+@osu-colour-d3: hsl(var(--hsl-d3));
+@osu-colour-d4: hsl(var(--hsl-d4));
+@osu-colour-d5: hsl(var(--hsl-d5));
+@osu-colour-f1: hsl(var(--hsl-f1));
+@osu-colour-h1: hsl(var(--hsl-h1));
+@osu-colour-l1: hsl(var(--hsl-l1));
+@osu-colour-l2: hsl(var(--hsl-l2));
+@osu-colour-l3: hsl(var(--hsl-l3));
+@pink-dark: #cc5288;
+@pink-darker: #bb1177;
+@pink-light: #ff99cc;
+@profile-avatar-size: 120px;
+@red-dark: #ba0011;
+@yellow: #ffcc22;
+@yellow-dark: #eeaa00;
+@z-index--forum-topic-reply-stick: 1;
+@z-index--header-nav-v4-active: 1;
+@z-index--profile-previous-usernames: 10;
+
+
+
+
+
+
+
+
+
+.center-content() {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle(@diameter) {
+  border-radius: 50%;
+  width: @diameter;
+  height: @diameter;
+}
+
+.default-border-radius() {
+  border-radius: @border-radius-base;
+}
+
+.default-box-shadow() {
+  box-shadow+: 0 1px @box-shadow-radius @box-shadow-color;
+}
+
+.default-gutter-v2(@adjustment: 0) {
+  padding-left: (@gutter-v2 + @adjustment);
+  padding-right: (@gutter-v2 + @adjustment);
+
+  @media @desktop {
+    padding-left: (@gutter-v2-desktop + @adjustment);
+    padding-right: (@gutter-v2-desktop + @adjustment);
+  }
+}
+
+.default-text-shadow() {
+  text-shadow: 0 1px 3px fade(#000, 75%);
+}
+
+.ellipsis-overflow() {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.fade-element(@duration, @type: ease-in-out, @target: all) {
+  transition: @target @duration @type;
+}
+
+.full-size() {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.hit-stat-colours(@rules) {
+  // cross-reference: https://github.com/ppy/osu/blob/9e5029a5e7b902d984ec0184e4f04b5b0c22079a/osu.Game/Graphics/OsuColour.cs#L114-L145
+  @colours: {
+    good: var(--hsl-green-1);
+    great: var(--hsl-blue-2);
+    large_tick_hit: var(--hsl-blue-2);
+    meh: var(--hsl-orange-1);
+    miss: var(--hsl-red-1);
+    ok: var(--hsl-lime-2);
+    perfect: var(--hsl-blue-1);
+    small_tick_hit: var(--hsl-blue-2);
+    small_tick_miss: var(--hsl-f1);
+  };
+
+  each(@colours, {
+    &--hit-@{key} {
+      @rules();
+    }
+  });
+}
+
+
+
+
+
+.inner-shadow-top() {
+  box-shadow+: inset 0 (@box-shadow-radius - 1px) @box-shadow-radius -1px
+    @box-shadow-color;
+}
+
+.light-header-overlay() {
+  &::after {
+    .full-size();
+    content: "";
+    background-color: hsla(var(--hsl-b5), 60%);
+  }
+}
+
+.link-hover(@rules) {
+  &:hover,
+  &:focus,
+  &:active {
+    @rules();
+  }
+}
+
+.link-inverted() {
+  color: white;
+
+  .link-hover({
+    color: @osu-colour-l1;
+  });
+}
+
+.link-plain() {
+  text-decoration: none;
+
+  .link-hover({
+    text-decoration: none;
+  });
+}
+
+.link-white() {
+  color: #fff;
+
+  .link-hover({
+    color: #fff;
+  });
+}
+
+.own-layer() {
+  transform: translateZ(0);
+}
+
+.page-width(@extra-margin: 0px) {
+  width: calc(100% - (@extra-margin * 2));
+  max-width: (@container-sm - @extra-margin * 2);
+}
+
+.page-width-default() {
+  .page-width();
+
+  @media @desktop {
+    .page-width-desktop();
+  }
+}
+
+.page-width-desktop(@extra-margin: 0px) {
+  width: calc(100% - ((@extra-margin + @grid-gutter-width) * 2));
+  max-width: (@container-sm - @extra-margin * 2);
+}
+
+.reset-input() {
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+// OMS radius constants replace the otherwise required Bootstrap full stylesheet.
+@border-radius-base: 6px;
+@border-radius-large: 8px;
+// Utility mixin form of the actual upstream ellipsis declaration.
+.u-ellipsis-overflow() { .ellipsis-overflow(); }
+
+// Required interpolated breakpoint / selector declarations from actual upstream globals.
+@header-pinned: js-header-is-pinned;
+@screen-mobile-max: (@screen-sm-min - 1px);
+@screen-sm-min: 900px;
+
+@font-size--large-2: 35px;
+
+.content-font() {
+  font-family: var(--font-content-override, var(--font-content));
+  line-height: 1.35;
+}

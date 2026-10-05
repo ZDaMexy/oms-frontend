@@ -1,0 +1,290 @@
+// Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the GNU Affero General Public License v3.0.
+// See the LICENCE file in the repository root for full licence text.
+
+.header-v4 {
+  @_top: header-v4;
+
+  @media print {
+    display: none;
+  }
+
+  &--beatmapset {
+    --header-nav-count-bg: hsl(var(--hsl-b2));
+  }
+
+  &__bg {
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    &::before {
+      content: "";
+      background-image: linear-gradient(
+        to right,
+        @osu-colour-d5,
+        transparent 200px,
+        transparent 1000px,
+        @osu-colour-d5 1200px
+      );
+      background-position: center;
+      height: 100%;
+      width: 1200px;
+      display: block;
+      flex: none;
+    }
+
+    .@{_top}--artists & {
+    }
+
+    .@{_top}--beatmappacks & {
+    }
+
+    .@{_top}--changelog & {
+    }
+
+    .@{_top}--chat & {
+      filter: hue-rotate(115deg); // fix colour
+
+      &::before {
+        filter: hue-rotate(-115deg); // undo the one in parent
+      }
+    }
+
+    .@{_top}--contests & {
+    }
+
+    .@{_top}--forum & {
+    }
+
+    .@{_top}--forums-index & {
+    }
+
+    .@{_top}--help & {
+    }
+
+    .@{_top}--mp-history & {
+    }
+
+    .@{_top}--news & {
+    }
+
+    .@{_top}--password-reset & {
+    }
+
+    .@{_top}--rankings & {
+    }
+
+    .@{_top}--search & {
+    }
+
+    .@{_top}--store & {
+      opacity: 0.7;
+    }
+
+    .@{_top}--supporter & {
+      opacity: 0.2;
+    }
+
+    .@{_top}--tournaments & {
+    }
+
+    .@{_top}--beatmapset &,
+    .@{_top}--users &,
+    .@{_top}--team & {
+      opacity: 0.25;
+      filter: blur(50px);
+    }
+  }
+
+  &__bg-container {
+    .full-size();
+    background-color: @osu-colour-d5;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+
+    &--main {
+      .large() {
+        @media @desktop {
+          min-height: 450px;
+        }
+      }
+
+      @media @desktop {
+        padding-top: @nav2-height + 15px;
+        min-height: @header-container-min-height;
+      }
+
+      .@{_top}--supporter & {
+        .large();
+      }
+    }
+  }
+
+  &__content {
+    .page-width-default();
+    color: @osu-colour-c1;
+    position: relative;
+  }
+
+  &__icon {
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: stretch;
+    width: 40px;
+    margin-right: 10px;
+    flex: none;
+    background-size: 75%;
+
+    .@{_top}--artist & {
+      background-image: none;
+    }
+
+    .@{_top}--artists & {
+      background-image: none;
+    }
+
+    .@{_top}--beatmappacks & {
+      background-image: none;
+    }
+
+    .@{_top}--beatmapset & {
+      background-image: none;
+    }
+
+    .@{_top}--beatmapsets & {
+      background-image: none;
+    }
+
+    .@{_top}--changelog & {
+      background-image: none;
+    }
+
+    .@{_top}--chat & {
+      background-image: none;
+    }
+
+    .@{_top}--comments & {
+      background-image: none;
+    }
+
+    .@{_top}--contests & {
+      background-image: none;
+    }
+
+    .@{_top}--error & {
+      background-image: none;
+    }
+
+    .@{_top}--forum & {
+      background-image: none;
+    }
+
+    .@{_top}--forums-index & {
+      background-image: none;
+    }
+
+    .@{_top}--friends & {
+      background-image: none;
+    }
+
+    .@{_top}--help & {
+      background-image: none;
+    }
+
+    .@{_top}--home & {
+      background-image: none;
+    }
+
+    .@{_top}--livestreams & {
+      background-image: none;
+    }
+
+    .@{_top}--news & {
+      background-image: none;
+    }
+
+    .@{_top}--notifications & {
+      background-image: none;
+    }
+
+    .@{_top}--password-reset & {
+      background-image: none;
+    }
+
+    .@{_top}--rankings & {
+      background-image: none;
+    }
+
+    .@{_top}--search & {
+      background-image: none;
+    }
+
+    .@{_top}--settings & {
+      background-image: none;
+    }
+
+    .@{_top}--store & {
+      background-image: none;
+    }
+
+    .@{_top}--tournaments & {
+      background-image: none;
+    }
+
+    .@{_top}--users & {
+      background-image: none;
+    }
+  }
+
+  &__row {
+    padding-top: 0;
+    padding-bottom: 0;
+    .default-gutter-v2();
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &--bar {
+      background-color: @osu-colour-d4;
+    }
+
+    &--title {
+      background-color: @osu-colour-d5;
+      font-size: @font-size--title-small;
+
+      @media @desktop {
+        font-size: @font-size--large;
+        height: @header-title-height;
+      }
+    }
+
+    .@{_top}--beatmapset & {
+      @media @desktop {
+        padding-left: @gutter-beatmapset-desktop;
+        padding-right: $padding-left;
+      }
+    }
+  }
+
+  &__title {
+    display: none;
+
+    @media @desktop {
+      display: flex;
+    }
+  }
+}

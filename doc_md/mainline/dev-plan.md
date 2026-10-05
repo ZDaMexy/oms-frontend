@@ -1,8 +1,19 @@
 # Frontend Mainline Plan
 
-本文件只维护 Website 执行计划。统一阶段与状态以 [Dev Bridge](../../../../oms-server/dev_bridge_md/doc_md/mainline/dev-plan.md) 为准；社区沿 [社区闭环计划](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/dev-plan.md)，本轮多来源 IR 沿已采纳的[正式合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-ir/multisource-contract.md)实施。实际状态与证据见 [当前进展](dev-progress.md)。
+本文件只维护 Website 执行计划。统一阶段与状态以 [Dev Bridge](../../../../oms-server/dev_bridge_md/doc_md/mainline/dev-plan.md) 为准；本轮整体玩家网站沿 [新正式合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/constraints.md)、[玩家API](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/player-api.md)与 [谱面API](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/catalog-api.md)。原社区沿 [社区计划](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/dev-plan.md)，原多来源IR沿 [正式合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-ir/multisource-contract.md)。实际状态与证据见 [当前进展](dev-progress.md)。
 
 ## 当前最近任务
+
+新整体osu-web玩家网站的谱面 / 个人 / 玩家榜 / 两篇真实新闻已实施并通过本轮软件门，尚未部署，线上仍是前轮 `b520bcb99015-5d0531c22423`。下一步只推进未完成的本次真实浏览器、共享主机 / 外源worker隔离、两空恢复和同提交发布门；来源与准确软件范围取 [新核验](../other/oms-player-site-verification-20261005.md)，不重复已过且未变的软件，也不借前轮运行门代签新增范围。
+
+1. 完成本次真实浏览器桌面与窄屏：首页 / 新闻文章 / 下载帮助往返；两模式谱面来源页、具体难度 / 原身份和下载；公开资格 / 本人 / 错误登录、最佳分与独立灯、玩法 / 键型 / 来源 / 条件 / 后页统计；透明玩家指标、并列 / 0通关 / 页外本人；原IR真混榜 / 密钥 / 社区，以及切账号 / 迟到回应清除私有内容。来源失败和未知项保真，观察到页面不等于全部交互通过。
+2. 在真实同共享主机预算测新增个人 / 全体榜、目录、旧全量历史与写读共存，验证批准源worker实际网络和无账号库 / 凭据访问，测CPU / 内存 / 峰值磁盘 / 30分钟。新增96MiB / 25%CPU只是初值；不放宽原IR预算、扩盘或购买，以实际瓶颈给方案。
+3. 核对严格提交版运行 / 原修改源码 / 上游76项 / 许可和下载白名单，完成一致备份、两新空目录恢复（第二次含WAL撤销 / 隐藏）、兼容回退 / 数据保全及双站。原账号、UUID、外部状态、社区和全量公开投影保持，源码offer软件通过不签包 / HTTP或恢复门。
+4. 对应运行恢复门后按授权选择性提交推送、直接部署试运行；复核全部路由 / 固定文章、源码与插件字节、普通刷新 / 200和304缓存、原个人站、IR / 社区，取得新备份外取证据并同步维护 / 回退。不能让用户仍只能强刷新看到新页面而把缓存门写成通过。
+5. 部署后给真人具体路径，承接谱面获取 / 实际入库、原账号 / mania六判定、网页公开 / 本人页、透明排名与两端一致反馈；客户端由用户VS Code非调试启动，不制作Windows包。先OMS＋全量公开LR2IR历史＋ED7K先导P，再全部固定版本 / 玩法矩阵C；真人未完只记“已部署待验收”。
+6. 后续新闻只维护 `src/oms/news.ts` 的真实slug / 日期 / 状态 / 正文，同步精确文章路由与静态清单；不以社区假帖、假玩家动态或旧公开release的IR承诺补首页。地力 / Walkure / BMS PP按用户意见后续独立讨论，不自创公式，也不阻塞本次真实积累指标。
+
+## 前轮已部署范围的真人反馈
 
 实际 osu-web 前端 / 原 lazer 账号路径已部署待验收，最小身份、跨账号清除、严格源码 / 许可、全量运行 / 两空恢复、兼容回退、双站 / 缓存和新备份门已通过。接续用户非调试 OMS、网页真实同账号 / 来源对照、视觉与社区反馈，并补公网点击往返和窄屏工具缺口；准确 current 与证据只取 [本次核验](../other/osu-web-lazer-account-verification-20261005.md)。先导 P 后继续完整 C，不由软件 / 工具 / 合成输入代签，也不重复已过未变的运行门。
 
@@ -23,6 +34,6 @@
 
 - 客户端真实 BMS / mania 同局、断网重启和原账号恢复仍沿 [IR 闭环计划](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-ir/dev-plan.md)，由用户通过 VS Code 非调试启动当前工作区验收。本轮不制作 Windows 发行包。
 - 截图 / 视频、后续帮助内容和公开发行说明按真实版本补充，不用网站布局或社区交互通过代替客户端事实复核。
-- 附件、点赞、私信、实时聊天、在线状态、官网谱包及开放接口不进入本轮，也不预建入口；新需求另行采用合同。
+- 附件、点赞、私信、实时聊天与在线状态继续保留原范围。批准Ginger / 616 / Sayobot的谱面元数据及浏览器原包入口已进入本轮玩家合同；OMS大包代理 / 托管、未批准新源与其他开放接口没有进入这次实施。地力与BMS PP另作专题，不能把积累榜改名为能力评级。
 
 旧 [P1-A](../subline/P1-A/README.md) 已交接；社区与本轮多来源 IR 均由 Website mainline 承载，共同接口分别取 Dev Bridge 的社区与多来源正式合同。

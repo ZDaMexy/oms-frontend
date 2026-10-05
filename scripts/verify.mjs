@@ -12,6 +12,10 @@ const pages = new Map([
   ["/download/", "download/index.html"], ["/help/", "help/index.html"],
   ["/account/", "account/index.html"], ["/ir/", "ir/index.html"],
   ["/users/", "users/index.html"], ["/credits/", "credits/index.html"],
+  ["/beatmapsets/", "beatmapsets/index.html"], ["/beatmaps/", "beatmaps/index.html"],
+  ["/rankings/", "rankings/index.html"],
+  ["/news/", "news/index.html"], ["/news/2026-10-05-ir-trial/", "news/show.html"],
+  ["/news/2026-06-26-oms-release/", "news/show.html"],
 ]);
 // These assets are generated from committed Backend inputs by the release
 // exporter. Its exact whitelist and checksums are verified before deployment.
@@ -64,7 +68,8 @@ export function verifyPortal(directory) {
     assert(existsSync(target) && statSync(target).isFile(), `${ownerFile}: missing route or asset ${value}`);
     if (url.hash && page) {
       const anchor = decodeURIComponent(url.hash.slice(1));
-      assert(page.ids.includes(anchor) || (url.pathname === "/ir/" && anchor === "history"), `${ownerFile}: unknown anchor ${value}`);
+      const runtimeAnchor = (url.pathname === "/ir/" && anchor === "history") || (url.pathname === "/beatmaps/" && anchor === "scores");
+      assert(page.ids.includes(anchor) || runtimeAnchor, `${ownerFile}: unknown anchor ${value}`);
     }
     references += 1;
     return file;
@@ -74,10 +79,11 @@ export function verifyPortal(directory) {
     assert(/<html\s+lang="zh-CN"/.test(html), `${file}: page language is required`);
     assert(tags.some(({ name, attrs }) => name === "meta" && attrs.name === "viewport"), `${file}: missing viewport`);
     assert.equal(ids.filter(id => id === "site-account").length, 1, `${file}: shared account entry is required`);
+    assert(ids.includes("player-nav"), `${file}: shared React navigation mount is required`);
     const nav = html.match(/<nav\b[^>]*class="[^"]*\bsite-nav\b[^"]*"[^>]*>([\s\S]*?)<\/nav>/)?.[1];
     assert(nav, `${file}: missing shared navigation`);
     assert.deepEqual(startTags(nav).filter(({ name }) => name === "a").map(({ attrs }) => attrs.href),
-      ["/", "/community/", "/download/", "/ir/", "/help/"], `${file}: navigation differs`);
+      ["/", "/beatmapsets/", "/rankings/", "/community/", "/download/", "/help/"], `${file}: navigation differs`);
     const loaded = [];
     for (const { name, attrs } of tags) {
       assert(!Object.keys(attrs).some(key => key === "style" || /^on/i.test(key)), `${file}: inline CSS or event handler violates CSP`);
@@ -96,12 +102,14 @@ export function verifyPortal(directory) {
       }
     }
     assert.equal(loaded[0], "portal/site.js", `${file}: load the shared account before page behavior`);
-    if (["/", "/community/", "/community/new/", "/community/posts/1/"].includes(url)) {
-      assert.deepEqual(loaded, ["portal/site.js", "portal/community.js"], `${file}: community scripts differ`);
+    const expected = ["portal/site.js", "portal/player-site.js"];
+    if (["/", "/community/", "/community/new/", "/community/posts/1/"].includes(url)) expected.push("portal/community.js");
+    if (url === "/ir/") expected.push("ir/ir.js");
+    assert.deepEqual(loaded, expected, `${file}: shared React navigation must precede preserved page behavior`);
+    if (["/", "/users/", "/beatmapsets/", "/beatmaps/", "/rankings/"].includes(url) || url.startsWith("/news/")) {
+      assert(ids.includes("player-app"), `${file}: React player page mount is required`);
     }
-    if (url === "/users/") {
-      assert.deepEqual(loaded, ["portal/site.js", "portal/profile.js"], `${file}: profile scripts differ`);
-    }
+    assert(tags.some(({ name, attrs }) => name === "link" && attrs.rel === "stylesheet" && attrs.href.startsWith("/portal/player-site.css?")), `${file}: shared player stylesheet is required`);
   }
   for (const file of css) {
     for (const match of readFileSync(resolve(directory, file), "utf8").matchAll(/url\(\s*["']?([^"')]+)["']?\s*\)/g)) {

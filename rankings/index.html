@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2e1f26">
+    <meta name="description" content="按真实公开原谱收录、通关和 mania 累计最佳分查看玩家进度。">
+    <title>玩家榜 · OMS</title>
+    <link rel="icon" href="/portal/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/portal/osu-web.css?v=20261005-player-site-1">
+    <link rel="stylesheet" href="/portal/style.css?v=20261005-player-site-1">
+    <link rel="stylesheet" href="/portal/player-site.css?v=20261005-player-site-1">
+    <script defer src="/portal/site.js?v=20261005-player-site-1"></script>
+    <script defer src="/portal/player-site.js?v=20261005-player-site-1"></script>
+  </head>
+  <body data-page="rankings">
+    <a class="skip" href="#main">跳到主要内容</a>
+  <!-- JSX fork of ppy/osu-web nav2; static fallback retains every player entry. -->
+  <header id="player-nav" class="site-header">
+    <div class="shell nav2 header-inner">
+      <a class="brand nav2__col nav2__col--logo" href="/" aria-label="OMS 首页"><span class="nav2__logo-link"><img class="nav2__logo" src="/portal/favicon.svg" alt="" width="42" height="42"></span><span class="brand-word">OMS</span></a>
+      <nav class="nav2__colgroup nav2__colgroup--menu site-nav" aria-label="主要导航">
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/">首页</a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/beatmapsets/">谱面</a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/rankings/" aria-current="page">玩家榜</a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/community/">社区</a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/download/">客户端下载</a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/help/">帮助</a></div>
+      </nav>
+      <a id="site-account" class="header-account" href="/account/">登录 / 注册</a>
+    </div>
+  </header>
+  <div id="player-app"><main id="main" class="osu-page player-page"><p class="player-status" role="status">正在打开页面…</p></main></div>
+  <footer class="shell site-footer">
+    <span>OMS · BMS / mania · Windows</span>
+    <div class="footer-links">
+      <a href="/help/#rules">社区约定</a>
+      <a href="/help/#privacy">数据与隐私</a>
+      <a href="/help/#contact">联系与反馈</a>
+      <a href="/credits/">源码与许可</a>
+    </div>
+  </footer>
+
+    <noscript><p class="shell notice">谱面查询、个人页、登录与成绩需要 JavaScript；客户端<a href="/download/">下载</a>与<a href="/help/">帮助</a>可直接阅读。</p></noscript>
+  </body>
+</html>

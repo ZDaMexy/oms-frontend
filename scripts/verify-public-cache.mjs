@@ -15,6 +15,10 @@ const routes = new Map([
   ["/help/", "help/index.html"], ["/account/", "account/index.html"],
   ["/community/", "community/index.html"], ["/community/new/", "community/new/index.html"],
   ["/users/", "users/index.html"], ["/credits/", "credits/index.html"],
+  ["/beatmapsets/", "beatmapsets/index.html"], ["/beatmaps/", "beatmaps/index.html"],
+  ["/rankings/", "rankings/index.html"], ["/ir/", "ir/index.html"],
+  ["/news/", "news/index.html"], ["/news/2026-10-05-ir-trial/", "news/show.html"],
+  ["/news/2026-06-26-oms-release/", "news/show.html"],
 ]);
 // Follow the versions actually referenced by the authored pages; a later
 // asset revision must not leave this check exercising only a retired URL.

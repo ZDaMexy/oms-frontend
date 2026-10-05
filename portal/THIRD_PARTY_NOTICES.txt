@@ -1,31 +1,191 @@
 OMS website portal source and third-party notices
 
-The current portal HTML, CSS and JavaScript adaptations are distributed under
-the GNU Affero General Public License, version 3 or any later version.
+The OMS portal application, adapted views/styles and corresponding OMS
+integration source are licensed under the GNU Affero General Public License,
+version 3 or any later version (AGPL-3.0-or-later).
 Copyright (c) ZDaMexy and OMS contributors. Modified on 2026-10-05.
 Full license: /portal/LICENCE.txt
+Incorporated MIT components retain their own licenses and notices below.
 
-This portal adapts page templates and component styles from osu!web.
+This portal adapts actual React components, Blade page structures, Less
+component styles and a selected build-tool configuration from osu!web.
 Copyright (c) ppy Pty Ltd <contact@ppy.sh> and osu!web contributors.
 License: GNU Affero General Public License, version 3 or later.
 Upstream: https://github.com/ppy/osu-web
 Fixed source: 2c596022a1345fbed288978e7fa5304df0359f50
-Component source paths, hashes and local adaptations: /portal/osu-web-sources.json
+Fixed license grant:
+  https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/README.md#licence
+Component paths, raw upstream blob SHA256 values, exact local adaptations,
+and per-file modification descriptions: /portal/osu-web-sources.json
 
-Changes: the reused page, navigation, forum, download and profile structure and
-styles use OMS text, system fonts, the existing OMS logo, and the existing
-request-driven OMS APIs. Less rules are adapted to plain CSS. No upstream
-branding, font files, artwork, accounts or full server stack are distributed.
+Changes include actual catalog/search/detail/scoreboard/profile/ranking,
+home/news, navigation, pagination, forum and download composition adapted to
+OMS data and on-demand APIs. The existing native-CSS portal subset remains
+in use; selected Less sources also compile into player-site.css. ppy global
+controllers, routes, unavailable statistics and asset dependencies are
+removed or replaced by explicit OMS data, system fonts and the existing
+OMS logo. News contains maintained OMS publications, not fabricated player
+activity. No ppy/osu! branding, upstream artwork, font files or icon files
+are included. Source-provided covers are external images, not bundled ppy
+assets. The full osu!web server stack and accounts are not included.
 
-The complete unminified portal sources and corresponding service installation
-sources for the active release are available from:
+Corresponding source for a released version:
   /portal/oms-website-source.tar.gz
-The source-manifest.json inside that download binds each file checksum to the
-exact website and backend commits. It contains no player data, databases,
-SDK/adapter binaries or deployment credentials.
+The archive contains the exact release's unminified TypeScript/TSX/Less,
+OMS integration sources, runtime HTML/JavaScript/CSS, notices, package.json,
+package-lock.json, tsconfig.json, webpack.config.cjs and build instructions
+at web/src/BUILD.md. The fixed mapping is at web/src/osu-web/upstream.json;
+all current local-source hashes and exact website/backend commits are bound
+by source-manifest.json. A compressed/minified JavaScript bundle alone is
+not the source offer. Build the extracted web directory using Node 22 and
+the fixed npm lock as described in web/src/BUILD.md; production uses static
+assets and the separate same-origin service, without a Node server.
+
+Corresponding service runtime/installation source is also included in the
+archive under backend/. No node_modules, developer caches, player records,
+databases, raw personal data, SDK/adapter binaries or deployment credentials
+are included. The independent service and player adapters are not osu!web
+implementations; their source and dependency licenses remain separate.
 Website repository: https://github.com/ZDaMexy/oms-frontend
 Service repository: https://github.com/ZDaMexy/oms-backend
-The independent service and player adapters are not osu!web implementations;
-their own source and dependency notices remain in their respective projects.
-
 Information and source links: /credits/
+
+Runtime bundle license comments
+------------------------------
+/portal/player-site.js.LICENSE.txt is the license-comment file generated
+alongside the current production-mode player-site.js. Its preserved notices
+identify React 17.0.2, ReactDOM 17.0.2, scheduler 0.20.2 and object-assign 4.1.1.
+The complete matching installed-package MIT permissions follow. The AGPL
+portal application does not remove these dependencies' MIT notices.
+
+React 17.0.2; ReactDOM 17.0.2; scheduler 0.20.2
+Installed license files: react/LICENSE, react-dom/LICENSE, scheduler/LICENSE
+
+MIT License
+
+Copyright (c) Facebook, Inc. and its affiliates.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+object-assign 4.1.1
+Installed license file: object-assign/license
+
+The MIT License (MIT)
+
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+Additional declared source/build dependencies
+---------------------------------------------
+The fixed package-lock.json also declares the packages below. This records
+source/build dependency versions and their exact MIT permissions, without
+asserting that each is present or loaded in a particular generated bundle.
+The generated bundle license-comment list above is a separate record.
+
+MobX 6.13.7; mobx-react 7.6.0; mobx-react-lite 3.4.3
+Installed license files: mobx/LICENSE, mobx-react/LICENSE, mobx-react-lite/LICENSE
+
+The MIT License (MIT)
+
+Copyright (c) 2015 Michel Weststrate
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+loose-envify 1.4.0
+Installed license file: loose-envify/LICENSE
+
+The MIT License (MIT)
+
+Copyright (c) 2015 Andres Suarez <zertosh@gmail.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+js-tokens 4.0.0
+Installed license file: js-tokens/LICENSE
+
+The MIT License (MIT)
+
+Copyright (c) 2014, 2015, 2016, 2017, 2018 Simon Lydell
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.

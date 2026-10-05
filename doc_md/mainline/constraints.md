@@ -15,6 +15,8 @@
 
 ## 页面与输入边界
 
+2026-10-05 用户的新范围采用 [玩家网站合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/constraints.md)：整体 React / 实际上游视图、`/beatmapsets/` / `/beatmaps/` / `/rankings/` 和成熟公开最佳个人页。首页近期新闻、`/news/` 与真实文章固定地址采用上游新闻视图，单一 `src/oms/news.ts` 维护真实日期及已发布 / 试运行状态；只发布已有公开发行或实际运行能力，不补假帖子和活跃数。新 [玩家 API](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/player-api.md) 扩展原合格公共最佳统计，[谱面 API](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/catalog-api.md) 仅批准源元数据及真实大包跳转；下列旧无新闻 / 最小身份 / 官网无谱包口径适用于原发布，不能覆盖这次明确扩展。仍不公开本人UUID全历史、AT或原LR2IR个人资料；地力靠后，PP另议。
+
 - `/`、`/download/`、`/help/`、`/community/`、独立帖子、新帖、`/account/`、`/users/?id=<OMS ID>`、`/credits/` 与 `/ir/` 使用统一入口；原 `/#download` 转到独立下载页，已移出的旧锚点不能伪装成仍存在的区块。身份页只展示真实 OMS ID / 账号名与已有公开帖子，本人历史仍由原认证入口查看；无公开资格账号不提供匿名枚举，旧 LR2IR 身份不跳转为同名 OMS 账号。
 - 原下载锚点包含初始导航与已打开首页的同文档 hash 变化；旧判定 / 特性 / 阶段锚点转帮助，不留下同文档无反应的入口。
 - 门户 HTML 与 `/portal/` 资源每次使用都须重新校验版本，当前 Nginx 的 `Cache-Control: no-cache` 同时覆盖 200 / 304；旧校验值应返回新正文。发布检查包含普通刷新与实际引用资源的条件请求，不能只签首次打开或强制刷新。改版前已缓存且尚未联系服务器的旧页面无法靠新响应头追溯清除，反馈与证据边界见 [缓存复核](../other/community-infrastructure-20261004.md#2026-10-05缓存反馈复核)。

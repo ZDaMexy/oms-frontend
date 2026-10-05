@@ -7,119 +7,31 @@
     <meta name="description" content="OMS：BMS 与 mania 客户端、玩家社区和多来源 IR。Windows-only，离线优先。">
     <title>OMS</title>
     <link rel="icon" href="/portal/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/portal/osu-web.css?v=20261005-osuweb-1">
-    <link rel="stylesheet" href="/portal/style.css?v=20261005-osuweb-1">
-    <script defer src="/portal/site.js?v=20261005-osuweb-1"></script>
-    <script defer src="/portal/community.js?v=20261005-osuweb-1"></script>
+    <link rel="stylesheet" href="/portal/osu-web.css?v=20261005-player-site-1">
+    <link rel="stylesheet" href="/portal/style.css?v=20261005-player-site-1">
+    <link rel="stylesheet" href="/portal/player-site.css?v=20261005-player-site-1">
+    <script defer src="/portal/site.js?v=20261005-player-site-1"></script>
+    <script defer src="/portal/player-site.js?v=20261005-player-site-1"></script>
+    <script defer src="/portal/community.js?v=20261005-player-site-1"></script>
   </head>
   <body data-page="home">
     <a class="skip" href="#main">跳到主要内容</a>
-  <!-- Adapted from ppy/osu-web nav2; AGPL-3.0. See /credits/. -->
-  <header class="site-header">
+  <!-- JSX fork of ppy/osu-web nav2; static fallback retains every player entry. -->
+  <header id="player-nav" class="site-header">
     <div class="shell nav2 header-inner">
-      <a class="brand nav2__col nav2__col--logo" href="/" aria-label="OMS 首页">
-        <span class="nav2__logo-link"><img class="nav2__logo" src="/portal/favicon.svg" alt="" width="42" height="42"></span>
-        <span class="brand-word">OMS</span>
-      </a>
+      <a class="brand nav2__col nav2__col--logo" href="/" aria-label="OMS 首页"><span class="nav2__logo-link"><img class="nav2__logo" src="/portal/favicon.svg" alt="" width="42" height="42"></span><span class="brand-word">OMS</span></a>
       <nav class="nav2__colgroup nav2__colgroup--menu site-nav" aria-label="主要导航">
-        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/" aria-current="page">首页<span class="nav2__menu-link-bar" aria-hidden="true"></span></a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/" aria-current="page">首页</a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/beatmapsets/">谱面</a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/rankings/">玩家榜</a></div>
         <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/community/">社区</a></div>
-        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/download/">下载</a></div>
-        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/ir/">IR</a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/download/">客户端下载</a></div>
         <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/help/">帮助</a></div>
       </nav>
       <a id="site-account" class="header-account" href="/account/">登录 / 注册</a>
     </div>
   </header>
-  <!-- Adapted from ppy/osu-web layout/_page_header_v4.blade.php. -->
-  <div class="header-v4 header-v4--home">
-    <div class="header-v4__container header-v4__container--main">
-      <div class="header-v4__bg-container"><div class="header-v4__bg"></div></div>
-      <div class="header-v4__content">
-        <div class="header-v4__row header-v4__row--title">
-          <h1 id="home-title" class="header-v4__title">主页</h1>
-          <p class="header-subtitle">BMS / mania · Windows · 离线游玩</p>
-        </div>
-      </div>
-    </div>
-    <div class="header-v4__container">
-      <div class="header-v4__content">
-        <nav class="header-v4__row header-v4__row--bar" aria-label="本页导航">
-          <ul class="header-nav-v4 header-nav-v4--list">
-          <li class="header-nav-v4__item"><a class="header-nav-v4__link" href="/" aria-current="page">近期帖子</a></li>
-          <li class="header-nav-v4__item"><a class="header-nav-v4__link" href="/community/">社区</a></li>
-          <li class="header-nav-v4__item"><a class="header-nav-v4__link" href="/download/">下载 OMS</a></li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </div>
-    <main id="main" class="osu-page osu-page--generic-compact">
-<!-- Adapted from ppy/osu-web home/user.blade.php and user-home.less. -->
-<div class="user-home">
-<div class="user-home__left-section">
-<section aria-labelledby="feed-title">
-<div class="section-heading home-feed-heading">
-<h2 id="feed-title" class="user-home__left-title">近期帖子</h2>
-<span id="feed-count" class="count">正在读取</span>
-</div>
-      <div class="panel feed-panel">
-<div class="feed-controls">
-<div class="categories" role="group" aria-label="帖子分类">
-<button type="button" class="category-button" data-category="" aria-pressed="true">全部</button>
-<button type="button" class="category-button" data-category="discussion" aria-pressed="false">讨论</button>
-<button type="button" class="category-button" data-category="help" aria-pressed="false">求助</button>
-<button type="button" class="category-button" data-category="showcase" aria-pressed="false">分享</button>
-<button type="button" class="category-button" data-category="development" aria-pressed="false">开发记录</button>
-</div>
-      <form id="search-form" class="search" role="search">
-<label for="post-search">搜索帖子</label>
-<input id="post-search" name="q" type="search" maxlength="80" placeholder="搜索帖子标题与正文" autocomplete="off">
-<button class="button" type="submit">搜索</button>
-</form>
-</div>
-      <p id="feed-message" class="feed-message" role="status" aria-live="polite">正在读取帖子…</p>
-<ul id="feed-list" class="feed-list">
-</ul>
-      <div id="feed-empty" class="empty" hidden>
-<h3>社区暂无帖子</h3>
-<p>发布的讨论、求助、分享和开发记录会显示在这里。</p>
-<a class="button button-quiet" href="/community/new/">发布帖子</a>
-</div>
-      <div class="pagination">
-<button id="feed-prev" class="button button-quiet" type="button" disabled>上一页</button>
-<span id="feed-page">待读取</span>
-<button id="feed-next" class="button button-quiet" type="button" disabled>下一页</button>
-</div>
-      <div id="feed-retry-wrap" class="empty" hidden>
-<button id="feed-retry" class="button" type="button">重新读取</button>
-</div>
-</div>
-</section>
-</div>
-<aside class="user-home__right-sidebar home-sidebar" aria-label="相关内容">
-  <div class="user-home__buttons">
-    <a class="home-download" href="/download/">下载 OMS <span aria-hidden="true">↓</span></a>
-  </div>
-  <section class="panel panel-padded">
-    <h2>Windows 客户端</h2>
-    <p>BMS / mania，本地谱库与离线游玩。</p>
-    <dl class="release-facts">
-      <div><dt>公开发行</dt><dd>oms_20260626</dd></div>
-      <div><dt>系统</dt><dd>Windows</dd></div>
-    </dl>
-    <p>公开客户端包尚未包含 IR 接入，支持 IR 的开发版可按需连接。</p>
-  </section>
-  <section class="panel panel-padded">
-    <h2>常用入口</h2>
-    <a class="side-link" href="/help/#startup">首次启动 <span aria-hidden="true">›</span></a>
-    <a class="side-link" href="/help/#library">添加本地谱库 <span aria-hidden="true">›</span></a>
-    <a class="side-link" href="/ir/">IR 谱面榜单 <span aria-hidden="true">›</span></a>
-    <a class="side-link" href="/help/#contact">联系与反馈 <span aria-hidden="true">›</span></a>
-  </section>
-</aside>
-</div>
-    </main>
+  <div id="player-app"><main id="main" class="osu-page player-page"><p class="player-status" role="status">正在打开页面…</p></main></div>
   <footer class="shell site-footer">
     <span>OMS · BMS / mania · Windows</span>
     <div class="footer-links">
@@ -130,6 +42,6 @@
     </div>
   </footer>
 
-    <noscript><p class="shell notice">帖子、登录和成绩查询需要 JavaScript。下载与帮助页面可直接阅读。</p></noscript>
+    <noscript><p class="shell notice">谱面查询、个人页、登录与成绩需要 JavaScript；客户端<a href="/download/">下载</a>与<a href="/help/">帮助</a>可直接阅读。</p></noscript>
   </body>
 </html>
