@@ -2,6 +2,7 @@
 
 ## 产品与公开口径
 
+- `client-ir-native-account-ui`：客户端实际复用原 lazer 用户按钮、登录与个人页，来源取 [Client Bridge 原账号快照](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-native-account-snapshot-20261005.md)。网站使用同一 OMS 账号和最小 ID / 用户名，但浏览器与桌面分别登录；外链不带凭据，不能将窗口复用理解为接回 ppy 服务或共享会话。真实两端、窗口与 P/C 门仍由用户签收。
 - 统一阶段及状态只由 [Dev Bridge dev-plan](../../../../oms-server/dev_bridge_md/doc_md/mainline/dev-plan.md) 定义。2026-10-04 用户授权社区帖首页与独立下载 / 帮助页面，Phase 2 / Phase 4 进入开发；阶段变化不替代实现、浏览器或生产证据。
 - 2026-10-05 玩家拒绝当前视觉与文风，官网视觉验收重新打开。首页、社区、下载、帮助、账号与 IR 必须保持共同的字体、色彩、排版及控件规则；中文直接说明功能与实际状态，移除重复宣传口号和模板套话。旧站视觉材料可作参考，其历史产品说明和第三方演奏素材不因设计回用而恢复适用性。实际可见方案与对应浏览器结果先于完成结论，功能检查不代签设计质量。公共上游色板 / 组件在 portal/osu-web.css，body 字体和 OMS 控件适配在 portal/style.css，IR 样式仅定义榜单布局；手机视觉与 DOM 阅读顺序一致，密集表格仅在自身容器滚动。
 - 2026-10-05 用户选择实际复用 osu-web 页面与组件设计，固定上游 `2c596022a1345fbed288978e7fa5304df0359f50`，将对应 Less / 模板适配为本项目可维护的原生 HTML / CSS / JavaScript；基础组件在 `portal/osu-web.css`，OMS 适配在 `portal/style.css`，IR 只维护榜单布局。复用文件、AGPL-3.0-or-later 与对应修改源码须从 `/credits/` 可读，不使用 osu! / ppy 品牌或未核对的字体 / 图像。以请求型 API 读取真实帖子 / 回复，账号复用原 IR；采用 [社区合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/constraints.md)。没有官方新闻栏目、假帖子、合成玩家动态或假活跃数，不扩张实时在线服务。

@@ -203,7 +203,7 @@
       document.getElementById("account-posts").href = "/community/?author_id=" + user.id;
       document.getElementById("account-profile").href = "/users/?id=" + user.id;
     }
-    if (sessionError) message(notice, sessionError, true);
+    message(notice, sessionError || "", Boolean(sessionError));
   }
 
   function setMode(next) {
