@@ -1,5 +1,9 @@
 # Frontend Mainline Changelog
 
+## 2026-10-05（实际 osu-web 上线待验收）
+
+17:16:55（UTC+8）发布 `b520bcb99015-5d0531c22423` / schema3。最小个人页、原 lazer 账号链接、真实来源 / 同条件榜和对应 AGPL 源码已上线，跨标签旧操作提示已复验修复。全量主机 / 两空恢复 / 保全补账、旧 schema3 往返、公开 84/232 / 缓存 38/110、新备份外取通过；准确运行提交、原失败和浏览器限制仅取[此次核验](../other/osu-web-lazer-account-verification-20261005.md)。原候选 / OpenDesign与旧390px结果保留各自日期，当前普通刷新 / 公网点击 / 窄屏、视觉、两端与宿主 P/C 真人未签收。
+
 ## 2026-10-05（实际 osu-web 复用与原账号页候选）
 
 - 按用户改选实际 upstream `2c596022…` 的 Blade / Less，在静态页面复用 nav2 / header-v4 / user-home / forum-topic-entry / download-page / profile-info；继续 OMS 真实帖子与 FastAPI / SQLite，不引入整个 ppy 服务、品牌、美术或字体。十页共用导航，新增最小同账号个人页、作者 / OMS 榜单入口和源码许可页，LR2 旧身份保持文本及独立 ID。

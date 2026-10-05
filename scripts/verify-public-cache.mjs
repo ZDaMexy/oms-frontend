@@ -1,10 +1,15 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
 // Maintenance check against the published public portal. No login or writes.
 // It deliberately does not share or clear any player's browser cache.
 const origin = "https://oms.zdamexy.work";
+assert(process.argv.length === 2 || process.argv.length === 3, "Usage: node scripts/verify-public-cache.mjs [exact-release-web-directory]");
+const webRoot = process.argv[2] ?? fileURLToPath(new URL("../", import.meta.url));
+const sourceBytes = file => readFileSync(resolve(webRoot, file));
 const routes = new Map([
   ["/", "index.html"], ["/download/", "download/index.html"],
   ["/help/", "help/index.html"], ["/account/", "account/index.html"],
@@ -14,7 +19,7 @@ const routes = new Map([
 // Follow the versions actually referenced by the authored pages; a later
 // asset revision must not leave this check exercising only a retired URL.
 for (const [route, file] of [...routes]) {
-  const html = readFileSync(new URL("../" + file, import.meta.url), "utf8");
+  const html = sourceBytes(file).toString("utf8");
   for (const [, asset] of html.matchAll(/(?:href|src)="([^\"]+)"/g)) {
     const url = new URL(asset, origin + route);
     if (url.origin !== origin || !url.pathname.startsWith("/portal/")) continue;
@@ -48,11 +53,10 @@ function revalidates(record) {
 }
 
 try {
-  assert.equal(process.argv.length, 2, "Usage: node scripts/verify-public-cache.mjs");
   for (const [route, file] of routes) {
     const current = await request(route);
     check(current.status === 200, `${route}: public GET succeeds`);
-    check(current.sha256 === sha256(readFileSync(new URL("../" + file, import.meta.url))), `${route}: published bytes match local source`);
+    check(current.sha256 === sha256(sourceBytes(file)), `${route}: published bytes match exact source`);
     check(revalidates(current), `${route}: every use requires revalidation`);
     check(Boolean(current.headers.etag), `${route}: published validator is present`);
     const unchanged = await request(route, { "If-None-Match": current.headers.etag });

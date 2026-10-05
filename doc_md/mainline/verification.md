@@ -67,9 +67,11 @@ node scripts/verify.mjs
 ```powershell
 . F:\oms\UseDevelopmentStorage.ps1
 node scripts/verify-public-cache.mjs
+# 存在生成源码下载、行尾差异或本地 HEAD 已前进时，核对严格导出的实际包：
+node scripts/verify-public-cache.mjs F:/oms/artifacts/oms-osu-web-lazer-account-20261005/package-r2/web
 ```
 
-这是独立、按需运行的公网只读维护检查，不由客户端或页面自动发起。固定请求 `https://oms.zdamexy.work` 的六个门户页及这些页面实际引用的 `/portal/` 资源，不登录、不写内容、不清除玩家浏览器缓存；使用默认 TLS 校验。它检查正文与本地源码字节、200 / 304 的 `no-cache`、当前 ETag 复用、旧单页日期及明确合成的不匹配 ETag 返回新版。JSON 输出应留在非系统盘验收目录，失败退出码非零；本地候选尚未发布时字节不符是预期阻断，不能改成跳过比较。
+这是独立、按需运行的公网只读维护检查，不由客户端或页面自动发起。固定请求 `https://oms.zdamexy.work` 的八个门户页及页面实际引用的 `/portal/` 资源，不登录、不写内容、不清除玩家浏览器缓存；使用默认 TLS 校验。它检查正文与默认本地源码或所传精确 web 包字节、200 / 304 的 `no-cache`、当前 ETag 复用、旧单页日期及明确合成的不匹配 ETag 返回新版。生成的源码下载必须存在于传入的严格包，不能拿未生成的 repo 文件跳过字节比较。JSON 输出留非系统盘，失败退出非零；候选未发布时字节不符是阻断。维护脚本 / 文档 HEAD 前进不改变部署来源。
 
 HTTP 校验不能代签浏览器普通刷新，也不能追溯清除从未向服务器重新请求的旧缓存。2026-10-05 实际范围与原始证据只维护于 [共享设施缓存记录](../other/community-infrastructure-20261004.md#2026-10-05缓存反馈复核)。
 

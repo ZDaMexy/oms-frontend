@@ -63,3 +63,9 @@ schema 已升至 2，原 schema 1 运行时不能直接接受当前库。升级�
 实际公网浏览器普通 reload 后显示“一起聊聊，下一局。”、真实 0 帖空状态及独立导航；点击“下载”进入“准备好，开始下一局。”的独立下载页。该结果证明当前页面刷新 / 导航可用，不还原玩家强刷前的缓存，也不签首次真实发帖或 IR 真人 P/C。HTTPS 首页 SHA256 `517d4bb48319ba1bf247ae437d13b40b0d63b4b6215637245b8e672a95f20c66`，IR SHA256 `90562df8278020c6502f980980856e9dfdf0aaea09ba15046ddb637482f87173`，均匹配本地制品内容；个人站 HTTPS 200 / SHA256 `400a06bbe5318fd9c57aedcaac61b8f5a8edeaf815d4404602c66f687f0d10a7` 与此前一致。
 
 长期证据位于 `F:/oms/artifacts/oms-homepage-cache-20261005/`：`public-cache-report.json`、`inspection-report.json`、`runtime-cache-inspection.txt`、`home-after-normal-reload.txt` / `.png` 与浏览器最终记录。后续门户发布在 [Website 验证方法](../../../oms-website/doc_md/mainline/verification.md#发布后的缓存复核) 核对普通刷新、返回首页和真实资源的条件请求；不要求玩家常规强刷来替代发布验收。运行源码仍是前节已发布来源，本轮维护 / 文档 HEAD 不替换它。
+
+## 2026-10-05实际osu-web发布
+
+17:16:55（UTC+8）当前 OMS 为 `b520bcb99015-5d0531c22423` / schema3。共享变更仅 OMS 原 extension 增加 users / credits 精确路由，实际 BT Nginx 切换前后预检与 reload 通过；vhost / .well-known / Homepage 源码和部署均未改。vhost 与 extension 备份 `/var/backups/oms-ir/nginx-20261005T091651Z/`，switch `/opt/oms-ir/releases/20261005T091651Z-switch/`，schema3 一致快照 `/var/backups/oms-ir/before-release-20261005T091651Z.db` 保留。
+
+双个人站 HTTPS200 / SHA256 `400a06bbe5318fd9c57aedcaac61b8f5a8edeaf815d4404602c66f687f0d10a7` 前后相同；OMS公开84请求/232检查和门户缓存38/110通过，实际首页与普通reload后保存的截图为“主页”与真实0帖。AX/DOM读取及组合调用后段超时、窄屏override未真正生效单独保留；仅签保存完成的普通刷新，点击往返/窄屏不由HTTP代签。新备份unit成功且完整受保护F外取核验，timer enabled/active。准确运行来源、完整预算/恢复/补账、失败、备份/兼容回退及未完真人门只取[此次核验](osu-web-lazer-account-verification-20261005.md)，当前“已部署待验收”，P/C未签收。共享记录与Homepage镜像同步，不自行扩盘。
