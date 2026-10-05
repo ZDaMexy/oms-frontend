@@ -1,0 +1,263 @@
+@charset "UTF-8";
+/*
+ * Copyright (c) ppy Pty Ltd <contact@ppy.sh>.
+ * Licensed under the GNU Affero General Public License v3.0.
+ * See /credits/ for the licence and corresponding source.
+ *
+ * Adapted for OMS on 2026-10-05 from ppy/osu-web at
+ * 2c596022a1345fbed288978e7fa5304df0359f50.
+ * The applicable BEM rules are translated from LESS to native CSS; unused
+ * service-specific modifiers and external image/font dependencies are omitted.
+ * Source files: resources/css/colors.less, functions.less, variables.less;
+ * resources/css/bem/{osu-page,nav2,header-v4,header-nav-v4,user-home,
+ * forum-topic-entry,download-page,btn-osu-big,profile-info}.less.
+ */
+
+:root {
+  --base-hue: 333;
+  --hsl-p: var(--base-hue), 100%, 50%;
+  --hsl-h1: var(--base-hue), 100%, 70%;
+  --hsl-h2: var(--base-hue), 50%, 45%;
+  --hsl-c1: var(--base-hue), 40%, 100%;
+  --hsl-c2: var(--base-hue), 40%, 90%;
+  --hsl-l1: var(--base-hue), 40%, 80%;
+  --hsl-l2: var(--base-hue), 40%, 75%;
+  --hsl-l3: var(--base-hue), 40%, 70%;
+  --hsl-l4: var(--base-hue), 40%, 50%;
+  --hsl-d1: var(--base-hue), 20%, 35%;
+  --hsl-d2: var(--base-hue), 20%, 30%;
+  --hsl-d3: var(--base-hue), 20%, 25%;
+  --hsl-d4: var(--base-hue), 20%, 20%;
+  --hsl-d5: var(--base-hue), 20%, 15%;
+  --hsl-d6: var(--base-hue), 20%, 10%;
+  --hsl-f1: var(--base-hue), 10%, 60%;
+  --hsl-b1: var(--base-hue), 10%, 40%;
+  --hsl-b2: var(--base-hue), 10%, 30%;
+  --hsl-b3: var(--base-hue), 10%, 25%;
+  --hsl-b4: var(--base-hue), 10%, 20%;
+  --hsl-b5: var(--base-hue), 10%, 15%;
+  --hsl-b6: var(--base-hue), 10%, 10%;
+}
+
+.osu-page {
+  align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  flex: none;
+  width: 100%;
+  max-width: 1000px;
+}
+.osu-page--generic,
+.osu-page--generic-compact {
+  background-color: hsl(var(--hsl-b5));
+  color: hsl(var(--hsl-c1));
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+}
+.osu-page--generic { padding: 20px 50px; }
+.osu-page--forum { background-color: hsl(var(--hsl-b5)); color: hsl(var(--hsl-c1)); }
+.osu-page--forum-topic { background-color: hsl(var(--hsl-b4)); color: hsl(var(--hsl-c1)); }
+
+.nav2 {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+}
+.nav2__col { display: flex; align-items: center; flex: none; }
+.nav2__col--logo { margin-right: 10px; }
+.nav2__col--menu { align-items: stretch; position: relative; }
+.nav2__colgroup { display: flex; flex: none; }
+.nav2__colgroup--menu { margin-right: auto; }
+.nav2__logo-link { position: relative; width: 60px; height: 60px; margin: -5px; }
+.nav2__logo { width: 100%; height: 100%; display: block; transition: transform 100ms ease-in-out; }
+.nav2__logo-link:hover .nav2__logo { transform: scale(1.11); }
+.nav2__menu-link-main {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.nav2__colgroup:hover .nav2__menu-link-main { color: rgba(255, 255, 255, .7); }
+.nav2__colgroup .nav2__menu-link-main:hover,
+.nav2__colgroup .nav2__menu-link-main[aria-current] { color: #fff; }
+.nav2__menu-link-bar {
+  position: absolute;
+  top: 100%;
+  margin-top: 5px;
+  height: 3px;
+  border-radius: 10px;
+  width: calc(100% - 20px);
+  display: block;
+  background: #ffcc22;
+}
+
+.header-v4__bg-container { position: absolute; inset: 0; background-color: hsl(var(--hsl-d5)); }
+.header-v4__bg {
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: .7;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.header-v4__container { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative; }
+.header-v4__container--main { min-height: 160px; padding-top: 105px; }
+.header-v4__content { width: 100%; max-width: 1000px; color: hsl(var(--hsl-c1)); position: relative; }
+.header-v4__row { padding: 0 50px; display: flex; align-items: center; flex-wrap: wrap; }
+.header-v4__row--title { min-height: 55px; background-color: hsl(var(--hsl-d5)); font-size: 20px; }
+.header-v4__row--bar { background-color: hsl(var(--hsl-d4)); }
+.header-v4__title { display: flex; font-weight: normal; }
+.header-nav-v4 {
+  --header-nav-item-padding-y: 15px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  position: relative;
+}
+.header-nav-v4--list { gap: 20px; }
+.header-nav-v4--list::before { content: ""; position: absolute; bottom: 0; width: 100%; height: 1px; background-color: hsl(var(--hsl-h1)); }
+.header-nav-v4__item { display: flex; align-items: baseline; }
+.header-nav-v4__link { align-items: baseline; display: flex; gap: 2px 5px; padding: var(--header-nav-item-padding-y) 0; position: relative; text-decoration: none; color: hsl(var(--hsl-l1)); }
+.header-nav-v4__link::before { content: ""; position: absolute; bottom: -2px; height: 5px; width: 100%; border-radius: 10000px; background-color: hsl(var(--hsl-h1)); transform: scaleY(0); transition: transform 120ms; }
+.header-nav-v4__link:hover::before,
+.header-nav-v4__link[aria-current]::before { transform: scaleY(1); }
+.header-nav-v4__link[aria-current] { color: #fff; font-weight: bold; }
+
+.user-home { box-shadow: 0 1px 3px rgba(0, 0, 0, .25); display: flex; background: hsl(var(--hsl-b5)); flex-direction: row; padding: 0 50px; align-items: flex-start; }
+.user-home__left-section { padding-bottom: 20px; flex: none; width: calc(60% - 10px); margin-right: 10px; }
+.user-home__left-title { margin: 0; padding: 20px 0 10px; font-size: 20px; font-weight: bold; color: hsl(var(--hsl-l1)); display: flex; align-items: flex-end; }
+.user-home__right-sidebar { --padding-x: 10px; background-color: hsl(var(--hsl-b4)); margin: 0 0 10px 10px; padding: 20px var(--padding-x) 10px; width: calc(40% - 10px); box-shadow: 0 1px 3px rgba(0, 0, 0, .25); }
+.user-home__buttons { display: grid; gap: 10px; }
+.user-home__beatmap-list-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0; padding: 20px 0 10px; font-size: 16px; color: hsl(var(--hsl-l1)); font-weight: bold; }
+
+.forum-topic-entry {
+  font-size: 12px;
+  display: flex;
+  margin: 2px -10px;
+  background-color: hsl(var(--hsl-b4));
+  border-radius: 6px;
+  padding: 10px;
+  color: hsl(var(--hsl-c2));
+  transition: background-color 120ms;
+  position: relative;
+}
+.forum-topic-entry:hover { background-color: hsl(var(--hsl-b3)); }
+.forum-topic-entry__col { display: flex; justify-content: center; align-items: center; flex: none; }
+.forum-topic-entry__col--icon { display: flex; align-items: center; flex-direction: column; align-self: center; position: relative; }
+.forum-topic-entry__col--main { flex: 1; display: flex; flex-direction: row; align-items: center; word-break: break-word; min-width: 0; }
+.forum-topic-entry__content { flex: none; padding: 0 10px; }
+.forum-topic-entry__content--left { flex: 1; min-width: 0; }
+.forum-topic-entry__content--counts { min-width: 68px; white-space: nowrap; }
+.forum-topic-entry__count { font-weight: 600; }
+.forum-topic-entry__icon { display: flex; justify-content: center; align-items: center; min-width: 46px; height: 36px; border-radius: 10000px; font-size: 14px; background-color: hsl(var(--hsl-b6)); color: hsl(var(--hsl-c1)); }
+.forum-topic-entry__title { display: block; width: max-content; max-width: 100%; font-size: 14px; color: hsl(var(--hsl-c1)); word-wrap: break-word; }
+
+.btn-osu-big {
+  --active-bg: var(--hover-bg);
+  --active-colour: var(--hover-colour);
+  --bg: hsl(var(--hsl-h2));
+  --colour: hsl(var(--hsl-c1));
+  --disabled-bg: hsl(var(--hsl-b3));
+  --disabled-colour: hsl(var(--hsl-f1));
+  --disabled-opacity: 1;
+  --focus-bg: var(--hover-bg);
+  --focus-colour: var(--hover-colour);
+  --hover-bg: hsl(var(--hsl-h1));
+  --hover-colour: hsl(var(--hsl-c1));
+  border: none;
+  border-radius: 6px;
+  display: inline-block;
+  background: var(--bg);
+  transition: background-color 120ms;
+  padding: 5px;
+  color: var(--colour);
+  font-size: 12px;
+  font-weight: 600;
+  overflow: hidden;
+  cursor: pointer;
+  text-transform: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-decoration: none;
+}
+.btn-osu-big:focus-visible { color: var(--focus-colour); background: var(--focus-bg); }
+.btn-osu-big:hover { color: var(--hover-colour); background: var(--hover-bg); }
+.btn-osu-big:active { color: var(--active-colour); background: var(--active-bg); }
+.btn-osu-big[disabled] { cursor: default; background: var(--disabled-bg); color: var(--disabled-colour); opacity: var(--disabled-opacity); }
+.btn-osu-big--rounded { padding: 10px 15px; border-radius: 100000px; }
+.btn-osu-big--forum-primary { border-radius: 10000px; padding: 8px 20px; font-weight: normal; }
+.btn-osu-big--download { border-radius: 20px; padding: 30px; width: 100%; font-weight: normal; }
+.btn-osu-big__content { width: 100%; height: 100%; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.btn-osu-big__left { margin: 0; display: flex; flex-direction: column; justify-content: center; text-align: left; gap: 10px; }
+.btn-osu-big__icon { flex: none; margin: 0; font-size: 24px; }
+.btn-osu-big__text-top--download { font-size: 20px; font-weight: 700; }
+.btn-osu-big__text-bottom { font-size: 10px; font-weight: 300; }
+
+.download-page { --content-margin: 40px; display: flex; flex-direction: column; gap: 10px; padding-bottom: 10px; }
+.download-page__header { box-shadow: 0 1px 3px rgba(0, 0, 0, .25); display: flex; flex-direction: column; background: hsl(var(--hsl-b4)); border-radius: 0 0 20px 20px; }
+.download-page__banner { position: relative; display: flex; justify-content: flex-end; min-height: 350px; border-radius: 0 0 20px 20px; }
+.download-page__banner-content { position: relative; display: flex; flex-direction: column; flex: 1; margin: var(--content-margin); padding: 10px; max-width: 440px; background: hsla(var(--hsl-b5), .5); }
+.download-page__banner-content--main { align-items: flex-end; gap: 10px; border-radius: 20px; }
+.download-page__banner-tail { display: flex; justify-content: flex-end; }
+.download-page__guide { box-shadow: 0 1px 3px rgba(0, 0, 0, .25); display: flex; flex-direction: column; gap: 10px; background: hsl(var(--hsl-b4)); border-radius: 20px; margin: 0 10px; }
+.download-page__guide-content { padding: 30px; }
+.download-page__step { display: flex; flex-direction: column; gap: 10px; }
+.download-page__steps { display: grid; grid-auto-columns: minmax(0, 1fr); grid-auto-flow: column; justify-content: space-between; gap: 40px; }
+.download-page__step-number { display: flex; justify-content: center; align-items: center; width: 60px; height: 24px; border-radius: 24px; border: solid currentColor 2px; font-weight: 700; padding-bottom: 2px; }
+.download-page__text { font-size: 12px; }
+.download-page__text--description { color: hsl(var(--hsl-c2)); }
+.download-page__text--title { font-size: 18px; }
+.download-page__help { padding-top: 20px; font-size: 12px; }
+
+.profile-info {
+  --avatar-radius: 20px;
+  --avatar-size: 96px;
+  --content-height: 85px;
+  --vertical-padding: 10px;
+  --info-margin: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  width: 100%;
+  background-color: hsl(var(--hsl-b3));
+}
+.profile-info__details { padding: 0 50px; display: flex; align-items: center; position: relative; min-height: calc(var(--content-height) + var(--vertical-padding) * 2); }
+.profile-info__avatar { flex: none; width: var(--avatar-size); height: var(--avatar-size); border-radius: var(--avatar-radius); overflow: hidden; align-self: flex-end; margin-bottom: var(--vertical-padding); box-shadow: 0 1px 3px rgba(0, 0, 0, .25); }
+.profile-info__info { margin-left: var(--info-margin); display: flex; flex-direction: column; align-items: flex-start; flex: 1; min-width: 0; }
+.profile-info__name { padding: 0; margin: -5px 0 0; font-weight: normal; font-style: normal; line-height: normal; max-width: 100%; display: flex; align-items: center; position: relative; font-size: 24px; }
+
+@media (max-width: 767px) {
+  .osu-page--generic { padding: 20px 10px; }
+  .nav2 { height: auto; min-height: 70px; }
+  .header-v4__container--main { min-height: 105px; padding-top: 0; }
+  .header-v4__row { padding-left: 20px; padding-right: 20px; }
+  .header-nav-v4 { --header-nav-item-padding-y: 12px; font-size: 13px; }
+  .user-home { padding: 0; flex-direction: column; }
+  .user-home__left-section { margin: 0; width: 100%; }
+  .user-home__right-sidebar { --padding-x: 20px; margin: 0; padding: 20px; width: 100%; }
+  .user-home__left-title { padding-left: 20px; }
+  .forum-topic-entry { margin: 2px 0; padding: 12px 6px; }
+  .forum-topic-entry__col--main { flex-direction: column; align-items: normal; }
+  .forum-topic-entry__content--counts { margin-top: 8px; }
+  .download-page { --content-margin: 20px; }
+  .download-page__banner { min-height: auto; }
+  .download-page__banner-content { margin: 20px; max-width: none; }
+  .download-page__steps { grid-auto-flow: row; grid-auto-columns: auto; gap: 30px; }
+  .download-page__guide-content { padding: 20px; }
+  .profile-info { --avatar-size: 65px; --avatar-radius: 16px; --info-margin: 10px; }
+  .profile-info__details { padding: 15px 20px; }
+  .profile-info__avatar { align-self: flex-start; margin-bottom: 0; }
+  .profile-info__name { font-size: 20px; }
+}

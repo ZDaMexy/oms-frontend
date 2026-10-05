@@ -1,5 +1,10 @@
 # Frontend Mainline Changelog
 
+## 2026-10-05（实际 osu-web 复用与原账号页候选）
+
+- 按用户改选实际 upstream `2c596022…` 的 Blade / Less，在静态页面复用 nav2 / header-v4 / user-home / forum-topic-entry / download-page / profile-info；继续 OMS 真实帖子与 FastAPI / SQLite，不引入整个 ppy 服务、品牌、美术或字体。十页共用导航，新增最小同账号个人页、作者 / OMS 榜单入口和源码许可页，LR2 旧身份保持文本及独立 ID。
+- 静态十页 / 311 引用通过，本地真实浏览器完成登录、发帖 / 回复 / 固定地址 / 作者页与桌面 / 手机布局检查。客户端原账号与本人页软件门 64/64、普通 Desktop 编译通过；实际源码下载、全量共享主机、恢复、新包部署与真人仍待后续门。来源、权限、初次失败及原工作保全只取 [本次核验](../other/osu-web-lazer-account-verification-20261005.md)，不刷新早先 OpenDesign 与 P/C 签收。
+
 ## 2026-10-05（官网改版实际上线，真人视觉仍待）
 
 - 12:02:06（UTC+8）严格发布 ecca50eab82c-d34fab9b9611 / schema3，Website d34fab9 已推送；33 服务文件、8 生成资产和公开投影保持实际原来源 / 字节。一致备份、激活 / 健康、55 manifest 文件、公开 GET / HEAD 及缓存维护门通过，Nginx 配置未变。

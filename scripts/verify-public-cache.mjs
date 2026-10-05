@@ -9,6 +9,7 @@ const routes = new Map([
   ["/", "index.html"], ["/download/", "download/index.html"],
   ["/help/", "help/index.html"], ["/account/", "account/index.html"],
   ["/community/", "community/index.html"], ["/community/new/", "community/new/index.html"],
+  ["/users/", "users/index.html"], ["/credits/", "credits/index.html"],
 ]);
 // Follow the versions actually referenced by the authored pages; a later
 // asset revision must not leave this check exercising only a retired URL.

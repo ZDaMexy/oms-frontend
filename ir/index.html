@@ -1,51 +1,62 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#050608" />
-    <meta name="description" content="OMS IR 试验榜：按游玩条件查看 BMS 与 mania 成绩，以及自己的游玩记录。" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2e1f26">
+    <meta name="description" content="OMS：BMS 与 mania 客户端、玩家社区和多来源 IR。Windows-only，离线优先。">
     <title>OMS IR · 试验榜</title>
-    <link rel="icon" href="../portal/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="../portal/style.css?v=20261005-2" />
-    <link rel="stylesheet" href="ir.css?v=20261005-2" />
-    <script defer src="../portal/site.js?v=20261005-2">
-</script>
-    <script defer src="ir.js?v=20261005-2">
-</script>
+    <link rel="icon" href="/portal/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/portal/osu-web.css?v=20261005-osuweb-1">
+    <link rel="stylesheet" href="/portal/style.css?v=20261005-osuweb-1">
+    <link rel="stylesheet" href="/ir/ir.css?v=20261005-osuweb-1">
+    <script defer src="/portal/site.js?v=20261005-osuweb-1"></script>
+    <script defer src="/ir/ir.js?v=20261005-osuweb-1"></script>
   </head>
   <body data-page="ir">
-    <a class="skip-link" href="#ranking">跳到成绩区</a>
-    <header class="site-header">
-      <div class="shell header-inner">
-<a class="brand" href="/" aria-label="OMS 首页">
-<img src="../portal/favicon.svg" alt="" width="34" height="34" />
-<span class="brand-word">OM<span>S</span>
-</span>
-<span class="brand-sub">BMS / MANIA</span>
-</a>
-<nav class="site-nav" aria-label="主要导航">
-<a href="/">首页</a>
-<a href="/community/">社区</a>
-<a href="/download/">下载</a>
-<a href="/ir/" aria-current="page">IR</a>
-<a href="/help/">帮助</a>
-</nav>
-<a id="site-account" class="header-account" href="/account/">登录 / 注册</a>
-</div>
-    </header>
-
-    <main class="shell">
-      <section class="intro" aria-labelledby="page-title">
-        <div>
-
-          <h1 id="page-title">IR 谱面榜单</h1>
-          <p class="intro-copy">按谱面选择一个、多个或全部来源，查看跨播放器的 EX 参考混榜；也能主动收窄到已确认的同条件榜。</p>
+    <a class="skip" href="#main">跳到主要内容</a>
+  <!-- Adapted from ppy/osu-web nav2; AGPL-3.0. See /credits/. -->
+  <header class="site-header">
+    <div class="shell nav2 header-inner">
+      <a class="brand nav2__col nav2__col--logo" href="/" aria-label="OMS 首页">
+        <span class="nav2__logo-link"><img class="nav2__logo" src="/portal/favicon.svg" alt="" width="42" height="42"></span>
+        <span class="brand-word">OMS</span>
+      </a>
+      <nav class="nav2__colgroup nav2__colgroup--menu site-nav" aria-label="主要导航">
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/">首页</a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/community/">社区</a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/download/">下载</a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/ir/" aria-current="page">IR<span class="nav2__menu-link-bar" aria-hidden="true"></span></a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/help/">帮助</a></div>
+      </nav>
+      <a id="site-account" class="header-account" href="/account/">登录 / 注册</a>
+    </div>
+  </header>
+  <!-- Adapted from ppy/osu-web layout/_page_header_v4.blade.php. -->
+  <div class="header-v4 header-v4--ir">
+    <div class="header-v4__container header-v4__container--main">
+      <div class="header-v4__bg-container"><div class="header-v4__bg"></div></div>
+      <div class="header-v4__content">
+        <div class="header-v4__row header-v4__row--title">
+          <h1 id="page-title" class="header-v4__title">IR 谱面榜单</h1>
+          <p class="header-subtitle">按谱面选择来源 · 跨来源参考 / 同条件榜</p>
         </div>
-
-      </section>
-
-      <details class="trust-notice">
+      </div>
+    </div>
+    <div class="header-v4__container">
+      <div class="header-v4__content">
+        <nav class="header-v4__row header-v4__row--bar" aria-label="本页导航">
+          <ul class="header-nav-v4 header-nav-v4--list">
+          <li class="header-nav-v4__item"><a class="header-nav-v4__link" href="/ir/" aria-current="page">谱面榜单</a></li>
+          <li class="header-nav-v4__item"><a class="header-nav-v4__link" href="/help/#players">接入说明</a></li>
+          <li class="header-nav-v4__item"><a class="header-nav-v4__link" href="/account/">账号</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+    <main id="main" class="osu-page osu-page--generic-compact page-content">
+<details class="trust-notice">
 <summary>试运行：客户端上报，未经回放核验。查看来源与隐私说明</summary>
         <div>
           <strong>跨播放器接入仍在试运行</strong>
@@ -222,13 +233,13 @@
             <div id="account-logged-in" hidden>
               <p id="account-username" class="account-name">
 </p>
-              <p class="section-hint">已登录。本人记录仅向当前账号开放。</p>
+              <p class="section-hint"><a id="ir-profile" href="/users/">打开个人页 ›</a> · 本人记录仅向当前账号开放。</p>
               <div class="account-actions">
                 <button id="mine-button" class="primary-button" type="button">我的记录 <span aria-hidden="true">→</span>
 </button>
                 <button id="logout-button" class="text-button" type="button">退出登录</button>
               </div>
-              <details class="integration-panel">
+              <details id="keys" class="integration-panel">
 <summary>播放器专用密钥</summary>
 <p class="section-hint">每个来源使用独立密钥，可随时撤销。插件填写密钥，不填写 OMS 账号密码。密钥仅在创建时显示一次。</p>
                 <form id="key-form">
@@ -257,14 +268,16 @@
           </section>
       </div>
     </main>
-
-    <footer class="shell site-footer">
-<span>OMS IR · 试验榜</span>
-<span>按需交分与查榜 · 无持续在线状态</span>
-<a href="https://oms.zdamexy.work/">OMS 官网 ↗</a>
-</footer>
-
-    <dialog id="score-dialog" class="score-dialog" aria-labelledby="detail-title">
+  <footer class="shell site-footer">
+    <span>OMS · BMS / mania · Windows</span>
+    <div class="footer-links">
+      <a href="/help/#rules">社区约定</a>
+      <a href="/help/#privacy">数据与隐私</a>
+      <a href="/help/#contact">联系与反馈</a>
+      <a href="/credits/">源码与许可</a>
+    </div>
+  </footer>
+<dialog id="score-dialog" class="score-dialog" aria-labelledby="detail-title">
       <div class="dialog-heading">
 <div>
 <h2 id="detail-title">
@@ -290,8 +303,6 @@
 </form>
 </div>
     </dialog>
-    <noscript>
-<p class="shell message">需要启用 JavaScript 才能读取真实榜单与登录账号。</p>
-</noscript>
+    <noscript><p class="shell notice">帖子、登录和成绩查询需要 JavaScript。下载与帮助页面可直接阅读。</p></noscript>
   </body>
 </html>

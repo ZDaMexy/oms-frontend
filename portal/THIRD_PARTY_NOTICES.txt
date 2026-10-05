@@ -1,0 +1,31 @@
+OMS website portal source and third-party notices
+
+The current portal HTML, CSS and JavaScript adaptations are distributed under
+the GNU Affero General Public License, version 3 or any later version.
+Copyright (c) ZDaMexy and OMS contributors. Modified on 2026-10-05.
+Full license: /portal/LICENCE.txt
+
+This portal adapts page templates and component styles from osu!web.
+Copyright (c) ppy Pty Ltd <contact@ppy.sh> and osu!web contributors.
+License: GNU Affero General Public License, version 3 or later.
+Upstream: https://github.com/ppy/osu-web
+Fixed source: 2c596022a1345fbed288978e7fa5304df0359f50
+Component source paths, hashes and local adaptations: /portal/osu-web-sources.json
+
+Changes: the reused page, navigation, forum, download and profile structure and
+styles use OMS text, system fonts, the existing OMS logo, and the existing
+request-driven OMS APIs. Less rules are adapted to plain CSS. No upstream
+branding, font files, artwork, accounts or full server stack are distributed.
+
+The complete unminified portal sources and corresponding service installation
+sources for the active release are available from:
+  /portal/oms-website-source.tar.gz
+The source-manifest.json inside that download binds each file checksum to the
+exact website and backend commits. It contains no player data, databases,
+SDK/adapter binaries or deployment credentials.
+Website repository: https://github.com/ZDaMexy/oms-frontend
+Service repository: https://github.com/ZDaMexy/oms-backend
+The independent service and player adapters are not osu!web implementations;
+their own source and dependency notices remain in their respective projects.
+
+Information and source links: /credits/

@@ -47,7 +47,7 @@
     "history-body", "history-prev", "history-page", "history-next", "score-dialog", "detail-title", "detail-subtitle",
     "detail-summary", "detail-statistics", "detail-lamp-note",
     "chart-search", "chart-query", "source-control", "source-choices", "sources-all", "sources-none", "ranking-mode",
-    "board-me", "board-condition-heading", "detail-fields-heading", "key-form", "key-source", "key-label", "key-message", "key-secret", "key-secret-label", "key-list",
+    "board-me", "board-condition-heading", "detail-fields-heading", "key-form", "key-source", "key-label", "key-message", "key-secret", "key-secret-label", "key-list", "ir-profile", "keys",
   ];
   const dom = Object.fromEntries(ids.map((id) => {
     const node = document.getElementById(id);
@@ -261,6 +261,7 @@
     dom["account-logged-in"].hidden = user === null;
     dom["account-state"].textContent = user ? "已登录" : "未登录";
     dom["account-username"].textContent = user ? user.username : "";
+    dom["ir-profile"].href = user ? "/users/?id=" + user.id : "/users/";
     dom["history-tab"].disabled = user === null;
     dom["history-body"].replaceChildren();
     dom["history-table-wrap"].hidden = true;
@@ -398,7 +399,14 @@
     const row = element("tr");
     const identity = item.identity;
     const score = item.score;
-    const player = element("td", "player-name", identity.username || "原名称为空");
+    const player = element("td", "player-name");
+    if (identity.namespace === "oms") {
+      const profileLink = element("a", "", identity.username || "原名称为空");
+      profileLink.href = "/users/?id=" + identity.id;
+      player.append(profileLink);
+    } else {
+      player.append(document.createTextNode(identity.username || "原名称为空"));
+    }
     player.append(element("span", "identity-note", `${identity.namespace === "lr2ir" ? "LR2IR 旧 ID" : "OMS ID"} #${identity.id}`));
     const scoreValue = element("td");
     scoreValue.append(element("span", "score-value", number.format(score.ex_score)), element("span", "score-sub", score.max_ex_score === null ? "最大 EX 未收录" : `/ ${number.format(score.max_ex_score)} EX`));
@@ -495,7 +503,11 @@
       dom["board-condition-heading"].textContent = "准确率 / 连击";
       for (const item of data.items) {
         const row = element("tr");
-        row.append(element("td", item.rank <= 3 ? "rank rank--top" : "rank", String(item.rank)), element("td", "player-name", item.user.username), scoreCell(item.score), accuracyCell(item.score), boardLampCell(item), element("td", "small-label", date(item.score.played_at)));
+        const player = element("td", "player-name");
+        const profileLink = element("a", "", item.user.username);
+        profileLink.href = "/users/?id=" + item.user.id;
+        player.append(profileLink);
+        row.append(element("td", item.rank <= 3 ? "rank rank--top" : "rank", String(item.rank)), player, scoreCell(item.score), accuracyCell(item.score), boardLampCell(item), element("td", "small-label", date(item.score.played_at)));
         const action = element("td");
         const button = element("button", "text-button", "详情 ↗");
         button.type = "button";
@@ -814,6 +826,10 @@
       if (revision === accountRevision) {
         setUser(data.user);
         if (location.hash === "#history") openHistory();
+        if (location.hash === "#keys") {
+          dom["keys"].open = true;
+          dom["keys"].scrollIntoView({ block: "start" });
+        }
       }
     } catch (error) {
       if (revision !== accountRevision) return;

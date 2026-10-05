@@ -3,8 +3,8 @@
 ## 产品与公开口径
 
 - 统一阶段及状态只由 [Dev Bridge dev-plan](../../../../oms-server/dev_bridge_md/doc_md/mainline/dev-plan.md) 定义。2026-10-04 用户授权社区帖首页与独立下载 / 帮助页面，Phase 2 / Phase 4 进入开发；阶段变化不替代实现、浏览器或生产证据。
-- 2026-10-05 玩家拒绝当前视觉与文风，官网视觉验收重新打开。首页、社区、下载、帮助、账号与 IR 必须保持共同的字体、色彩、排版及控件规则；中文直接说明功能与实际状态，移除重复宣传口号和模板套话。旧站视觉材料可作参考，其历史产品说明和第三方演奏素材不因设计回用而恢复适用性。实际可见方案与对应浏览器结果先于完成结论，功能检查不代签设计质量。公共 tokens、body 字体和全局控件只在 portal/style.css 维护，IR 样式仅定义榜单布局；手机视觉与 DOM 阅读顺序一致，密集表格仅在自身容器滚动。
-- Website 保持原生 HTML / CSS / JavaScript，以请求型 API 读取真实帖子 / 回复，账号复用原 IR；采用 [社区合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/constraints.md)。没有官方新闻栏目、假帖子、合成玩家动态或假活跃数，不扩张实时在线服务。
+- 2026-10-05 玩家拒绝当前视觉与文风，官网视觉验收重新打开。首页、社区、下载、帮助、账号与 IR 必须保持共同的字体、色彩、排版及控件规则；中文直接说明功能与实际状态，移除重复宣传口号和模板套话。旧站视觉材料可作参考，其历史产品说明和第三方演奏素材不因设计回用而恢复适用性。实际可见方案与对应浏览器结果先于完成结论，功能检查不代签设计质量。公共上游色板 / 组件在 portal/osu-web.css，body 字体和 OMS 控件适配在 portal/style.css，IR 样式仅定义榜单布局；手机视觉与 DOM 阅读顺序一致，密集表格仅在自身容器滚动。
+- 2026-10-05 用户选择实际复用 osu-web 页面与组件设计，固定上游 `2c596022a1345fbed288978e7fa5304df0359f50`，将对应 Less / 模板适配为本项目可维护的原生 HTML / CSS / JavaScript；基础组件在 `portal/osu-web.css`，OMS 适配在 `portal/style.css`，IR 只维护榜单布局。复用文件、AGPL-3.0-or-later 与对应修改源码须从 `/credits/` 可读，不使用 osu! / ppy 品牌或未核对的字体 / 图像。以请求型 API 读取真实帖子 / 回复，账号复用原 IR；采用 [社区合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/constraints.md)。没有官方新闻栏目、假帖子、合成玩家动态或假活跃数，不扩张实时在线服务。
 - 平台口径准确表达 Windows-only；客户端能力来自 [Client Bridge](../../../../oms-server/oms_client_bridge_md/doc_md/mainline/README.md) 的有日期 / 提交来源，旧事实不能靠网页重构刷新为当前客户端已验证。
 - 默认发行边界引用 [事实登记](../../../../oms-server/oms_client_bridge_md/doc_md/mainline/facts.md#事实登记)：`client-default-offline`（默认离线优先）、`client-in-app-update-disabled`（历史默认更新开关）与 `client-online-entrypoints`（代码接点不证明已连服务）。公开新页面只采用本轮需要且有适用依据的口径，不把后两项旧快照包装为新版本承诺。
 - 公开下载静态跳转至 GitHub Releases，不调用 GitHub API、不经过 OMS Backend；QQ 群 650530995 为手动搜索联络说明，不虚构邀请 URL。最新公开发行与开发源码能力分开；官网发布不制作 Windows 发行包。用户自行发行，设备验收通过 VS Code 非调试启动当前工作区。
@@ -14,7 +14,7 @@
 
 ## 页面与输入边界
 
-- `/`、`/download/`、`/help/`、`/community/`、独立帖子、新帖、`/account/` 与 `/ir/` 使用统一入口；原 `/#download` 转到独立下载页，已移出的旧锚点不能伪装成仍存在的区块。
+- `/`、`/download/`、`/help/`、`/community/`、独立帖子、新帖、`/account/`、`/users/?id=<OMS ID>`、`/credits/` 与 `/ir/` 使用统一入口；原 `/#download` 转到独立下载页，已移出的旧锚点不能伪装成仍存在的区块。身份页只展示真实 OMS ID / 账号名与已有公开帖子，本人历史仍由原认证入口查看；无公开资格账号不提供匿名枚举，旧 LR2IR 身份不跳转为同名 OMS 账号。
 - 原下载锚点包含初始导航与已打开首页的同文档 hash 变化；旧判定 / 特性 / 阶段锚点转帮助，不留下同文档无反应的入口。
 - 门户 HTML 与 `/portal/` 资源每次使用都须重新校验版本，当前 Nginx 的 `Cache-Control: no-cache` 同时覆盖 200 / 304；旧校验值应返回新正文。发布检查包含普通刷新与实际引用资源的条件请求，不能只签首次打开或强制刷新。改版前已缓存且尚未联系服务器的旧页面无法靠新响应头追溯清除，反馈与证据边界见 [缓存复核](../other/community-infrastructure-20261004.md#2026-10-05缓存反馈复核)。
 - 帖子标题 / 正文 / 回复和作者名按 API 合同渲染为文本节点，保留换行，不执行 HTML / Markdown，不提供附件、远端图片嵌入、点赞或私信。可信固定文案与不可信内容的处理边界明确。

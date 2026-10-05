@@ -1,0 +1,182 @@
+{
+  "format": 1,
+  "upstream": "https://github.com/ppy/osu-web",
+  "commit": "2c596022a1345fbed288978e7fa5304df0359f50",
+  "license": "AGPL-3.0-or-later",
+  "copyright": "ppy Pty Ltd <contact@ppy.sh> and osu!web contributors",
+  "modified_at": "2026-10-05",
+  "files": [
+    {
+      "upstream_path": "LICENCE",
+      "sha256": "d6e820b6147f08d6fffe461c8b44fc921263ff5b4f38a4f1488d9cecc332480f",
+      "local_adaptations": [
+        "portal/LICENCE.txt"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/LICENCE"
+    },
+    {
+      "upstream_path": "resources/css/colors.less",
+      "sha256": "a2c89a48a5fac24ba44def2aaad2cfa0064349f64a2e2f6f482caa8d7cd43383",
+      "local_adaptations": [
+        "portal/osu-web.css"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/css/colors.less"
+    },
+    {
+      "upstream_path": "resources/css/functions.less",
+      "sha256": "ba1cad9d4a6bea4ece83e75eb39ca6f8f05773f6c43e2582b3109ff9dd2f7b89",
+      "local_adaptations": [
+        "portal/osu-web.css"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/css/functions.less"
+    },
+    {
+      "upstream_path": "resources/css/variables.less",
+      "sha256": "4964e49c21c3e613e1a4ee2b4ec6f9cce69f6d2d2d8ec1d70555593ff9e88602",
+      "local_adaptations": [
+        "portal/osu-web.css"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/css/variables.less"
+    },
+    {
+      "upstream_path": "resources/css/bootstrap-variables.less",
+      "sha256": "011ba0929b667bbc281258e47cea273e26b46d806a7be207d049173605663e18",
+      "local_adaptations": [
+        "portal/osu-web.css"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/css/bootstrap-variables.less"
+    },
+    {
+      "upstream_path": "resources/css/bem/osu-page.less",
+      "sha256": "3b5be456a6d102853209733b4c6e3ffd6657255e4d45b61705686c6b76ffd1b5",
+      "local_adaptations": [
+        "portal/osu-web.css"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/css/bem/osu-page.less"
+    },
+    {
+      "upstream_path": "resources/css/bem/nav2.less",
+      "sha256": "9236121357efa0ede334d17da34f330c65f000b49e463b3cca2e73c70df51a79",
+      "local_adaptations": [
+        "portal/osu-web.css"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/css/bem/nav2.less"
+    },
+    {
+      "upstream_path": "resources/css/bem/header-v4.less",
+      "sha256": "37a4c9bbacd3feb68fcf822bec4ab4d19163ee9a5b18e70b75e4498958b504a8",
+      "local_adaptations": [
+        "portal/osu-web.css"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/css/bem/header-v4.less"
+    },
+    {
+      "upstream_path": "resources/css/bem/header-nav-v4.less",
+      "sha256": "857826d4bab6ed14a55d3d3e7730cac7c9b307f9753c14bf62c21bf406c3314e",
+      "local_adaptations": [
+        "portal/osu-web.css"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/css/bem/header-nav-v4.less"
+    },
+    {
+      "upstream_path": "resources/css/bem/user-home.less",
+      "sha256": "54d4bbe67d2640a72c33c101ceb2b8bcd86d75e99a61e39a9e28705ad84fa4a3",
+      "local_adaptations": [
+        "portal/osu-web.css"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/css/bem/user-home.less"
+    },
+    {
+      "upstream_path": "resources/css/bem/forum-topic-entry.less",
+      "sha256": "18e6cafab8ef0cf44732b90fc1e826a2ad253f57e853419d8c1831f58a5478f4",
+      "local_adaptations": [
+        "portal/osu-web.css"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/css/bem/forum-topic-entry.less"
+    },
+    {
+      "upstream_path": "resources/css/bem/download-page.less",
+      "sha256": "9095823e31e4d035c30bc910efed842065783e25f8c5a2a67cea76aaef0a141c",
+      "local_adaptations": [
+        "portal/osu-web.css"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/css/bem/download-page.less"
+    },
+    {
+      "upstream_path": "resources/css/bem/btn-osu-big.less",
+      "sha256": "39204d1afe8f0c23482dd2e4d0f375413ab27b7b17cac25b207773dcd22d9649",
+      "local_adaptations": [
+        "portal/osu-web.css"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/css/bem/btn-osu-big.less"
+    },
+    {
+      "upstream_path": "resources/css/bem/profile-info.less",
+      "sha256": "ad395c472cbfaf31170df154750478a70d1de3777421f7f366ea4691c845de02",
+      "local_adaptations": [
+        "portal/osu-web.css"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/css/bem/profile-info.less"
+    },
+    {
+      "upstream_path": "resources/views/layout/_nav2.blade.php",
+      "sha256": "97dd23bd2c2fec485ca200942743f843a280aa2ed067c86a106b27ad76ad7d75",
+      "local_adaptations": [
+        "index.html",
+        "download/index.html",
+        "help/index.html",
+        "account/index.html",
+        "users/index.html",
+        "community/index.html",
+        "community/new/index.html",
+        "community/topic.html",
+        "credits/index.html",
+        "ir/index.html"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/views/layout/_nav2.blade.php"
+    },
+    {
+      "upstream_path": "resources/views/layout/_page_header_v4.blade.php",
+      "sha256": "32859f6e2a36e21c7e121460bfb2b99776a4b60bbd156aac81536a4a79ae8cee",
+      "local_adaptations": [
+        "index.html",
+        "download/index.html",
+        "help/index.html",
+        "account/index.html",
+        "users/index.html",
+        "community/index.html",
+        "community/new/index.html",
+        "community/topic.html",
+        "credits/index.html",
+        "ir/index.html"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/views/layout/_page_header_v4.blade.php"
+    },
+    {
+      "upstream_path": "resources/views/home/user.blade.php",
+      "sha256": "a602fa0f2021b084e3a254f1ee90367731efc2e4460a620e986e6b7b7998b41b",
+      "local_adaptations": [
+        "index.html"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/views/home/user.blade.php"
+    },
+    {
+      "upstream_path": "resources/views/home/download.blade.php",
+      "sha256": "0a384bb0898da75b1098a44759b636fa1518e0688927dc32b55b3ec76e5a2a41",
+      "local_adaptations": [
+        "download/index.html"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/views/home/download.blade.php"
+    },
+    {
+      "upstream_path": "resources/views/forum/forums/_topic.blade.php",
+      "sha256": "f720a3dfcdee92bf30af8b5a66296c129552eb2c640cc4bda860bb12ba6d5cfa",
+      "local_adaptations": [
+        "portal/community.js",
+        "portal/profile.js"
+      ],
+      "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/views/forum/forums/_topic.blade.php"
+    }
+  ],
+  "changes": "Applicable LESS and Blade structure adapted to native CSS/static HTML; OMS API, system fonts, existing OMS icon; no upstream brand, font, image or full server stack."
+}

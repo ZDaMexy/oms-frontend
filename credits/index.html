@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#2e1f26">
     <meta name="description" content="OMS：BMS 与 mania 客户端、玩家社区和多来源 IR。Windows-only，离线优先。">
-    <title>发布帖子 · OMS</title>
+    <title>源码与许可 · OMS</title>
     <link rel="icon" href="/portal/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/portal/osu-web.css?v=20261005-osuweb-1">
     <link rel="stylesheet" href="/portal/style.css?v=20261005-osuweb-1">
     <script defer src="/portal/site.js?v=20261005-osuweb-1"></script>
-    <script defer src="/portal/community.js?v=20261005-osuweb-1"></script>
   </head>
-  <body data-page="new">
+  <body data-page="credits">
     <a class="skip" href="#main">跳到主要内容</a>
   <!-- Adapted from ppy/osu-web nav2; AGPL-3.0. See /credits/. -->
   <header class="site-header">
@@ -23,7 +22,7 @@
       </a>
       <nav class="nav2__colgroup nav2__colgroup--menu site-nav" aria-label="主要导航">
         <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/">首页</a></div>
-        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/community/" aria-current="page">社区<span class="nav2__menu-link-bar" aria-hidden="true"></span></a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/community/">社区</a></div>
         <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/download/">下载</a></div>
         <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/ir/">IR</a></div>
         <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/help/">帮助</a></div>
@@ -32,13 +31,13 @@
     </div>
   </header>
   <!-- Adapted from ppy/osu-web layout/_page_header_v4.blade.php. -->
-  <div class="header-v4 header-v4--new">
+  <div class="header-v4 header-v4--credits">
     <div class="header-v4__container header-v4__container--main">
       <div class="header-v4__bg-container"><div class="header-v4__bg"></div></div>
       <div class="header-v4__content">
         <div class="header-v4__row header-v4__row--title">
-          <h1 id="page-heading" class="header-v4__title">发布帖子</h1>
-          <p class="header-subtitle">帖子发布后会出现在社区与首页</p>
+          <h1 id="page-heading" class="header-v4__title">源码与许可</h1>
+          <p class="header-subtitle">本站使用的开源设计与对应源码</p>
         </div>
       </div>
     </div>
@@ -46,61 +45,27 @@
       <div class="header-v4__content">
         <nav class="header-v4__row header-v4__row--bar" aria-label="本页导航">
           <ul class="header-nav-v4 header-nav-v4--list">
-          <li class="header-nav-v4__item"><a class="header-nav-v4__link" href="/community/">全部帖子</a></li>
-          <li class="header-nav-v4__item"><a class="header-nav-v4__link" href="/community/new/" aria-current="page">发布帖子</a></li>
+          <li class="header-nav-v4__item"><a class="header-nav-v4__link" href="/credits/" aria-current="page">源码与许可</a></li>
+          <li class="header-nav-v4__item"><a class="header-nav-v4__link" href="/ir/">IR 谱面榜</a></li>
+          <li class="header-nav-v4__item"><a class="header-nav-v4__link" href="/help/#contact">反馈问题</a></li>
           </ul>
         </nav>
       </div>
     </div>
   </div>
     <main id="main" class="osu-page osu-page--generic-compact page-content">
-<div class="page-layout">
-<div class="page-main">
-<p id="editor-message" class="notice" role="status" aria-live="polite" hidden>
-</p>
-<div id="editor-login" class="notice" hidden>登录后就可以发帖。<a id="editor-login-link" class="text-link" href="/account/?next=/community/new/">登录 / 注册 →</a>
-</div>
-<form id="post-form" class="panel form-panel">
-<div class="field">
-<label for="post-category">分类</label>
-<select id="post-category" name="category" required>
-<option value="discussion">讨论</option>
-<option value="help">求助</option>
-<option value="showcase">分享</option>
-<option value="development">开发记录</option>
-</select>
-</div>
-<div class="field">
-<label for="post-title">标题</label>
-<input id="post-title" name="title" maxlength="100" placeholder="写明主题，最多 100 字符" required>
-</div>
-<div class="field">
-<label for="post-body">正文</label>
-<textarea id="post-body" name="body" rows="13" maxlength="12000" placeholder="分享你的想法；求助时可以说明版本、操作步骤和遇到的现象。" required>
-</textarea>
-<small>纯文本 · 可以粘贴网页链接 · 最多 12000 字符</small>
-</div>
-<p class="draft-note">发帖内容公开。请不要贴密码、令牌或私密日志。失败时本页会保留文字供重试；离开本页会丢失未发布内容。</p>
-<div class="form-actions">
-<button id="post-submit" class="button button-primary" type="submit" disabled>发布帖子</button>
-<a class="text-link" href="/community/">返回社区</a>
-</div>
-</form>
-</div>
-<aside class="sidebar" aria-label="相关内容">
-<section class="panel panel-padded">
-<h2>发帖前检查</h2>
-<p>标题写清问题或主题。求助时说明客户端版本、玩法、操作步骤和实际现象。</p>
-<a class="side-link" href="/help/#rules">阅读社区约定</a>
-</section>
-<section>
-<h2>文字与账号</h2>
-<p>支持纯文本与网页链接。发布失败时保留本页文字，重试前确认仍在使用原账号。</p>
-<p class="side-note">不公开密码、令牌或私密日志。</p>
-</section>
-</aside>
-</div>
-    </main>
+<article class="panel article">
+<h2>osu-web</h2>
+<p>本站的导航、页头、社区列表、下载页与个人页改编自 <a href="https://github.com/ppy/osu-web">ppy / osu-web</a>，使用 GNU Affero General Public License 第 3 版或后续版本。原代码与设计版权属于 ppy Pty Ltd 和 osu-web 贡献者。</p>
+<p>本站改编使用 OMS 内容、系统字体和 OMS 图标，继续连接 OMS 社区与 IR 服务。osu! / ppy 品牌、图片与字体没有包含在本站中。</p>
+<p>固定来源：<a href="https://github.com/ppy/osu-web/tree/2c596022a1345fbed288978e7fa5304df0359f50">osu-web 2c596022</a>；本站修改日期为 2026-10-05。</p>
+<p><a href="/portal/LICENCE.txt">完整许可证</a> · <a href="/portal/THIRD_PARTY_NOTICES.txt">版权与修改说明</a> · <a href="/portal/osu-web-sources.json">复用文件与来源校验记录</a></p>
+<h2>本站对应源码</h2>
+<p>下载当前运行版本的未压缩前端源码及服务安装源码，包含每份文件的校验记录与实际源码版本。此下载不包含数据库、玩家资料、部署凭据或播放器插件二进制。</p>
+<p><a class="btn-osu-big btn-osu-big--rounded-thin" href="/portal/oms-website-source.tar.gz" download><span class="btn-osu-big__text-top">下载当前版本源码</span></a></p>
+<p>持续维护仓库：<a href="https://github.com/ZDaMexy/oms-frontend">OMS 官网</a> · <a href="https://github.com/ZDaMexy/oms-backend">OMS 服务</a>。前端源码按 AGPL-3.0-or-later 公开；独立服务与播放器插件各自的源码及依赖说明保留在对应项目中。</p>
+</article>
+</main>
   <footer class="shell site-footer">
     <span>OMS · BMS / mania · Windows</span>
     <div class="footer-links">

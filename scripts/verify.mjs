@@ -11,6 +11,7 @@ const pages = new Map([
   ["/community/posts/1/", "community/topic.html"],
   ["/download/", "download/index.html"], ["/help/", "help/index.html"],
   ["/account/", "account/index.html"], ["/ir/", "ir/index.html"],
+  ["/users/", "users/index.html"], ["/credits/", "credits/index.html"],
 ]);
 // These assets are generated from committed Backend inputs by the release
 // exporter. Its exact whitelist and checksums are verified before deployment.
@@ -20,6 +21,9 @@ const generatedAssets = new Set([
   "/ir/adapters/omsir-ed-v0.4.0-0.1.0.jar",
   "/ir/adapters/OmsIR-v260915.x64.dll", "/ir/adapters/OmsIR-v260915.x86.dll",
   "/ir/adapters/nlohmann-json-LICENSE.MIT.txt", "/ir/adapters/zlib-LICENSE.txt", "/ir/adapters/versions.json",
+  // The same release exporter creates the corresponding-source download
+  // from its committed inputs; archive contents and hashes are release gates.
+  "/portal/oms-website-source.tar.gz",
 ]);
 
 // Check authored navigation, assets and CSP constraints. Runtime behavior and
@@ -70,7 +74,7 @@ export function verifyPortal(directory) {
     assert(/<html\s+lang="zh-CN"/.test(html), `${file}: page language is required`);
     assert(tags.some(({ name, attrs }) => name === "meta" && attrs.name === "viewport"), `${file}: missing viewport`);
     assert.equal(ids.filter(id => id === "site-account").length, 1, `${file}: shared account entry is required`);
-    const nav = html.match(/<nav\b[^>]*class="site-nav"[^>]*>([\s\S]*?)<\/nav>/)?.[1];
+    const nav = html.match(/<nav\b[^>]*class="[^"]*\bsite-nav\b[^"]*"[^>]*>([\s\S]*?)<\/nav>/)?.[1];
     assert(nav, `${file}: missing shared navigation`);
     assert.deepEqual(startTags(nav).filter(({ name }) => name === "a").map(({ attrs }) => attrs.href),
       ["/", "/community/", "/download/", "/ir/", "/help/"], `${file}: navigation differs`);
@@ -94,6 +98,9 @@ export function verifyPortal(directory) {
     assert.equal(loaded[0], "portal/site.js", `${file}: load the shared account before page behavior`);
     if (["/", "/community/", "/community/new/", "/community/posts/1/"].includes(url)) {
       assert.deepEqual(loaded, ["portal/site.js", "portal/community.js"], `${file}: community scripts differ`);
+    }
+    if (url === "/users/") {
+      assert.deepEqual(loaded, ["portal/site.js", "portal/profile.js"], `${file}: profile scripts differ`);
     }
   }
   for (const file of css) {

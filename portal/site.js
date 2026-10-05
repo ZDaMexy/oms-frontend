@@ -138,7 +138,7 @@
     if (header) {
       header.removeAttribute("aria-label");
       header.textContent = next ? next.username : "登录 / 注册";
-      header.href = "/account/";
+      header.href = next ? "/users/?id=" + next.id : "/account/";
     }
     window.dispatchEvent(new CustomEvent("oms:account", { detail: next }));
   }
@@ -201,6 +201,7 @@
     if (user) {
       document.getElementById("account-name").textContent = user.username;
       document.getElementById("account-posts").href = "/community/?author_id=" + user.id;
+      document.getElementById("account-profile").href = "/users/?id=" + user.id;
     }
     if (sessionError) message(notice, sessionError, true);
   }
@@ -224,7 +225,7 @@
       if (error instanceof TypeError) return null;
       throw error;
     }
-    return url.origin === location.origin && /^\/(?:community(?:\/|$)|ir\/)/.test(url.pathname) ? url.pathname + url.search + url.hash : null;
+    return url.origin === location.origin && /^\/(?:community(?:\/|$)|ir\/|users\/)/.test(url.pathname) ? url.pathname + url.search + url.hash : null;
   }
 
   document.getElementById("login-tab").addEventListener("click", () => setMode("login"));

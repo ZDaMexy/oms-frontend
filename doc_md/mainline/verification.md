@@ -17,6 +17,8 @@ node scripts/verify.mjs
 
 ## 同源服务与真实闭环
 
+新增 `/users/?id=<OMS ID>` 要验证公开作者 / 榜单身份、空账号仅本人、匿名 / 他人相同 404、错误会话不退匿名、登录后的同源返回及退出 / 换账号清除本人入口；迟到 profile 回应不能复活旧私有显示。LR2 旧身份不链接新 OMS 用户页，外部最佳状态 / 历史摘要不进入逐局历史。静态许可、19 项 upstream 来源及当前源码下载由本次严格 release manifest 核对，不能以 GitHub 分支或旧 source 包代替当前适配源码；当前证据见 [实际复用核验](../other/osu-web-lazer-account-verification-20261005.md)。
+
 生产由 Nginx 提供指定 release 的门户静态页、固定帖子阅读器和资源，并同源反代 `/api/ir/v1` 到 Backend。Backend 单独 `serve` 只直挂 `ir/`，不会自动挂全部门户；不能据独立服务启动声称官网完整可运行。普通 `python -m http.server` 也只检查独立静态入口 / 布局，不提供账号、帖子或动态详情。
 
 本轮本地完整浏览器门使用只允许 F 盘合成库的 loopback ASGI 预览探针 `F:\oms\artifacts\oms-community-20261004\preview-server.py`，将当前门户路由和真实 Backend 同源挂到 `http://127.0.0.1:18085`，没有读取或复制生产库。已保留脚本可按本机路径复跑：

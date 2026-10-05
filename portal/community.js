@@ -29,7 +29,7 @@
 
   function author(author) {
     const node = el("a", "", author.username);
-    node.href = authorUrl(author.id);
+    node.href = "/users/?id=" + author.id;
     return node;
   }
 
@@ -135,17 +135,21 @@
         const data = await api("/posts?" + parameters, { refresh: false });
         if (atStart !== loadRevision) return;
         for (const post of data.items) {
-          const row = el("li", "topic-row");
-          const content = el("div", "");
+          const row = el("li", "forum-topic-entry topic-row");
+          const icon = el("div", "forum-topic-entry__col forum-topic-entry__col--icon");
+          icon.append(avatar(post.author));
+          const main = el("div", "forum-topic-entry__col forum-topic-entry__col--main");
+          const content = el("div", "forum-topic-entry__content forum-topic-entry__content--left");
           const meta = el("div", "topic-meta");
           meta.append(tag(post.category), author(post.author), site.dateNode(post.updated_at));
-          const title = el("a", "topic-title", post.title);
+          const title = el("a", "forum-topic-entry__title topic-title", post.title);
           title.href = topicUrl(post.id);
           const excerpt = el("p", "topic-excerpt", post.excerpt);
-          content.append(meta, title, excerpt);
-          const replies = el("div", "reply-count", String(post.reply_count));
+          content.append(title, meta, excerpt);
+          const replies = el("div", "forum-topic-entry__content forum-topic-entry__content--counts reply-count", String(post.reply_count));
           replies.append(el("small", "", "回复"));
-          row.append(avatar(post.author), content, replies);
+          main.append(content, replies);
+          row.append(icon, main);
           get("feed-list").append(row);
         }
         get("feed-count").textContent = data.total + " 个帖子";

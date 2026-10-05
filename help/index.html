@@ -2,40 +2,58 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#050608">
-    <meta name="description" content="OMS 玩家社区：讨论 BMS 与 mania，分享游玩，交流问题，查看自己的成绩。Windows-only，离线优先。">
-    <title>帮助与入门 · OMS</title>
-<link rel="icon" href="../portal/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../portal/style.css?v=20261005-2">
-    <script defer src="../portal/site.js?v=20261005-2">
-</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2e1f26">
+    <meta name="description" content="OMS：BMS 与 mania 客户端、玩家社区和多来源 IR。Windows-only，离线优先。">
+    <title>帮助 · OMS</title>
+    <link rel="icon" href="/portal/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/portal/osu-web.css?v=20261005-osuweb-1">
+    <link rel="stylesheet" href="/portal/style.css?v=20261005-osuweb-1">
+    <script defer src="/portal/site.js?v=20261005-osuweb-1"></script>
   </head>
   <body data-page="help">
     <a class="skip" href="#main">跳到主要内容</a>
-    <header class="site-header">
-<div class="shell header-inner">
-<a class="brand" href="/" aria-label="OMS 首页">
-<img src="../portal/favicon.svg" alt="" width="34" height="34">
-<span class="brand-word">OM<span>S</span>
-</span>
-<span class="brand-sub">BMS / MANIA</span>
-</a>
-<nav class="site-nav" aria-label="主要导航">
-<a href="/">首页</a>
-<a href="/community/">社区</a>
-<a href="/download/">下载</a>
-<a href="/ir/">IR</a>
-<a href="/help/" aria-current="page">帮助</a>
-</nav>
-<a id="site-account" class="header-account" href="/account/">登录 / 注册</a>
-</div>
-</header>
-    <main id="main" class="shell">
-      <div class="page-intro">
-<h1>帮助与接入说明</h1>
-<p>启动游戏、添加谱库、使用 IR，以及账号与社区帮助。</p>
-</div>
+  <!-- Adapted from ppy/osu-web nav2; AGPL-3.0. See /credits/. -->
+  <header class="site-header">
+    <div class="shell nav2 header-inner">
+      <a class="brand nav2__col nav2__col--logo" href="/" aria-label="OMS 首页">
+        <span class="nav2__logo-link"><img class="nav2__logo" src="/portal/favicon.svg" alt="" width="42" height="42"></span>
+        <span class="brand-word">OMS</span>
+      </a>
+      <nav class="nav2__colgroup nav2__colgroup--menu site-nav" aria-label="主要导航">
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/">首页</a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/community/">社区</a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/download/">下载</a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/ir/">IR</a></div>
+        <div class="nav2__col nav2__col--menu"><a class="nav2__menu-link-main" href="/help/" aria-current="page">帮助<span class="nav2__menu-link-bar" aria-hidden="true"></span></a></div>
+      </nav>
+      <a id="site-account" class="header-account" href="/account/">登录 / 注册</a>
+    </div>
+  </header>
+  <!-- Adapted from ppy/osu-web layout/_page_header_v4.blade.php. -->
+  <div class="header-v4 header-v4--help">
+    <div class="header-v4__container header-v4__container--main">
+      <div class="header-v4__bg-container"><div class="header-v4__bg"></div></div>
+      <div class="header-v4__content">
+        <div class="header-v4__row header-v4__row--title">
+          <h1 id="page-heading" class="header-v4__title">帮助</h1>
+          <p class="header-subtitle">启动游戏、添加谱库与使用 IR</p>
+        </div>
+      </div>
+    </div>
+    <div class="header-v4__container">
+      <div class="header-v4__content">
+        <nav class="header-v4__row header-v4__row--bar" aria-label="本页导航">
+          <ul class="header-nav-v4 header-nav-v4--list">
+          <li class="header-nav-v4__item"><a class="header-nav-v4__link" href="/help/" aria-current="page">入门与使用</a></li>
+          <li class="header-nav-v4__item"><a class="header-nav-v4__link" href="/ir/">IR 谱面榜</a></li>
+          <li class="header-nav-v4__item"><a class="header-nav-v4__link" href="/help/#contact">反馈问题</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+    <main id="main" class="osu-page osu-page--generic-compact page-content">
 <div class="page-layout help-layout">
 <aside class="sidebar" aria-label="相关内容">
 <section class="help-nav">
@@ -97,17 +115,16 @@
 
 </div>
     </main>
-    <footer class="shell site-footer">
-<span>OMS · BMS / MANIA · WINDOWS ONLY</span>
-<div class="footer-links">
-<a href="/help/#rules">社区约定</a>
-<a href="/help/#privacy">数据与隐私</a>
-<a href="/help/#contact">联系与反馈</a>
-<a href="https://github.com/ZDaMexy/oms" rel="noopener">客户端源码 ↗</a>
-</div>
-</footer>
-    <noscript>
-<p class="shell notice">社区帖子、登录和成绩查询需要 JavaScript。下载与帮助页面仍可直接阅读。</p>
-</noscript>
+  <footer class="shell site-footer">
+    <span>OMS · BMS / mania · Windows</span>
+    <div class="footer-links">
+      <a href="/help/#rules">社区约定</a>
+      <a href="/help/#privacy">数据与隐私</a>
+      <a href="/help/#contact">联系与反馈</a>
+      <a href="/credits/">源码与许可</a>
+    </div>
+  </footer>
+
+    <noscript><p class="shell notice">帖子、登录和成绩查询需要 JavaScript。下载与帮助页面可直接阅读。</p></noscript>
   </body>
 </html>
