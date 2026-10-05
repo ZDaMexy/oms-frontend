@@ -50,10 +50,12 @@ function check(condition, name) {
   assert(condition, name);
 }
 
-function revalidates(record) {
+function preventsStaleReuse(record) {
   const directives = (record.headers["cache-control"] ?? "").toLowerCase().split(",").map(value => value.trim());
-  // Public files may be retained, but every subsequent use must be validated.
-  return directives.includes("no-cache") && !directives.some(value => /^(?:s-maxage|max-age)=[1-9]\d*$/.test(value));
+  // The backend's existing IR middleware forbids storing its HTML. Portal
+  // files may be retained, but every subsequent use must be validated.
+  const policy = record.route === "/ir/" ? directives.includes("no-store") : directives.includes("no-cache");
+  return policy && !directives.some(value => /^(?:s-maxage|max-age)=[1-9]\d*$/.test(value));
 }
 
 try {
@@ -61,11 +63,11 @@ try {
     const current = await request(route);
     check(current.status === 200, `${route}: public GET succeeds`);
     check(current.sha256 === sha256(sourceBytes(file)), `${route}: published bytes match exact source`);
-    check(revalidates(current), `${route}: every use requires revalidation`);
+    check(preventsStaleReuse(current), `${route}: stale cached bytes cannot be reused`);
     check(Boolean(current.headers.etag), `${route}: published validator is present`);
     const unchanged = await request(route, { "If-None-Match": current.headers.etag });
-    check(unchanged.status === 304 && unchanged.bytes === 0, `${route}: current validator can reuse unchanged bytes`);
-    check(revalidates(unchanged), `${route}: 304 retains the revalidation policy`);
+    check(unchanged.status === 304 && unchanged.bytes === 0, `${route}: current validator returns an empty 304`);
+    check(preventsStaleReuse(unchanged), `${route}: 304 retains the cache policy`);
   }
   // The retired physical single-page file was last modified at this time,
   // as observed read-only on 2026-10-05. Its old date must not retain old HTML.
