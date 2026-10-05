@@ -2,7 +2,7 @@
 
 ## 当前结论
 
-八页已移植到原生 Website 源码，根执行者已完成真实 API 与桌面 / 390px 检查，等待绑定提交后部署。视觉认可、首次生产社区使用、OMS / ED 7K 的先导 P 与完整播放器矩阵 C 仍待真人；以下软件证据不能代签这些门。当前运行与公开结果在发布后补入本报告，旧 IR 主机 / 恢复证据继续保留原日期和来源。
+2026-10-05 12:02:06（UTC+8）八页已实际上线，current 为 ecca50eab82c-d34fab9b9611 / schema3，状态 **已部署待验收**。根执行者完成真实 API、本地八页桌面 / 390px、公开资源 / 缓存及实际公网页面检查。视觉认可、首次生产社区使用、OMS / ED 7K 的先导 P 与完整播放器矩阵 C 仍待真人；以下软件证据不能代签这些门。旧 IR 主机 / 两次空目录恢复证据保留原日期和来源。
 
 ## 来源与设计维护
 
@@ -38,18 +38,43 @@
 
 首次第二页记录采样处在“待读取”，不是成功页；后续显式等待后记录 2 / 1461，尾页和重载也分别确认。首张主机自然宽截图为 667px，不冒充桌面；桌面另设 1280×900。生成方只有静态无 API 首页图，根实际图与之分开。
 
-缓存维护检查原来只识别绝对 /portal/ 引用，新稿使用相对引用，已按页面真实 URL 解析绝对和相对地址，仍逐字节比较本地源码。部署后须独立运行该检查和浏览器普通刷新；不能跳过尚未发布候选的字节不符。
+缓存维护检查原来只识别绝对 /portal/ 引用，新稿使用相对引用，已按页面真实 URL 解析绝对和相对地址，仍逐字节比较本地源码。部署后该检查和实际浏览器普通刷新分别通过；不能跳过尚未发布候选的字节不符。
+
+首次公开检查误把未指定条件的 comparable 请求期望为 200，实际按合同返回 422 / condition_required；另一检查猜错社区路径，实际路由为 /api/ir/v1/community/posts。纠正检查后通过，未改服务迎合错误探针。上线后进程检查首次误要求 argv 含解析后的 release，实际 systemd 使用 current 链接；已通过 /proc/PID/cwd、工作目录及解释器 / 投影 / 网页路径解析证明新 release 正在运行，原错误单独留证。
+
+Windows 直接输送多行 SSH heredoc 的首个只读探针因 CRLF 分隔失败，没有生产变更；后续将审查后的 UTF-8 / LF 脚本放 F 盘，再 scp 到本轮服务器目录执行。维护不把 PowerShell 字符串插值或字节收据当作实际来源证明。
 
 ## 原始证据
 
 全部证据在 F:/oms/artifacts/oms-website-redesign-20261005/。核心文件为 open-design-full-artifact-tool-result.json、open-design-actual-runtime-config.json、open-design-fallback-terminal.json、source-integration.json、source-final-review.json 与 actual-browser-local-report.json；actual-*.png 为根实际 API 画面，open-design-generated-* 为生成方原范围，不能混签。原十六项 Website 未提交 / 删除文件按开工指纹逐一保全。
 
-静态检查 node scripts/verify.mjs：8 页 / 207 引用 / 3 脚本 / 2 样式通过，完整导航、标签、资源、CSP 与脚本语法有效。文档 / diff gate、绑定提交、发布包、公开缓存与最终截图在后续上线记录中登记。
+静态检查 node scripts/verify.mjs：8 页 / 207 引用 / 3 脚本 / 2 样式通过，完整导航、标签、资源、CSP 与脚本语法有效。工作区文档导航与 git diff --check 通过，源码提交 d34fab9 已推送；后续文档提交不替换运行源码身份。
+
+发布原始证据为 release-export-report.json、release-manifest.json、server-before-deployment.json、server-release-budget.json、server-prepare.log、server-activate.log 和 server-after-deployment.json。公开实际结果为 public-http-report.json、public-cache-report.json 和 actual-browser-public-report.json；检查纠正前的 public-http-attempt1/2.json、server-after-deployment-attempt1.json 另存。实际公网图为 public-home-desktop.png、public-home-mobile.png、public-ir-mobile.png，不把设计生成图当上线截图。
+
+收尾 closeout-evidence-report.json 再核原十六项工作与 14 运行文件，均未变化；本地合成 live 经一致 backup 保存为证据目录中的 local-preview-evidence.sqlite3，schema3 / quick_check=ok，不只留临时目录。仅停止确认属于本轮的预览 PID，移除已核对无用户改动的 F 盘临时运行源码 worktree；完整设计、截图、发布包、合成证据库与原公开投影保留，浏览器视口恢复。清理记录取 cleanup-report.json，没有清其他任务或全局缓存。
 
 ## 上线与真人路径
 
-上线尚待本轮正式记录。发布使用当前在线 Backend ecca50eab82c 的准确编译证据，重新核对 33 运行文件与 8 生成资产同字节，再和本轮提交的 Website 组成新包；不把文档 HEAD 当运行源码。旧 schema3 的主机 / 两次空目录恢复沿 [Backend 原发布门](../../../../oms-server/oms-backend/doc_md/other/multisource-host-verification-20261004.md#最终-r10-与实际发布)。
+本次严格发布绑定如下；它与各仓后续文档 HEAD 分开：
+
+| 项目 | 实际发布来源 |
+| --- | --- |
+| Website | d34fab9b9611215cc6bf8c19dcd0238bbb2d4f3a |
+| Backend | ecca50eab82c352b71f2e4590322b9a211546cb8 |
+| OMS / 插件来源 | b7d0f74d77425bc47079e55f854ff93fd3c0c9a5；插件各自固定来源保持原 manifest |
+| 发布包 | oms-ir-ecca50eab82c-d34fab9b9611.tar.gz；637,710 字节；SHA256 059c9bb07c147d21e126305bbf21c59ffdfc690622d15a8358aa3b99117c15e0 |
+| current | /opt/oms-ir/releases/ecca50eab82c-d34fab9b9611；55 个 manifest 文件全部核对 |
+| 上线前快照 | /var/backups/oms-ir/before-release-20261005T040206Z.db；schema3 / quick_check=ok / 184,320 字节 / 0600 |
+
+只读核对当时实际 current 后，用其准确 Backend 编译证据重新验证 33 运行文件与 8 生成资产，与旧生产逐字节相同，再和已提交 Website 组成新包。prepare-release / activate-release 原严格门均通过；激活先串行做一致备份，再切换并检查 schema3 健康。Nginx 配置字节不变，无配置 reload。服务、投影和默认离线边界未改，没有生产合成账号 / 帖子 / 成绩写入。
+
+服务器 12:24:47（UTC+8）复核服务与备份 timer active，NRestarts=0；PID 的实际工作目录绑定新 release。全量公开投影仍为原版本 / 1,600,610,304 字节 / 0444，不重导母库。可用空间 4,737,937,408 字节，原保守恢复预留 4,264,776,296 字节后余额 473,161,112 字节；没有购买或扩盘，不能据此签未来增长。旧 schema3 主机 / 两次新空恢复沿 [Backend 原发布门](../../../../oms-server/oms-backend/doc_md/other/multisource-host-verification-20261004.md#最终-r10-与实际发布)，未借本轮刷新原证据日期。
+
+公开 22 文件各 GET / HEAD，共 44 请求，字节 / SHA / CSP / nosniff 与 manifest 一致。目录实际 334,119 项（334,117 历史谱面及 2 个原 live 谱面）；实谱全来源 29,202 身份，LR2 单选及 OMS+LR2 均 16,898，空选 0，第二页及 1461 尾页成功。同条件没有主动指定条件时返回 422，原 v1 两谱、社区 0 帖、匿名本人 401、未知静态 404 与个人站原指纹正常。
+
+缓存维护门六门户页与四实际资源共 22 请求 / 62 检查通过，含 200 / 304、旧日期 / 不匹配 ETag 回新版。实际公网普通刷新已见新首页；从首页点击下载再返回首页成功。手机首页与 IR 全来源深链分别补核，后者根 / body 375 / 375、表格 342 / 900，20 行、页码 1 / 1461，未知条件 / 原身份 / 缺时间均正确。首次组合浏览器调用超时保留，后续同页真实观察另存；不把控制调用速度或最初超时当网站页面错误。临时视口已恢复。
 
 玩家上线后普通刷新首页，进入下载、帮助、社区和 IR，检查各页的视觉一致与阅读操作；本人发帖 / 回复和管理用真实账号验收。OMS 当前工作区主动连接后按同谱 / 同来源与网页核对，ED 7K 先导后再逐项固定矩阵，方法取 [真实播放器验收](../../../../oms-server/oms-backend/adapters/ACCEPTANCE.md)。没有真人结论时仍记录“已部署待验收”。
 
-维护、每日备份、每周受保护外取和兼容 schema3 回退沿 [服务维护](../../../../oms-server/oms-backend/deploy/README.md#仅官网改版的发布)；只回退源码，不能用旧快照覆盖上线后的玩家数据。
+维护、每日备份、每周受保护外取和兼容 schema3 回退沿 [服务维护](../../../../oms-server/oms-backend/deploy/README.md#仅官网改版的发布)。上一兼容 release ecca50eab82c-09d7ffdf4bbb 与其 ready 标记保留；需要退回官网时按同一激活门切回兼容源码、保留当前数据库 / WAL，并复核健康和页面。不能用旧快照覆盖上线后的玩家数据，也不能回到旧 schema2 服务。
