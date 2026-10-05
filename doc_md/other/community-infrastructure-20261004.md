@@ -1,6 +1,6 @@
 # OMS 社区门户生产发布与共享设施记录
 
-本记录在 Website 与 Homepage 的 `other/` 镜像维护，事实截至 2026-10-04（UTC+8）。产品与接口分别见 [社区进展](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/dev-progress.md) 和 [Backend 验收](../../../../oms-server/oms-backend/doc_md/other/community-verification-20261004.md)。没有发布 Homepage 源码或 Windows 客户端发行包。
+本记录在 Website 与 Homepage 的 `other/` 镜像维护，社区首轮事实为 2026-10-04，文末多来源发布与缓存复核为 2026-10-05（UTC+8）。产品与接口分别见 [社区进展](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/dev-progress.md) 和 [Backend 验收](../../../../oms-server/oms-backend/doc_md/other/community-verification-20261004.md)。没有发布 Homepage 源码或 Windows 客户端发行包。
 
 下方社区来源/恢复/浏览器章节保留2026-10-04当时范围；当前schema3及共享include后续变更见文末[2026-10-05多来源发布](#2026-10-05多来源发布)。
 
@@ -51,3 +51,15 @@ schema 已升至 2，原 schema 1 运行时不能直接接受当前库。升级�
 首份正式schema3日备份`daily-20261004T174642Z.db.gz`及同名`.json`实际unit成功，F盘受限目录完整解压CRC/raw字节/SHA和来源绑定通过。快照包含用户数据不入Git，报告无个人行/凭据；七日对保留、至少每周受保护外取，维护串行且增长重新计账。schema1/2旧源码不能接新库，向前修复或已实际验证兼容schema3的源码回退保全同一live；灾难恢复沿[发布维护](../../../../oms-server/oms-backend/deploy/README.md)，不能用旧快照覆盖上线后新内容。
 
 长期新增证据在`F:/oms/artifacts/oms-ir-multisource-20261004/`：`deployment-r10.json`、`public-multisource-report-r10.json`、`public-body-budget-r10.json`、`public-browser-r10-report.json`、`production-first-backup-r10.json`、`production-backup-offhost-r10.json`及`production-closeout-r10.json`；母库、个人原始行和凭据不提交Git。
+
+## 2026-10-05缓存反馈复核
+
+玩家先报告首页仍像旧版，随后确认 Ctrl+F5 后已显示新版。这属于更新可见性反馈；与改版前旧缓存相符，但强刷已替换原缓存，没有捕获玩家原响应头、缓存条目或网络过程，不判定具体旧 `max-age`、缓存层或浏览器行为。当前 HTML / 资源的新响应头不能追溯清除尚未重新向服务器请求的旧页面。
+
+08:33～08:44（UTC+8）仅只读取证：`current` 仍为 `ecca50eab82c-09d7ffdf4bbb`，OMS extension 与该制品的 include 相同，服务 active；门户共享头文件已经使用 `Cache-Control: no-cache`。没有改配置、reload、换制品或触发两个网站的发布钩子。退役的物理单页仍为 24,389 字节、Last-Modified 2026-06-03 05:24:20 UTC；它不是当前门户源码或生产首页。
+
+08:41:12～08:41:13 运行 Website 的 `scripts/verify-public-cache.mjs`，六个门户页和页面实际引用的四个 `/portal/` 资源正文与本地源码一致，200 / 304 均含 `no-cache`，当前 ETag 返回空正文 304；旧物理单页日期和明确合成的不匹配 ETag 均返回当前首页 200。22 个只读请求 / 62 个检查通过。新脚本随实际 HTML 引用核对资源版本，不只探测历史查询字符串；不接触账号、帖子写请求或玩家缓存。
+
+实际公网浏览器普通 reload 后显示“一起聊聊，下一局。”、真实 0 帖空状态及独立导航；点击“下载”进入“准备好，开始下一局。”的独立下载页。该结果证明当前页面刷新 / 导航可用，不还原玩家强刷前的缓存，也不签首次真实发帖或 IR 真人 P/C。HTTPS 首页 SHA256 `517d4bb48319ba1bf247ae437d13b40b0d63b4b6215637245b8e672a95f20c66`，IR SHA256 `90562df8278020c6502f980980856e9dfdf0aaea09ba15046ddb637482f87173`，均匹配本地制品内容；个人站 HTTPS 200 / SHA256 `400a06bbe5318fd9c57aedcaac61b8f5a8edeaf815d4404602c66f687f0d10a7` 与此前一致。
+
+长期证据位于 `F:/oms/artifacts/oms-homepage-cache-20261005/`：`public-cache-report.json`、`inspection-report.json`、`runtime-cache-inspection.txt`、`home-after-normal-reload.txt` / `.png` 与浏览器最终记录。后续门户发布在 [Website 验证方法](../../../oms-website/doc_md/mainline/verification.md#发布后的缓存复核) 核对普通刷新、返回首页和真实资源的条件请求；不要求玩家常规强刷来替代发布验收。运行源码仍是前节已发布来源，本轮维护 / 文档 HEAD 不替换它。

@@ -1,5 +1,10 @@
 # Frontend Mainline Changelog
 
+## 2026-10-05（首页缓存反馈复核）
+
+- 玩家确认 Ctrl+F5 后出现新版首页；原缓存已被替换，具体旧响应策略没有取证，不把旧缓存推断写成已证明的故障源。当前正式门户六页与四资源的正文 / 200 / 304 / 旧校验值复核及实际普通刷新通过，IR 与个人站只读回归通过。
+- 增加 [公网缓存检查](../../scripts/verify-public-cache.mjs) 与 [发布验证方法](verification.md#发布后的缓存复核)，共享设施证据同步双站镜像。未改生产配置、运行源码、数据库或客户端发行物；实际来源与证据取 [缓存记录](../other/community-infrastructure-20261004.md#2026-10-05缓存反馈复核)，社区真实使用与 IR P/C 仍待验收。
+
 ## 2026-10-05（多来源和全量历史已部署待验收）
 
 - Website实际09d7ffdf4bbb与Backend ecca/schema3已发布，全量历史/来源筛选、五插件/双许可/版本清单可按需访问；22公开文件字节、目录/来源查询、原IR/社区/双站及413通过。实际运行/恢复/补账、生产保全和首份正式备份外取只取[Backend最终证据](../../../../oms-server/oms-backend/doc_md/other/multisource-host-verification-20261004.md#最终-r10-与实际发布)，共享include来源同步两个站点other镜像，未发布Homepage源码。
