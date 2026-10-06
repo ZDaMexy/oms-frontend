@@ -1,4 +1,4 @@
-.workspace { display: grid; grid-template-columns: 304px minmax(0, 1fr); grid-template-rows: auto 1fr; gap: 24px; align-items: start; margin-top: 24px; }
+.workspace { display: grid; grid-template-columns: 240px minmax(0, 1fr); grid-template-rows: auto 1fr; gap: 24px; align-items: start; margin-top: 24px; }
 .catalog-sidebar { grid-column: 1; grid-row: 1; }
 .workspace > .ranking { grid-column: 2; grid-row: 1 / span 2; }
 .workspace > .account { grid-column: 1; grid-row: 2; }
@@ -65,16 +65,16 @@
 .ranking-summary { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 12px 24px; border-block: 1px solid var(--border); background: var(--raised); color: var(--muted); font-size: 13px; }
 .empty-state { padding: 32px 24px; color: var(--muted); font-size: 14px; }
 .table-wrap { position: relative; width: 100%; max-width: 100%; overflow-x: auto; scrollbar-color: var(--control-border) var(--surface); }
-.table-wrap table { width: 100%; min-width: 900px; border-collapse: collapse; font-size: 13px; table-layout: fixed; }
-.table-wrap th { text-align: left; padding: 14px 12px; color: var(--muted); font-weight: 400; border-bottom: 1px solid var(--border); }
-.table-wrap td { padding: 20px 12px; vertical-align: top; border-bottom: 1px solid var(--border); overflow-wrap: anywhere; }
+.table-wrap table { width: 100%; min-width: 600px; border-collapse: collapse; font-size: 13px; table-layout: auto; }
+.table-wrap th { text-align: left; padding: 12px 8px; color: var(--muted); font-weight: 400; border-bottom: 1px solid var(--border); }
+.table-wrap td { padding: 14px 8px; vertical-align: top; border-bottom: 1px solid var(--border); overflow-wrap: anywhere; }
 .table-wrap tbody tr:hover { background: var(--bg); }
-#board-table-wrap th:first-child { width: 96px; }
-#board-table-wrap th:nth-child(5) { width: 200px; }
-#board-table-wrap th:last-child { width: 96px; }
-.rank { font: 18px/1.4 var(--mono); font-variant-numeric: tabular-nums; }
+#board-table-wrap th:first-child { width: 52px; }
+#board-table-wrap th:nth-child(5) { width: 150px; }
+#board-table-wrap th:last-child { width: 56px; }
+.rank { font: 15px/1.4 var(--mono); font-variant-numeric: tabular-nums; }
 .player-name { font-weight: 600; }
-.score-value { display: block; font: 600 20px/1.4 var(--mono); font-variant-numeric: tabular-nums; }
+.score-value { display: block; font: 600 16px/1.4 var(--mono); font-variant-numeric: tabular-nums; }
 .score-sub, .cell-note, .identity-note, .history-group { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; overflow-wrap: anywhere; }
 .score-sub { font-family: var(--mono); letter-spacing: .06em; }
 .cell-primary, .history-title { display: block; overflow-wrap: anywhere; }
@@ -100,7 +100,7 @@
 .detail-grid dd { margin: 8px 0 0; font: 14px/1.8 var(--mono); overflow-wrap: anywhere; }
 .detail-grid--statistics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .dialog-footer { display: flex; justify-content: end; margin-top: 24px; }
-@media (max-width: 1050px) { .workspace { grid-template-columns: 272px minmax(0, 1fr); gap: 20px; } .view-trust { display: none; } }
+@media (max-width: 1050px) { .workspace { grid-template-columns: 240px minmax(0, 1fr); gap: 20px; } .view-trust { display: none; } }
 @media (max-width: 767px) {
   .workspace { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; }
   .catalog-sidebar, .workspace > .ranking, .workspace > .account { grid-column: 1; grid-row: auto; }

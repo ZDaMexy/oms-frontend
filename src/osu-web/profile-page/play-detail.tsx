@@ -17,7 +17,8 @@ export function PlayDetail({ item, recent = false }: { item: PublicBest; recent?
     <div className='play-detail__group player-score-summary'><strong>{item.ruleset === 'bms' ? `${score.ex_score} / ${score.max_ex_score ?? '未知'} EX` : formatInteger(score.total_score!)}</strong>{score.accuracy !== null && <span>{(score.accuracy * 100).toFixed(2)}%</span>}
       {item.best_lamps.length > 0 && <span>独立最佳灯：{item.best_lamps.map(l => `${l.label}（${l.rule_label || l.family}）`).join('；')}</span>}
     </div>
-    <div className='player-score-meta'>{recent && <span>{item.activity?.kind === 'best-state-updated' ? '最佳状态更新' : '公开最佳接收'}：{date(item.activity!.order_at)}</span>}{score.played_at !== null && <span>游玩：{date(score.played_at)}</span>}<span>接收：{date(score.received_at)}</span></div>
+    <div className='player-score-meta'>{recent && <span>{item.activity?.kind === 'best-state-updated' ? '最佳状态更新' : '最佳成绩接收'}：{date(item.activity!.order_at)}</span>}{score.played_at !== null && <span>游玩：{date(score.played_at)}</span>}{!recent && <span>接收：{date(score.received_at)}</span>}</div>
+    {recent && <details className='player-chart-details'><summary>接收时间</summary><p>{date(score.received_at)}</p></details>}
     <ConditionDetails condition={item.condition_scope} source={score.source} record={score} />
   </article>;
 }

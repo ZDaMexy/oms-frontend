@@ -246,7 +246,7 @@
       if (atStart !== revision) return;
       password.value = "";
       setUser(data.user);
-      message(notice, mode === "register" ? "账号已创建，社区与 IR 已登录。" : "已登录，可以继续交流。");
+      message(notice, mode === "register" ? "账号已创建并登录。" : "已登录。");
       const next = destination();
       if (next) location.assign(next);
     } catch (error) {

@@ -3,5 +3,6 @@
 import * as React from 'react';
 export function Pagination({ page, limit, total, onPage }: { page: number; limit: number; total: number; onPage(page: number): void }) {
   const pages = Math.max(1, Math.ceil(total / limit));
+  if (pages === 1 && page === 1) return null;
   return <nav className='pagination-v2' aria-label='分页'><button className='pagination-v2__link button button-quiet' disabled={page <= 1} onClick={() => onPage(page - 1)}>上一页</button><span className='pagination-v2__link pagination-v2__link--active'>{page} / {pages}</span><button className='pagination-v2__link button button-quiet' disabled={page >= pages} onClick={() => onPage(page + 1)}>下一页</button></nav>;
 }

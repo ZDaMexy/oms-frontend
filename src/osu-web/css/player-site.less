@@ -20,6 +20,7 @@
 .header-v4__title { display: block; min-width: 0; overflow-wrap: anywhere; font-size: 26px; font-weight: 500; }
 .header-nav-v4 { display: flex; }
 .header-v4__content { padding-inline: 35px; }
+.header-v4__row { padding-inline: 0; }
 .header-v4__row--title { padding-bottom: 10px; }
 .header-v4__row--bar { min-height: 46px; }
 .player-page { padding-block: 20px 35px; }
@@ -45,7 +46,6 @@ button.beatmapsets-search-filter__item { background: transparent; border: 0; pad
 .beatmapsets__paginator { display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; padding: 24px; color: var(--muted); font-size: 12px; }
 .beatmapset-panel { height: auto; min-height: 140px; overflow: hidden; font-size: 13px; }
 .beatmapset-panel__content { min-height: 140px; height: auto; }
-.beatmapset-panel__play { font-size: 30px; color: #fff; flex: 0 0 45px; width: 45px; text-align: center; justify-content: center; display: flex; align-items: center; }
 .beatmapset-panel__info { padding: 10px 8px; }
 .beatmapset-panel__info-row--title { font-size: 17px; line-height: 1.3; overflow-wrap: anywhere; white-space: normal; }
 .beatmapset-panel__info-row--stats { display: flex; flex-wrap: wrap; gap: 8px; font-size: 11px; color: var(--muted); margin-top: 6px; }
@@ -73,8 +73,8 @@ button.beatmapset-beatmap-picker__beatmap--active { color: #fff; background: hsl
 .beatmapset-stats { padding: 8px 15px; background: hsl(var(--hsl-b4)); border-radius: 6px; }
 .beatmap-stats-table { width: 100%; }
 .beatmap-stats-table__label, .beatmap-stats-table__value { padding: 7px 4px; font-size: 13px; }
-.beatmapset-info { gap: 22px; margin-bottom: 20px; padding: 5px 35px; max-height: none; }
-.beatmapset-info__box { min-width: 0; }
+.beatmapset-info { grid-template-columns: minmax(0, 1fr) auto; gap: 22px; margin-bottom: 20px; padding: 12px 35px; max-height: none; background: transparent; border-block: 1px solid var(--border); }
+.beatmapset-info__box { min-width: 0; min-height: 0; max-height: none; padding: 0; gap: 6px; font-size: 13px; }
 .beatmapset-info__header { font-size: 15px; padding-block: 10px; }
 .player-chart-identities { margin: 0; }
 .player-chart-identities div { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 12px; padding: 6px 0; }
@@ -93,27 +93,29 @@ button.beatmapset-beatmap-picker__beatmap--active { color: #fff; background: hsl
 .player-condition-body code { font-size: 11px; }
 .player-condition-body .player-condition-fields { margin-block: 10px; display: grid; gap: 4px; }
 .player-condition-body .player-condition-fields > div { display: grid; grid-template-columns: minmax(100px, 1fr) minmax(0, 2fr); gap: 10px; }
-.player-condition-body .player-condition-fields dt { color: var(--muted); font: 11px var(--mono); }
-.player-condition-body .player-condition-fields dd { margin: 0; font: 11px var(--mono); }
+.player-condition-fields { margin-block: 10px; display: grid; gap: 6px; }
+.player-condition-fields > div { display: grid; grid-template-columns: minmax(100px, 1fr) minmax(0, 2fr); gap: 10px; }
+.player-condition-fields dt { color: var(--muted); font: 12px var(--font-body); }
+.player-condition-fields dd { margin: 0; overflow-wrap: anywhere; font: 12px var(--mono); }
 .player-ranking-condition { margin: 8px 35px; }
 .player-provider-status { display: flex; flex-wrap: wrap; gap: 5px 20px; font-size: 12px; margin-block: 12px; color: var(--muted); }
 .player-package-candidate { display: flex; justify-content: space-between; gap: 20px; padding: 15px; margin: 10px 0; border: 1px solid hsl(var(--hsl-b2)); border-radius: 7px; font-size: 12px; }
 .player-package-candidate--selected { border-color: var(--accent); }
 .player-package-candidate h3 { margin-bottom: 8px; }
 .player-package-candidate > div:last-child { display: flex; flex-direction: column; align-items: start; gap: 8px; }
-.player-page .page-extra { margin: 15px 25px; padding: 20px; }
+.player-page .page-extra { margin: 20px 35px; padding: 22px 0; background: transparent; border-radius: 0; box-shadow: none; border-top: 1px solid var(--border); }
 .beatmapset-scoreboard h2 { font-size: 19px; margin-bottom: 15px; }
 .beatmapset-scoreboard .player-source-filters { padding: 8px 0; background: transparent; }
 .page-tabs { justify-content: start; gap: 22px; margin-block: 15px; flex-wrap: wrap; }
 button.page-tabs__tab { background: none; border: 0; border-bottom: 3px solid transparent; padding: 8px 0; }
 button.page-tabs__tab--active { border-bottom-color: var(--accent); }
 .player-table-scroll { width: 100%; overflow-x: auto; }
-.beatmap-scoreboard-table { min-width: 660px; width: 100%; font-size: 12px; border-collapse: collapse; }
+.beatmap-scoreboard-table { min-width: 660px; width: 100%; font-size: 13px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
 .beatmap-scoreboard-table th { color: var(--muted); font-weight: normal; text-align: left; padding: 10px 8px; white-space: nowrap; }
 .beatmap-scoreboard-table td { padding: 12px 8px; vertical-align: top; background: hsl(var(--hsl-b3)); border-bottom: 3px solid hsl(var(--hsl-b4)); }
 .beatmap-scoreboard-table td:first-child { width: 50px; }
-.beatmap-scoreboard-table small { display: block; font-size: 10px; color: var(--muted); margin-top: 5px; max-width: 220px; overflow-wrap: anywhere; }
-.beatmap-scoreboard-table details { font-size: 11px; color: var(--muted); max-width: 260px; margin-top: 6px; }
+.beatmap-scoreboard-table small { display: block; font-size: 12px; color: var(--muted); margin-top: 5px; max-width: 220px; overflow-wrap: anywhere; }
+.beatmap-scoreboard-table details { font-size: 12px; color: var(--muted); max-width: 260px; margin-top: 6px; }
 .beatmap-scoreboard-table summary { color: var(--accent); }
 .beatmap-scoreboard-table dl { white-space: normal; overflow-wrap: anywhere; }
 .beatmap-scoreboard-table dl div { margin-bottom: 5px; }
@@ -127,6 +129,7 @@ button.page-tabs__tab--active { border-bottom-color: var(--accent); }
 .profile-detail-stats { grid-template-columns: 180px 2px minmax(0, 1fr); gap: 20px; }
 .player-stat-values { flex-direction: column; padding-top: 10px; }
 .player-stat-values > div { display: flex; align-items: baseline; gap: 12px; }
+.player-stat-lanes > summary { color: var(--accent); cursor: pointer; padding: 10px 0; font-size: 13px; }
 .player-stat-values strong { font-size: 30px; font-weight: 500; }
 .player-stat-values span { font-size: 12px; color: var(--muted); }
 .profile-stats { display: grid; gap: 12px; padding: 0; background: none; }
@@ -139,7 +142,8 @@ button.page-tabs__tab--active { border-bottom-color: var(--accent); }
 .player-stat-lane dd { margin: 0; font-size: 16px; overflow-wrap: anywhere; }
 .player-clear-progress { display: block; width: 100%; height: 6px; accent-color: var(--success); margin-block: 10px; }
 .player-lane-rank { display: inline-block; margin: 5px 15px 0 0; font-size: 12px; }
-.player-profile-columns { display: grid; grid-template-columns: minmax(0, 1fr) 200px; align-items: start; gap: 15px; padding: 0 25px; }
+.player-profile-columns { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; gap: 15px; padding: 0 35px; }
+.player-profile-columns--own { grid-template-columns: minmax(0, 1fr) 200px; }
 .player-profile-columns > div { min-width: 0; }
 .player-profile-columns .page-extra { margin-inline: 0; }
 .player-owner-links { padding: 20px 0 20px 15px; display: grid; gap: 14px; font-size: 13px; }
@@ -157,7 +161,7 @@ button.page-tabs__tab--active { border-bottom-color: var(--accent); }
 .play-detail__beatmap { overflow: visible; white-space: normal; }
 .player-score-summary { display: flex; flex-wrap: wrap; gap: 5px 15px; font-size: 12px; align-items: baseline; }
 .player-score-summary strong { font-size: 17px; }
-.player-score-meta { display: flex; flex-wrap: wrap; gap: 3px 12px; font-size: 10px; color: var(--muted); }
+.player-score-meta { display: flex; flex-wrap: wrap; gap: 3px 12px; font-size: 12px; color: var(--muted); }
 .player-community-list { padding: 0; list-style: none; }
 .player-community-list li { padding: 15px 0; border-bottom: 1px solid var(--border); }
 .player-community-list p { margin-block: 5px; }
@@ -178,16 +182,18 @@ button.page-tabs__tab--active { border-bottom-color: var(--accent); }
 .player-rank-position h3 { font-size: 14px; }
 .pagination-v2 { display: flex; justify-content: center; gap: 15px; align-items: center; padding: 12px; }
 .player-scopes-pages { padding: 0 35px; display: flex; align-items: center; gap: 20px; font-size: 12px; color: var(--muted); }
-.user-home { gap: 30px; padding: 0 35px; grid-template-columns: minmax(0, 1fr) 270px; }
+.user-home { display: grid; gap: 35px; padding: 0 35px; grid-template-columns: minmax(0, 1fr) 240px; background: transparent; box-shadow: none; }
+.user-home__left-section { width: auto; margin: 0; }
+.user-home__right-sidebar { width: auto; flex: none; margin: 0; padding: 0; background: transparent; box-shadow: none; }
 .player-home-section-title { display: flex; justify-content: space-between; align-items: center; padding: 8px 0 15px; }
 .player-home-section-title h2 { margin: 0; font-size: 19px; }
 .player-home-section-title > a:not(.button) { color: var(--muted); font-size: 12px; }
 .player-home-news { margin-bottom: 35px; }
-.news-post-preview { margin-bottom: 10px; border-radius: 6px; overflow: hidden; }
-.news-post-preview__body { padding: 7px 5px; }
-.news-post-preview__post-right { padding: 4px 10px 8px 0; min-width: 0; }
+.news-post-preview { margin-bottom: 0; border-radius: 0; box-shadow: none; border-bottom: 1px solid var(--border); }
+.news-post-preview__body { padding: 12px 0; background: transparent; }
+.news-post-preview__post-right { padding: 4px 0 12px; min-width: 0; }
 .news-post-preview__post-title { font-weight: 500; margin-bottom: 3px; }
-.news-post-preview__post-content { color: var(--muted); line-height: 1.7; padding-top: 7px; }
+.news-post-preview__post-content { color: var(--muted); font-size: 14px; line-height: 1.8; padding-top: 7px; }
 .player-news-state { color: var(--accent); font-size: 11px; }
 .player-news-index { padding: 10px 35px 25px; gap: 16px; }
 .player-news-card .news-card__main { padding: 20px 25px; }
@@ -205,12 +211,15 @@ button.page-tabs__tab--active { border-bottom-color: var(--accent); }
 .player-news-links { display: flex; flex-wrap: wrap; gap: 5px 25px; padding-top: 12px; font-size: 13px; }
 .player-news-article .news-show__nav { display: grid; gap: 10px; padding-top: 20px; border-top: 1px solid var(--border); margin-top: 30px; }
 .user-home__right-sidebar { min-width: 0; }
-.player-home-account { background: hsl(var(--hsl-b4)); padding: 20px; border-radius: 7px; }
+.player-home-account { padding: 0 0 24px; border-bottom: 1px solid var(--border); }
 .player-home-account h2, .player-home-facts h2 { font-size: 17px; }
 .player-home-account p { color: var(--muted); font-size: 12px; margin: 8px 0 15px; }
+.player-home-release { padding-block: 24px; border-bottom: 1px solid var(--border); }
+.player-home-release p { color: var(--muted); font-size: 13px; margin-top: 10px; }
+.player-home-release > a:last-child { display: inline-block; margin-top: 10px; font-size: 13px; }
 .user-home__buttons { display: grid; gap: 8px; margin-block: 20px; }
-.player-home-get { padding: 13px 18px; border-radius: 5px; color: #fff; background: hsl(var(--hsl-b3)); }
 .home-download { padding: 15px 18px; border-radius: 5px; background: hsl(var(--hsl-h2)); color: #fff; }
+.player-home-facts { padding-top: 24px; }
 .player-home-facts p { color: var(--muted); font-size: 12px; margin-block: 10px; }
 .player-home-facts a { display: block; padding: 5px 0; font-size: 13px; }
 .user-home .feed-controls { padding-inline: 0; }
@@ -234,13 +243,13 @@ button.page-tabs__tab--active { border-bottom-color: var(--accent); }
   .beatmapset-header__details-text--title { font-size: 25px; }
   .beatmapset-info { padding: 10px 20px; display: grid; grid-template-columns: 1fr; }
   .player-package-candidate { flex-direction: column; }
-  .player-page .page-extra { margin-inline: 12px; padding: 15px; }
+  .player-page .page-extra { margin-inline: 20px; padding: 20px 0; }
   .profile-info__details, .profile-detail { padding-inline: 20px; }
   .profile-info__details { flex-wrap: wrap; gap: 15px; }
   .player-profile-actions { margin-left: 0; }
   .profile-detail-stats { grid-template-columns: 1fr; }
   .player-stat-values { flex-direction: row; flex-wrap: wrap; }
-  .player-profile-columns { display: flex; flex-direction: column; padding-inline: 12px; }
+  .player-profile-columns { display: flex; flex-direction: column; padding-inline: 20px; }
   .player-profile-columns > div { width: 100%; }
   .player-profile-columns .page-extra { margin-inline: 0; }
   .player-owner-links { padding: 10px 8px; }

@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#2e1f26">
-    <meta name="description" content="OMS：BMS 与 mania 客户端、玩家社区和多来源 IR。Windows-only，离线优先。">
+    <meta name="description" content="OMS：支持 BMS 与 mania 的 Windows 音游客户端。谱面、成绩与玩家社区。">
     <title>帮助 · OMS</title>
     <link rel="icon" href="/portal/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/portal/osu-web.css?v=20261005-player-site-1">
-    <link rel="stylesheet" href="/portal/style.css?v=20261005-player-site-1">
-    <link rel="stylesheet" href="/portal/player-site.css?v=20261005-player-site-1">
-    <script defer src="/portal/site.js?v=20261005-player-site-1"></script>
-    <script defer src="/portal/player-site.js?v=20261005-player-site-1"></script>
+    <link rel="stylesheet" href="/portal/osu-web.css?v=20261007-player-site-1">
+    <link rel="stylesheet" href="/portal/style.css?v=20261007-player-site-1">
+    <link rel="stylesheet" href="/portal/player-site.css?v=20261007-player-site-1">
+    <script defer src="/portal/site.js?v=20261007-player-site-1"></script>
+    <script defer src="/portal/player-site.js?v=20261007-player-site-1"></script>
   </head>
   <body data-page="help">
     <a class="skip" href="#main">跳到主要内容</a>
@@ -75,30 +75,46 @@
 <li>在 Windows 上启动客户端，核对数据目录和输入设置。</li>
 <li>选择 BMS 或 mania，添加自己的谱面后开始游玩。离线游玩不需要社区账号。</li>
 </ol>
-<p>当前开发版本与公开发行包可能不同；请阅读所下载版本的说明。OMS 网站不会自动替你升级客户端。</p>
+<p>公开下载的是 20260626 版，尚不支持 IR。使用说明请以所下载版本为准。</p>
 <h2 id="library">添加自己的谱库</h2>
-<p>OMS 只保留 mania 与第一类 BMS。你可以在客户端注册自己的外部谱库目录，并扫描其中的谱面；请保留谱面所需的音频、图片和其他原始文件。</p>
-<p>BMS 采用原谱目录，mania 使用自己的原谱目录。不要为了发帖或使用 IR 上传整份谱包。若有扫描问题，发帖时说明版本、玩法、操作步骤和可复现现象。</p>
+<p>OMS 支持 BMS 和 mania。在客户端添加谱库文件夹并扫描谱面；请保留配套音频、图片和其他原始文件。</p>
+<p>BMS 采用原谱目录，mania 使用自己的原谱目录。发帖或使用 IR 都不需要上传谱包。若有扫描问题，发帖时说明版本、玩法、操作步骤和可复现现象。</p>
 <h2 id="ir">开启 IR 与查询成绩</h2>
-<p>IR 默认关闭，离线游玩照常可用。仅当所用客户端版本支持 IR 时，主动填写服务地址 <code>https://oms.zdamexy.work</code>、启用 IR，再登录账号。</p>
+<p>使用支持 IR 的开发版，从工具栏的账号入口打开连接设置。填写 <code>https://oms.zdamexy.work</code>，勾选“启用 IR”并保存，然后登录。IR 默认关闭，离线游玩无需账号。</p>
 <p>社区和 IR 使用同一账号。游戏结算先保存本地成绩，再尝试交分；网页可以查看同条件谱面榜和本人记录。断网后仍可保留待交成绩，重新连接并使用原账号补交。匿名游玩不会自动归入后来登录的账号。</p>
 <p>
 <a href="/ir/">打开 IR →</a> 当前榜单是客户端自报的试验榜，未经回放核验。自动游玩只保留在本人记录，不能作为公开排名。</p>
 <h2 id="multisource">按来源查看 BMS 榜单</h2>
 <p>在<a href="/ir/">IR</a>输入原谱 MD5，或搜索标题、作者，再选择一个、多个或全部来源。参考混榜按原 EX 排序；来源选择同时改变最佳分、独立灯、人数、名次和分页。同分共享名次；同一 OMS 账号的新来源成绩合并显示，历史旧账号始终保留独立 ID。</p>
-<p>“同条件榜”需要主动选择已确认条件，目前仅包括 OMS 相同内容、规则和最大 EX。外部播放器和历史摘要中尚未证明的判定、血条或长条条件不会自动加入；可随时回到参考混榜。每种原灯独立展示，不换算成跨播放器最高灯。OMS 游戏内可从当前 BMS 原谱直接打开同一榜；所用开发版本需具备此入口，旧公开发行包不因此升级。</p>
+<p>“同条件榜”需要主动选择已确认条件，目前仅包括 OMS 相同内容、规则和最大 EX。外部播放器和历史摘要中尚未证明的判定、血条或长条条件不会自动加入；可随时回到参考混榜。每种原灯独立展示，不换算成跨播放器最高灯。OMS 游戏内可从当前 BMS 原谱直接打开同一榜；所用开发版本需具备此入口，公开的 20260626 版尚无此入口。</p>
 <p>LR2IR 基础榜来自<a href="https://github.com/zkldi/lr2ir-dataset">公开 v3 归档与展示工具</a>（2026-05-31 快照），保留谱面 MD5、旧玩家 ID、行内名称、原 EX、物量和原通关灯。没有可信逐局时间或账号认领；名称相同不表示是你的 OMS 账号。来源未收录时显示“未知客户端”，原始字段缺失如实显示。归档作者的异常标记与数值矛盾记录不进入排名，不能用它们处罚当前账号。个人资料、留言、次数和 ghost 不在此榜导出范围；需要处理历史行的公开可见性时，通过<a href="#contact">联系入口</a>核实旧 ID 与谱面 MD5。</p>
 <h2 id="players">其他播放器接入试运行</h2>
-<p>插件支持版本为 beatoraja 0.8.8、LR2oraja build11611350155、Endless Dream v0.4.0 和 OpenLR2 v260915。接入仍在试运行；这些版本的实际交分与原生读榜，以及 5K / 7K / 14K 普通和标准长条，尚未逐项完成玩家验证。Endless Dream 7K 优先验证，其他版本与玩法不能据此视为可用。</p>
-<p>Java 插件下载：<a href="/ir/adapters/omsir-ed-v0.4.0-0.1.0.jar" download>Endless Dream v0.4.0</a>、<a href="/ir/adapters/omsir-beatoraja-0.8.8-0.1.0.jar" download>beatoraja 0.8.8</a>、<a href="/ir/adapters/omsir-lr2oraja-build11611350155-0.1.0.jar" download>LR2oraja build11611350155</a>。这些文件已完成软件交分与完整榜单回读检查，尚待上述播放器的实际游玩确认。</p>
-<p>OpenLR2 v260915 插件下载：<a href="/ir/adapters/OmsIR-v260915.x64.dll" download>x64 DLL</a>、<a href="/ir/adapters/OmsIR-v260915.x86.dll" download>x86 DLL</a>；按宿主架构选择，不能混用。两份 DLL 已完成编译和入口加载检查，尚待 OpenLR2 实际游玩确认。随插件提供<a href="/ir/adapters/nlohmann-json-LICENSE.MIT.txt">nlohmann/json 的 MIT 许可证</a>与<a href="/ir/adapters/zlib-LICENSE.txt">zlib 许可证</a>。插件仅适用于以上版本；<a href="/ir/adapters/versions.json">版本与文件校验记录</a>保留实际来源与验证范围。</p>
+<p>以下插件仅适用于所列版本。各版本的真实交分、原生读榜，以及 5K / 7K / 14K 普通谱面和标准长条，尚未逐项完成玩家确认。</p>
+<div class="player-table-scroll">
+<table class="help-downloads">
+<thead><tr><th>播放器版本</th><th>插件下载</th></tr></thead>
+<tbody>
+<tr><td>Endless Dream v0.4.0</td><td><a href="/ir/adapters/omsir-ed-v0.4.0-0.1.0.jar" download>Java 插件</a></td></tr>
+<tr><td>beatoraja 0.8.8</td><td><a href="/ir/adapters/omsir-beatoraja-0.8.8-0.1.0.jar" download>Java 插件</a></td></tr>
+<tr><td>LR2oraja build11611350155</td><td><a href="/ir/adapters/omsir-lr2oraja-build11611350155-0.1.0.jar" download>Java 插件</a></td></tr>
+<tr><td>OpenLR2 v260915</td><td><a href="/ir/adapters/OmsIR-v260915.x64.dll" download>x64 DLL</a> · <a href="/ir/adapters/OmsIR-v260915.x86.dll" download>x86 DLL</a></td></tr>
+</tbody>
+</table>
+</div>
+<h3>连接播放器</h3>
 <ol>
-<li>登录 IR 页，在“播放器专用密钥”中选择对应来源并创建密钥。秘密只显示一次，妥善保管；泄露或不再使用时撤销。不要填入网页密码。</li>
-<li>Java 插件放入现有播放器的 <code>ir/</code> 目录，确保启动器加载该目录，在配置页选择对应 OMS IR 并主动启用；ID 可填 <code>OMS</code>，密码栏填该来源专用密钥，重启播放器。播放器配置中的可逆加密不等于系统凭据库，请保护播放器目录和备份。</li>
-<li>OpenLR2 将匹配架构 DLL 与 <code>omsir.json</code> 放入现有宿主的 <code>LR2files/CustomIRs/OmsIR/</code>。JSON 仅填写 <code>origin</code>（服务地址 <code>https://oms.zdamexy.work</code>）和 <code>integration_key</code>（OpenLR2 来源专用密钥）；在宿主配置中主动启用 <code>OMS IR (OpenLR2 v260915)</code>，再重启播放器。</li>
-<li>用正常单谱完成一局，查看宿主交分提示，再打开本来源原生榜及网页同 MD5 榜核对。只有新回调的最佳状态被观察，旧存档不会自动批量上传；重复或较差成绩不增加虚假的局数。</li>
+<li>登录 IR 页，在“播放器专用密钥”中选择对应来源并创建密钥。密钥只显示一次，请及时保存；泄露或停用时撤销。不要填入网页密码。</li>
+<li>Java 插件放入播放器的 <code>ir/</code> 目录，确保启动器加载该目录。在配置页选择对应 OMS IR 并启用，ID 填 <code>OMS</code>，密码栏填该来源专用密钥，再重启。密钥可能以可恢复形式保存在播放器目录中，请保护该目录及备份。</li>
+<li>OpenLR2 按宿主架构选择 DLL，与 <code>omsir.json</code> 一起放入 <code>LR2files/CustomIRs/OmsIR/</code>。JSON 填写 <code>origin</code>（<code>https://oms.zdamexy.work</code>）和 <code>integration_key</code>（OpenLR2 专用密钥），启用 <code>OMS IR (OpenLR2 v260915)</code> 后重启。</li>
+<li>完成一局正常游玩，查看交分提示，并核对播放器和网页上同 MD5 的榜单。插件上传接入后的最佳状态更新，不会批量导入旧存档，也不提供逐局历史。</li>
 </ol>
-<p>自动、练习、回放、特殊修改、已知辅助、谱面随机分支及 CN / HCN 不在当前已确认接入范围；宿主允许提交仍不代表服务核验成绩。OpenLR2 只报告有无长条，长条类型仍可能未知；未提供 BP 时原生皮肤仍可能画成 0，这不是真实零 BP。原生榜并列行显示列表位置，不代表共享名次；网页与 OMS 保留共享排名及未知字段说明。原生整榜超过人数或字节预算时明确失败，可继续网页查榜，交分仍可用。关闭 IR 后离线游玩照常；网络失败不能阻塞本地保存。</p>
+<details class="help-details">
+<summary>支持范围与原生榜显示限制</summary>
+<p>自动、练习、回放、特殊修改、已知辅助、随机分支及 CN / HCN 不在当前已确认接入范围。成绩由播放器上报，未经回放核验。</p>
+<p>OpenLR2 只报告有无长条，类型可能未知。未提供 BP 时，原生皮肤可能显示 0，不能据此当作零 BP。原生榜并列行显示列表位置；网页与 OMS 显示共享名次。</p>
+<p>原生整榜超过人数或字节上限时会明确失败，可以改用网页查榜，交分仍可使用。关闭 IR 不影响离线游玩；网络失败不会阻止本地保存。</p>
+</details>
+<p class="help-plugin-notices"><a href="/ir/adapters/versions.json">版本与文件校验记录</a> · <a href="/ir/adapters/nlohmann-json-LICENSE.MIT.txt">nlohmann/json MIT 许可</a> · <a href="/ir/adapters/zlib-LICENSE.txt">zlib 许可</a></p>
 <h2 id="rules">社区约定</h2>
 <p>可以讨论玩法、求助、分享谱面入口和记录开发变化。发帖选择合适分类，标题写清主题；求助尽量附上版本、步骤和现象。</p>
 <p>正文目前支持纯文本与安全的网页链接。请不要发布密码、账号令牌、个人联系方式或含私密信息的日志；也不要冒用他人身份、刷屏或发布无授权资源。维护者可以隐藏违规内容，申诉可通过下方项目联系入口。</p>

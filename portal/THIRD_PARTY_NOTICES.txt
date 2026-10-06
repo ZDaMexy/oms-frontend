@@ -3,7 +3,7 @@ OMS website portal source and third-party notices
 The OMS portal application, adapted views/styles and corresponding OMS
 integration source are licensed under the GNU Affero General Public License,
 version 3 or any later version (AGPL-3.0-or-later).
-Copyright (c) ZDaMexy and OMS contributors. Modified on 2026-10-05.
+Copyright (c) ZDaMexy and OMS contributors. Modified on 2026-10-07.
 Full license: /portal/LICENCE.txt
 Incorporated MIT components retain their own licenses and notices below.
 

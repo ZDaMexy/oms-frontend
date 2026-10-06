@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#2e1f26">
-    <meta name="description" content="OMS：BMS 与 mania 客户端、玩家社区和多来源 IR。Windows-only，离线优先。">
+    <meta name="description" content="OMS：支持 BMS 与 mania 的 Windows 音游客户端。谱面、成绩与玩家社区。">
     <title>OMS IR · 试验榜</title>
     <link rel="icon" href="/portal/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/portal/osu-web.css?v=20261005-player-site-1">
-    <link rel="stylesheet" href="/portal/style.css?v=20261005-player-site-1">
-    <link rel="stylesheet" href="/ir/ir.css?v=20261005-player-site-1">
-    <link rel="stylesheet" href="/portal/player-site.css?v=20261005-player-site-1">
-    <script defer src="/portal/site.js?v=20261005-player-site-1"></script>
-    <script defer src="/portal/player-site.js?v=20261005-player-site-1"></script>
-    <script defer src="/ir/ir.js?v=20261005-player-site-1"></script>
+    <link rel="stylesheet" href="/portal/osu-web.css?v=20261007-player-site-1">
+    <link rel="stylesheet" href="/portal/style.css?v=20261007-player-site-1">
+    <link rel="stylesheet" href="/ir/ir.css?v=20261007-player-site-1">
+    <link rel="stylesheet" href="/portal/player-site.css?v=20261007-player-site-1">
+    <script defer src="/portal/site.js?v=20261007-player-site-1"></script>
+    <script defer src="/portal/player-site.js?v=20261007-player-site-1"></script>
+    <script defer src="/ir/ir.js?v=20261007-player-site-1"></script>
   </head>
   <body data-page="ir">
     <a class="skip" href="#main">跳到主要内容</a>
@@ -57,7 +57,7 @@
   </div>
     <main id="main" class="osu-page osu-page--generic-compact page-content">
 <details class="trust-notice">
-<summary>试运行：客户端上报，未经回放核验。查看来源与隐私说明</summary>
+<summary>试运行 · 成绩未经回放核验</summary>
         <div>
           <strong>跨播放器接入仍在试运行</strong>
           <p>榜单保留客户端上报的成绩，未经回放核验。支持 IR 的 OMS 开发版会先保存本地成绩再交分；断网后的待交内容仍归属原账号。各外部播放器的实际游玩验证范围见<a href="/help/#players">接入说明</a>。IR 默认关闭。</p>
@@ -122,11 +122,11 @@
 <div id="source-choices" class="source-choices">
 </div>
 </fieldset>
-            <div class="group-control">
+            <div id="ranking-mode-control" class="group-control" hidden>
 <label for="ranking-mode">比较方式</label>
 <select id="ranking-mode" disabled>
-<option value="reference">跨来源参考混榜 · 原 EX</option>
-<option value="comparable">同条件榜 · 主动收窄</option>
+<option value="reference">参考混榜 · 原 EX</option>
+<option value="comparable">同条件榜</option>
 </select>
 </div>
             <div class="group-control">
@@ -141,7 +141,7 @@
 </div>
             <p id="board-me" class="my-rank" role="status" hidden>
 </p>
-            <p id="board-message" class="empty-state" role="status" aria-live="polite">选择谱面后读取真实成绩。参考混榜保留不同来源，只有已确认条件才能进入同条件榜。</p>
+            <p id="board-message" class="empty-state" role="status" aria-live="polite">选择一张谱面查看排行榜。需要比较相同规则时，请切换到同条件榜。</p>
             <div id="board-table-wrap" class="table-wrap" tabindex="0" role="region" aria-label="谱面成绩表，可横向滚动" hidden>
               <table>
                 <caption class="sr-only">当前谱面所选来源的玩家最佳成绩</caption>
@@ -151,7 +151,7 @@
 <th scope="col">玩家</th>
 <th id="board-score-heading" scope="col">最佳分数</th>
 <th id="board-condition-heading" scope="col">来源 / 条件</th>
-<th scope="col">独立最佳灯</th>
+<th id="board-lamp-heading" scope="col">独立最佳灯</th>
 <th scope="col">记录类型 / 时间</th>
 <th scope="col">
 <span class="sr-only">成绩详情</span>
@@ -167,7 +167,7 @@
               <span id="board-page" class="page-label">待读取</span>
               <button id="board-next" class="text-button" type="button" disabled>下一页 →</button>
             </div>
-            <p class="ranking-footnote">来源筛选同时影响最佳分、独立灯、人数和名次。各灯按其原规则分别展示，未知规则不会换算成同一最高灯。历史摘要没有可信逐局时间。</p>
+            <p id="board-lamp-note" class="ranking-footnote" hidden>最佳分和通关灯可能来自不同记录。各灯保留原规则，不跨播放器换算；历史摘要未提供可信游玩时间。</p>
           </div>
 
           <div id="history-view" hidden>
@@ -216,7 +216,7 @@
 </div>
 <span id="account-state" class="small-label">正在确认</span>
 </div>
-            <div id="account-logged-out">
+            <details id="account-logged-out" class="integration-panel"><summary>登录查看自己的记录</summary>
               <div class="auth-tabs" role="group" aria-label="账号操作">
                 <button id="login-tab" class="auth-tab is-active" type="button" aria-pressed="true">登录</button>
                 <button id="register-tab" class="auth-tab" type="button" aria-pressed="false">注册</button>
@@ -229,7 +229,7 @@
                 <p id="register-hint" class="section-hint" hidden>注册后即可登录。账号名不区分大小写；目前没有邮箱找回入口，请保存好密码。</p>
                 <button id="auth-submit" class="primary-button" type="submit" disabled>登录</button>
               </form>
-            </div>
+            </details>
             <div id="account-logged-in" hidden>
               <p id="account-username" class="account-name">
 </p>

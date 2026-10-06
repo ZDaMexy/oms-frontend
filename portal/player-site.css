@@ -3587,6 +3587,9 @@
 .header-v4__content {
   padding-inline: 35px;
 }
+.header-v4__row {
+  padding-inline: 0;
+}
 .header-v4__row--title {
   padding-bottom: 10px;
 }
@@ -3710,16 +3713,6 @@ button.beatmapsets-search-filter__item {
 .beatmapset-panel__content {
   min-height: 140px;
   height: auto;
-}
-.beatmapset-panel__play {
-  font-size: 30px;
-  color: #fff;
-  flex: 0 0 45px;
-  width: 45px;
-  text-align: center;
-  justify-content: center;
-  display: flex;
-  align-items: center;
 }
 .beatmapset-panel__info {
   padding: 10px 8px;
@@ -3882,13 +3875,21 @@ button.beatmapset-beatmap-picker__beatmap--active {
   font-size: 13px;
 }
 .beatmapset-info {
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 22px;
   margin-bottom: 20px;
-  padding: 5px 35px;
+  padding: 12px 35px;
   max-height: none;
+  background: transparent;
+  border-block: 1px solid var(--border);
 }
 .beatmapset-info__box {
   min-width: 0;
+  min-height: 0;
+  max-height: none;
+  padding: 0;
+  gap: 6px;
+  font-size: 13px;
 }
 .beatmapset-info__header {
   font-size: 15px;
@@ -3970,13 +3971,24 @@ button.beatmapset-beatmap-picker__beatmap--active {
   grid-template-columns: minmax(100px, 1fr) minmax(0, 2fr);
   gap: 10px;
 }
-.player-condition-body .player-condition-fields dt {
-  color: var(--muted);
-  font: 11px var(--mono);
+.player-condition-fields {
+  margin-block: 10px;
+  display: grid;
+  gap: 6px;
 }
-.player-condition-body .player-condition-fields dd {
+.player-condition-fields > div {
+  display: grid;
+  grid-template-columns: minmax(100px, 1fr) minmax(0, 2fr);
+  gap: 10px;
+}
+.player-condition-fields dt {
+  color: var(--muted);
+  font: 12px var(--font-body);
+}
+.player-condition-fields dd {
   margin: 0;
-  font: 11px var(--mono);
+  overflow-wrap: anywhere;
+  font: 12px var(--mono);
 }
 .player-ranking-condition {
   margin: 8px 35px;
@@ -4012,8 +4024,12 @@ button.beatmapset-beatmap-picker__beatmap--active {
   gap: 8px;
 }
 .player-page .page-extra {
-  margin: 15px 25px;
-  padding: 20px;
+  margin: 20px 35px;
+  padding: 22px 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  border-top: 1px solid var(--border);
 }
 .beatmapset-scoreboard h2 {
   font-size: 19px;
@@ -4045,8 +4061,9 @@ button.page-tabs__tab--active {
 .beatmap-scoreboard-table {
   min-width: 660px;
   width: 100%;
-  font-size: 12px;
+  font-size: 13px;
   border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
 }
 .beatmap-scoreboard-table th {
   color: var(--muted);
@@ -4066,14 +4083,14 @@ button.page-tabs__tab--active {
 }
 .beatmap-scoreboard-table small {
   display: block;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
   margin-top: 5px;
   max-width: 220px;
   overflow-wrap: anywhere;
 }
 .beatmap-scoreboard-table details {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
   max-width: 260px;
   margin-top: 6px;
@@ -4128,6 +4145,12 @@ button.page-tabs__tab--active {
   display: flex;
   align-items: baseline;
   gap: 12px;
+}
+.player-stat-lanes > summary {
+  color: var(--accent);
+  cursor: pointer;
+  padding: 10px 0;
+  font-size: 13px;
 }
 .player-stat-values strong {
   font-size: 30px;
@@ -4190,10 +4213,13 @@ button.page-tabs__tab--active {
 }
 .player-profile-columns {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 200px;
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
   gap: 15px;
-  padding: 0 25px;
+  padding: 0 35px;
+}
+.player-profile-columns--own {
+  grid-template-columns: minmax(0, 1fr) 200px;
 }
 .player-profile-columns > div {
   min-width: 0;
@@ -4283,7 +4309,7 @@ button.page-tabs__tab--active {
   display: flex;
   flex-wrap: wrap;
   gap: 3px 12px;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
 }
 .player-community-list {
@@ -4369,9 +4395,24 @@ button.page-tabs__tab--active {
   color: var(--muted);
 }
 .user-home {
-  gap: 30px;
+  display: grid;
+  gap: 35px;
   padding: 0 35px;
-  grid-template-columns: minmax(0, 1fr) 270px;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  background: transparent;
+  box-shadow: none;
+}
+.user-home__left-section {
+  width: auto;
+  margin: 0;
+}
+.user-home__right-sidebar {
+  width: auto;
+  flex: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
 }
 .player-home-section-title {
   display: flex;
@@ -4391,15 +4432,17 @@ button.page-tabs__tab--active {
   margin-bottom: 35px;
 }
 .news-post-preview {
-  margin-bottom: 10px;
-  border-radius: 6px;
-  overflow: hidden;
+  margin-bottom: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 1px solid var(--border);
 }
 .news-post-preview__body {
-  padding: 7px 5px;
+  padding: 12px 0;
+  background: transparent;
 }
 .news-post-preview__post-right {
-  padding: 4px 10px 8px 0;
+  padding: 4px 0 12px;
   min-width: 0;
 }
 .news-post-preview__post-title {
@@ -4408,7 +4451,8 @@ button.page-tabs__tab--active {
 }
 .news-post-preview__post-content {
   color: var(--muted);
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.8;
   padding-top: 7px;
 }
 .player-news-state {
@@ -4487,9 +4531,8 @@ button.page-tabs__tab--active {
   min-width: 0;
 }
 .player-home-account {
-  background: hsl(var(--hsl-b4));
-  padding: 20px;
-  border-radius: 7px;
+  padding: 0 0 24px;
+  border-bottom: 1px solid var(--border);
 }
 .player-home-account h2,
 .player-home-facts h2 {
@@ -4500,22 +4543,33 @@ button.page-tabs__tab--active {
   font-size: 12px;
   margin: 8px 0 15px;
 }
+.player-home-release {
+  padding-block: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.player-home-release p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 10px;
+}
+.player-home-release > a:last-child {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+}
 .user-home__buttons {
   display: grid;
   gap: 8px;
   margin-block: 20px;
-}
-.player-home-get {
-  padding: 13px 18px;
-  border-radius: 5px;
-  color: #fff;
-  background: hsl(var(--hsl-b3));
 }
 .home-download {
   padding: 15px 18px;
   border-radius: 5px;
   background: hsl(var(--hsl-h2));
   color: #fff;
+}
+.player-home-facts {
+  padding-top: 24px;
 }
 .player-home-facts p {
   color: var(--muted);
@@ -4606,8 +4660,8 @@ button.page-tabs__tab--active {
     flex-direction: column;
   }
   .player-page .page-extra {
-    margin-inline: 12px;
-    padding: 15px;
+    margin-inline: 20px;
+    padding: 20px 0;
   }
   .profile-info__details,
   .profile-detail {
@@ -4630,7 +4684,7 @@ button.page-tabs__tab--active {
   .player-profile-columns {
     display: flex;
     flex-direction: column;
-    padding-inline: 12px;
+    padding-inline: 20px;
   }
   .player-profile-columns > div {
     width: 100%;

@@ -1,5 +1,9 @@
 # Frontend Mainline Plan
 
+## 页面与原账号体验验收
+
+沿[实际路径](../other/oms-deai-verification-20261007.md#部署维护与真人路径)接玩家普通刷新、下载来源、个人成绩、空页 / 条件榜与VS Code原账号窗口反馈。源码 / 软件与公开HTTP分别签收，视觉与真人范围未完时仍记录“已部署待验收”，不关闭P/C或制作客户端发行包。
+
 本文件只维护 Website 执行计划。统一阶段与状态以 [Dev Bridge](../../../../oms-server/dev_bridge_md/doc_md/mainline/dev-plan.md) 为准；本轮整体玩家网站沿 [新正式合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/constraints.md)、[玩家API](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/player-api.md)与 [谱面API](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/catalog-api.md)。原社区沿 [社区计划](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/dev-plan.md)，原多来源IR沿 [正式合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-ir/multisource-contract.md)。实际状态与证据见 [当前进展](dev-progress.md)。
 
 ## 当前最近任务

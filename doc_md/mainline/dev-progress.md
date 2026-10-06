@@ -1,5 +1,9 @@
 # Frontend Mainline Progress
 
+## 2026-10-07 页面与原账号复查
+
+当前页面候选完成四轮源码 / 文案复查，压缩重复说明与卡片，统一排版，并修复所选下载来源、mania错义、他人空侧栏和失效分页；原始条件、未知灯、旧身份与本人范围保留。客户端6168791已推送，软件门通过；Website本次实际发布待后记，开工独立在线核对仍d1 / 22b。来源、失败与具体真人路径取[本次核验](../other/oms-deai-verification-20261007.md)。浏览器工具超时，视觉与P/C保持待验收。
+
 ## 当前状态
 
 2026-10-07 整体osu-web BMS / 原生mania玩家网站 `d1f052b93a81-22b4ee54f237` / schema3 **已部署待验收**。新全量R7与严格源码提供、完整受保护F / 实际空间、生产激活与切回后的156公开GET / 880检查、HTTP缓存 / 双站、三阶段正式备份 / 两新空恢复和b520→新同库回退、原timer恢复均有实际证据；原失败保持，最终observer漏采prune PID与独立F22表备份校验分记。客户端运行234a9ff未变；文档HEAD不更新运行来源。精确门、资源与维护只取[最新服务验证](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-verification-20261005.md#生产发布与维护收尾) / [维护说明](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-maintenance-20261006.md)，页面 / 真人缺口取[本仓核验](../other/oms-player-site-verification-20261005.md)。视觉 / 普通浏览器刷新、真人下载入库 / 私有账号 / OMS两端与P/C尚未签收。

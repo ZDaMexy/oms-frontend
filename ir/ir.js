@@ -47,7 +47,7 @@
     "history-body", "history-prev", "history-page", "history-next", "score-dialog", "detail-title", "detail-subtitle",
     "detail-summary", "detail-statistics", "detail-lamp-note",
     "chart-search", "chart-query", "source-control", "source-choices", "sources-all", "sources-none", "ranking-mode",
-    "board-me", "board-condition-heading", "detail-fields-heading", "key-form", "key-source", "key-label", "key-message", "key-secret", "key-secret-label", "key-list", "ir-profile", "keys",
+    "board-me", "board-condition-heading", "board-lamp-heading", "board-lamp-note", "ranking-mode-control", "detail-fields-heading", "key-form", "key-source", "key-label", "key-message", "key-secret", "key-secret-label", "key-list", "ir-profile", "keys",
   ];
   const dom = Object.fromEntries(ids.map((id) => {
     const node = document.getElementById(id);
@@ -92,7 +92,7 @@
 
   class ConnectionError extends Error {
     constructor() {
-      super("未能连接到 IR 服务。请确认服务正在运行，再手动重试。");
+      super("暂时无法连接到 IR，请检查网络后重试。");
     }
   }
 
@@ -331,6 +331,9 @@
     dom["board-title"].textContent = title(item.chart);
     dom["board-subtitle"].textContent = chartSubtitle(item.chart);
     dom["source-control"].hidden = item.ruleset !== "bms";
+    dom["ranking-mode-control"].hidden = item.ruleset !== "bms";
+    dom["board-lamp-note"].hidden = item.ruleset !== "bms";
+    dom["board-lamp-heading"].textContent = item.ruleset === "bms" ? "独立最佳灯" : "通过";
     dom["ranking-mode"].disabled = item.ruleset !== "bms";
     dom["ranking-mode"].value = rankingMode;
     if (item.ruleset === "bms") updateConditions([]);
@@ -354,14 +357,16 @@
 
   function updateConditions(conditions) {
     boardConditions = conditions;
-    dom["group-select"].replaceChildren(element("option", "", rankingMode === "reference" ? "参考混榜保留不同条件；可切换同条件榜" : "请选择已确认的同条件"));
+    const placeholder = element("option", "", rankingMode === "reference" ? "参考混榜包含不同游玩条件" : "请选择已确认条件");
+    placeholder.value = "";
+    dom["group-select"].replaceChildren(placeholder);
     for (const condition of conditions) {
       const option = element("option", "", condition.label);
       option.value = condition.id;
       dom["group-select"].append(option);
     }
     if (selectedCondition && !conditions.some((item) => item.id === selectedCondition)) {
-      const option = element("option", "", "原选择不适用于当前来源；请重新选择");
+      const option = element("option", "", "请重新选择当前来源的条件");
       option.value = selectedCondition;
       dom["group-select"].append(option);
     }
@@ -416,7 +421,7 @@
     for (const best of item.best_lamps) lamp.append(element("span", "reference-lamp", `${best.label} · ${sourceLabel(best.source)} · ${best.rule_label || lampFamilyLabel(best.family)}`));
     if (item.best_lamps.length === 0) lamp.append(element("span", "reference-lamp", score.lamp ? `${score.lamp.label} · 原摘要灯，规则未知` : "灯未收录"));
     const time = element("td", "small-label", recordLabels[score.record_kind]);
-    time.append(element("span", "cell-note", score.played_at ? date(score.played_at) : "逐局时间未收录"));
+    time.append(element("span", "cell-note", score.played_at ? date(score.played_at) : "游玩时间未提供"));
     const action = element("td");
     const button = element("button", "text-button", "详情 ↗");
     button.type = "button";
@@ -489,7 +494,7 @@
           return;
         }
         for (const item of data.items) dom["board-body"].append(referenceRow(item));
-        dom["board-total"].textContent = `${number.format(data.total)} 位身份 · ${rankingMode === "reference" ? "EX 参考混榜" : "同条件榜"}`;
+        dom["board-total"].textContent = `${number.format(data.total)} 个参榜账号 · ${rankingMode === "reference" ? "EX 参考混榜" : "同条件榜"}`;
         dom["board-table-wrap"].hidden = data.items.length === 0;
         message(dom["board-message"], data.notice);
         if (user) message(dom["board-me"], data.me ? `本人全榜名次：${data.me.rank} / ${number.format(data.total)} · ${number.format(data.me.score.ex_score)} EX · ${sourceLabel(data.me.score.source)}` : "当前所选来源和条件没有本人的公开成绩。");
@@ -581,7 +586,7 @@
       }
       dom["history-total"].textContent = `${number.format(data.total)} 局记录`;
       dom["history-table-wrap"].hidden = data.items.length === 0;
-      message(dom["history-message"], data.items.length === 0 ? "还没有收到这个账号的成绩。客户端交分接通后，已上报的游玩记录会出现在这里。" : "");
+      message(dom["history-message"], data.items.length === 0 ? "还没有收到此账号的 OMS 新局。使用支持 IR 的开发版启用交分后，已上报记录会显示在这里。" : "");
       pagination("history", data);
     } catch (error) {
       if (revision !== historyRevision || accountAtStart !== accountRevision) return;
@@ -876,10 +881,11 @@
         const input = element("input");
         input.type = "checkbox";
         input.value = source.code;
+        input.title = source.verification;
         input.checked = selectedSources.includes(source.code);
         input.disabled = !source.available;
         input.addEventListener("change", () => changeSources([...dom["source-choices"].querySelectorAll("input:checked")].map((node) => node.value)));
-        const status = source.record_kind === "best_state" ? ` · ${source.verification}` : "";
+        const status = source.record_kind === "best_state" ? " · 试运行" : "";
         label.append(input, element("span", "", source.label + (source.available ? status : " · 未开放")));
         dom["source-choices"].append(label);
       }

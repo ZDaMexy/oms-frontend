@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* OMS integration of the osu-web BEM subset in osu-web.css. Modified 2026-10-05.
+/* OMS integration of the osu-web BEM subset in osu-web.css. Modified 2026-10-07.
    Released under AGPL-3.0; source and upstream attribution are at /credits/. */
 :root {
   color-scheme: dark;
@@ -48,7 +48,7 @@ img { max-width: 100%; height: auto; }
 .header-v4__row--bar { min-height: 48px; }
 .header-nav-v4 { gap: 24px; }
 .header-action { margin-left: auto; font-size: 12px; padding-block: 12px; }
-.page-content { padding: 25px 50px; }
+.page-content { padding: 25px 35px; }
 .page-layout { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 30px; align-items: start; }
 .page-main, .sidebar, .page-layout > *, .workspace > *, .user-home > * { min-width: 0; }
 .help-layout > .sidebar { grid-column: 2; grid-row: 1; }
@@ -125,6 +125,13 @@ textarea { resize: vertical; line-height: 1.8; }
 .article p { color: hsl(var(--hsl-c2)); margin: 15px 0; max-width: 65ch; }
 .article ul, .article ol { padding-left: 22px; color: hsl(var(--hsl-c2)); }
 .article li { padding: 5px 0; }
+.article h3 { margin: 24px 0 10px; }
+.help-downloads { border-collapse: collapse; width: 100%; font-size: 13px; margin-block: 15px; }
+.help-downloads th, .help-downloads td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: left; }
+.help-downloads th { color: var(--muted); font-weight: 400; }
+.help-details { margin-block: 20px; }
+.help-details summary { padding-block: 8px; color: var(--accent); }
+.help-plugin-notices { font-size: 12px; }
 .article code { color: #fff; font: 12px/1.8 var(--mono); overflow-wrap: anywhere; }
 .form-panel { padding: 25px; }
 .field { display: grid; gap: 7px; margin-bottom: 20px; }
@@ -159,12 +166,6 @@ textarea { resize: vertical; line-height: 1.8; }
 .confirm-dialog::backdrop { background: rgb(0 0 0 / 75%); } .confirm-dialog p { margin: 15px 0; color: var(--muted); }
 .eyebrow { color: var(--muted); font-size: 12px; margin-bottom: 5px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
-.home-feed-heading { padding-top: 20px; margin-bottom: 10px; } .home-feed-heading .user-home__left-title { padding: 0; }
-.home-sidebar { display: grid; gap: 20px; }
-.home-sidebar .panel { background: transparent; box-shadow: none; padding: 10px; }
-.home-sidebar .product-name { font-size: 22px; }
-.home-sidebar h2 { font-size: 16px; color: var(--muted); margin-bottom: 10px; }
-.home-sidebar p, .home-sidebar .side-note { color: var(--muted); font-size: 12px; }
 .home-download { padding: 14px 20px; width: 100%; color: #fff; background: hsl(var(--hsl-h2)); border-radius: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 18px; }
 .home-download:hover { background: var(--accent); color: var(--accent-ink); }
 .download-page__banner-copy { align-self: center; padding: 35px 40px; flex: 1; }
@@ -176,11 +177,7 @@ textarea { resize: vertical; line-height: 1.8; }
 .download-page__banner-content .download-actions { margin-top: 0; }
 .download-page__text--description { line-height: 1.8; font-size: 13px; }
 .download-page__help { color: var(--muted); font-size: 13px; line-height: 1.8; } .download-notice { margin: 10px; }
-.profile-avatar-placeholder { display: grid; place-items: center; background: hsl(var(--hsl-b5)); font-size: 36px; color: var(--muted); }
 .profile-info__name { overflow-wrap: anywhere; }
-.profile-identity { color: var(--muted); font-size: 12px; margin-top: 7px; }
-.profile-links { display: grid; gap: 12px; } .profile-links .button { justify-self: start; }
-.profile-unavailable { padding: 25px 50px; } .profile-feed-empty { padding: 20px; }
 @media (max-width: 900px) { .header-inner { gap: 12px; } .brand-word { display: none; } }
 @media (max-width: 767px) {
   .site-header { position: relative; background: hsl(var(--hsl-d5)); }
@@ -192,7 +189,7 @@ textarea { resize: vertical; line-height: 1.8; }
   .nav2__menu-link-bar { top: auto; bottom: 0; margin-top: 0; }
   .header-v4__container--main { min-height: 72px; } .header-v4__row--title { gap: 5px; }
   .header-subtitle { width: 100%; } .header-nav-v4 { gap: 18px; } .header-action { font-size: 12px; }
-  .page-content { padding: 20px 15px; } .page-layout { grid-template-columns: minmax(0, 1fr); gap: 25px; }
+  .page-content { padding: 20px; } .page-layout { grid-template-columns: minmax(0, 1fr); gap: 25px; }
   .sidebar { grid-template-columns: minmax(0, 1fr); }
   .help-layout > .sidebar, .help-layout > .article { grid-column: auto; grid-row: auto; }
   .help-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 15px; }
@@ -202,14 +199,12 @@ textarea { resize: vertical; line-height: 1.8; }
   .article, .form-panel, .panel-padded { padding: 20px; } .auth-layout { grid-template-columns: minmax(0, 1fr); }
   .thread-header, .thread-body, .reply, .reply-form { padding: 20px; }
   .thread-header h1 { font-size: 22px; } .edit-panel { margin-inline: 20px; } .site-footer { padding: 20px; }
-  .home-feed-heading { padding-inline: 20px; }
   .user-home__left-section .feed-controls { padding-inline: 20px; }
   .user-home__left-section .feed-list { padding-inline: 10px; }
   .user-home__left-section .pagination { padding-inline: 20px; } .user-home__left-section .empty { padding-inline: 20px; }
   .download-page__banner { flex-direction: column; }
   .download-page__banner-copy { align-self: stretch; padding: 25px 30px 0; }
   .download-page__banner-copy h2 { font-size: 26px; } .download-page__banner-content { margin: 20px; }
-  .profile-info__details { align-items: flex-start; } .profile-avatar-placeholder { font-size: 24px; }
-  .profile-unavailable { padding: 20px; }
+  .profile-info__details { align-items: flex-start; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }

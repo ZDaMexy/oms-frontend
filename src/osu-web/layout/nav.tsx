@@ -14,8 +14,8 @@ export function Nav() {
     <details className='player-account-menu'><summary>{user ? user.username : '账号'}</summary><div className='simple-menu'>
       {user && <a href={profileUrl(user.id)} className='simple-menu__item'>我的个人页</a>}
       <a id='site-account' href='/account/' className='simple-menu__item'>{user ? '账号与退出' : '登录 / 注册'}</a>
-      {user && <><a href='/ir/#history' className='simple-menu__item'>本人记录</a><a href='/ir/#keys' className='simple-menu__item'>播放器密钥</a></>}
-      <a href='/ir/' className='simple-menu__item'>IR 与来源说明</a>
+      {user && <><a href='/ir/#history' className='simple-menu__item'>我的游玩记录</a><a href='/ir/#keys' className='simple-menu__item'>播放器密钥</a></>}
+      <a href='/ir/' className='simple-menu__item'>谱面排行榜</a>
     </div></details>
   </div>;
 }

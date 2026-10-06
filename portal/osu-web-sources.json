@@ -4,7 +4,7 @@
   "commit": "2c596022a1345fbed288978e7fa5304df0359f50",
   "license": "AGPL-3.0-or-later",
   "copyright": "ppy Pty Ltd <contact@ppy.sh> and osu!web contributors",
-  "modified_at": "2026-10-05",
+  "modified_at": "2026-10-07",
   "files": [
     {
       "upstream_path": "LICENCE",
@@ -218,7 +218,7 @@
         "rankings/index.html": "Keep the actual nav2 column/menu structure as static navigation before React mounts; replace ppy links, brand assets and account handling with OMS links, existing OMS logo and account entry.",
         "news/index.html": "Keep the actual nav2 column/menu structure as static navigation before React mounts; replace ppy links, brand assets and account handling with OMS links, existing OMS logo and account entry.",
         "news/show.html": "Keep the actual nav2 column/menu structure as static navigation before React mounts; replace ppy links, brand assets and account handling with OMS links, existing OMS logo and account entry.",
-        "src/osu-web/layout/nav.tsx": "Port the actual nav2 column/menu composition from Blade to JSX. Use OMS page links, the existing OMS logo and the independently authenticated OMS account; remove ppy account, chat, presence and branded assets."
+        "src/osu-web/layout/nav.tsx": "Port the actual nav2 column/menu composition from Blade to JSX. Use OMS page links, the existing OMS logo and the independently authenticated OMS account; remove ppy account, chat, presence and branded assets. 2026-10-07: use the same concrete account and chart-ranking entry names across pages."
       }
     },
     {
@@ -254,7 +254,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/views/home/user.blade.php",
       "modifications": {
-        "src/osu-web/home/main.tsx": "Port the actual user-home left content/right sidebar/buttons layout from Blade to JSX. Render the maintained OMS news list, actual community feed mount and account/download entries; omit fabricated online totals and unavailable ppy widgets."
+        "src/osu-web/home/main.tsx": "Port the actual user-home left content/right sidebar/buttons layout from Blade to JSX. Render the maintained OMS news list, actual community feed mount and account/download entries; omit fabricated online totals and unavailable ppy widgets. 2026-10-07: simplify maintained news/account/download hierarchy and remove repeated feature cards."
       }
     },
     {
@@ -553,7 +553,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/views/objects/_pagination_v2.blade.php",
       "modifications": {
-        "src/osu-web/components/pagination.tsx": "Port the pagination-v2 navigation/link structure from Blade to JSX. Use the actual service page/limit/total to render previous/current/next controls and disable bounds; remove Laravel route/query generation."
+        "src/osu-web/components/pagination.tsx": "Port the pagination-v2 navigation/link structure from Blade to JSX. Use the actual service page/limit/total to render previous/current/next controls and disable bounds; remove Laravel route/query generation. 2026-10-07: omit redundant single-page navigation while retaining a path back from stale later pages."
       }
     },
     {
@@ -564,7 +564,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/app/helpers.php",
       "modifications": {
-        "src/osu-web/layout/nav.tsx": "Use only the nav_links navigation/menu arrangement as the source for OMS JSX links. Replace PHP route helpers and ppy sections with explicit OMS destinations; none of the remaining PHP helper/server implementation is copied."
+        "src/osu-web/layout/nav.tsx": "Use only the nav_links navigation/menu arrangement as the source for OMS JSX links. Replace PHP route helpers and ppy sections with explicit OMS destinations; none of the remaining PHP helper/server implementation is copied. 2026-10-07: use the same concrete account and chart-ranking entry names across pages."
       }
     },
     {
@@ -586,7 +586,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/beatmaps/main.tsx",
       "modifications": {
-        "src/osu-web/beatmaps/main.tsx": "Adapt the actual search/filter/content page composition to the OMS catalog API and URL query state. Use BMS MD5 and native mania sid entry paths, source-aware paging/cursors and real errors instead of ppy core/routes/search state."
+        "src/osu-web/beatmaps/main.tsx": "Adapt the actual search/filter/content page composition to the OMS catalog API and URL query state. Use BMS MD5 and native mania sid entry paths, source-aware paging/cursors and real errors instead of ppy core/routes/search state. 2026-10-07: use direct Chinese source/search labels while retaining real source pagination."
       }
     },
     {
@@ -597,7 +597,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/beatmaps/search-content.tsx",
       "modifications": {
-        "src/osu-web/beatmaps/main.tsx": "Merge the actual search-result content/item/paginator composition into the OMS catalog page. Render normalized source packages and explicit empty/partial-source results with service paging; remove ppy model/global state and fabricated totals."
+        "src/osu-web/beatmaps/main.tsx": "Merge the actual search-result content/item/paginator composition into the OMS catalog page. Render normalized source packages and explicit empty/partial-source results with service paging; remove ppy model/global state and fabricated totals. 2026-10-07: use direct Chinese source/search labels while retaining real source pagination."
       }
     },
     {
@@ -608,7 +608,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/beatmaps/search-panel.tsx",
       "modifications": {
-        "src/osu-web/beatmaps/main.tsx": "Merge the actual search input/filter/panel composition into the OMS catalog page. Use explicit ruleset/source/key choices and adopted catalog requests; remove unsupported ppy status/genre/language/ranked-date filters."
+        "src/osu-web/beatmaps/main.tsx": "Merge the actual search input/filter/panel composition into the OMS catalog page. Use explicit ruleset/source/key choices and adopted catalog requests; remove unsupported ppy status/genre/language/ranked-date filters. 2026-10-07: use direct Chinese source/search labels while retaining real source pagination."
       }
     },
     {
@@ -619,7 +619,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/beatmapset-panel/index.tsx",
       "modifications": {
-        "src/osu-web/beatmapset-panel/index.tsx": "Retain the actual content/play/info/menu/mobile-expand JSX composition. Use real BMS package/native mania-set metadata, optional approved covers and local detail URLs; remove ppy favorites/preview/game-action state and icons."
+        "src/osu-web/beatmapset-panel/index.tsx": "Retain the actual content/play/info/menu/mobile-expand JSX composition. Use real BMS package/native mania-set metadata, optional approved covers and local detail URLs; remove ppy favorites/preview/game-action state and icons. 2026-10-07: remove a duplicate pseudo-play affordance and preserve unknown original key types."
       }
     },
     {
@@ -630,7 +630,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/beatmapsets-show/main.tsx",
       "modifications": {
-        "src/osu-web/beatmapsets-show/main.tsx": "Adapt the actual detail-page header/info/scoreboard composition to BMS source candidates or native mania sets. Replace ppy set and conversion/edit services with adopted metadata and IR requests; do not infer a sid/bid association from an IR-only MD5."
+        "src/osu-web/beatmapsets-show/main.tsx": "Adapt the actual detail-page header/info/scoreboard composition to BMS source candidates or native mania sets. Replace ppy set and conversion/edit services with adopted metadata and IR requests; do not infer a sid/bid association from an IR-only MD5. 2026-10-07: the selected eligible provider determines the named download destination; missing chart fields remain unknown."
       }
     },
     {
@@ -641,7 +641,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/beatmapsets-show/header.tsx",
       "modifications": {
-        "src/osu-web/beatmapsets-show/main.tsx": "Merge the actual header boxes/title/artist/buttons/stats composition into the OMS detail view. Use optional approved source covers and real download/source controls; omit ppy edits, favorites, package completion claims and missing metadata defaults."
+        "src/osu-web/beatmapsets-show/main.tsx": "Merge the actual header boxes/title/artist/buttons/stats composition into the OMS detail view. Use optional approved source covers and real download/source controls; omit ppy edits, favorites, package completion claims and missing metadata defaults. 2026-10-07: the selected eligible provider determines the named download destination; missing chart fields remain unknown."
       }
     },
     {
@@ -652,7 +652,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/beatmapsets-show/beatmap-picker.tsx",
       "modifications": {
-        "src/osu-web/beatmapsets-show/main.tsx": "Port the actual beatmap-picker container/active selection to OMS native chart buttons keyed by proven MD5 or bid; remove ppy converted-mode and difficulty-icon dependencies."
+        "src/osu-web/beatmapsets-show/main.tsx": "Port the actual beatmap-picker container/active selection to OMS native chart buttons keyed by proven MD5 or bid; remove ppy converted-mode and difficulty-icon dependencies. 2026-10-07: the selected eligible provider determines the named download destination; missing chart fields remain unknown."
       }
     },
     {
@@ -663,7 +663,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/beatmapsets-show/info.tsx",
       "modifications": {
-        "src/osu-web/beatmapsets-show/main.tsx": "Port the actual beatmapset-info boxes into original-chart identity and import guidance. Use only real MD5/SHA256/bid and supplied metadata; remove ppy editor/discussion/moderation content."
+        "src/osu-web/beatmapsets-show/main.tsx": "Port the actual beatmapset-info boxes into original-chart identity and import guidance. Use only real MD5/SHA256/bid and supplied metadata; remove ppy editor/discussion/moderation content. 2026-10-07: the selected eligible provider determines the named download destination; missing chart fields remain unknown."
       }
     },
     {
@@ -674,7 +674,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/beatmapsets-show/stats.tsx",
       "modifications": {
-        "src/osu-web/beatmapsets-show/main.tsx": "Port the actual stats/table placement into real keymode/BPM/notes/length/mirror-star fields, displaying absent values as unavailable. Remove ppy difficulty/PP calculators, simulated attributes and icon dependencies."
+        "src/osu-web/beatmapsets-show/main.tsx": "Port the actual stats/table placement into real keymode/BPM/notes/length/mirror-star fields, displaying absent values as unavailable. Remove ppy difficulty/PP calculators, simulated attributes and icon dependencies. 2026-10-07: the selected eligible provider determines the named download destination; missing chart fields remain unknown."
       }
     },
     {
@@ -685,7 +685,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/beatmapsets-show/scoreboard/main.tsx",
       "modifications": {
-        "src/osu-web/scoreboard/main.tsx": "Adapt the actual scoreboard section/tab composition to the complete scoped BMS reference/comparable API and the existing mania condition board. Sources, independent lamps, conditions, identity counts and the off-page owner row come from the service."
+        "src/osu-web/scoreboard/main.tsx": "Adapt the actual scoreboard section/tab composition to the complete scoped BMS reference/comparable API and the existing mania condition board. Sources, independent lamps, conditions, identity counts and the off-page owner row come from the service. 2026-10-07: readable original conditions, separately preserved raw IDs, old identities and independent raw lamps."
       }
     },
     {
@@ -696,7 +696,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/beatmapsets-show/scoreboard/table.tsx",
       "modifications": {
-        "src/osu-web/scoreboard/main.tsx": "Port the actual scoreboard table composition to OMS columns and service pagination; retain true shared ranks and distinct source identity namespaces, omitting ppy PP/flag/replay/mod-icon columns."
+        "src/osu-web/scoreboard/main.tsx": "Port the actual scoreboard table composition to OMS columns and service pagination; retain true shared ranks and distinct source identity namespaces, omitting ppy PP/flag/replay/mod-icon columns. 2026-10-07: readable original conditions, separately preserved raw IDs, old identities and independent raw lamps."
       }
     },
     {
@@ -707,7 +707,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/beatmapsets-show/scoreboard/table-row.tsx",
       "modifications": {
-        "src/osu-web/scoreboard/main.tsx": "Port the actual score row composition to real OMS/source records, original EX/max EX, lamp rules, unknown fields and supplied dates. Only OMS identities link to OMS profiles; old namespaces are not claimed by name."
+        "src/osu-web/scoreboard/main.tsx": "Port the actual score row composition to real OMS/source records, original EX/max EX, lamp rules, unknown fields and supplied dates. Only OMS identities link to OMS profiles; old namespaces are not claimed by name. 2026-10-07: readable original conditions, separately preserved raw IDs, old identities and independent raw lamps."
       }
     },
     {
@@ -718,7 +718,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/profile-page/main.tsx",
       "modifications": {
-        "src/osu-web/profile-page/main.tsx": "Adapt the actual mode/profile/statistics/section composition to the authenticated/public OMS identity and public-best APIs. Add explicit source/keymode/condition scope and owner links; omit unavailable ppy avatar/country/PP/badges/editor services."
+        "src/osu-web/profile-page/main.tsx": "Adapt the actual mode/profile/statistics/section composition to the authenticated/public OMS identity and public-best APIs. Add explicit source/keymode/condition scope and owner links; omit unavailable ppy avatar/country/PP/badges/editor services. 2026-10-07: reserve account navigation only for the owner and retain the public/UUID-history distinction."
       }
     },
     {
@@ -729,7 +729,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/profile-page/top-scores.tsx",
       "modifications": {
-        "src/osu-web/profile-page/main.tsx": "Adapt the actual score-list section composition to paginated current public bests using OMS PlayDetail. Preserve separate conditions and independent lamps rather than ppy PP-based top-score order or full private histories."
+        "src/osu-web/profile-page/main.tsx": "Adapt the actual score-list section composition to paginated current public bests using OMS PlayDetail. Preserve separate conditions and independent lamps rather than ppy PP-based top-score order or full private histories. 2026-10-07: reserve account navigation only for the owner and retain the public/UUID-history distinction."
       }
     },
     {
@@ -740,7 +740,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/profile-page/historical.tsx",
       "modifications": {
-        "src/osu-web/profile-page/main.tsx": "Adapt the historical/recent section placement to recent current-public-best receipt or best-state updates. Omit absent historical graphs and superseded/private plays; external state updates are not presented as individual games."
+        "src/osu-web/profile-page/main.tsx": "Adapt the historical/recent section placement to recent current-public-best receipt or best-state updates. Omit absent historical graphs and superseded/private plays; external state updates are not presented as individual games. 2026-10-07: reserve account navigation only for the owner and retain the public/UUID-history distinction."
       }
     },
     {
@@ -751,7 +751,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/profile-page/detail-stats.tsx",
       "modifications": {
-        "src/osu-web/profile-page/detail-stats.tsx": "Retain the actual profile-detail/stats/numbers/separator composition. Display real public chart/best counts, condition lanes and available metrics; remove ppy rank-history graphs, PP, playtime and unsupported totals."
+        "src/osu-web/profile-page/detail-stats.tsx": "Retain the actual profile-detail/stats/numbers/separator composition. Display real public chart/best counts, condition lanes and available metrics; remove ppy rank-history graphs, PP, playtime and unsupported totals. 2026-10-07: fold condition statistics without deleting lanes or implying cross-player equivalence."
       }
     },
     {
@@ -762,7 +762,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/profile-page/stats.tsx",
       "modifications": {
-        "src/osu-web/profile-page/detail-stats.tsx": "Adapt the actual statistic-label/value composition to separate OMS source/condition lanes and proven clear/count/score metrics. Show unknown rules, preserve exact totals and do not synthesize country/PP/play-count fields."
+        "src/osu-web/profile-page/detail-stats.tsx": "Adapt the actual statistic-label/value composition to separate OMS source/condition lanes and proven clear/count/score metrics. Show unknown rules, preserve exact totals and do not synthesize country/PP/play-count fields. 2026-10-07: fold condition statistics without deleting lanes or implying cross-player equivalence."
       }
     },
     {
@@ -773,7 +773,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/js/profile-page/play-detail.tsx",
       "modifications": {
-        "src/osu-web/profile-page/play-detail.tsx": "Retain the actual play-detail top/detail/summary composition for current public best records. Use real chart links, EX or mania total score, independent lamp labels/rules and provided receipt/play times; omit ppy grade/mod/PP/replay assets."
+        "src/osu-web/profile-page/play-detail.tsx": "Retain the actual play-detail top/detail/summary composition for current public best records. Use real chart links, EX or mania total score, independent lamp labels/rules and provided receipt/play times; omit ppy grade/mod/PP/replay assets. 2026-10-07: remove repeated timestamps; keep actual play and best-state receipt meanings."
       }
     },
     {
@@ -784,7 +784,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/views/rankings/index.blade.php",
       "modifications": {
-        "src/osu-web/rankings/main.tsx": "Port the actual rankings page/filter/table/paginator composition from Blade to JSX. Use OMS ruleset/keymode/source/condition/metric scopes and service ranks; remove unsupported country/PP/team navigation and ppy routes."
+        "src/osu-web/rankings/main.tsx": "Port the actual rankings page/filter/table/paginator composition from Blade to JSX. Use OMS ruleset/keymode/source/condition/metric scopes and service ranks; remove unsupported country/PP/team navigation and ppy routes. 2026-10-07: remove duplicate coverage values and empty tables, retain source/rule scopes and out-of-page owner rank."
       }
     },
     {
@@ -795,7 +795,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/views/rankings/global.blade.php",
       "modifications": {
-        "src/osu-web/rankings/main.tsx": "Port the actual ranking table columns/rows/paging composition to the adopted OMS player metrics and an explicit off-page owner position. Preserve shared ties and exact service totals; omit ppy PP/accuracy/playcount/country assumptions."
+        "src/osu-web/rankings/main.tsx": "Port the actual ranking table columns/rows/paging composition to the adopted OMS player metrics and an explicit off-page owner position. Preserve shared ties and exact service totals; omit ppy PP/accuracy/playcount/country assumptions. 2026-10-07: remove duplicate coverage values and empty tables, retain source/rule scopes and out-of-page owner rank."
       }
     },
     {
@@ -806,7 +806,7 @@
       ],
       "url": "https://github.com/ppy/osu-web/blob/2c596022a1345fbed288978e7fa5304df0359f50/resources/views/rankings/_main_column.blade.php",
       "modifications": {
-        "src/osu-web/rankings/main.tsx": "Port the actual primary ranking-player name/link cell to a real OMS profile link. Omit unavailable avatar, flag, badge and supporter assets and all ppy profile URLs."
+        "src/osu-web/rankings/main.tsx": "Port the actual primary ranking-player name/link cell to a real OMS profile link. Omit unavailable avatar, flag, badge and supporter assets and all ppy profile URLs. 2026-10-07: remove duplicate coverage values and empty tables, retain source/rule scopes and out-of-page owner rank."
       }
     },
     {

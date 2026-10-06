@@ -13,6 +13,10 @@
 - 共享服务器及部署边界取 [共同发布维护](../../../../oms-server/oms-backend/deploy/README.md) 与 [双站维护镜像](../other/oms-player-site-infrastructure-20261006.md)；本轮沿不可变服务发布目录，只更新 OMS 扩展，保全原个人主页、TLS / 续期 / .well-known 和旧静态发布目录，不执行旧整站检出钩子。镜像整理不代签本轮准备、量测、恢复或部署。
 - 门户静态页 / 固定阅读器由 Nginx 与 Backend API 同源提供；Backend 单独运行只直挂 `ir/`，完整本地门户验收采用隔离合成预览探针，不能把该工具当作额外已发布 Backend 能力。
 
+## 2026-10-07 玩家呈现修订
+
+采用用户深度去AI味要求：中文说明真实功能与当前动作，项目 / 运行取证只在维护说明；统一已采用的osu-web结构，不堆重复口号、嵌套卡片或无消费者控件。来源选择必须改变实际下载入口；mania不得显示BMS原EX / 独立灯；本人导航不为他人页预留空列。区分整个范围为空和本页为空，保留真实total、页外本人和直接回第一页，回页不清条件。未知字段、旧身份、原灯 / 原条件标识可折叠但不可删或推算；无原局ID不造历史。反复源码 / 文案审查及自动检查不代签实际视觉或真人验收，证据见[核验](../other/oms-deai-verification-20261007.md)。
+
 ## 页面与输入边界
 
 2026-10-05 用户的新范围采用 [玩家网站合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/constraints.md)：BMS 与原生 mania 的整体谱面获取、成熟公开个人页和透明玩家榜。首页近期新闻、`/news/` 与真实文章固定地址采用上游新闻视图，单一 `src/oms/news.ts` 维护真实日期及已发布 / 试运行状态；只发布已有公开发行或实际运行能力。新 [玩家 API](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/player-api.md) 消费原已合格的公共最佳、独立灯和条件统计；[谱面 API](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/catalog-api.md) 仅批准源元数据及原站包入口。地力设计后置、PP另议，累计分、收录和通关数量不包装成能力榜或自造评级。
@@ -55,3 +59,5 @@
 本轮验证覆盖两模式真实谱面路径、公开个人 / 玩家榜语义、多页入口、社区纯文本 / 作者权限、会话和迟到回应边界、旧 IR 回归与桌面 / 窄屏布局；方法见 [verification](verification.md) 和 [玩家网站实际核验](../other/oms-player-site-verification-20261005.md)。读模型的软件与主机查询 r6 大样本首请求 / 数学 / 隐私 / 旧读取往返通过，兼容 r3 的真实旧 HTTP 新写 / 重交、外部状态、独立灯、dirty / WAL、新助手128 MiB备份及附加恢复已 completed / pass；r1 / r2探针误用原失败保留。正式 1800 秒 / 5 rps / 全量历史及两新空恢复流程已启动，结果待签；同主服务 worker 与发布不能由启动状态代签。根按原标准继续签收，精确版本、时间和结果只取 [Backend 验证](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-verification-20261005.md)。局部通过不代签整个共享门、生产激活、整包入库或用户视觉认可；新范围尚未部署，部署后仍须真人和 P/C 签收。
 
 客户端事实变化先更新 Client Bridge，再经 Dev Bridge 采用后回写；接口、错误、下载或联调结论变化同步 [Dev Bridge](../../../../oms-server/dev_bridge_md/doc_md/mainline/README.md) 与 Backend。通用协作和文件归属见 [AGENTS](../../AGENTS.md)。
+
+`client-ir-saved-connection-and-board-ui`：采用[Client Bridge原连接与查榜快照](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-ui-snapshot-20261007.md)，Website帮助采用真实启用 / 保存 / 登录顺序；原账号源码6168791及17/17仅软件证据，默认离线 / 原UUID / owner与独立会话不变，真实窗口和P/C仍待。

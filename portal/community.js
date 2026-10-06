@@ -78,7 +78,7 @@
     const panel = el("div", "notice");
     panel.hidden = true;
     panel.setAttribute("role", "status");
-    panel.append(el("p", "", "上一次发布绑定到另一账号。请切回原账号重试，或确认用当前账号重新发布。上一账号的发布结果仍需核对。"));
+    panel.append(el("p", "", "上次提交使用了另一账号。请先确认是否已发布；可以切回原账号重试，或用当前账号重新发布。"));
     const confirm = el("button", "button", "用当前账号发布");
     confirm.type = "button";
     panel.append(confirm);
@@ -154,15 +154,25 @@
         }
         get("feed-count").textContent = data.total + " 个帖子";
         get("feed-empty").hidden = data.items.length !== 0;
-        if (data.items.length === 0 && (query || category || authorId)) {
+        if (data.items.length === 0 && data.page > 1) {
+          const firstPage = new URL(location.href);
+          firstPage.searchParams.delete("page");
+          get("feed-empty").querySelector("h3").textContent = "这一页没有帖子";
+          get("feed-empty").querySelector("p").textContent = "帖子数量可能已变化，请返回第一页查看。";
+          get("feed-empty").querySelector("a").textContent = "返回第一页";
+          get("feed-empty").querySelector("a").href = firstPage.pathname + firstPage.search;
+        } else if (data.items.length === 0 && (query || category || authorId)) {
           get("feed-empty").querySelector("h3").textContent = "没有符合筛选条件的帖子";
-          get("feed-empty").querySelector("p").textContent = "试试其他分类或关键词，或返回社区查看全部帖子。";
-          get("feed-empty").querySelector("a").textContent = "发布帖子";
+          get("feed-empty").querySelector("p").textContent = "请更换分类或关键词，或查看全部帖子。";
+          get("feed-empty").querySelector("a").textContent = "查看全部帖子";
+          get("feed-empty").querySelector("a").href = "/community/";
         } else {
           get("feed-empty").querySelector("h3").textContent = "社区暂无帖子";
-          get("feed-empty").querySelector("p").textContent = "发布的讨论、求助、分享和开发记录会显示在这里。";
+          get("feed-empty").querySelector("p").textContent = "可以发布讨论、求助或分享。";
           get("feed-empty").querySelector("a").textContent = "发布帖子";
+          get("feed-empty").querySelector("a").href = "/community/new/";
         }
+        get("feed-prev").closest(".pagination").hidden = data.page === 1 && data.total <= data.limit;
         notice(get("feed-message"), "");
         pagination("feed", data);
         updateUrl();
