@@ -2,15 +2,15 @@
 
 ## 当前状态
 
-整体osu-web BMS / 原生mania玩家网站已实现候选源码与本地浏览器路径，**尚未部署**；生产仍`b520bcb99015-5d0531c22423`。3ab正式全量 / 原生 / 1,800秒写读及两空恢复成功分项完成，七日空间总门false保留；完整人口本人统计超300ms已按[差异合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/constraints.md#2026-10-06-本人名次纯读取修订与差异验收)修复，Backend新来源`25d32397c330090fe7e6588938bd558d884bfa89`。新候选的本人规模 / 重叠 / 两恢复 / 实际空间与公开发布尚待。Web静态运行仍与0cac原字节相同，本次仅修正维护缓存核验脚本和文档；源码offer须绑定实际已提交维护输入，不把文档HEAD等同旧运行来源。Client运行仍234a9ff、文档f05不代替它。准确包 / 资源 / 失败只取[Backend验证](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-verification-20261005.md)，页面及真人缺口取[本仓核验](../other/oms-player-site-verification-20261005.md)。
+2026-10-07 整体osu-web BMS / 原生mania玩家网站 `d1f052b93a81-22b4ee54f237` / schema3 **已部署待验收**。新全量R7与严格源码提供、完整受保护F / 实际空间、生产激活与切回后的156公开GET / 880检查、HTTP缓存 / 双站、三阶段正式备份 / 两新空恢复和b520→新同库回退、原timer恢复均有实际证据；原失败保持，最终observer漏采prune PID与独立F22表备份校验分记。客户端运行234a9ff未变；文档HEAD不更新运行来源。精确门、资源与维护只取[最新服务验证](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-verification-20261005.md#生产发布与维护收尾) / [维护说明](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-maintenance-20261006.md)，页面 / 真人缺口取[本仓核验](../other/oms-player-site-verification-20261005.md)。视觉 / 普通浏览器刷新、真人下载入库 / 私有账号 / OMS两端与P/C尚未签收。
 
-玩家可在本地候选首页看两篇真实开发 / 发行近况并进入原社区；按 Ginger / 616 来源浏览 BMS，用原 MD5 看具体谱、两源原包、自动选择入口及人工换源；通过 Sayobot 浏览 1～18K 原生 mania、原 sid / bid 和具体难度。下载入口只在批准有界元数据 / 连通性核验后 `307` 到原站，OMS 不托管 / 代理包正文。来源失败 / 未命中、未知键型、包大小 / SHA 与源计数 / 游标如实显示；缺 MD5 时不猜 sid / bid 或同名与 OMS 榜关联。首次真实整包下载、入库 / 打开尚待真人，没有已获证的网页→客户端自动入库。
+玩家现可在官网首页看两篇真实开发 / 发行近况并进入原社区；按 Ginger / 616 来源浏览 BMS，用原MD5看具体谱、两个原包候选、自动推荐与人工换源；通过Sayobot浏览1～18K原生mania、原sid / bid和具体难度。下载仅在批准有界元数据 / 连通性核验后307到原站；初次Ginger失败与616替代、切回后Ginger和616均ok的两次实际结果分别保留，不承诺外源持续可用。来源失败 / 未命中、未知键型、SHA和源计数 / 游标如实显示；首次真实整包下载、OMS入库 / 打开仍待，没有已获证的网页→客户端自动入库。
 
-个人页按玩法、键型和一个 / 多个新来源展示当前公开最佳、独立灯、最近公开最佳 / 外部状态更新与分条件统计；完整UUID历史、AT、密钥与旧LR2IR身份保持原边界。玩家榜使用单个新来源：BMS覆盖 / 明确真实规则scope通关数，mania普通30000016的累计公开最佳分 / 覆盖；全范围排名后分页，同分、指标0的真实参与者及页外本人保真，累计值精确字符串。地力、Walkure / 黑星与BMS PP暂缓另议，没有自创rating或累计EX地力。
+个人页按玩法、键型和一个 / 多个新来源展示公开最佳、独立灯、最近公开最佳 / 外部状态更新与分条件统计；本人UUID、AT、密钥与旧LR2IR身份沿原边界。玩家榜按单个新来源 / 明确真实条件统计BMS通关与覆盖、mania普通30000016累计最佳；全范围先算名次后分页，并列和页外本人保真。地力 / 黑星 / komasan / Walkure后置，PP为后续优先方向但须独立讨论规则 / 数据 / 客户端；累计分和通关数不称PP或地力。
 
 客户端开发工作区沿原 lazer 用户按钮、登录与个人页入口，网站用同一 OMS 账号；浏览器与桌面分别登录，个人页外链只传稳定 ID，不移交 token。原入口的软件和来源依据取 [Client Bridge 原账号快照](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-native-account-snapshot-20261005.md) 与 [本轮客户端来源](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-player-site-client-snapshot-20261005.md)。用户 VS Code 非调试游玩、旧待交 / UUID / 归属和两端真实一致性仍待，不将软件入口描述为真人已通过。
 
-新闻唯一维护源 `src/oms/news.ts` 供首页、列表和固定文章共同读取，当前为2026-10-05“按需IR试运行”与2026-06-26“OMS 20260626发布”。真实日期 / 试运行或已发布状态及原 release 链接明确，公开 oms_20260626 包未包含 IR 开发能力。固定 osu-web `2c596022a1345fbed288978e7fa5304df0359f50` 的实际 React 视图 / Blade 结构 / BEM Less、固定依赖、构建说明、许可和对应修改源码纳入精确白名单；来源映射与同发布源码身份取 Website 核验及实际 manifest，包已准备仍不是公开交付。
+新闻唯一维护源 `src/oms/news.ts` 供首页、列表和固定文章共同读取，当前为2026-10-05“按需IR试运行”与2026-06-26“OMS 20260626发布”；真实日期 / 状态和旧release边界明确。固定osu-web `2c596022a1345fbed288978e7fa5304df0359f50` 的实际React视图 / Blade结构 / BEM Less、依赖 / 构建说明 / AGPL及对应修改源码已纳入精确白名单并公开，运行与源码清单分别绑定；实际全资产字节门通过不代签浏览器视觉。
 
 根统一类型检查r8与生产资源构建r8、静态页面门通过；Backend玩家 / 原身份、批准源与旧IR / 混榜 / 社区 / 备份，以及最终源码offer白名单均通过对应软件门。Client原生mania六判定与普通Desktop Release通过，新源 `234a9ff39654cdc30f3d5661cb6a9bf69bb90db6` 已推送。精确命令、结果及首次失败只取 [新核验](../other/oms-player-site-verification-20261005.md#本轮有效软件门)，不以软件数签产品或真人完成。
 
@@ -44,7 +44,7 @@
 
 ## 本轮交付范围
 
-本表保留原社区门户的交付范围与当时证据，完整玩家网站的本地候选能力及待激活状态见顶部当前状态；不把下方“已发布”扩展到新的谱面 / 个人统计 / 玩家榜范围。
+本表保留原社区门户的交付范围与当时证据，完整玩家网站的当前公开能力与真人缺口见顶部状态；不把下方“已发布”扩展到新的谱面 / 个人统计 / 玩家榜范围。
 
 | 玩家路径 | 本轮范围 | 当前证据边界 |
 | --- | --- | --- |
@@ -64,7 +64,7 @@
 
 ## 多来源 IR 实施
 
-D01～D09 按 [正式审查修订3](../../../../oms-server/dev_bridge_md/doc_md/other/oms-ir-multisource-plan-20261004.md#15-正式审查决定)采用，已部署网页消费 [多来源合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-ir/multisource-contract.md)。早先 Website d34fab9b9611 / Backend ecca50eab82c 的官网改版是历史来源；当前真正线上为 b520bcb99015-5d0531c22423 / schema3，新增完整玩家网站仍待激活，准确状态见 [当前状态](#当前状态)。旧全量投影 / 查询、资源、实际发布与备份只取 [Backend 实施](../../../../oms-server/oms-backend/doc_md/mainline/dev-progress.md#多来源-ir-实施)，新增个人 / 玩家指标运行门取 Backend 玩家网站验证，后续职责见 [计划](dev-plan.md#多来源-ir-实施)。
+D01～D09 按[正式审查修订3](../../../../oms-server/dev_bridge_md/doc_md/other/oms-ir-multisource-plan-20261004.md#15-正式审查决定)采用，网页消费[多来源合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-ir/multisource-contract.md)。当前真正线上为 `d1f052b93a81-22b4ee54f237` / schema3；旧b520是保全的真实回退来源，旧ecca等日期保留历史。完整全量、真实部署 / 同库往返、资源及备份只取[最新服务验证](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-verification-20261005.md#生产发布与维护收尾)，下一步真人与增长维护见[计划](dev-plan.md#当前最近任务)。
 
 已部署页面可搜索标题/作者/MD5、按MD5直达，选择一个、多个、全部来源或清空；来源、参考/同条件、条件与页码保留在URL。服务先筛完整范围再计算最佳EX、独立灯、共享名次、人数/分页/全榜本人，不拼各来源TopN。同条件由玩家主动选择已证明的OMS组，未知或无匹配明确说明；mania条件榜和本人逐局历史保留v1。
 
