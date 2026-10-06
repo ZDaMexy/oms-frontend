@@ -1,5 +1,13 @@
 # OMS 玩家网站共享主机维护镜像（2026-10-06）
 
+## 2026-10-07 04:25页面发布
+
+当前OMS为 `d1f052b93a81-e6fdf914cb04` / schema3，已部署待验收。新客户端账号UI软件来源6168791与服务完整门原客户端来源234a9ff分记；Website运行源e6，Backend仍d1，48服务 / 插件叶和只读公开投影不变。本次没有修改Nginx、TLS、续期、Homepage内容或四份安装单元，六份原配置SHA保持。
+
+137次公开GET / 770检查、54次当前缓存请求 / 158检查、46次真正旧22b校验值请求、完整138叶源码提供及正式备份 / 两新空兼容恢复均通过；两站TLS与指定缺失ACME探针保持原状态，不宣称实际续期。准确当前来源、原失败、工具限制与真人路径取[页面核验](../../../oms-website/doc_md/other/oms-deai-verification-20261007.md)，维护取[当前运行说明](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-maintenance-20261006.md)。当前前端回退目标22b，同库重启主 / catalog，Nginx保持；下方旧b520 / 22b往返、全量与预算均是前次实测记录，不改签为本次重跑。
+
+## 前次完整运行门与共享设施记录
+
 本说明在OMS Website和Homepage同内容维护。2026-10-07更新实际运行水位：`d1f052b93a81-22b4ee54f237` / schema3 **已部署待验收**，client runtime234a9ff未变；原b520为本次已实测同库回退的真实旧HTTP / 网站来源。以前25d / 37f / 3ab prepared与失败水位是历史，不代表当前线上。原失败和取证日期不改。
 
 当前精确来源、全量 / 1,800秒 / 新空恢复、受保护F原件、真实资源、激活和实际source-only回退、公开路由 / 缓存 / 双站与三阶段备份只取 [Backend最新验证](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-verification-20261005.md#生产发布与维护收尾)。固定维护helper、日备份 / 每周受保护外取、恢复与源码回退的具体操作取 [当前运行说明](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-maintenance-20261006.md)；页面 / 原包和真人路径取 [Website验证](../../../oms-website/doc_md/other/oms-player-site-verification-20261005.md#内容维护真人路径与未完成项)。
