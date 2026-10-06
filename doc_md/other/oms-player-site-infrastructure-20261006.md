@@ -10,15 +10,15 @@
 | --- | --- |
 | 真正线上 `current` | 本轮准备与实测期间始终为 `/opt/oms-ir/releases/b520bcb99015-5d0531c22423`，schema 3 |
 | 原3ab玩家网站候选 | 仅prepared未激活；正式全量 / 原生 / 1,800秒与两恢复成功分项完成，原七日空间及包装总门false保留 |
-| 本人SQL修复候选 | Backend实际25d，Web静态运行仍0cac原字节；新规模 / 重叠 / 两恢复 / 空间与发布尚待，精确新包身份只取Backend核验 |
+| 本人SQL修复候选 | 实际准备25d / 37f，29项Web普通运行字节与0cac相同；新不同最佳r7通过，30k r1恢复首次统计330.510ms失败，扩大完整新1,800秒及两恢复复核，尚未发布 |
 | 新玩家网站实现 | 本地实际 fork 固定 osu-web `2c596022a1345fbed288978e7fa5304df0359f50` 的 React / Less 视图及 Blade 页面结构；继续由 OMS FastAPI / SQLite 承载真实账号、成绩和社区 |
 | 发布形态 | 精确静态资源、同源 API 与不可变 release；生产不运行完整 ppy 服务或常驻 Node 前端 |
 
 b520 的完整 Backend / Website / OMS 来源、当次发布时间与既有人工缺口取 [实际账号专项发布记录](../../../oms-website/doc_md/other/osu-web-lazer-account-verification-20261005.md)。新候选的完整提交、插件 / SDK 证据、同发布源码 offer、文件指纹与公开投影身份以实际 release / source manifest 和上述 Backend 验证为准。历史 ecca、旧 schema 2、历史审计提交和后续文档 HEAD 都不替换这份运行来源。
 
-当前 prepared 的 Backend 为 `3abf9aa3741559f2f6fad310429b5ec9a490f349`，Website 仍 `0cac041e0cd1`，Client 来源仍 `234a9ff`，客户端文档 HEAD `f05` 不代替运行源码。runtime 登记78项 / source offer登记138项，其中 Web source-only69项，全部准确路径及指纹以 manifest 为准，开发源码不作生产路由。批准维护代码来自这个3ab候选的 backup.py / backup.sh 与 pinned `oms-ir-backup.service`；`53ea4e…` 仅是保持不变的 host_player_probe.py 验收脚本指纹，不是维护代码来源。这些记录不表示已替换生产 b520 或其日备份单元。
+当前 prepared 的 Backend 为 `25d32397c330090fe7e6588938bd558d884bfa89`，Website为 `37f05e2ca3690c5ba6008862121aa5038864f92b`，Client运行来源仍 `234a9ff`；客户端后续仅文档提交，不代替运行源码。`release-export-r9.json` / `candidate-preparation-r9.json`登记78项runtime、138项source offer，其中Web source-only69项，准确路径 / 指纹以实际manifest为准，开发源码不作生产路由。拟采用维护代码来自这份实际25d候选的 backup.py / backup.sh 与 pinned `oms-ir-backup.service`，其字节与已验3ab保持相同；`53ea4e…`只是 host_player_probe.py验收脚本指纹。生产仍b520及其原日备份单元，尚未切换新pin。
 
-正式 `450d13d` [公开统计读取修订](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/constraints.md#2026-10-06-公开统计读取修订)采用必要、可重建读模型，保持schema3核心行、接口、精确数学和原预算。当前写事务提交前维护，旧普通SQLite写入保留dirty，新runtime在readiness前修复，失败回滚；全派生表 / 索引 / trigger进入备份与完整指纹。b520旧维护工具不能维护这些扩展，HTTP / 网站回退须保留批准3ab维护代码，并分别绑定真实运行release与维护来源。
+正式[公开统计读取修订](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/constraints.md#2026-10-06-公开统计读取修订)采用必要、可重建读模型，保持schema3核心行、接口、精确数学和原预算。当前写事务提交前维护，旧普通SQLite写入保留dirty，新runtime在readiness前修复，失败回滚；全派生表 / 索引 / trigger进入备份与完整指纹。b520旧维护工具不能维护这些扩展，HTTP / 网站回退须保留实际通过发布的25d维护代码，并分别绑定真实运行release与维护来源，不能从旧3ab文档身份推定已上线。
 
 本轮继续默认离线，由玩家主动打开、搜索、选择或交分触发请求。批准范围只有 Ginger Rush / 616 的公共 BMS 与 Sayobot 的原生 mania 有界元数据，以及核验后返回批准原站的 `307` 下载跳转。OMS 不托管或转发谱包、音频、BGA 正文，不把跳转或首字节连通性当作整包下载 / 入库完成；没有聊天、presence 或多人服务。
 
@@ -55,15 +55,15 @@ Homepage 保持独立的 `/www/wwwroot/zdamexy.work`、Astro 内容、vhost 与�
 
 完整历史投影须真实挂载并查询。个人读取与全榜按正式门量测，原失败、超时、执行器回收事件和补账保持原值；后续修复记录另写，不将旧失败改成成功。两次恢复都使用新空目标，核对账号、UUID / 原归属、真实最佳与独立灯、外部最佳状态、社区及隐藏覆盖；第二次还包括未 checkpoint WAL 中的撤销 / 隐藏。恢复期间不能覆盖仍在写的 live。
 
-根已完成读模型focused117 / full312；主机查询r6两玩法各100,000 distinct的全部首请求 / 数学 / 隐私 / 旧读取往返通过，精确ms只引用Backend后续报告。`population-compat-report-r3.json` 已completed / pass，核对真实旧HTTP UUID新局 / 重交、ED最佳状态 / 独立灯、dirty / WAL、128 MiB新助手备份 / 附加空恢复及全量原始数学。r1 / r2路由前缀与条件描述字段误读失败完整保留，不改成通过。
+原3ab读模型focused117 / full312及r6仅按原来源引用；新25d本人纯读取修复focused119、r7两玩法1,000 / 100,000 distinct的首请求 / 数学 / 隐私 / 旧读取往返通过，精确ms取Backend报告。`population-compat-report-r3.json`已completed / pass，核对真实旧HTTP UUID新局 / 重交、ED最佳状态 / 独立灯、dirty / WAL、128 MiB新助手备份 / 附加空恢复及全量原始数学。原r1 / r2路由前缀与条件描述字段误读失败完整保留，不改成通过。
 
-正式1800秒 / 5 rps、全25M公开历史、100,000 OMS局 / 各29,204原生整榜及两新空恢复流程已于UTC 2026-10-05 21:40:23.852909启动，仍待结果；附加恢复与正式两恢复分开，同主服务worker及整个共享门不能由启动状态代签。新候选尚未激活，生产发布未开始；不把旧b520 / ecca成功时间补作本轮门，最终可激活范围以Backend验证及共同维护入口的根签收为准。
+原3ab正式1,800秒 / 全25M历史 / 各29,204原生及两空恢复已结束，运行成功分项和七日空间总门false分别保留，空间补账不改原失败。新25d / 37f的30k r1已通过十次首请求、原始数学与120秒重叠，但第一次新空恢复统计330.510ms导致总门false，两恢复未完成；两失败假数据将完整F盘保全后才定点退役。正式约束已扩大新候选完整全量 / 原生 / 突发 / 1,800秒及原限流复核，同时保留新增个人重叠 / 十次含首次300ms / 两新空恢复与实际盘账。新候选仍未激活，生产发布未开始；实际可激活范围只取根的后续真实签收。
 
 ## 一致备份、受保护外取与空间维护
 
 维护前记录真正 `current`、schema、原 timer 启用 / 活动状态和 worker 状态。先暂停 `oms-ir-backup.timer`，等待已经在跑的 backup worker 完整结束，再串行执行发布、恢复或空间维护；不停止备份 service 或杀进程来省空间。失败时保留诊断，并按共同维护入口决定何时恢复原 timer 状态。
 
-日备份由批准的固定3ab候选维护代码沿SQLite backup API生成包括已提交WAL及完整派生结构的一致快照，再发布gzip与同名sidecar完整对；真实运行release与维护代码身份分记，生产当前b520的旧单元不因本文已切换。不能复制运行中的裸 `.db` 充当备份，也不能只凭退出码、压缩文件存在或一条SHA签收。根须将完整对外取到F盘受保护、Git忽略的位置，完整解压核验CRC、raw字节数 / SHA256、压缩指纹、schema与双来源绑定。七日保留和后续至少每周受保护外取沿共同维护入口执行，实时状态与新增数据增长须重新核账。
+计划日备份由实际25d发布维护代码沿SQLite backup API生成包括已提交WAL及完整派生结构的一致快照，再发布gzip与同名sidecar完整对；真实运行release与维护代码身份分记，生产当前b520的旧单元不因本文已切换。不能复制运行中的裸 `.db` 充当备份，也不能只凭退出码、压缩文件存在或一条SHA签收。根须将完整对外取到F盘受保护、Git忽略的位置，完整解压核验CRC、raw字节数 / SHA256、压缩指纹、schema与双来源绑定。七日保留和后续至少每周受保护外取沿共同维护入口执行，实时状态与新增数据增长须重新核账。
 
 只有已明确归属本轮、可再生成且 idle 的纯合成 raw 文件，在完整压缩对 / 报告已保留并核验、确认无活动进程 / unit / 维护任务后，才按已审查的绝对文件路径逐个退场。相关 WAL / SHM 同样需停止与归属证明。保留目录、所有原失败、报告、恢复证据和两端压缩对；不整目录清理，不触碰生产 live、玩家数据、公共档案、母库或原备份。空间补账另记，不反写原资源失败。
 
@@ -71,12 +71,12 @@ Homepage 保持独立的 `/www/wwwroot/zdamexy.work`、Astro 内容、vhost 与�
 
 ## 回退到真正线上 b520
 
-候选仍未激活时不执行回退。读模型修订后，回退范围仅为 `/opt/oms-ir/releases/b520bcb99015-5d0531c22423` 的HTTP / 网站；维护代码固定保留实际3ab候选的backup.py / backup.sh与pinned备份单元，完整核心 / 派生结构和同一live继续保全。不能调用旧b520整套activator覆盖新维护单元，也不能用新activator处理缺catalog文件的旧包。兼容r3是对应通过记录，整体共享 / 正式恢复及实际回退仍以根的后续签收为准。
+候选仍未激活时不执行回退。读模型修订后，回退范围仅为 `/opt/oms-ir/releases/b520bcb99015-5d0531c22423` 的HTTP / 网站；维护代码固定保留实际通过发布的25d backup.py / backup.sh与pinned备份单元，完整核心 / 派生结构和同一live继续保全。不能调用旧b520整套activator覆盖新维护单元，也不能用新activator处理缺catalog文件的旧包。兼容r3是对应通过记录，整体共享 / 正式恢复及实际回退仍以根的后续签收为准。
 
-1. 保存本轮current / manifest、实际运行与固定维护的双来源、主服务 / catalog / 备份单元、include / vhost、原timer状态及失败证据；暂停timer并等待在跑备份结束，由批准3ab维护代码生成一致快照，保全schema3 live / WAL及完整派生结构。
-2. 停止主服务，stop / disable新 `oms-ir-catalog.service`，只安装b520主服务单元并原子切换current；备份单元继续固定3ab维护来源，不恢复b520旧备份工具。快照和切换的真实磁盘峰值纳入本轮账。
+1. 保存本轮current / manifest、实际运行与固定维护的双来源、主服务 / catalog / 备份单元、include / vhost、原timer状态及失败证据；暂停timer并等待在跑备份结束，由实际发布的25d维护代码生成一致快照，保全schema3 live / WAL及完整派生结构。
+2. 停止主服务，stop / disable新 `oms-ir-catalog.service`，只安装b520主服务单元并原子切换current；备份单元继续固定25d维护来源，不恢复b520旧备份工具。快照和切换的真实磁盘峰值纳入本轮账。
 3. 恢复经审查的 b520 配套 OMS extension，检查 BT Nginx 后重载；源码 `current/web` 与 include 必须配对，不能只恢复旧 include。
-4. 实际复核b520运行来源 / 3ab维护来源分别正确、schema3核心 / 派生数据保全、catalog停止 / disabled、主服务与原timer状态、页面 / 资源 / 缓存、旧IR / 社区和Homepage双站。旧写留下的dirty须在重返新runtime的readiness前修复；任一步失败保留live / WAL / 证据，明确失败步骤。
+4. 实际复核b520运行来源 / 25d维护来源分别正确、schema3核心 / 派生数据保全、catalog停止 / disabled、主服务与原timer状态、页面 / 资源 / 缓存、旧IR / 社区和Homepage双站。旧写留下的dirty须在重返新runtime的readiness前修复；任一步失败保留live / WAL / 证据，明确失败步骤。
 
 完整命令与失败处置只维护在 [b520 回退流程](../../../../oms-server/oms-backend/deploy/README.md#本轮源码回退到实际-b520)。源码回退继续使用同一当前库；灾难恢复才在新空目录恢复数据，两者不能混用。不能恢复上线前旧快照来回退视觉，不能覆盖上线后新局、账号、帖子、隐藏或撤销，也不能切回不支持 schema 3 的历史运行时。
 
