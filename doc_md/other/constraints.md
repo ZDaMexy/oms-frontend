@@ -1,5 +1,7 @@
 # Frontend Other Constraints
 
+2026-10-07 后续已授权原版 OMS Web 新站部署。独立 PHP 页面环境、BT 原生路由和同库配对回退须经实际共享主机 / 两新恢复门；旧设计与实际配置备份只放 F，不在服务器另打旧站包，不升级共享 PHP。当前未切换；来源取 [生产迁移](../../../oms-web/doc_md/production-deployment-20261007.md)。
+
 ## 2026-10-04 OMS 社区发布边界
 
 OMS 社区门户与 IR 使用 `/opt/oms-ir/current/web` 的精确静态路由及同源 Backend API，旧 OMS 整站检出 hook 不用于当前发布；Homepage 的网站根和发布链独立。共享配置变更前保留备份，BT Nginx 检查通过后重载，并核对两站 / TLS / 续期入口。schema 2 不能盲切原 v1 运行时或用发布前快照覆盖新增用户内容，详细来源与恢复边界见 [社区发布记录](community-infrastructure-20261004.md)。
