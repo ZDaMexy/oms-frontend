@@ -1,6 +1,10 @@
 # OMS Website Other Progress
 
-## 当前OMS接续（2026-10-08）
+## 当前 OMS 网页维护（2026-10-09）
+
+OMS 文案与阅读体验审改已发布，本轮双站 HTTPS、资源与完整备份核对取[共享镜像](oms-web-copy-review-20261009.md)。准确运行身份、回退和待验收范围只取[现行维护](../../../oms-web/doc_md/production-maintenance.md)；下方2026-10-08接续与更早观察保持历史日期，Homepage本地内容没有随本轮发布。
+
+## 2026-10-08 原版接续记录
 
 原版OMS官网已由 [OMS Web](../../../oms-web/OMS.md) 接管，HTTP / 页面运行包为 `b879e4233818-b0feceae22e4` / schema3，状态“已部署待验收”。固定维护来源为D1/22b，旧设计同库回退目标为D1/e6；完整身份与现行步骤只取[原版站维护](../../../oms-web/doc_md/production-maintenance.md)，共享接续取[镜像记录](shared-journal-budget-20261008.md)。
 

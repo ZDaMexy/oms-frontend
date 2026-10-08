@@ -1,5 +1,6 @@
 # 调研与运维
 
+- [2026-10-09 OMS 网页审改发布](oms-web-copy-review-20261009.md)：OMS资源目录切换、配置F保全、双站核对与本轮范围。
 - [2026-10-08 原版官网与共享日志](shared-journal-budget-20261008.md)：当前官网接续、46件原日志 F 保全及 default480＋OMS32 MiB 的合计512 MiB配置。
 - [现行OMS维护](../../../oms-web/doc_md/production-maintenance.md)：schema3原版站的准确来源、备份、同库回退与未完成真人门。
 - [2026-10-06～07 旧静态维护镜像](oms-player-site-infrastructure-20261006.md)：保留当次来源、预算和回退操作，顶栏指向当前接续。
