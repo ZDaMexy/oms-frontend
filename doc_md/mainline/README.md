@@ -1,6 +1,6 @@
 # OMS Website Mainline
 
-本目录维护社区帖首页、独立下载 / 帮助 / 账号 / 帖子页面与已试运行 IR 的实现、内容和交付。首次访问无需登录，写入真实社区内容复用 IR 账号；共同边界沿 [社区合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/constraints.md)。
+本目录保留旧静态设计的社区、下载、帮助、账号与IR合同和历史，现官网功能已交接到[OMS Web](../../../oms-web/doc_md/README.md)。不从旧计划重新启动功能开发；当前新闻、维护与真人验收取[现行说明](../../../oms-web/doc_md/production-maintenance.md)。旧设计回退仍保留[社区权限合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-community/constraints.md)和真实OMS账号边界。
 
 | 文件 | 职责 |
 | --- | --- |

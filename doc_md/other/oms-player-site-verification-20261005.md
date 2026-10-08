@@ -55,7 +55,7 @@ AGPL-3.0-or-later与React / 构建依赖声明在 `/credits/`、[LICENCE](../../
 
 Backend的Starlette TestClient / httpx弃用警告保留。客户端新提交和受限来源已在 [Client Bridge快照](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-player-site-client-snapshot-20261005.md) / [事实登记](../../../../oms-server/oms_client_bridge_md/doc_md/mainline/facts.md)采用。2026-10-06 正式 `450d13d` [公开统计读取修订](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/constraints.md#2026-10-06-公开统计读取修订)取代初修“无持久聚合”的技术取舍：schema3 核心行不改写，准许可重建派生表 / 索引 / trigger，全部进入一致备份与完整指纹；没有扩展 LR2IR 个人历史投影或访问母库。当前 runtime 提交前维护，旧普通 SQLite 写入留下 dirty，readiness 前修复，失败回滚，不把旧缓存作为成功结果。
 
-根执行的读模型 focused 117 / full 312 软件结果保留在 [Backend 软件验证](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-verification-20261005.md#公开统计修订的软件验证)，不替换上表原软件数量或首次失败。批准维护代码固定为实际 `3abf9aa37415-0cac041e0cd1` 的 backup.py / backup.sh 与 pinned `oms-ir-backup.service`；运行 b520与维护3ab身份分别记录，不能称为旧b520备份字节。`53ea4e…` 仅为保持不变的 host_player_probe.py 验收脚本SHA前缀，不是维护 helper 身份。
+根执行的读模型 focused 117 / full 312 软件结果保留在 [Backend 软件验证](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-verification-20261005.md#公开统计修订的软件验证2026-10-06)，不替换上表原软件数量或首次失败。批准维护代码固定为实际 `3abf9aa37415-0cac041e0cd1` 的 backup.py / backup.sh 与 pinned `oms-ir-backup.service`；运行 b520与维护3ab身份分别记录，不能称为旧b520备份字节。`53ea4e…` 仅为保持不变的 host_player_probe.py 验收脚本SHA前缀，不是维护 helper 身份。
 
 首轮前端类型检查在 `beatmaps/main.tsx` 报TS1005，新闻Less构建r3缺 `@osu-colour-b3`，原日志 `frontend-typecheck-r1.log` / `frontend-build-r3.log`保留；修正后r4有效通过，不把失败改成成功。Backend开发运行第一次uv缓存找不到指定Python安装的失败及明确使用既有F盘venv的有效过程取 [服务报告](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-verification-20261005.md#根执行者已完成的软件检查)。
 

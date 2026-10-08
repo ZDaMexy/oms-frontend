@@ -1,5 +1,17 @@
 # Frontend Subline P1-A Changelog
 
+## 2026-09-09（文档减负）
+
+- 已提升主线的状态、计划和约束副本合并至 README 交接说明，本日志继续保留历史；未完成的正式内容与来源核对仍以主线为准。
+
+## 2026-09-09（进度审查）
+
+- 明确支线已完成的是静态页面结构与交互交接，不等于初版官网正式内容和发布验收完成；当前平台说明、便携声明及判定数值的缺口引用主线审查结论，保留历史实现记录。
+
+## 2026-08-09
+
+- 完成收尾文档审查：明确 `P1-A` 是旧模型遗留编号、按现行模型映射 Phase 2；重写当前 constraints / plan / progress，移除“尚未开发”、旧多页面和 GitHub API 等过期现状，历史过程继续保留在本 changelog。
+
 ## 2026-06-02
 
 - 演奏区演示谱面由 Stargazer [SAETHER] 换为 **告白/告別 (BMS edit.) [Lost]**（曲 Greetea feat.ninnikuu / obj. MiyakoMeow，BPM 161，beatoraja Satellite sl1 `_7_lost.bme` 7key）；`parse-bms.cjs` 解析为 `chart-lost.js`（日文标题手工修正），删旧 `chart-stargazer.js`；index.html 改引用 + slate 署名更新；preview 实测下落/HUD/控制台均正常；版权待确认项更新为新谱面
@@ -56,13 +68,3 @@
 - 演奏区手感定稿：`RATE=1` + `VISIBLE_BEATS=0.72`（87 BPM 下约 0.5s 落速）
 - 演奏区演示谱面换为 Stargazer [SAETHER]（Lime / obj saaa）；解析器新增 `#LNOBJ` 长条支持；署名更新为「曲 Lime ／ obj saaa」
 - 标记版权待确认：演奏区使用第三方谱面（Stargazer [SAETHER] / Lime·saaa）的音符数据，发布前需替换或授权
-
----
-
-## 联动更新
-
-更新本文件时，需同步检查以保持一致：
-
-- **同目录五大文档**：`README.md` / `constraints.md` / `dev-plan.md` / `dev-progress.md` / `changelog.md` 必须保持一致
-- **回写主线**：若结论影响主线计划 / 状态 / 约束 / 验证 → 提升回写 `mainline/` 对应文档
-- **桥文档 / 客户端快照**：若涉及前后端通信或客户端对接事实 → 同步 `dev_bridge_md/` 与 `oms_client_bridge_md/`

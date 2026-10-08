@@ -1,34 +1,15 @@
-# OMS Frontend 文档索引
+# OMS Website 文档索引
 
-本目录保存 OMS Frontend 的内部规划文档，仅用于 vibe coding 上下文、任务同步和决策留痕。
+本仓已交接为旧静态设计保全与回退来源。当前官网功能、新闻和真人反馈从[OMS Web](../../oms-web/doc_md/README.md)接续，现行运行、备份和同库回退取[维护说明](../../oms-web/doc_md/production-maintenance.md)。本仓历史 / 回退任务读取[主线约束](mainline/constraints.md)与[状态](mainline/dev-progress.md)，按需追溯[计划](mainline/dev-plan.md)或[旧验证方法](mainline/verification.md)。协作规则见[项目AGENTS](../AGENTS.md)。
 
-## 目录分工
+- [mainline](mainline/README.md)：旧设计合同、交接状态与历史入口
+- [subline](subline/README.md)：并行议题及已交接成果；按实际需要建文档，不预建空五件套
+- [other](other/README.md)：部署、共享设施与调研
 
-- `mainline/`：主交付线，记录当前应当优先推进的正式路线
-- `subline/`：并行支线集合，按功能方向拆分为多个子目录，每个子目录各自维护五大文档
-- `other/`：调研、运维、杂项与尚未上升为正式计划的内容
+## 跨项目入口
 
-## 文档联动索引
+- [Dev Bridge](../../../oms-server/dev_bridge_md/doc_md/mainline/README.md)：统一阶段、已采纳跨边界结论与接口契约
+- [Client Bridge](../../../oms-server/oms_client_bridge_md/doc_md/mainline/README.md)：有来源的客户端事实与适用性
+- [OMS Backend](../../../oms-server/oms-backend/doc_md/mainline/README.md)：后端计划与状态
 
-- 当前仓库内部规划：`oms-frontend/doc_md/`
-- 工作区级前后端桥文档独立仓库：`dev_bridge_md/`
-- 后端仓库内部规划：`oms-backend/doc_md/`
-
-## 统一产品阶段
-
-1. Phase 1：底层加固（客户端·开发中）
-2. Phase 2：初版官网（**本仓库承载**）
-3. Phase 3：OMS-IR（账号/登录/传分/排行）
-4. Phase 4：社区官网
-5. Phase 5：开放接口（API / QQ bot / 非 OMS 客户端传分）
-
-> 2026-06-03 重定义，以根 `AGENTS.md` §2 为权威；旧模型已废弃。
-
-## 文档纪律
-
-- 仓库根目录 README 是唯一对外正式文档
-- 任何开发、调研、修复或验收只要改变计划、状态、约束或验证结论，必须同步更新所归属的文档
-- 若变更涉及前后端通信、字段约定、接口契约、联调方式或验收结论，必须同步更新工作区根目录独立仓库 `dev_bridge_md/`
-- `mainline/constraints.md`、`mainline/dev-plan.md`、`mainline/dev-progress.md`、`mainline/changelog.md` 必须互相一致
-- `subline/` 不再直接平铺五件套；支线必须按功能方向建子目录，并在子目录中维护对应五大文档
-- 若支线或调研内容被采纳，必须同步提升到 `mainline/`
+联动规则只在 [主线约束](mainline/constraints.md) 维护。

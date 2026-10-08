@@ -1,10 +1,16 @@
 # Frontend Mainline Progress
 
+## 当前状态
+
+2026-10-08 正式官网已由 [OMS Web](../../../oms-web/OMS.md) 接管，状态“已部署待验收”。本仓旧静态设计只作保全与同库源码回退来源，退出当前功能开发；原页面、脚本、治理文档及未提交差异继续保留。
+
+本地原版视觉已获用户认可，线上普通浏览器、下载入库、真实账号 / 密钥、OMS 对照及 P/C 仍待签收。当前来源、固定维护与回退、真人路径只取[原版站维护](../../../oms-web/doc_md/production-maintenance.md)，实际生产与失败证据取[正式收尾](../../../oms-web/doc_md/production-deployment-20261007.md#正式发布与收尾)。下方内容按旧静态阶段的原日期与版本保留，不刷新当前原版站的验证。
+
 ## 2026-10-07 页面与原账号复查
 
 四轮源码 / 文案复查后的官网已于04:25:04 CST实际发布 `d1f052b93a81-e6fdf914cb04` / schema3。重复说明与卡片收紧，排版统一，所选下载源、mania错义、他人空侧栏和失效分页已修；原始条件、未知灯、旧身份与本人范围保留。新官网公开页面 / 缓存 / 全部对应源码、正式备份与两新空恢复通过，Backend / 插件 / 投影与六份配置字节不变。客户端软件来源6168791已推送，原账号窗口仍待VS Code非调试体验。来源、失败与真人路径取[本次核验](../other/oms-deai-verification-20261007.md)，当前“已部署待验收”。浏览器工具超时，视觉与P/C未签收。下方d1 / 22b为前次完整运行门的原来源。
 
-## 当前状态
+## 2026-10-07 页面发布前的完整运行记录
 
 前次完整运行门记录（2026-10-07本次04:25页面发布前）：整体osu-web BMS / 原生mania玩家网站 `d1f052b93a81-22b4ee54f237` / schema3 **已部署待验收**。新全量R7与严格源码提供、完整受保护F / 实际空间、生产激活与切回后的156公开GET / 880检查、HTTP缓存 / 双站、三阶段正式备份 / 两新空恢复和b520→新同库回退、原timer恢复均有实际证据；原失败保持，最终observer漏采prune PID与独立F22表备份校验分记。客户端运行234a9ff未变；文档HEAD不更新运行来源。精确门、资源与维护只取[最新服务验证](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-verification-20261005.md#生产发布与维护收尾) / [维护说明](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-maintenance-20261006.md)，页面 / 真人缺口取[本仓核验](../other/oms-player-site-verification-20261005.md)。视觉 / 普通浏览器刷新、真人下载入库 / 私有账号 / OMS两端与P/C尚未签收。
 
@@ -14,7 +20,7 @@
 
 客户端开发工作区沿原 lazer 用户按钮、登录与个人页入口，网站用同一 OMS 账号；浏览器与桌面分别登录，个人页外链只传稳定 ID，不移交 token。原入口的软件和来源依据取 [Client Bridge 原账号快照](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-native-account-snapshot-20261005.md) 与 [本轮客户端来源](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-player-site-client-snapshot-20261005.md)。用户 VS Code 非调试游玩、旧待交 / UUID / 归属和两端真实一致性仍待，不将软件入口描述为真人已通过。
 
-新闻唯一维护源 `src/oms/news.ts` 供首页、列表和固定文章共同读取，当前为2026-10-05“按需IR试运行”与2026-06-26“OMS 20260626发布”；真实日期 / 状态和旧release边界明确。固定osu-web `2c596022a1345fbed288978e7fa5304df0359f50` 的实际React视图 / Blade结构 / BEM Less、依赖 / 构建说明 / AGPL及对应修改源码已纳入精确白名单并公开，运行与源码清单分别绑定；实际全资产字节门通过不代签浏览器视觉。
+旧静态阶段的新闻维护源为 `src/oms/news.ts`，当时供首页、列表和固定文章共同读取2026-10-05“按需IR试运行”与2026-06-26“OMS 20260626发布”，真实日期 / 状态和旧release边界明确；该文件不再承载当前新闻维护。固定osu-web `2c596022a1345fbed288978e7fa5304df0359f50` 的实际React视图 / Blade结构 / BEM Less、依赖 / 构建说明 / AGPL及对应修改源码已纳入当次精确白名单并公开，运行与源码清单分别绑定；旧全资产字节门不代签原版站浏览器视觉。
 
 根统一类型检查r8与生产资源构建r8、静态页面门通过；Backend玩家 / 原身份、批准源与旧IR / 混榜 / 社区 / 备份，以及最终源码offer白名单均通过对应软件门。Client原生mania六判定与普通Desktop Release通过，新源 `234a9ff39654cdc30f3d5661cb6a9bf69bb90db6` 已推送。精确命令、结果及首次失败只取 [新核验](../other/oms-player-site-verification-20261005.md#本轮有效软件门)，不以软件数签产品或真人完成。
 
@@ -22,7 +28,7 @@
 
 正式 `450d13d` 的公开统计修订采用必要、可重建的读模型，替代初修“无持久聚合”的技术取舍，公开语义和原标准不变。根已完成 focused 117 / full 312 软件门；主机查询 r6 两玩法各100,000 distinct的原首请求、数学、隐私和真实旧 runtime 读取往返通过。`population-compat-report-r3.json` 已 completed / pass，核对旧 HTTP UUID 新局 / 重交、ED 最佳状态 / 独立灯、dirty / WAL、128 MiB新助手备份 / 附加空恢复及完整原始数学，r1 / r2路由前缀与条件描述字段误用失败保持原记录。批准维护代码来自 `3abf9aa37415-0cac041e0cd1` 的 backup.py / backup.sh与固定备份单元，运行 b520 / 维护3ab来源分别绑定；`53ea4e…` 只是未改的 host_player_probe.py 指纹，具体来源与结果只取 Backend 验证。
 
-正式流程已于 UTC 2026-10-05 21:40:23.852909 以 1800 秒 / 5 rps、全量25M历史、100,000 OMS局及各29,204原生整榜、两次新空恢复范围启动，结果仍待根签收；启动或兼容 r3通过不证明整个共享门和同主服务 worker联测已通过，生产发布未开始。实际激活后的公开字节 / 普通刷新和 200 / 304 缓存 / 双站 / 新备份，首次真实整包下载 / 入库、用户非调试游玩、真实宿主 / 非空 DLL、真人视觉认可与 P/C 继续保留；地力后置、PP另议，通过门并实际部署后才写“已部署待验收”，不生成 Windows 发行包 / publish / 安装副本。
+正式流程在 UTC 2026-10-05 21:40:23.852909 以 1800 秒 / 5 rps、全量25M历史、100,000 OMS局及各29,204原生整榜、两次新空恢复范围启动；以下保留该启动时点的待签记录：结果当时待根签收，启动或兼容 r3通过不证明整个共享门和同主服务 worker联测已通过，生产发布当时未开始。实际激活后的公开字节 / 普通刷新和 200 / 304 缓存 / 双站 / 新备份，首次真实整包下载 / 入库、用户非调试游玩、真实宿主 / 非空 DLL、真人视觉认可与 P/C 继续保留；地力后置、PP另议，通过门并实际部署后才写“已部署待验收”，不生成 Windows 发行包 / publish / 安装副本。
 
 ## 前轮已部署记录
 
@@ -68,7 +74,7 @@
 
 ## 多来源 IR 实施
 
-D01～D09 按[正式审查修订3](../../../../oms-server/dev_bridge_md/doc_md/other/oms-ir-multisource-plan-20261004.md#15-正式审查决定)采用，网页消费[多来源合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-ir/multisource-contract.md)。当前真正线上为 `d1f052b93a81-22b4ee54f237` / schema3；旧b520是保全的真实回退来源，旧ecca等日期保留历史。完整全量、真实部署 / 同库往返、资源及备份只取[最新服务验证](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-verification-20261005.md#生产发布与维护收尾)，下一步真人与增长维护见[计划](dev-plan.md#当前最近任务)。
+D01～D09 按[正式审查修订3](../../../../oms-server/dev_bridge_md/doc_md/other/oms-ir-multisource-plan-20261004.md#15-正式审查决定)采用，旧静态网页消费[多来源合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-ir/multisource-contract.md)。此处保留2026-10-07当次线上 `d1f052b93a81-22b4ee54f237` / schema3的记录；b520是当次已实测的旧回退来源，ecca等日期继续保留历史。旧完整全量、部署 / 同库往返、资源及备份只取[当次服务验证](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-verification-20261005.md#生产发布与维护收尾)，当前真人与增长维护见[计划](dev-plan.md#当前最近任务)。
 
 已部署页面可搜索标题/作者/MD5、按MD5直达，选择一个、多个、全部来源或清空；来源、参考/同条件、条件与页码保留在URL。服务先筛完整范围再计算最佳EX、独立灯、共享名次、人数/分页/全榜本人，不拼各来源TopN。同条件由玩家主动选择已证明的OMS组，未知或无匹配明确说明；mania条件榜和本人逐局历史保留v1。
 

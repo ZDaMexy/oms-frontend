@@ -1,67 +1,18 @@
-# AGENTS.md — OMS Frontend
+# AGENTS.md — OMS Website
 
-本仓库是 OMS 官网前端（纯静态 HTML/CSS/JS）。需求、计划、状态、约束都写在 `doc_md/`；本文件是本仓库唯一的持久协作入口和导航。
+本仓保留 OMS 旧静态官网设计、Git 历史及原工作区差异，作为保全与已验证兼容范围内的源码回退来源。2026-10-08 正式官网已由相邻 [OMS Web](../oms-web/AGENTS.md) 接管；本仓退出当前功能开发。项目说明见 [README](README.md)，历史与共享设施记录集中在 [doc_md](doc_md/README.md)。
 
-开始任务前先读上级 `../AGENTS.md`（若存在）以及任务所属的 `doc_md/` 文档。项目级持久说明只维护在 `AGENTS.md`。
+## 任务入口
 
-## 仓库内容
+- 当前官网功能、新闻和真人反馈转到 [OMS Web 文档](../oms-web/doc_md/README.md)；运行、备份与回退只取[现行维护](../oms-web/doc_md/production-maintenance.md)。本仓专项保全或历史审查先读 `constraints.md` 与 `dev-progress.md`，按需追溯计划和 `changelog.md`；不以旧计划重新启动功能开发。
+- [主线](doc_md/mainline/README.md) · [P1-A](doc_md/subline/P1-A/README.md)（已交接的历史支线） · [调研与运维](doc_md/other/README.md)
+- 本入口与本仓 `doc_md` 支持从单项目独立开始工作；任务扩展到其他项目时，切换到 `F:\zdamexy-workspace` 并读取全部受影响项目入口。工作区导航见 [上级 AGENTS](../AGENTS.md)。
 
-- 根级**单页**：`index.html`（下载/特性/判定/路线图均为首页内段落与锚点 `#download`/`#capabilities`/`#timing`/`#phases`，无独立 download/hub 页；导航文案「规格」已改为「特性」，锚点 id 仍为 `#capabilities`；导航/页脚「下载」指向 `#download`）
-- `assets/styles/site.css`：Cabinet Mode 样式
-- `assets/scripts/`：`site.js`（i18n + playfield 渲染器 + tweaks）、`i18n.js`（中/英/日词典）、`chart-lost.js`（`window.OMS_CHART` 谱面数据）（`download.js` 已删除——下载改为静态链接跳转，不再自动拉取 GitHub release）
-- `doc_md/`：内部规划文档
+## 协作与记忆
 
-## 部署（push 即上线）
-
-- `origin` → GitHub `ZDaMexy/oms-frontend`（源码真相）
-- `deploy` → 服务器裸仓库 `zdamexy-srv:/www/wwwroot/oms.git`
-- 纯静态：`git push deploy main` → 服务器 `post-receive` `checkout -f` 到网站根 `/www/wwwroot/oms` → `chown www`（无构建步骤）。
-- **连服务器只用别名 `ssh zdamexy-srv`**（`~/.ssh/config`，IdentityFile `id_ed25519_zdamexy`；勿用 `ssh root@39.105.55.78` 直连，会用错密钥）。
-- 站点 `oms.zdamexy.work`（与 `zdamexy.work` homepage 共用同一台 ECS）。**已上 HTTPS**（2026-06-03：acme.sh + ZeroSSL ECC，证书在 `/www/server/panel/vhost/cert/`，cron 自动续期；vhost 同块 `listen 80+443 ssl`，域名 HTTP 301→HTTPS，裸 IP/`.well-known` 留 HTTP）。截至 2026-06-03 公网访问正常，未再见未备案 403；本机仍可 `curl -H "Host: oms.zdamexy.work" http://127.0.0.1/` 验证（裸 IP 默认出 homepage）。
-- BT 的 nginx 重载用 `/etc/init.d/nginx reload`，勿用 `/usr/sbin/nginx`。
-- `git push deploy main` 会直接触发生产部署；只有用户明确要求上线时才能执行。
-
-## doc_md 索引
-
-三条线，每条维护五大文档（README / constraints / dev-plan / dev-progress / changelog）：
-
-- 总索引：[doc_md/README](doc_md/README.md)
-- **mainline/**（主线，最重要）：[README](doc_md/mainline/README.md) · [constraints](doc_md/mainline/constraints.md) · [dev-plan](doc_md/mainline/dev-plan.md) · [dev-progress](doc_md/mainline/dev-progress.md) · [changelog](doc_md/mainline/changelog.md)
-- **subline/**：[README](doc_md/subline/README.md) · `P1-A/`（首版静态宣传页工作线）[README](doc_md/subline/P1-A/README.md) · [constraints](doc_md/subline/P1-A/constraints.md) · [dev-plan](doc_md/subline/P1-A/dev-plan.md) · [dev-progress](doc_md/subline/P1-A/dev-progress.md) · [changelog](doc_md/subline/P1-A/changelog.md)
-- **other/**：[README](doc_md/other/README.md) · [constraints](doc_md/other/constraints.md) · [dev-plan](doc_md/other/dev-plan.md) · [dev-progress](doc_md/other/dev-progress.md) · [changelog](doc_md/other/changelog.md)
-
-## 当前状态（以 dev-progress.md 为准）
-
-产品阶段（2026-06-03 重定义，详见根 `AGENTS.md` §2）：本仓库承载 **Phase 2「初版官网」**（无登录 OMS 官网，当前在建）；P1「底层加固」为客户端侧·开发中。已完成第三轮视觉系统重做（落地 Claude Design 设计稿）：推翻暗色霓虹，改为 **Cabinet Mode**（街机机台/电竞转播视觉语言，纯黑底 + 扫描线 + 信号青/红/lime LED + Big Shoulders Display/JetBrains Mono/Noto JP·SC）。产品重定位为 **OMS = 基于 osu!lazer 的 fork client，以 ruleset 形式增加 BMS 原生支持**。
-
-- 根级**单页**：首页（marquee 含三语切换 + 导航 / 两栏 Hero：左标题 + 右全幅 playfield，slate 显示曲名·难度名·谱师·BPM·进度 / capabilities 特性表 / 判定窗口表格+条形图 / 下载块 `#download` / 路线图）。下载块 `#download` 内为两枚常驻静态下载方式 tile（`.dl-methods`/`.dl-method`：GitHub Releases 跳转 + QQ 群 650530995 一键加群跳转，图标+名称+副标+箭头，hover 信号色）。**原 `download.js` 自动拉取 GitHub release 及「解压开玩」安装步骤板块均已删除**，下载区只留两枚链接跳转 tile。hero CTA 为「即刻下载 ↓」主按钮（跳 `#download`）+「查看特性」。`download.html`、`hub.html`、`download.js` 均已删除。
-- 中文默认 + 中/英/日切换（`assets/scripts/i18n.js`，持久化 localStorage），专有名词保留原文。
-- Playfield：复用 `assets/scripts/chart-lost.js`（`window.OMS_CHART`，仅音符位置无音频；解析工具 `parse-bms.cjs` 在工作区根、不发布），`site.js` rAF 渲染器驱动，播放按真实 BPM、视觉 hi-speed 由 `VISIBLE_BEATS` 独立控制；离屏/切后台暂停（仅信任 IntersectionObserver + visibilitychange）；reduced-motion 回退。
-- Tweaks 面板：信号色红/黄/蓝/绿（默认蓝）· Hi-Speed ×0.6/×1.0/×1.6 · Playfield Live/Pause。
-- **平台口径收回为 Windows-only**（设计稿原写 WIN/MAC/LINUX，按硬约束未采纳）：`dl.platform` = WIN 10/11 · X64，安装步骤只讲 `OMS.exe`。
-- 上线后视觉打磨轮（2026-05-27）：删除两页顶部 cab 状态栏与 brand 日文 kana；缩放适配（移动端导航可见+可横滚、cab→按需换行、跨 320–2560/横屏无溢出）；Hero 标题中/日文降字号 `clamp(44px,4.6vw,88px)` 解决窄栏重叠；HUD 改为 EX-SCORE / COMBO（三语统一英文）/ GROOVE GAUGE（IIDX 分段条 + 大号百分比，随 combo 填充），删除判定 PGREAT。GROOVE GAUGE 血条随信号色同步；Hi-Speed（5 档 ×0.6–×1.4）与 Playfield Live/Pause 移到 playfield slate 同行右侧，tweaks 面板仅留信号色。「规格」概念三语统一改为「特性」；所有大字标题去结尾句号（三语）；判定窗口区（#timing）从条形图改为「判定类型 + 难度」两下拉 + 表格（PG/GR/GD/BD/空PR），类型 IIDX/LR2/RAJA/OD（OD 用 osu!mania 公式），默认 RAJA easy(100%)；表格下方保留随选择实时重绘的条形可视化（PG/GR/GD/BD）。特性清单 cap.05「便携安装」（绿灯·已实现）+ cap.06「外部谱库」（选定本地目录索引谱面，含 mania/BMS，无需为 OMS 单独建库；绿灯·已实现）+ cap.07「游戏社区」（IR/谱面库/论坛，红灯·开发中）。
-- 资源版本 `v=20260602-19`。**版权待确认**：当前用第三方谱面 告白/告別 (BMS edit.) [Lost]（Greetea feat.ninnikuu / obj. MiyakoMeow，BPM 161，beatoraja Satellite sl1 `_7_lost.bme`）的音符数据，发布前需替换或授权。slate 仅显示谱师 obj. MiyakoMeow 并将曲名链到 YouTube；基准下落速度 `HS_BASE=1.114`（比初版 0.78 慢 30%）。正式文案、展示媒体、下载渠道、外链等仍待逐项确认。
-
-## 关键硬约束
-
-- Phase 1 用纯静态 HTML/CSS/JS，不预先引入框架或构建系统。
-- 客户端是 **Windows-only**，文案不得出现误导性跨平台表述。
-- 可安全公开的客户端事实：默认离线优先、默认不启用游戏内更新、保留在线接点但默认未连远端、BMS 为正式 ruleset（短名 `bms`）。不得把「保留在线入口」写成「已可直连私服」。
-- 部署目标：阿里云 ECS（Ubuntu 24.04）+ Nginx，公开地址 `39.105.55.78`。
-- 未确认事实只能标「待确认」，禁止写成正式对外口径。
-
-## 同步纪律
-
-改动若改变 计划/状态/约束/事实，对应更新 dev-plan / dev-progress / constraints / changelog，并保持 mainline 五大文档一致。
-
-涉及前后端通信、接口契约、字段、错误码、下载入口、联调结论 → 同步 `../dev_bridge_md/`。
-
-涉及客户端对接事实 → 以 `../oms_client_bridge_md/` 已确认快照为准。
-
-subline 结论被采纳 → 回写 mainline。
-
-## Git 与安全
-
-- 本仓库是独立 Git 仓库；只在本目录执行 Git 操作，并保留已有工作区改动。
-- 连接生产服务器只使用 `ssh zdamexy-srv`。
-- 除非用户明确要求，不提交、不推送、不部署。
+- 修改前核对 HEAD、Git 状态与相关已有 diff，保留此前未提交工作；并行任务按文件分工，交付区分本轮增量。
+- 在已授权范围内持续完成实施与验证，常规细节自行决策，已有授权不重复确认；提交、推送和部署遵循本项目约束。
+- AGENTS 保存稳定协作规则，README 导航，constraints 边界，dev-plan 下一步，dev-progress 当前状态及带日期的证据，changelog 历史。当前事实完整维护一处，其余引用；休眠线不强制五件套。
+- 会话摘要用于续接，不另建平行事实账本；发生冲突时核对权威文档与实际文件。文档整理日期不替代验证日期，历史成功不代表当前已验证，本地完成不代表已发布。
+- 按已确认需求、实际调用方和明确不变量直接实现，优先修复根因；不堆假想兼容、无用抽象、重复判空、静默吞错或伪成功默认值。外部输入在边界校验，内部按契约运行；只捕获实际可恢复的失败，移除失效代码。
+- 验证覆盖本轮行为及必要回归，通过且无新变化时停止扩测；交付记录实际结果和未复核事项。只更新受影响的文档职责，不机械重写整套文件。

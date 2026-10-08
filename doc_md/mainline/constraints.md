@@ -1,5 +1,11 @@
 # Frontend Mainline Constraints
 
+## 适用范围（2026-10-08交接）
+
+正式官网已由 [OMS Web](../../../oms-web/AGENTS.md) 接管。本仓只保留旧静态设计、原工作区差异与已验证兼容范围内的回退来源；下方静态路由、样式、新闻文件、缓存规则与旧维护来源仅属原日期的方案，不能用于当前原版站的部署或维护。
+
+当前网页合同仍沿 Dev Bridge，当前来源、固定维护、配对回退与未完成真人门取[原版站维护](../../../oms-web/doc_md/production-maintenance.md)。本仓不继续官网功能开发，也不通过旧整站检出 hook 覆盖现生产或以旧数据回退页面。
+
 ## 产品与公开口径
 
 - `client-ir-native-account-ui`：客户端实际复用原 lazer 用户按钮、登录与个人页，来源取 [Client Bridge 原账号快照](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-native-account-snapshot-20261005.md)。网站使用同一 OMS 账号和最小 ID / 用户名，但浏览器与桌面分别登录；外链不带凭据，不能将窗口复用理解为接回 ppy 服务或共享会话。真实两端、窗口与 P/C 门仍由用户签收。
@@ -25,7 +31,7 @@
 - BMS 谱面获取只使用批准的 Ginger / 616，原生 mania 使用 Sayobot。搜索保持真实来源分页 / 游标，不拼来源 TopN 充当完整目录；BMS 原 MD5 / 可知 SHA256 和包候选保真。Sayobot 缺原 .osu MD5 时不从 sid / bid、同名或候选包猜出 OMS 同谱关联。元数据请求有界、按需且无账号凭据透传，下载入口在验证后 `307` 至批准原站 HTTPS；OMS 不代理 / 托管大包，不把元数据、HEAD、首字节或跳转当整包下载 / 入库完成，也不提供未获证的自动入库入口。
 - 玩家榜先筛完整玩法 / 键型 / 单个 live 来源和实际条件，再计算指标、共享名次和分页；BMS 提供覆盖及真实条件通关，mania 提供普通 `30000016` 的累计公开最佳分 / 覆盖。累计值以精确十进制字符串消费，同分、零通关真实参榜者和页外本人保真。未知条件 / 原灯不换算成已对齐条件，长原始字段可折叠但不删除；假 PP 列、假地域与推定地力不进入页面。
 - 2026-10-06 沿正式 `450d13d` [公开统计读取修订](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/constraints.md#2026-10-06-公开统计读取修订)采用必要、可重建的读模型，取代初修“无持久聚合”的技术取舍。它只消费当前 live 合格公开最佳、真实条件和独立灯，不复制私人局 payload、凭据或 LR2IR 个人记录，不成为第二份成绩权威；接口、精确整数、个人 / 全榜标准及资源预算不变。当前写事务提交前维护，旧 schema3 写入留下普通 SQLite dirty，新 runtime 在 readiness 前修复；失败回滚，不把失效统计当成功返回。全派生表 / 索引 / trigger 进入备份和完整指纹，未知 / 部分结构拒绝。
-- 新读模型下 b520 的旧备份工具不能维护扩展结构。旧 HTTP / 网站兼容回退须保留批准的 `3abf9aa37415-0cac041e0cd1` 中 backup.py / backup.sh 与固定 `oms-ir-backup.service`，分别绑定真实运行 release 与维护代码来源；不能恢复旧整套备份单元、删除新表或用旧快照覆盖新局。`53ea4e…` 只是未改的 host_player_probe.py 验收脚本指纹，不是维护代码身份。旧读取往返、旧 HTTP 新写重返、128 MiB 维护预算与正式两次空恢复分别取 Backend 实测，局部通过不能代签整套回退。
+- 读模型初修时，b520 的旧备份工具不能维护扩展结构；该时点旧 HTTP / 网站兼容回退保留批准的 `3abf9aa37415-0cac041e0cd1` 中 backup.py / backup.sh 与固定 `oms-ir-backup.service`，分别绑定当时运行 release 与维护来源。此处是旧维护 pin 的历史，不替代现行维护来源；禁止恢复旧整套备份单元、删除新表或用旧快照覆盖新局。`53ea4e…` 只是未改的 host_player_probe.py 验收脚本指纹，不是维护代码身份。旧读取往返、旧 HTTP 新写重返、128 MiB 维护预算与正式两次空恢复分别取 Backend 当次实测，局部通过不能代签整套回退。
 - 原下载锚点包含初始导航与已打开首页的同文档 hash 变化；旧判定 / 特性 / 阶段锚点转帮助，不留下同文档无反应的入口。
 - 门户HTML与`/portal/`资源每次使用都须重新校验版本，Nginx `Cache-Control: no-cache`覆盖200 / 304；Backend的`/ir/`沿既有中间件使用`no-store`，核验器按各自真实策略检查，不能错误要求IR持久缓存。旧校验值应返回新正文；发布门包含普通刷新、当前空304与旧校验值的新200，不能只签首次打开或强刷。改版前尚未联系服务器的缓存无法靠新响应头追溯清除，边界见[缓存复核](../other/community-infrastructure-20261004.md#2026-10-05缓存反馈复核)。
 - 帖子标题 / 正文 / 回复和作者名按 API 合同渲染为文本节点，保留换行，不执行 HTML / Markdown，不提供附件、远端图片嵌入、点赞或私信。可信固定文案与不可信内容的处理边界明确。
@@ -56,7 +62,9 @@
 
 ## 验证与联动
 
-本轮验证覆盖两模式真实谱面路径、公开个人 / 玩家榜语义、多页入口、社区纯文本 / 作者权限、会话和迟到回应边界、旧 IR 回归与桌面 / 窄屏布局；方法见 [verification](verification.md) 和 [玩家网站实际核验](../other/oms-player-site-verification-20261005.md)。读模型的软件与主机查询 r6 大样本首请求 / 数学 / 隐私 / 旧读取往返通过，兼容 r3 的真实旧 HTTP 新写 / 重交、外部状态、独立灯、dirty / WAL、新助手128 MiB备份及附加恢复已 completed / pass；r1 / r2探针误用原失败保留。正式 1800 秒 / 5 rps / 全量历史及两新空恢复流程已启动，结果待签；同主服务 worker 与发布不能由启动状态代签。根按原标准继续签收，精确版本、时间和结果只取 [Backend 验证](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-verification-20261005.md)。局部通过不代签整个共享门、生产激活、整包入库或用户视觉认可；新范围尚未部署，部署后仍须真人和 P/C 签收。
+旧静态方案的验证覆盖两模式真实谱面路径、公开个人 / 玩家榜语义、多页入口、社区纯文本 / 作者权限、会话和迟到回应边界、旧 IR 回归与桌面 / 窄屏布局；方法见 [verification](verification.md) 和 [玩家网站实际核验](../other/oms-player-site-verification-20261005.md)。读模型的软件与主机查询 r6 大样本首请求 / 数学 / 隐私 / 旧读取往返通过，兼容 r3 的真实旧 HTTP 新写 / 重交、外部状态、独立灯、dirty / WAL、新助手128 MiB备份及附加恢复已 completed / pass；r1 / r2探针误用原失败保留。
+
+以下保留2026-10-05启动时点的状态：正式 1800 秒 / 5 rps / 全量历史及两新空恢复流程已启动，结果当时待签；同主服务 worker 与发布不能由启动状态代签。原根执行者按原标准继续签收，精确版本、时间和结果只取 [Backend 当次验证](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-verification-20261005.md)。局部通过不代签整个共享门、生产激活、整包入库或用户视觉认可；该启动时点的新范围尚未部署，后续实际结论与当前真人状态以顶部交接入口为准。
 
 客户端事实变化先更新 Client Bridge，再经 Dev Bridge 采用后回写；接口、错误、下载或联调结论变化同步 [Dev Bridge](../../../../oms-server/dev_bridge_md/doc_md/mainline/README.md) 与 Backend。通用协作和文件归属见 [AGENTS](../../AGENTS.md)。
 

@@ -1,10 +1,18 @@
 # OMS 玩家网站共享主机维护镜像（2026-10-06）
 
+## 当前接续（2026-10-08）
+
+原版OMS官网已由 [OMS Web](../../../oms-web/AGENTS.md) 接管，运行包为 `b879e4233818-b0feceae22e4` / schema3，状态“已部署待验收”。固定维护代码仍为 `d1f052b93a81-22b4ee54f237`，当前已证明兼容的旧设计回退目标为 `d1f052b93a81-e6fdf914cb04`；三个身份不能混用。
+
+当前来源、PHP与配对路由、正式备份 / F外取和保留同一库的回退只取[原版站维护](../../../oms-web/doc_md/production-maintenance.md)。共享日志46原件F保全与default480＋OMS32 MiB合计512 MiB配置取[2026-10-08镜像](shared-journal-budget-20261008.md)，实际发布 / 失败取[正式收尾](../../../oms-web/doc_md/production-deployment-20261007.md#正式发布与收尾)。Homepage内容发布仍独立，线上真人及P/C未关闭。
+
+下文严格保留2026-10-06～07旧静态方案的当次证据与操作。b520、当时的预算及停止 / disable catalog只属于那个时点，不是现原版站维护指令；旧命令不机械改写成新版本。
+
 ## 2026-10-07 04:25页面发布
 
-当前OMS为 `d1f052b93a81-e6fdf914cb04` / schema3，已部署待验收。新客户端账号UI软件来源6168791与服务完整门原客户端来源234a9ff分记；Website运行源e6，Backend仍d1，48服务 / 插件叶和只读公开投影不变。本次没有修改Nginx、TLS、续期、Homepage内容或四份安装单元，六份原配置SHA保持。
+该次OMS为 `d1f052b93a81-e6fdf914cb04` / schema3，已部署待验收。新客户端账号UI软件来源6168791与服务完整门原客户端来源234a9ff分记；Website运行源e6，Backend仍d1，48服务 / 插件叶和只读公开投影不变。该次没有修改Nginx、TLS、续期、Homepage内容或四份安装单元，六份原配置SHA保持。
 
-137次公开GET / 770检查、54次当前缓存请求 / 158检查、46次真正旧22b校验值请求、完整138叶源码提供及正式备份 / 两新空兼容恢复均通过；两站TLS与指定缺失ACME探针保持原状态，不宣称实际续期。准确当前来源、原失败、工具限制与真人路径取[页面核验](../../../oms-website/doc_md/other/oms-deai-verification-20261007.md)，维护取[当前运行说明](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-maintenance-20261006.md)。当前前端回退目标22b，同库重启主 / catalog，Nginx保持；下方旧b520 / 22b往返、全量与预算均是前次实测记录，不改签为本次重跑。
+137次公开GET / 770检查、54次当时当前缓存请求 / 158检查、46次真正旧22b校验值请求、完整138叶源码提供及正式备份 / 两新空兼容恢复均通过；两站TLS与指定缺失ACME探针保持原状态，不宣称实际续期。该次准确来源、原失败、工具限制与真人路径取[页面核验](../../../oms-website/doc_md/other/oms-deai-verification-20261007.md)，旧维护取[当次运行说明](../../../../oms-server/oms-backend/doc_md/other/oms-player-site-maintenance-20261006.md)。当次前端回退目标22b，同库重启主 / catalog，Nginx保持；下方b520 / 22b往返、全量与预算均是前次实测记录，不改签为本次重跑。
 
 ## 前次完整运行门与共享设施记录
 
@@ -18,7 +26,7 @@
 
 最终实际公开156 GET / 880检查通过：两站TLS主页与Homepage基线内容保持，指定缺失ACME路径仍404；这不声明实际ACME续期已执行。OMS精确白名单网页 / assets / AGPL / 对应修改源码 / 五插件全字节通过，旧八ETag / IMS返回新200，当前ETag空304。普通浏览器视觉和刷新因工具超时仍待真人，不用Ctrl+F5或HTTP字节代签。
 
-## 当前预算、备份与回退
+## 2026-10-07 当次预算、备份与回退
 
 主IR仅127.0.0.1:8081，High384 / Max500MiB、CPU150%、swap0；catalog仅127.0.0.1:8082，High80 / Max96MiB、CPU25%、swap0，独立UID996 / GID986。实际catalog namespace受限身份对live / 备份目录 / 指定档案open均EACCES13；不透传账号、Cookie、Authorization或玩家IP。批准外源为Ginger / 616 BMS与Sayobot原生mania，只做有界元数据及批准原站307，谱包正文不代理 / 托管。
 
@@ -28,7 +36,7 @@
 
 00:55CST实测可用内存约870MiB、loadavg0.05 / 0.03 / 0.02、swap使用0；磁盘4,777,447,424B，按八对真实 / 批准最大gzip与sidecar、临时raw962,183,168B、系统2GiB共预留3,433,858,016B，另余1,343,589,408B。固定证据已计入；后续实际live / 来源增长或保留更多raw重测，不购买 / 扩盘。旧十万合成门不能代签25M档案。
 
-源码回退只切真实b520 HTTP / 网站与准确include，继续同一当前库和d1维护pin；停止catalog后先收实际加载终态，再disable，停止主服务后采有序关闭日志，再切来源。新源码返回在readiness前清算dirty。实际新→旧→新往返、原IR / 社区 / 历史读取与非配额全表指纹保持，只有真实GET更新rate_limits。检查误判曾导致停服，其原失败和修复收据取Backend，不宣称不中断。不得用旧整套activator覆盖新备份单元或恢复上线前旧raw来回退页面。
+当时已验证的源码回退只切真实b520 HTTP / 网站与准确include，继续同一当前库和d1维护pin；停止catalog后先收实际加载终态，再disable，停止主服务后采有序关闭日志，再切来源。该步骤仅属旧静态方案。新源码返回在readiness前清算dirty；当次新→旧→新往返、原IR / 社区 / 历史读取与非配额全表指纹保持，只有真实GET更新rate_limits。检查误判曾导致停服，其原失败和修复收据取Backend，不宣称不中断。不得用旧整套activator覆盖新备份单元或恢复上线前旧raw来回退页面。
 
 ## 仍需真人签收
 
