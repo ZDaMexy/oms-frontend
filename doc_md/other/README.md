@@ -1,5 +1,6 @@
 # 调研与运维
 
+- [2026-10-09 OMS 难度表浏览发布](oms-bms-tables-20261009.md)：选表导航、网页版本绑定与双站 / 备份 / 当前预算。
 - [2026-10-09 OMS 网页审改发布](oms-web-copy-review-20261009.md)：OMS资源目录切换、配置F保全、双站核对与本轮范围。
 - [2026-10-08 原版官网与共享日志](shared-journal-budget-20261008.md)：当前官网接续、46件原日志 F 保全及 default480＋OMS32 MiB 的合计512 MiB配置。
 - [现行OMS维护](../../../oms-web/doc_md/production-maintenance.md)：schema3原版站的准确来源、备份、同库回退与未完成真人门。
