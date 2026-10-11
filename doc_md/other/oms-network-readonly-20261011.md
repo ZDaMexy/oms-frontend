@@ -1,5 +1,13 @@
 # OMS 网络审查与共享压缩优化（2026-10-11）
 
+## 12:24 清理后实际部署
+
+用户明确要求部署并清理后，OMS已切入本次已测Web / Backend，三服务实际同步重启、有限并行读取、同库新→直接上一版→新、公开范围 / 完整资源和对应源码、固定helper前后完整备份 / F核验均通过，日备份计划恢复。只退役已有完整F副本并核SHA / 无引用的两份incoming重复上传包；所需运行 / 回退 / 固定维护 / 日备份与原业务库保留，既定恢复预留不降低。准确清理量、实际盘账 / 资源、前后13件配置、失败与真人缺口只维护在[OMS本轮发布](../../../oms-web/doc_md/network-service-review-20261011.md#清理后实际发布已部署待验收)，当前来源和回退沿[现行维护](../../../oms-web/doc_md/production-maintenance.md)。
+
+共享图片gzip维持先前新值，两站根配置 / TLS / ACME / 原限额和Homepage产品源码保持，双站真实HTTPS200。本文早前“只读 / 未上线”均属下方原观察时点；此次完整业务备份与13件配置原件保全另行记录，原1,800秒 / 两空恢复和真人门日期不提升。
+
+## 02:22～03:14 首次观察与图片压缩历史
+
 2026-10-11 02:22 CST，OMS网络审查只读确认共享主机：OMS current为 `a85aee3e3c45-b17354d27c6b`，IR / catalog / Web active / running、NRestarts0，共享可用内存795,975,680 B、swap使用0，两个公开主页HTTPS均200。Nginx原gzip / JSON与keepalive60秒已生效，公开sources压缩实体496 B、identity1847 B且解压相等。这次观察不刷新持续运行 / 恢复或真人日期。
 
 02:45 CST公开CSS声明PNG和Homepage社交预览JPEG重复gzip仅省0.534% / 0.584%，解压后SHA相同；不推导全站速度或CPU百分比。02:52 CST将完整13件配置 / unit / manifest及元数据保全到F受保护目录后，只从共享Nginx的gzip类型表移除JPEG / GIF / PNG。宝塔Nginx配置检查 / reload及前后双站200通过；两实际图片恢复原实体且SHA相等，JSON继续gzip1847→496 B。TLS、域名、路由、服务预算和Homepage产品源码保持；配置SHA、原件、作用范围与仅恢复该行的回退步骤只维护在[OMS网络审查](../../../oms-web/doc_md/network-service-review-20261011.md#共享图片gzip优化已生效)。
