@@ -1,5 +1,9 @@
 # OMS Website Other Progress
 
+## 最新安全维护
+
+2026-10-22 已实施[共享主机安全维护](shared-security-maintenance-20261022.md)，真实重启后双站与业务服务正常，备份范围接续新版运行环境。准确版本、备份工具和当前回退约束取该记录；本轮不发布 Homepage 内容或改变 OMS 原真人门。
+
 最近双站HTTPS / OMS公开资源核验属于2026-10-11的[原生配套](oms-native-services-20261011.md)，此前网络与2026-10-09记录保留历史。静态ACME路径沿2026-10-08[正式收尾](../../../oms-web/doc_md/production-deployment-20261007.md#正式发布与收尾)，不签实际续期；旧社区 / 备份仍取各来源。
 
 最新共享设施与OMS应用发布为2026-10-11原生服务配套，当前精确源、三服务往返、双站 / 资源、两备份与安全清理只取[本轮镜像](oms-native-services-20261011.md)。当前来源 / 固定维护 / 回退沿[现行维护](../../../oms-web/doc_md/production-maintenance.md#当前来源与运行位置)，旧网络与更早发布保留原日期。
