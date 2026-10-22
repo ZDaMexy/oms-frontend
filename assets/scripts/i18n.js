@@ -2,20 +2,15 @@
    OMS · CABINET — i18n dictionary
    Default = zh (中文). Proper nouns (BMS, mania, osu!lazer,
    ruleset, EX-SCORE, BPM, COMBO, PGREAT, GREAT, GOOD, BAD,
-   IIDX, LR2, BEATORAJA, OD, RAJA, Stargazer, Lime, saaa,
+   IIDX, LR2, BEATORAJA, OD, RAJA,
    Satellite, Stella, 発狂, Windows, x64, OMS, OMS-IR,
    GAUGE, GROOVE, etc.) are intentionally left untranslated.
    Platform copy is Windows-only per project constraints.
    ============================================================= */
 window.OMS_I18N = {
   /* ---------- top cabinet status bar ---------- */
-  "bar.system":  { zh: "系统",      en: "SYSTEM",  ja: "システム" },
-  "bar.ready":   { zh: "就绪",      en: "READY",   ja: "稼働中" },
   "bar.build":   { zh: "构建",      en: "BUILD",   ja: "ビルド" },
   "bar.host":    { zh: "主机",      en: "HOST",    ja: "ホスト" },
-  "bar.online":  { zh: "联网未接服务端", en: "ONLINE STUBBED", ja: "オンライン未接続" },
-  "bar.cabinet": { zh: "机台",      en: "CABINET", ja: "稼働" },
-  "bar.live":    { zh: "运行中",    en: "LIVE",    ja: "ライブ" },
   "bar.filed":   { zh: "记录",      en: "FILED",   ja: "更新" },
 
   /* ---------- nav ---------- */
@@ -49,14 +44,9 @@ window.OMS_I18N = {
     ja: "osu!lazer fork · BMS ルールセット",
   },
   "hero.lede": {
-    zh: "<strong>OMS</strong> 是一个基于 osu!lazer 的 fork client，以 ruleset 的形式增加了对 BMS 谱面的原生支持，支持 OD / RAJA / LR2 / 类IIDX 判定窗自由切换，支持 Gauge 点灯记录，支持难度表。更多现代 mod 跟进开发中，未来 OMS-IR、谱面社区跟进开发中。",
-    en: "<strong>OMS</strong> is a fork client of osu!lazer that adds native BMS chart support as a ruleset. Free switching between OD / RAJA / LR2 / IIDX-style judgement windows. Gauge clear records. Difficulty table support. More modern mods are in the works; OMS-IR and the chart community are also in development.",
-    ja: "<strong>OMS</strong> は osu!lazer をベースにした fork クライアントで、BMS 譜面のネイティブサポートを ruleset として追加している。OD / RAJA / LR2 / IIDX 系の判定ウィンドウを自由に切り替え可能。Gauge の点灯記録に対応、難易度表に対応。より現代的な mod も順次追加中、OMS-IR と譜面コミュニティも開発中。",
-  },
-  "cta.win_soon": {
-    zh: "PORTABLE · 即将开放",
-    en: "PORTABLE · COMING SOON",
-    ja: "PORTABLE · 近日公開",
+    zh: "<strong>OMS</strong> 是一个基于 osu!lazer 的 fork client，以 ruleset 的形式增加了对 BMS 谱面的原生支持，支持 OD / RAJA / LR2 / 类IIDX 判定窗自由切换，支持 Gauge 点灯记录，支持难度表。更多现代 mod 跟进开发中；OMS-IR 与谱面社区处于后续规划。",
+    en: "<strong>OMS</strong> is a fork client of osu!lazer that adds native BMS chart support as a ruleset. Free switching between OD / RAJA / LR2 / IIDX-style judgement windows. Gauge clear records. Difficulty table support. More modern mods are in development; OMS-IR and the chart community are planned for later phases.",
+    ja: "<strong>OMS</strong> は osu!lazer をベースにした fork クライアントで、BMS 譜面のネイティブサポートを ruleset として追加している。OD / RAJA / LR2 / IIDX 系の判定ウィンドウを自由に切り替え可能。Gauge の点灯記録に対応、難易度表に対応。より現代的な mod は開発中。OMS-IR と譜面コミュニティは今後のフェーズで計画中。",
   },
   "cta.view_specs": {
     zh: "查看特性",
@@ -70,43 +60,14 @@ window.OMS_I18N = {
   },
 
   /* ---------- field overlays ---------- */
-  "field.ch_prefix": {
-    zh: "频道 01 · SP · 7K+1 · BPM",
-    en: "CH-01 · SP · 7K+1 · BPM",
-    ja: "CH-01 · SP · 7K+1 · BPM",
-  },
-  "field.live": { zh: "直播", en: "LIVE", ja: "ライブ" },
-  "field.beat": { zh: "拍",   en: "BEAT", ja: "拍" },
 
   "hud.score":  { zh: "EX-SCORE", en: "EX-SCORE", ja: "EX-SCORE" },
   "hud.combo":  { zh: "COMBO",    en: "COMBO",    ja: "COMBO" },
-  "hud.judge":  { zh: "判定",     en: "JUDGE",    ja: "判定" },
   "hud.gauge":  { zh: "GROOVE GAUGE", en: "GROOVE GAUGE", ja: "GROOVE GAUGE" },
-
-  /* ---------- now-playing panel ---------- */
-  "np.label":   { zh: "当前曲目", en: "NOW PLAYING", ja: "演奏中" },
-  "np.readout": { zh: "实时读数", en: "LIVE READOUT", ja: "リアルタイム" },
-  "np.air":     { zh: "直播中",   en: "ON AIR",      ja: "配信中" },
-  "np.ch":      { zh: "频道 01 · 演示曲", en: "CH-01 · DEMO ATTRACT", ja: "CH-01 · デモ" },
-  "np.lv":      { zh: "难度", en: "LV",    ja: "Lv" },
-  "np.bpm":     { zh: "BPM",   en: "BPM",   ja: "BPM" },
-  "np.notes":   { zh: "物量",  en: "NOTES", ja: "ノート数" },
-  "np.nps":     { zh: "密度时间线", en: "NPS · TIMELINE", ja: "密度タイムライン" },
-  "np.peak":    { zh: "峰值", en: "PK", ja: "PK" },
-  "np.lanes":   { zh: "键道分布 · 7K+1", en: "LANE DIST · 7K+1", ja: "レーン分布 · 7K+1" },
-
-  /* ---------- vital stats ---------- */
-  "v.bpm":      { zh: "BPM",       en: "BPM",          ja: "BPM" },
-  "v.level":    { zh: "难度",      en: "LEVEL",        ja: "レベル" },
-  "v.notes":    { zh: "总物量",    en: "TOTAL · NOTES",ja: "総ノート数" },
-  "v.avgnps":   { zh: "平均 NPS",  en: "AVG · NPS",    ja: "平均 NPS" },
-  "v.peaknps":  { zh: "峰值 NPS",  en: "PEAK · NPS",   ja: "ピーク NPS" },
-  "v.length":   { zh: "时长",      en: "LENGTH",       ja: "長さ" },
 
   /* ---------- section heads ---------- */
   "sec02.no":    { zh: "02 · 能力特性", en: "02 · FEATURES", ja: "02 · 能力特性" },
   "sec02.title": { zh: "特性<br/><em>清单</em>", en: "Feature<br/><em>sheet</em>", ja: "特性<br/><em>一覧</em>" },
-  "sec02.lede":  { zh: "", en: "", ja: "" },
 
   "sec03.no":    { zh: "03 · 判定窗口", en: "03 · JUDGEMENT", ja: "03 · 判定ウィンドウ" },
   "sec03.title": { zh: "判定<br/><em>窗口</em>", en: "Timing<br/><em>windows</em>", ja: "判定<br/><em>ウィンドウ</em>" },
@@ -115,7 +76,6 @@ window.OMS_I18N = {
     en: "Judgement windows switch by type (IIDX / LR2 / RAJA / OD) and difficulty.",
     ja: "判定ウィンドウはタイプ（IIDX / LR2 / RAJA / OD）と難易度で切り替えられる。",
   },
-  "sec03.ms": { zh: "毫秒", en: "MS", ja: "ミリ秒" },
 
   "jt.type":     { zh: "判定类型", en: "JUDGE TYPE", ja: "判定タイプ" },
   "jt.diff":     { zh: "判定难度", en: "DIFFICULTY", ja: "判定難易度" },
@@ -128,19 +88,9 @@ window.OMS_I18N = {
 
   "sec04.no":    { zh: "04 · 下载", en: "04 · DOWNLOAD", ja: "04 · ダウンロード" },
   "sec04.title": { zh: "即刻<br/><em>下载</em>", en: "Download<br/><em>now</em>", ja: "今すぐ<br/><em>ダウンロード</em>" },
-  "sec04.lede":  {
-    zh: "可自行选择下方下载方式。",
-    en: "Pick a download option below.",
-    ja: "下のダウンロード方法から選べる。",
-  },
 
   "sec05.no":    { zh: "05 · 路线图", en: "05 · ROADMAP", ja: "05 · ロードマップ" },
   "sec05.title": { zh: "开发<br/><em>阶段</em>", en: "Development<br/><em>phases</em>", ja: "開発<br/><em>段階</em>" },
-  "sec05.lede":  {
-    zh: "OMS 网站分五段推进。现在是 Phase 1（宣传 + 展示）。账号、个人主页、OMS-IR 排行榜、谱面社区在客户端里都已预留入口，逐段开放。",
-    en: "The OMS site rolls out in five phases. Phase 1 (promo + showcase) is current. Accounts, profile pages, OMS-IR leaderboards and the chart community are reserved client-side and opened one phase at a time.",
-    ja: "OMS のサイトは五段階で進める。今は Phase 1（広報・展示）。アカウント、マイページ、OMS-IR ランキング、譜面コミュニティはクライアント側に入口を用意済み、フェーズごとに順次開放する。",
-  },
 
   /* ---------- capabilities ---------- */
   "cap.01.name": { zh: "双模式", en: "Dual mode", ja: "デュアルモード" },
@@ -186,9 +136,9 @@ window.OMS_I18N = {
   "cap.06.name": { zh: "外部谱库", en: "External library", ja: "外部ライブラリ" },
   "cap.06.sub":  { zh: "DIRECTORY INDEX · MANIA/BMS", en: "DIRECTORY INDEX · MANIA/BMS", ja: "DIRECTORY INDEX · MANIA/BMS" },
   "cap.06.body": {
-    zh: "直接选定本地目录索引谱面（含 mania / BMS），无额外储存占用，无需为 OMS 单独准备谱库。",
-    en: "Point OMS at any local folder to index charts (mania / BMS included) — no extra storage footprint, no need to maintain a separate library just for OMS.",
-    ja: "任意のローカルフォルダを指定して譜面をインデックス（mania / BMS 対応）。追加のストレージ使用なし、OMS 専用の譜面ライブラリを用意する必要はない。",
+    zh: "直接选定本地目录索引谱面（含 mania / BMS），无需为 OMS 单独准备谱库。",
+    en: "Point OMS at a local folder to index charts (mania / BMS included), without maintaining a separate library just for OMS.",
+    ja: "ローカルフォルダを指定して譜面をインデックス（mania / BMS 対応）。OMS 専用の譜面ライブラリを用意する必要はない。",
   },
 
   "cap.07.name": { zh: "游戏社区", en: "Game community", ja: "ゲームコミュニティ" },
@@ -200,23 +150,6 @@ window.OMS_I18N = {
   },
 
   "cap.status.shipped":      { zh: "已实现",            en: "SHIPPED",             ja: "実装済" },
-  "cap.status.shipped_off":  { zh: "已实现 · 默认关闭", en: "SHIPPED · OFF DEFAULT", ja: "実装済 · 既定オフ" },
-  "cap.status.indev":        { zh: "开发中",            en: "IN DEV",              ja: "開発中" },
-
-  /* ---------- download meta ---------- */
-  "dl.version":  { zh: "版本",     en: "VERSION",   ja: "バージョン" },
-  "dl.platform": { zh: "平台",     en: "PLATFORM",  ja: "プラットフォーム" },
-  "dl.package":  { zh: "包格式",   en: "PACKAGE",   ja: "パッケージ" },
-  "dl.updater":  { zh: "更新器",   en: "UPDATER",   ja: "アップデーター" },
-  "dl.online":   { zh: "在线",     en: "ONLINE",    ja: "オンライン" },
-  "dl.filed":    { zh: "时间戳",   en: "FILED",     ja: "更新時刻" },
-
-  "dl.version.v":  { zh: "0.1.0-DEV<small>内部版 · 公开发布未定</small>",     en: "0.1.0-DEV<small>internal · public release TBD</small>", ja: "0.1.0-DEV<small>内部版 · 公開リリース未定</small>" },
-  "dl.platform.v": { zh: "WIN 10 / 11 · X64<small>仅 Windows 桌面</small>", en: "WIN 10 / 11 · X64<small>Windows desktop only</small>", ja: "WIN 10 / 11 · X64<small>Windows デスクトップのみ</small>" },
-  "dl.package.v":  { zh: "PORTABLE .ZIP<small>免安装 · 解压即用</small>",     en: "PORTABLE .ZIP<small>no install · unzip and run</small>", ja: "PORTABLE .ZIP<small>インストール不要 · 解凍して起動</small>" },
-  "dl.updater.v":  { zh: "MANUAL<small>不自动更新 · 自己按版本号下</small>", en: "MANUAL<small>no auto-update · grab by version</small>",       ja: "MANUAL<small>自動更新なし · 任意のバージョンを取得</small>" },
-  "dl.online.v":   { zh: "STUBBED<small>账号 · 排行榜 · 多人都留好了</small>",   en: "STUBBED<small>auth · leaderboard · multi reserved</small>",         ja: "STUBBED<small>アカウント · ランキング · マルチの接続口を用意済み</small>" },
-  "dl.filed.small": { zh: "页面生成时刻", en: "page generated at", ja: "ページ生成時刻" },
 
   /* ---------- roadmap phases ---------- */
   "phase.1.name": { zh: "底层加固", en: "Core hardening", ja: "基盤強化" },
@@ -280,109 +213,14 @@ window.OMS_I18N = {
   /* ---------- tweaks panel ---------- */
   "tw.title":   { zh: "调节面板", en: "Tweaks",  ja: "ツイーク" },
   "tw.accent":  { zh: "信号色 · 强调",  en: "SIGNAL · ACCENT", ja: "シグナル · アクセント" },
-  "tw.speed":   { zh: "HI-SPEED · 速度", en: "HI-SPEED · SPEED", ja: "HI-SPEED · 速度" },
-  "tw.field":   { zh: "谱面区",         en: "PLAYFIELD",        ja: "譜面エリア" },
   "tw.live":    { zh: "运行",   en: "Live",  ja: "動作" },
   "tw.pause":   { zh: "暂停",   en: "Pause", ja: "停止" },
 
   /* ============================================================
-     DOWNLOAD — release manifest + install steps
-     (now part of the homepage #download section; download.html removed)
+     DOWNLOAD — static GitHub Releases and QQ group links
      ============================================================ */
-  "dlp.stage": {
-    zh: "第 04 节 · 发行清单",
-    en: "STAGE 04 · RELEASE MANIFEST",
-    ja: "ステージ 04 · リリースマニフェスト",
-  },
-  "dlp.title": {
-    zh: '发行<br/><em>清单</em>',
-    en: 'Release<br/><em>manifest</em>',
-    ja: 'リリース<br/><em>マニフェスト</em>',
-  },
-  "dlp.kana": {
-    zh: "GitHub Releases · 最新版直链",
-    en: "GitHub Releases · latest, direct",
-    ja: "GitHub Releases · 最新版を直接取得",
-  },
-  "dlp.lede": {
-    zh: "页面打开即从 GitHub 拉取最新一版 OMS 发行包。下载、解压、运行。尚未发公开版时，本页指向 GitHub release 页以便跟进。",
-    en: "On page open we pull the latest OMS release from GitHub. Download, unzip, run. When no public release is filed yet, this page points to the GitHub releases page so you can follow along.",
-    ja: "ページを開いた瞬間、GitHub から最新の OMS リリースを取得する。ダウンロード、解凍、起動。公開版がない時は GitHub のリリースページへ案内する。",
-  },
-  "dlp.fetching": {
-    zh: "正在拉取 github.com/ZDaMexy/oms/releases/latest …",
-    en: "FETCHING github.com/ZDaMexy/oms/releases/latest …",
-    ja: "github.com/ZDaMexy/oms/releases/latest を取得中 …",
-  },
-  "dlp.k.latest":   { zh: "最新版本",        en: "LATEST RELEASE",       ja: "最新リリース" },
-  "dlp.k.filed":    { zh: "发布时间",        en: "PUBLISHED",            ja: "公開日" },
-  "dlp.k.author":   { zh: "发布者",          en: "AUTHOR",               ja: "公開者" },
-  "dlp.k.assets":   { zh: "资源数",          en: "ASSETS",               ja: "アセット数" },
-  "dlp.k.assets-h": { zh: "资源列表 · ASSETS",      en: "ASSETS · downloadables", ja: "アセット一覧 · ASSETS" },
-  "dlp.k.notes-h":  { zh: "更新说明 · RELEASE NOTES", en: "RELEASE NOTES",          ja: "リリースノート · RELEASE NOTES" },
-  "dlp.cta.dl":     { zh: "下载",            en: "DOWNLOAD",             ja: "ダウンロード" },
-  "dlp.cta.github": { zh: "在 GitHub 上查看", en: "VIEW ON GITHUB",       ja: "GitHub で開く" },
-  "dlp.cta.qq":     { zh: "QQ 群 · 650530995", en: "QQ GROUP · 650530995", ja: "QQ グループ · 650530995" },
   "dlp.m.gh":       { zh: "从 GitHub Releases 下载发行包", en: "Grab the build from GitHub Releases", ja: "GitHub Releases から発行包を入手" },
   "dlp.m.qqh":      { zh: "QQ 群", en: "QQ Group", ja: "QQ グループ" },
   "dlp.m.qq":       { zh: "一键加群 · 650530995", en: "One-tap join · 650530995", ja: "ワンタップ参加 · 650530995" },
-  "dlp.cta.primary": {
-    zh: "下载主包",
-    en: "GET PRIMARY",
-    ja: "メインパッケージを取得",
-  },
-  "dlp.none.no":    { zh: "暂无公开发布",     en: "NO PUBLIC RELEASE FILED YET", ja: "公開リリースなし" },
-  "dlp.none.title": {
-    zh: '还在<br/><em>备料</em>',
-    en: 'Not<br/><em>filed yet</em>',
-    ja: 'まだ<br/><em>仕込み中</em>',
-  },
-  "dlp.none.lede": {
-    zh: "公开下载入口要等到 Phase 1 收尾才开。在 GitHub 上盯一眼就能知道什么时候有新的包。",
-    en: "The public download opens at the end of Phase 1. Watch the GitHub releases page to catch the moment a new build lands.",
-    ja: "公開ダウンロード口は Phase 1 の終盤で開ける。GitHub のリリースページを見ておけば、新しいビルドが落ちた瞬間に気付ける。",
-  },
-  "dlp.none.cta":   { zh: "打开 GitHub · ZDaMexy/oms/releases", en: "OPEN GITHUB · ZDaMexy/oms/releases", ja: "GitHub を開く · ZDaMexy/oms/releases" },
-  "dlp.err": {
-    zh: "拉取失败 · 已切换到 GitHub 链接",
-    en: "FETCH FAILED · falling back to GitHub link",
-    ja: "取得失敗 · GitHub リンクに切り替え",
-  },
 
-  /* ---- install steps ---- */
-  "dlp.ins.no":    { zh: "运行", en: "RUN IT", ja: "起動" },
-  "dlp.ins.title": {
-    zh: '解压<br/><em>开玩</em>',
-    en: 'Unzip<br/><em>and run</em>',
-    ja: '解凍して<br/><em>起動</em>',
-  },
-  "dlp.ins.lede": {
-    zh: "下载、解压、运行——三步开玩。",
-    en: "Download, unzip, run — three steps to play.",
-    ja: "ダウンロード、解凍、起動——三ステップで遊ぶ。",
-  },
-  "dlp.ins.1.h":   { zh: "下载发行包", en: "Grab the release", ja: "リリースを取得" },
-  "dlp.ins.1.b": {
-    zh: "点上面的 GitHub Releases 进去，下载最新的发行包（.zip）。",
-    en: "Open GitHub Releases above and grab the latest build (.zip).",
-    ja: "上の GitHub Releases を開いて、最新の発行包（.zip）を入手。",
-  },
-  "dlp.ins.2.h":   { zh: "解压到独立目录", en: "Unzip to its own folder", ja: "独立したフォルダに解凍" },
-  "dlp.ins.2.b": {
-    zh: "选位置解压。建议单独一个文件夹，与其他游戏目录分开。",
-    en: "Unzip anywhere you like. Use a folder of its own, kept separate from other game installs.",
-    ja: "好きな場所に解凍する。他のゲームディレクトリとは別の、独立したフォルダにしておく。",
-  },
-  "dlp.ins.3.h":   { zh: "启动 OMS", en: "Launch OMS", ja: "OMS を起動" },
-  "dlp.ins.3.b": {
-    zh: "双击 <code>OMS.exe</code> 启动。首次启动会在系统数据目录里建自己的存档。",
-    en: "Double-click <code>OMS.exe</code> to launch. The first launch creates its own save data folder in your system data path.",
-    ja: "<code>OMS.exe</code> をダブルクリックして起動。初回起動でシステムのデータパスに専用のセーブフォルダが作られる。",
-  },
-  "dlp.ins.4.h":   { zh: "把谱面拖进来", en: "Drag your charts in", ja: "譜面をドロップ" },
-  "dlp.ins.4.b": {
-    zh: "把 BMS 谱面文件夹拖到 OMS 窗口，或在设置里指定根目录。难度表（Satellite / Stella / 発狂）可稍后接入。",
-    en: "Drag a BMS chart folder onto the OMS window, or point it at a root directory in settings. Difficulty tables (Satellite / Stella / 発狂) can be added later.",
-    ja: "BMS 譜面フォルダを OMS ウィンドウにドロップ、または設定からルートディレクトリを指定する。難易度表（Satellite / Stella / 発狂）は後でも追加可能。",
-  },
 };

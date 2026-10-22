@@ -2,7 +2,7 @@
 
 本仓是 OMS 旧静态官网设计及历史来源，当前只作保全与已验证兼容范围内的源码回退。2026-10-08 [正式官网](https://oms.zdamexy.work/)已由相邻 [OMS Web](../oms-web/README.md) 接管，状态为“已部署待验收”；当前玩家范围、新闻维护和真人路径取[原版站文档](../oms-web/doc_md/README.md)。本仓不继续当前功能开发。
 
-以下保留旧静态方案的职责与使用方法：2026-10-03 IR 公网试运行，2026-10-04 上线真实社区帖子首页、独立下载 / 帮助、帖子与账号页。社区复用浏览器 cookie 账号并按需 HTTP 保存内容，没有持续在线连接。旧实现和当次证据见[本仓记录](doc_md/mainline/dev-progress.md)，不代表当前原版站已获真人签收。
+以下保留旧静态方案的职责与使用方法：2026-10-03 IR 公网试运行，2026-10-04 上线真实社区帖子首页、独立下载 / 帮助、帖子与账号页。社区复用浏览器 cookie 账号并按需 HTTP 保存内容，没有持续在线连接。旧实现和当次证据见[本仓历史](doc_md/mainline/changelog.md#旧静态站进展与计划归档)，不代表当前原版站已获真人签收。
 
 OMS 为 Windows-only、BMS / mania 双模式、离线优先。官网公开下载与开发源码分开，官网下载入口指向 GitHub Releases；本轮不生成 Windows 发行包，用户自行发行并通过 VS Code 非调试启动当前工作区验收。
 
@@ -31,7 +31,7 @@ python -m http.server 8080 --bind 127.0.0.1
 
 原静态方案的账号、帖子 / 回复与动态地址需要 Nginx 静态路由和 Backend API 同源提供；当时 Backend 单独启动只挂 `ir/`。旧隔离预览探针及其范围见 [verification](doc_md/mainline/verification.md)，后端说明见 [Backend 运行与验证](../../oms-server/oms-backend/doc_md/mainline/verification.md)。这些步骤不用于现原版网站，当前本地运行取 [OMS Web 本地说明](../oms-web/doc_md/local-use-and-recovery.md)。
 
-在本仓库运行 `node scripts/verify.mjs` 检查多页导航、本地资源和 JavaScript 语法；真实交互、数据持久保存、权限与窄屏另行验收。本机开发检查 shell 先执行 `. F:\oms\UseDevelopmentStorage.ps1`，临时与证据放 F 盘。
+在本仓库运行 `node scripts/verify.mjs` 检查多页导航、本地资源和 JavaScript 语法；真实交互、数据持久保存、权限与窄屏另行验收。本机开发检查 shell 先执行 `. F:\zdamexy-workspace\oms\UseDevelopmentStorage.ps1`，临时与证据放 F 盘。
 
 ## 维护与发布
 

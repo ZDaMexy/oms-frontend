@@ -1,3 +1,7 @@
 node_modules/
 dist/
+.dev-cache/
 .claude/
+
+# Local BMS-to-playfield helper; keep it out of the static production checkout.
+parse-bms.cjs

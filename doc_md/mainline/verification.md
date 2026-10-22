@@ -1,13 +1,15 @@
 # OMS Website 验证
 
-## 本轮对象与可复跑检查
+本文保留 2026-10-03～05 旧静态方案的检查方法与当次限制，只用于旧设计保全或已确认兼容范围的回退审查。2026-10-08 官网已由 OMS Web 接管，现官网运行与验收取 [本地说明](../../../oms-web/doc_md/local-use-and-recovery.md) 和 [生产维护](../../../oms-web/doc_md/production-maintenance.md)；下文“本轮”“生产”均属原时点，不能据旧静态脚本检查签收当前官网。
 
-2026-10-04 社区改版验收首页、独立下载 / 帮助、社区列表 / 新帖 / 固定详情、账号与 IR 统一入口。旧 `assets/` 演奏和三语数据只保留归档，本轮不重新签收旧演奏 / 判定交互。实际结果只写入 [dev-progress](dev-progress.md)，本说明是方法而非完成证据。
+## 旧设计检查范围与可复跑方法
+
+2026-10-04 社区改版验收首页、独立下载 / 帮助、社区列表 / 新帖 / 固定详情、账号与 IR 统一入口。旧 `assets/` 演奏和三语数据只保留归档，当次不重新签收旧演奏 / 判定交互。原结果见 [旧站历史](changelog.md#旧静态站进展与计划归档)；后续专项验证在 [dev-progress](dev-progress.md) 留当前摘要，详细证据按日期归入 [changelog](changelog.md)。本说明是方法而非完成证据。
 
 在本仓库执行：
 
 ```powershell
-. F:\oms\UseDevelopmentStorage.ps1
+. F:\zdamexy-workspace\oms\UseDevelopmentStorage.ps1
 node scripts/verify.mjs
 ```
 
@@ -21,11 +23,11 @@ node scripts/verify.mjs
 
 生产由 Nginx 提供指定 release 的门户静态页、固定帖子阅读器和资源，并同源反代 `/api/ir/v1` 到 Backend。Backend 单独 `serve` 只直挂 `ir/`，不会自动挂全部门户；不能据独立服务启动声称官网完整可运行。普通 `python -m http.server` 也只检查独立静态入口 / 布局，不提供账号、帖子或动态详情。
 
-本轮本地完整浏览器门使用只允许 F 盘合成库的 loopback ASGI 预览探针 `F:\oms\artifacts\oms-community-20261004\preview-server.py`，将当前门户路由和真实 Backend 同源挂到 `http://127.0.0.1:18085`，没有读取或复制生产库。已保留脚本可按本机路径复跑：
+当次本地完整浏览器门使用只允许 F 盘合成库的 loopback ASGI 预览探针，将当时门户路由和真实 Backend 同源挂到 `http://127.0.0.1:18085`，没有读取或复制生产库。脚本现保留在 `F:\zdamexy-workspace\oms\artifacts\oms-community-20261004\preview-server.py`，旧 `F:\oms` 路径已迁移；可按下方路径复跑，运行前核对当前 Backend 与旧门户的实际兼容范围：
 
 ```powershell
-. F:\oms\UseDevelopmentStorage.ps1
-& F:\zdamexy-workspace\oms-server\oms-backend\.venv\Scripts\python.exe F:\oms\artifacts\oms-community-20261004\preview-server.py --backend F:\zdamexy-workspace\oms-server\oms-backend --website F:\zdamexy-workspace\websites\oms-website --database F:\oms\.dev-cache\temp\community-preview-acceptance.db
+. F:\zdamexy-workspace\oms\UseDevelopmentStorage.ps1
+& F:\zdamexy-workspace\oms-server\oms-backend\.venv\Scripts\python.exe F:\zdamexy-workspace\oms\artifacts\oms-community-20261004\preview-server.py --backend F:\zdamexy-workspace\oms-server\oms-backend --website F:\zdamexy-workspace\websites\oms-website --database F:\zdamexy-workspace\oms\.dev-cache\temp\community-preview-acceptance.db
 ```
 
 该探针是本轮保留的本机验收工具，不是 Backend 的公开运行能力或生产入口；Nginx 配置与实际服务器旧 / 新 runtime 验收另看 [Backend 社区报告](../../../../oms-server/oms-backend/doc_md/other/community-verification-20261004.md)。不用静态假内容代替服务。
@@ -65,10 +67,10 @@ node scripts/verify.mjs
 在已发布且本地门户源码对应该制品时执行：
 
 ```powershell
-. F:\oms\UseDevelopmentStorage.ps1
+. F:\zdamexy-workspace\oms\UseDevelopmentStorage.ps1
 node scripts/verify-public-cache.mjs
 # 存在生成源码下载、行尾差异或本地 HEAD 已前进时，核对严格导出的实际包：
-node scripts/verify-public-cache.mjs F:/oms/artifacts/oms-osu-web-lazer-account-20261005/package-r2/web
+node scripts/verify-public-cache.mjs F:/zdamexy-workspace/oms/artifacts/oms-osu-web-lazer-account-20261005/package-r2/web
 ```
 
 这是独立、按需运行的公网只读维护检查，不由客户端或页面自动发起。固定请求 `https://oms.zdamexy.work` 的八个门户页及页面实际引用的 `/portal/` 资源，不登录、不写内容、不清除玩家浏览器缓存；使用默认 TLS 校验。它检查正文与默认本地源码或所传精确 web 包字节、200 / 304 的 `no-cache`、当前 ETag 复用、旧单页日期及明确合成的不匹配 ETag 返回新版。生成的源码下载必须存在于传入的严格包，不能拿未生成的 repo 文件跳过字节比较。JSON 输出留非系统盘，失败退出非零；候选未发布时字节不符是阻断。维护脚本 / 文档 HEAD 前进不改变部署来源。

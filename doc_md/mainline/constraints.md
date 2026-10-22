@@ -68,4 +68,4 @@
 
 客户端事实变化先更新 Client Bridge，再经 Dev Bridge 采用后回写；接口、错误、下载或联调结论变化同步 [Dev Bridge](../../../../oms-server/dev_bridge_md/doc_md/mainline/README.md) 与 Backend。通用协作和文件归属见 [AGENTS](../../AGENTS.md)。
 
-`client-ir-saved-connection-and-board-ui`：采用[Client Bridge原连接与查榜快照](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-ui-snapshot-20261007.md)，Website帮助采用真实启用 / 保存 / 登录顺序；原账号源码6168791及17/17仅软件证据，默认离线 / 原UUID / owner与独立会话不变，真实窗口和P/C仍待。
+`client-ir-saved-connection-and-board-ui`：采用[Client Bridge原连接与查榜快照](../../../../oms-server/oms_client_bridge_md/doc_md/other/oms-ir-ui-snapshot-20261007.md)，当时 Website 帮助采用真实启用 / 保存 / 登录顺序；原账号源码6168791及17/17仅适用于该提交的软件证据。现行固定 OMSIR 直接登录与具体谱面入口只取 [共同接线合同](../../../../oms-server/dev_bridge_md/doc_md/subline/oms-player-site/constraints.md#客户端与网页入口)，默认离线 / 原UUID / owner与独立会话不变；历史帮助与软件不代签当前窗口、两端真人或 P/C。

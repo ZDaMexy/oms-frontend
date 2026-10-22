@@ -5,9 +5,9 @@
 | 文件 | 职责 |
 | --- | --- |
 | [constraints](constraints.md) | 产品、公开口径与实现边界 |
-| [dev-progress](dev-progress.md) | 当前实现、缺口及验证证据 |
-| [dev-plan](dev-plan.md) | 下一步与后续 Website 执行投影 |
-| [verification](verification.md) | 可复跑检查与按需浏览器验收 |
+| [dev-progress](dev-progress.md) | 交接状态、回退职责与当前证据入口 |
+| [dev-plan](dev-plan.md) | 保全 / 回退任务与现官网接续入口 |
+| [verification](verification.md) | 旧设计受影响范围的检查方法 |
 | [changelog](changelog.md) | 按日期保留的变更与历史验证 |
 
 其他工作线与跨项目入口见 [文档总索引](../README.md)。

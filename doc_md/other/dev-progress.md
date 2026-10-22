@@ -2,68 +2,32 @@
 
 ## 最新安全维护
 
-2026-10-22 已实施[共享主机安全维护](shared-security-maintenance-20261022.md)，真实重启后双站与业务服务正常，备份范围接续新版运行环境。准确版本、备份工具和当前回退约束取该记录；本轮不发布 Homepage 内容或改变 OMS 原真人门。
+2026-10-22晚间安全修复、实际服务核对及新云备份/F盘恢复已完成，准确运行版本、恢复范围和剩余上游项取[共享维护镜像](shared-security-maintenance-20261022.md)。Homepage仅安全依赖增量`7d71c1f`已循原hook发布；本地Header/CSS与文档源码推送不代表这些页面改动已部署，OMS原真人门保持。
 
-最近双站HTTPS / OMS公开资源核验属于2026-10-11的[原生配套](oms-native-services-20261011.md)，此前网络与2026-10-09记录保留历史。静态ACME路径沿2026-10-08[正式收尾](../../../oms-web/doc_md/production-deployment-20261007.md#正式发布与收尾)，不签实际续期；旧社区 / 备份仍取各来源。
+## 最新存储维护
 
-最新共享设施与OMS应用发布为2026-10-11原生服务配套，当前精确源、三服务往返、双站 / 资源、两备份与安全清理只取[本轮镜像](oms-native-services-20261011.md)。当前来源 / 固定维护 / 回退沿[现行维护](../../../oms-web/doc_md/production-maintenance.md#当前来源与运行位置)，旧网络与更早发布保留原日期。
+2026-10-17 本人网盘的数据库日备份与[OMS / Homepage 全量恢复材料备份](../../../../oms-server/oms-backend/doc_md/other/full-backup-20261017.md)均已启用，当前目录、准确工具、新旧引用、真实取回 / 数据库恢复和清理闭环统一取[分层归档](../../../../oms-server/oms-backend/doc_md/other/netdisk-layout-20261017.md)。原HTTP、三业务进程、本地备份与双站内容保持；当前共享设施摘要取[本地镜像](oms-netdisk-backup-20261017.md)。
 
-2026-10-11网络优化已清理后部署，三服务同库往返、有限并行访问和前后完整备份通过；准确运行 / 回退、双站 / 资源、清理量与未完真人只取[本轮镜像](oms-network-readonly-20261011.md)。较早带日期发布与服务器元信息保持原适用范围，不能代签当前版本。
+[ECS CDT升级](aliyun-backup-cost-20261017.md)已完成，北京适用内地20 GB/月账号共享额度；首次读取用量暂无数据，实际抵扣仍待出账核对。没有购买 / 续费或网站内容发布，新Linux整机启动及原真人门仍待。
 
-## 2026-10-09 OMSIR维护（历史）
+2026-10-16 [OMS闲置材料清理](oms-storage-cleanup-20261016.md)已完成，完整F保全后释放空间、保持正式服务和原恢复预留，实际双站有限读取成功；本轮没有应用发布，当前应用/回退来源仍取下方维护入口。
 
-OMSIR已发布实际客户端并列 /旧库标记与EX /ACC /判定 /Mod。当前主IR /网页绑定、模板路由、两对备份、双站与有限预算取[本轮镜像](oms-score-display-20261009.md)，准确来源 /同库回退与未完成真人取[现行维护](../../../oms-web/doc_md/production-maintenance.md)。本地实际桌面 /390窄屏已核，生产取景单次25秒超时；Homepage本地内容没有发布。旧同日普通LR2IR来源方案及原证据取[早先镜像](oms-lr2ir-source-20261009.md)。
+## 当前 OMS 维护入口
 
-## 2026-10-09 排行榜展示发布记录（17:24）
+OMS应用最近正式发布仍为2026-10-11原生服务配套，本次独立备份维护取上节；当前精确源、三服务往返、双站 / 资源、两备份与安全清理只取[本轮镜像](oms-native-services-20261011.md)。当前来源 / 固定维护 / 回退沿[现行维护](../../../oms-web/doc_md/production-maintenance.md#当前来源与运行位置)，旧网络与更早发布保留原日期。
 
-OMS成绩来源、谱面 / 玩家榜和个人成绩页已发布审改。当前共享绑定、双站 / 完整备份、历史运行包F保全和新增预算取[本轮镜像](oms-ranking-layout-20261009.md)，准确版本 / 回退只取[现行维护](../../../oms-web/doc_md/production-maintenance.md)。公开成绩前后一致，本地桌面与此前有效窄屏图片已取得；线上取景20秒超时，真人门继续待验收。Homepage本地内容没有随本轮发布。
+上述发布保持 Homepage 原内容，未包含其本地内容改动。OMS 仍记录为“已部署待验收”；线上普通浏览器、真实下载 / 账号 / OMS 与 P/C 的未完成范围取 [真人验收](../../../oms-web/doc_md/production-maintenance.md#真人验收)，2026-10-11 新增运行 / 公开核验和备份沿上方镜像，真人门不提升。
 
-## 2026-10-09 表内等级发布记录（15:03）
+## 双站观察与证据日期
 
-OMS谱面榜已发布表内等级选择，当前共享配置、双站 / 完整备份及预算取[本轮镜像](oms-table-levels-20261009.md)，准确版本 / 回退只取[现行维护](../../../oms-web/doc_md/production-maintenance.md)。本地桌面与公网检查通过，窄屏工具未生效、线上浏览器仍超时，真人门继续待验收；Homepage本地内容没有随本轮发布。
+最近双站HTTPS与服务有限读取取2026-10-22[晚间安全维护](shared-security-maintenance-20261022.md)，10月16～17日存储/备份观察保留原时点；完整原生配套公开资源范围仍取2026-10-11[记录](oms-native-services-20261011.md)。静态ACME路径沿2026-10-08[正式收尾](../../../oms-web/doc_md/production-deployment-20261007.md#正式发布与收尾)，不以HTTPS读取代签实际续期。
 
-## 2026-10-09 难度表浏览记录（14:07）
-
-OMS 难度表浏览已发布，新增共享配置绑定、双站 / 完整备份、有限读取与当前盘账取[共享镜像](oms-bms-tables-20261009.md)。准确当前来源和回退只取[现行维护](../../../oms-web/doc_md/production-maintenance.md)；网页元数据来源不提升客户端事实，Homepage本地内容没有随本轮上线。下方文案轮和2026-10-08接续保留各自日期，真人门继续待验收。
-
-## 2026-10-09 文案审改记录
-
-OMS 文案与阅读体验审改已发布，本轮双站 HTTPS、资源与完整备份核对取[共享镜像](oms-web-copy-review-20261009.md)。准确运行身份、回退和待验收范围只取[现行维护](../../../oms-web/doc_md/production-maintenance.md)；下方2026-10-08接续与更早观察保持历史日期，Homepage本地内容没有随本轮发布。
-
-## 2026-10-08 原版接续记录
-
-原版OMS官网已由 [OMS Web](../../../oms-web/OMS.md) 接管，HTTP / 页面运行包为 `b879e4233818-b0feceae22e4` / schema3，状态“已部署待验收”。固定维护来源为D1/22b，旧设计同库回退目标为D1/e6；完整身份与现行步骤只取[原版站维护](../../../oms-web/doc_md/production-maintenance.md)，共享接续取[镜像记录](shared-journal-budget-20261008.md)。
-
-Homepage内容发布仍独立；原版上线不代表个人主页工作区改动已发布。系统日志原件完整F保全及合计512 MiB配置已有实际记录，线上真人浏览器、下载 / 账号 / OMS与P/C未因此关闭。下方旧观察保留原日期，不代表当前源码或刷新TLS实际续期验收。
-
-## 2026-10-04 社区发布记录（历史）
-
-社区门户当次release为 `f1f8286640c7-c1b1b7a5da7a` / schema2；最终公网桌面与手机只读检查通过，个人主页内容与发布前一致。03:35一致日备份成功并完成受限F盘外取。当次路径、来源、失败与真人门取[社区发布记录](community-infrastructure-20261004.md)，不用于现原版站的来源与回退判断。
-
-## 最近双站核验
-
-2026-09-09 01:10（UTC+8）通过公网请求和 `ssh zdamexy-srv` 只读核对，未修改服务器或触发部署。以下为两站共同的观察记录，另一站 other 保持镜像。
-
-| 项目 | 该次证据 |
-| --- | --- |
-| DNS 与访问 | 2026-09-09 01:10（UTC+8），两域名 A 记录均为 `39.105.55.78`；HTTP 均 301 跳同域 HTTPS，HTTPS 首页均 200，系统 TLS 证书校验通过。 |
-| 服务器 | `/etc/os-release` 为 Ubuntu 24.04.4 LTS；`/www/server/nginx/sbin/nginx -v` 为 Nginx 1.28.3。 |
-| 网站根权属 | `/www/wwwroot/zdamexy.work` 与 `/www/wwwroot/oms` 均为 `www:www`。 |
-| 当前证书文件 | 两个站点 `fullchain.pem` 均由 ZeroSSL ECC DV SSL CA 2 签发，有效期为 2026-08-18 00:00:00 至 2026-11-16 23:59:59（UTC）。仅读取公开证书元信息，未读取私钥。 |
-| 复核范围 | 已查当前可达性、已安装证书、部署裸仓 main 与公开资源；该次未执行 post-receive、续期任务、Nginx reload 或生产浏览器矩阵，不能据此宣称完整发布/续期链路已重新验收。 |
-
+服务器版本、站点权属及已安装证书元信息仍取2026-09-09的[历史观察](changelog.md#2026-09-09-双站观察与版本差异)；后续实际运行 / 配置和双站TLS读取没有重验DNS、证书安装或续期。本次文档同步不刷新这些证据日期，下一次运维按[计划](dev-plan.md#后续维护)复核受影响范围。
 
 ## 本地与生产版本
 
-本节仅保存2026-09-09的本地 / 部署观察；其中“本地”“生产”和未发布差异都指当次，不能用旧HEAD或裸仓水位判断当前原版站或Homepage发布。
-
-- 本地 main 为 `5215e3b9d180a5572aaa631a58a38a2af852c0c4`；生产部署裸仓 `/www/wwwroot/oms.git` 的 main 为 `e8b764bcbbc9a7c25c330f5a6b144692bb374dd5`。本地 HEAD 比部署提交多 2 个文档/协作基线提交，另有尚未提交的页面与脚本修改。
-- 生产 `index.html`、`assets/scripts/site.js`、`assets/scripts/i18n.js`、`assets/styles/site.css` 与部署 main 的工作树比较无差异；当前本地工作区没有同步到生产。
-- 公网资源标记仍为 `20260602-19`，本地为 `20260909-1`。线上 HTML、i18n 与 site.js 不同于本地；`chart-lost.js` 和 site.css 字节一致。此前 Hero/社区状态口径和 2026-09-09 本地协作优化的播放修复不能记为已上线。
-- 生产 `index.html` 文件最后修改时间为 2026-06-03 13:24:20（UTC+8），与公网 Last-Modified 对应；资源标记及文件时间均不替代发布日志。
-- 该次只读审查不触发提交、push 或部署。后续发布安排见 [计划](dev-plan.md)；直接 push 当前 HEAD 不会包含未提交修复。
-
+旧HEAD和公开资源差异保留于[2026-09-09原观察](changelog.md#2026-09-09-双站观察与版本差异)。当前OMS来源取顶部维护入口；Homepage生产为10月22日安全增量`7d71c1f`，本地页面/脚本范围与验证取其[主线状态](../../../homepage-website/doc_md/mainline/dev-progress.md)。后续发布仍先核实际来源，文档或origin推送不改变部署hook水位。
 
 ## 运行约定与历史
 
-部署目标、SSH、Nginx 与续期边界见 [constraints](constraints.md)。历史部署和续期验证见 [changelog](changelog.md)，最近检查没有重跑发布或续期链路。当前无新增产品调研结论。
+部署、SSH、Nginx 与续期边界见 [constraints](constraints.md)。2026-10-08 接续及 2026-10-09 各次发布摘要见 [原日期历史](changelog.md#2026-10-09-oms-发布摘要历史)，详细记录从 [other 索引](README.md) 进入；历次本地职责与镜像核对见 [运维历史](changelog.md)，文档治理验证统一见 [Dev Bridge](../../../../oms-server/dev_bridge_md/doc_md/mainline/dev-progress.md#文档治理验证)。
