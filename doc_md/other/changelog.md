@@ -1,5 +1,9 @@
 # Frontend Other Changelog
 
+## 2026-11-01 Shiro 官方 QQ 独立回调
+
+新增独立 `shiro-bot.service` 与 Homepage exact `/shiro-qq/webhook`，经 BT Nginx 检查和重载后完成公网受控回调验证；首轮旧 worker 404 与后续通过结果均保留于 [设施镜像](shiro-qq-webhook-20261101.md)。两站根页变更前后均 200，既有 Nginx / OMS 服务保持 active，原恢复预留保持；未发布网站内容、变更 TLS / OMS 阶段或扩展现有备份任务。机器人控制台、真人收发和后续恢复只归 Shiro，不将本次 HTTPS 读取记为续期重验。
+
 ## 2026-10-22 安全维护后的文档一致性复核
 
 双站共享设施当前入口接续 10 月 22 日安全维护，旧 PHP / Python、10 月 17 日备份数量和盘账保留原日期；Homepage 安全部署 `7d71c1f` 与后续本地源码分开。镜像与全仓审查 / 检查范围取[统一收据](../../../../oms-server/dev_bridge_md/doc_md/mainline/changelog.md#2026-10-22-全工作区进度与文档记忆同步)，本次没有新生产连接、共享配置修改或部署，不刷新 CDT 抵扣、完整容量或 Linux 整机恢复门。

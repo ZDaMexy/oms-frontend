@@ -1,5 +1,6 @@
 # 调研与运维
 
+- [2026-11-01 Shiro 官方 QQ 回调](shiro-qq-webhook-20261101.md)：独立服务、Homepage 精确路由、配置保全与双站有限验证；机器人功能与真人验收归 Shiro。
 - [2026-10-22 共享服务器安全维护](shared-security-maintenance-20261022.md)：PHP / Nginx / 内核修复、真实重启及恢复材料；应用来源保持。
 
 本目录保留旧 OMS 官网运维历史与两站共用设施镜像；现官网已交接到 OMS Web，Homepage 的内容与发布独立。
