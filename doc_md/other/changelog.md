@@ -1,5 +1,17 @@
 # Frontend Other Changelog
 
+## 2026-11-01 共享运行时与安全增量
+
+续记 06:35～06:37 CST：新全备同一 worker 成功完成，42 roots 实际展开 49 对象及 catalog；新增 / 变化密文完整下载核 SHA，未变化对象 metadata probe 复用。维护重启用新 boot ID 与业务 / 双站 / health / 隔离有限检查确认，四 timer waiting，短 startup 资源样本不签长期性能。本地 Web npm 修复已提交 `7000b90625` 未部署、484 assets SHA 不变；主源触发条件与剩余云端 age 解密 / 异机、真人、两 CVE 范围沿 [设施镜像](shared-agent-security-20261101.md)只取 OMS Web。下段保留此前各时点的未完成范围。
+
+续记 06:29 CST：旧面板历史目录在 F 逐普通文件及完整归档成员核验后退役，自有 transport archive 同步删除，受限 F 保全件保持。进程 / FD 无引用、现行 full plan 无该路径，双站 / health / Nginx / 面板和服务 PID 基线保持；磁盘净观察含并行全备影响，准确指纹及边界沿 [镜像](shared-agent-security-20261101.md)只取 OMS Web。新全备与整机重启仍待最终收据，未发布网站资产。
+
+续记 05:43～05:57 CST：Shiro v0.2 `4dc8422` 已切换，独立快照与同机新目录恢复通过，准确业务范围只取 Shiro。Backend `1de5eab` 已推送，真实 age 组合回归 108 passed / 1 条既有提示；备份工具 `d9a42ff093e1799d` 与新 plan 已上线，旧 `f7b8b9b0a39b7971` 保留。42 roots 预期展开 49 对象，真实全备 MainPID 146489 仍运行、timer 已恢复；全备完成、age 解密 / 异机启动、旧面板清理及重启尚未签收。权威收据沿 [设施镜像](shared-agent-security-20261101.md#current-release-backup)引用 OMS Web；下段保留 05:07～05:25 及 04:57 原时段范围。
+
+续记 05:07～05:25 CST：SSH / UFW 已取得独立新会话及精确规则收据，特定 bwrap profile 保持全局限制；真实服务用户 Linux 定向验证通过，BT 两包补修与正常协议 / 双站检查通过，首次 TLS-only 面板 HTTP 探错保留。源码 guard 误判 OpenSSL tuple 的失败与修正另有证据；这些设施事实统一沿 [镜像](shared-agent-security-20261101.md)引用 OMS Web。正式 Bot 切换、独立状态备份、全备恢复和维护重启尚待，未把定向缓解写成内核已修复。下段保留 04:57 阶段原范围。
+
+OMS / 固定 helper 切换 Python 3.12.16，BT 切换 Python 3.13.18，并修复源模板覆盖已加固 init 的根因；新鲜备份 F 验证、同库和包版本保持、三 timer 恢复及双站有限检查取 [设施镜像](shared-agent-security-20261101.md)。已停用空 Docker / containerd / multipath 服务，主机包更新和 Nginx 源树完整保全后退役有独立收据。新 full plan roots 尚未新全备 / 恢复签收，系统上游项、后续 SSH / UFW、Bot 与重启待实际结果；原网站内容、TLS 续期和 OMS 真人门不提升。下方 03:18 首期 QQ 回调保留原证据。
+
 ## 2026-11-01 Shiro 官方 QQ 独立回调
 
 新增独立 `shiro-bot.service` 与 Homepage exact `/shiro-qq/webhook`，经 BT Nginx 检查和重载后完成公网受控回调验证；首轮旧 worker 404 与后续通过结果均保留于 [设施镜像](shiro-qq-webhook-20261101.md)。两站根页变更前后均 200，既有 Nginx / OMS 服务保持 active，原恢复预留保持；未发布网站内容、变更 TLS / OMS 阶段或扩展现有备份任务。机器人控制台、真人收发和后续恢复只归 Shiro，不将本次 HTTPS 读取记为续期重验。
