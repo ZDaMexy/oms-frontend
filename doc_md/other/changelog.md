@@ -1,5 +1,9 @@
 # Frontend Other Changelog
 
+## 2026-11-01 Shiro 新版入口与私人配置 TLS
+
+21:56～22:05 CST，新 Shiro 服务与 Homepage exact 回调已激活，新增 `shiro.zdamexy.work` 私人配置 vhost、Let’s Encrypt 证书及既有 ACME 续期安装记录。变更前保全、BT 检查/reload、双站 200、原服务和公网协议健康取[共享镜像](shiro-qq-webhook-20261101.md#2156-新版共享入口)。旧服务/旧 snapshot timer 保持停用；未发布网站内容、修改 OMS 数据或提升真人门。开发及资源专项留本机，服务器只接生产产物；当前 Bot 来源和人工绑定修复只归 Shiro。
+
 ## 2026-11-01 共享运行时与安全增量
 
 续记 06:35～06:37 CST：新全备同一 worker 成功完成，42 roots 实际展开 49 对象及 catalog；新增 / 变化密文完整下载核 SHA，未变化对象 metadata probe 复用。维护重启用新 boot ID 与业务 / 双站 / health / 隔离有限检查确认，四 timer waiting，短 startup 资源样本不签长期性能。本地 Web npm 修复已提交 `7000b90625` 未部署、484 assets SHA 不变；主源触发条件与剩余云端 age 解密 / 异机、真人、两 CVE 范围沿 [设施镜像](shared-agent-security-20261101.md)只取 OMS Web。下段保留此前各时点的未完成范围。

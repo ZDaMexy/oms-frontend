@@ -1,5 +1,25 @@
 # 2026-11-01 Shiro 官方 QQ 回调共享设施镜像
 
+2026-11-01 21:56:58 CST，新 `shiro-agent.service` 已激活，Homepage exact `/shiro-qq/webhook` 从维护状态改为代理新版。新增本人配置入口 [shiro.zdamexy.work](https://shiro.zdamexy.work) 与独立 TLS；旧 `shiro-bot.service` / snapshot timer 保持停用。22:05:52 的静态 JS 修复沿同一服务与路由发布，未改网站内容或 OMS。业务来源、登录及真人状态只取 [Shiro 生产运行](../../../../Shiro-Agent/doc_md/mainline/production.md)，旧停用与清理取[退役记录](../../../../Shiro-Agent/doc_md/mainline/deployment-retirement.md)。
+
+## 21:56 新版共享入口
+
+Homepage 只代理 exact 回调到 `http://127.0.0.1:18775/qq/webhook`，不开放 Bot 管理 API。新增 `/www/server/panel/vhost/nginx/shiro.zdamexy.work.conf`，代理同一薄宿主的静态配置页及认证 API；该域名的 `/qq/webhook` 明确 404。专属入口 HTTP01 webroot 为 `/var/lib/acme-shiro`，实际 DNS A 记录为 39.105.55.78。
+
+Let’s Encrypt EC256 证书已实际签发，UTC 有效期为 **2026-11-01 12:55:18 至 2027-01-30 12:55:17**，安装于 `/www/server/panel/vhost/cert/shiro.zdamexy.work/`。沿用 acme.sh 3.1.4 与既有 cron，安装记录的续期 reload hook 为 BT Nginx `-t` 通过后 `/etc/init.d/nginx reload`；未改原两站证书，未来续期不因本次签发自动视作已验证。
+
+修改前双站均 200，Homepage 配置保全在 root0700 的 `/var/backups/oms-maintenance/shiro-agent-release-20261101/`。BT 配置检查及 reload 通过；首次新域名 TLS 检查遇到 worker 切换窗口，随后确认登录页 200、匿名配置 API 401、私人回调 404、公开 challenge 200 且实际 Ed25519 验证通过、非法回调 403。双站仍 200，nginx、oms-ir、oms-ir-catalog、oms-web 均 active。22:05 修正版之后双站与配置登录页再次 200。没有上传工程 QA、测试依赖或在服务器构建。
+
+| 共享配置 | SHA-256 |
+| --- | --- |
+| Homepage 变更前 | `c33d25d7e367766fa11e89266d638dcc3e4f00f1fceb8824bdb571951838687d` |
+| Homepage 变更后 | `6f752ed53bdfcc205d74c06404c9f56b6974ae8656d5178d91170b5ad3540d4b` |
+| 新 Shiro vhost | `b70c8768e68ce0d17dfd6fb8b5709d01796317491d7b46ee7bf9131cf4daed6a` |
+
+原网站内容、部署 hook、OMS 业务版本和数据库保持。新认知资料没有加入现有 OMS 追加式全备；当前恢复和旧图库只读复用的归属只取 Shiro 生产记录，旧云对象未删除。原恢复预留保持，QQ 全群权限、本人绑定与真实业务不由网站健康检查代签。
+
+## 17:21 停旧历史
+
 2026-11-01 17:21 后，旧 Bot 已停止并取消自启，旧 snapshot timer 同样停用；exact 回调改为 503 maintenance，不再代理到已停端口。BT 配置检查、reload、Homepage / OMS 200 与原四服务 active 已核对；原配置保全、当前配置 SHA、清理与恢复归属统一取 [Shiro 待部署记录](../../../../Shiro-Agent/doc_md/mainline/deployment-retirement.md)。新版仍在本机开发，没有上传 QA、激活新服务或创建配置子域名。下方 03:18 记录保留其原时点，不代表旧 Bot 现在仍在运行。
 
 > 证据落点更新（2026-11-01）：旧 Shiro 开发目录已完整 ZIP 校验后移除；下方旧业务文档固定到封存提交，原本地收据从 ZIP 按成员路径查阅，位置与校验身份取[交接](../../../../Shiro-Agent/doc_md/mainline/legacy-handoff.md)。本次只调整引用，不刷新原验证日期、网站发布或恢复结论。

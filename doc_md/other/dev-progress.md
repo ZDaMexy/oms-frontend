@@ -1,6 +1,6 @@
 # OMS Website Other Progress
 
-2026-11-01 17:21 后，Shiro 旧服务和旧 snapshot timer 已停用并取消自启，exact 回调为 503 maintenance，已清理 QA / 探测和旧 SDK 环境；主机维护保全件归入既有恢复根。BT 检查、reload、双站 200 和原四服务 active 通过，当前配置与完整清单取[共享镜像](shiro-qq-webhook-20261101.md)。新 Shiro 仍在本机开发；旧开发线、ZIP 与历史证据保持原日期，取[Shiro 交接](../../../../Shiro-Agent/doc_md/mainline/legacy-handoff.md)。
+2026-11-01 21:56～22:05 CST，Shiro 新服务、Homepage exact 新版回调与本人配置 HTTPS 已激活；BT 检查/reload、双站 200、原四服务 active 和配置入口必要健康通过。旧 Bot / snapshot timer 保持停用，网站内容及 OMS 版本未变；共享配置、TLS 与保全只取[共享镜像](shiro-qq-webhook-20261101.md#2156-新版共享入口)，Bot 来源与真人验收只取[Shiro 生产记录](../../../../Shiro-Agent/doc_md/mainline/production.md)。旧线与 ZIP 保持原历史日期。
 
 ## 最新共享设施变更
 
