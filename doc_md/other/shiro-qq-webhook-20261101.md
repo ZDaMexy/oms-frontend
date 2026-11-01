@@ -1,5 +1,7 @@
 # 2026-11-01 Shiro 官方 QQ 回调共享设施镜像
 
+2026-11-01 17:21 后，旧 Bot 已停止并取消自启，旧 snapshot timer 同样停用；exact 回调改为 503 maintenance，不再代理到已停端口。BT 配置检查、reload、Homepage / OMS 200 与原四服务 active 已核对；原配置保全、当前配置 SHA、清理与恢复归属统一取 [Shiro 待部署记录](../../../../Shiro-Agent/doc_md/mainline/deployment-retirement.md)。新版仍在本机开发，没有上传 QA、激活新服务或创建配置子域名。下方 03:18 记录保留其原时点，不代表旧 Bot 现在仍在运行。
+
 > 证据落点更新（2026-11-01）：旧 Shiro 开发目录已完整 ZIP 校验后移除；下方旧业务文档固定到封存提交，原本地收据从 ZIP 按成员路径查阅，位置与校验身份取[交接](../../../../Shiro-Agent/doc_md/mainline/legacy-handoff.md)。本次只调整引用，不刷新原验证日期、网站发布或恢复结论。
 
 > 实际证据时间：2026-11-01 03:18 CST（UTC+8）。本页仅记录共享服务器与 Nginx 的变更和保全边界；Shiro 的功能、配置、恢复与后续验收统一取 [Shiro 官方部署指南](https://github.com/ZDaMexy/Shiro-BOT/blob/364fb1dcf34c6f4ba669dedb1bcd87a34f66b915/doc_md/mainline/qq-official-deployment.md)。

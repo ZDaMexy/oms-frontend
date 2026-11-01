@@ -1,6 +1,6 @@
 # OMS Website Other Progress
 
-2026-11-01 Shiro 旧开发线以 `364fb1d` / `pre-custom-20261101` 封存，本地完整 ZIP 已校验并在原路径建立独立新开发线；旧服务继续运行。旧共享设施证据保持原日期，引用已指向固定旧提交或 ZIP；新本地入口与备份身份取[Shiro 交接](../../../../Shiro-Agent/doc_md/mainline/legacy-handoff.md)。本次没有网站或服务器配置变更。
+2026-11-01 17:21 后，Shiro 旧服务和旧 snapshot timer 已停用并取消自启，exact 回调为 503 maintenance，已清理 QA / 探测和旧 SDK 环境；主机维护保全件归入既有恢复根。BT 检查、reload、双站 200 和原四服务 active 通过，当前配置与完整清单取[共享镜像](shiro-qq-webhook-20261101.md)。新 Shiro 仍在本机开发；旧开发线、ZIP 与历史证据保持原日期，取[Shiro 交接](../../../../Shiro-Agent/doc_md/mainline/legacy-handoff.md)。
 
 ## 最新共享设施变更
 
