@@ -1,5 +1,9 @@
 # Frontend Other Changelog
 
+## 2026-11-02 存储清理与百度冷归档
+
+历史发布、旧运行时和维护原件在完整云端校验后迁出，阿里云本机客户端与旧工具退役；用户确认暂停云端计划并保留已有恢复点。系统 / OMS journal 预算接续为 128 / 32 MiB、14 天，网站发布链与应用版本保持。盘账、当前目录及恢复边界通过[本轮镜像](shared-storage-offload-20261102.md)指向 OMS Web 权威，不刷新旧业务或异机恢复验收。
+
 ## 2026-11-01 Shiro 新版入口与私人配置 TLS
 
 21:56～22:05 CST，新 Shiro 服务与 Homepage exact 回调已激活，新增 `shiro.zdamexy.work` 私人配置 vhost、Let’s Encrypt 证书及既有 ACME 续期安装记录。变更前保全、BT 检查/reload、双站 200、原服务和公网协议健康取[共享镜像](shiro-qq-webhook-20261101.md#2156-新版共享入口)。旧服务/旧 snapshot timer 保持停用；未发布网站内容、修改 OMS 数据或提升真人门。开发及资源专项留本机，服务器只接生产产物；当前 Bot 来源和人工绑定修复只归 Shiro。

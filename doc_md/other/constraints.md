@@ -1,5 +1,7 @@
 # OMS Website Other Constraints
 
+2026-11-02 日志预算与退役材料的主机保留规则接续为[存储维护镜像](shared-storage-offload-20261102.md)：系统 journal 128 MiB、OMS namespace 32 MiB，均 14 天；历史原件经完整云端校验后迁出。下方旧日志预算保留原日期，不再是当前预算。
+
 2026-10-22 起共享主机安全配置和恢复范围取[安全维护镜像](shared-security-maintenance-20261022.md)。Nginx 的 systemd 服务现已绑定 BT binary / config / PID；下方“未升级 BT PHP”等表述属于 10 月 8 日当次范围，当前旧 PHP8.2 已停用。禁止以应用回退覆盖受修复运行时或安全配置。
 
 2026-10-08 原版OMS Web已部署 / schema3，状态“已部署待验收”。独立PHP、BT配对路由与同库回退已有实际证据；当前运行、固定维护与旧设计回退的准确来源和步骤只取[现行维护](../../../oms-web/doc_md/production-maintenance.md)。当次旧设计及实际配置备份只放F，未在服务器另打旧站包或升级共享PHP；共享日志保全与512 MiB配置取[镜像记录](shared-journal-budget-20261008.md)。
