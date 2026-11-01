@@ -1,5 +1,7 @@
 # 2026-11-01 共享主机运行时与安全维护
 
+> 证据落点更新（2026-11-01）：旧 Shiro 开发目录已完整 ZIP 校验后移除；下方旧业务文档固定到封存提交，原本地收据从 ZIP 按成员路径查阅，位置与校验身份取[交接](../../../../shiro-bot/doc_md/mainline/legacy-handoff.md)。本次只调整引用，不刷新原验证日期、网站发布或恢复结论。
+
 本页是两站共用设施的同文镜像，准确运行时、BT 模板根因、备份指纹和未完成范围统一取 [OMS Web 权威记录](../../../oms-web/doc_md/server-agent-security-20261101.md)。Homepage、OMS、Shiro 的内容、源码和发布仍独立，不把主机维护记成网站或 Bot 业务验收。
 
 ## 已完成的设施变更
@@ -24,7 +26,7 @@ AppArmor 仅加载 `/usr/bin/bwrap` 特定 profile，全局 userns restriction �
 
 ## 05:43 后的发布与备份状态
 
-Shiro v0.2 已正式切至 `4dc8422`，独立状态快照和同机新目录恢复通过；业务来源、恢复范围与真人门只取 [Shiro 部署记录](../../../../shiro-bot/doc_md/mainline/qq-official-deployment.md)。同机恢复不签云端解密或异机启动。
+Shiro v0.2 已正式切至 `4dc8422`，独立状态快照和同机新目录恢复通过；业务来源、恢复范围与真人门只取 [Shiro 部署记录](https://github.com/ZDaMexy/Shiro-BOT/blob/364fb1dcf34c6f4ba669dedb1bcd87a34f66b915/doc_md/mainline/qq-official-deployment.md)。同机恢复不签云端解密或异机启动。
 
 Backend `1de5eab` 已推送，真实 age 的 guard / 备份组合回归 **108 passed / 1 条既有 Starlette 提示**。新备份工具 `d9a42ff093e1799d` 与 plan 已上线，旧 `f7b8b9b0a39b7971` 保留。06:35 CST 全备已成功完成：42 个声明 roots 实际展开 49 对象及 catalog；本轮新增 / 变化密文上传后完整下载核 SHA，未变化对象 metadata probe 后复用。四个 timer enabled / active / waiting，workers idle；准确 plan、八类归档、conditional host metadata 和 catalog 指纹统一取 [OMS Web 当前状态](../../../oms-web/doc_md/server-agent-security-20261101.md#current-release-backup)。本轮没有读取恢复私钥，云端 age 解密 / 异机启动未验收。
 
@@ -44,6 +46,6 @@ Backend `1de5eab` 已推送，真实 age 的 guard / 备份组合回归 **108 pa
 
 系统 Python 的 CVE-2026-115557 仍待 Ubuntu 评估；CVE-2026-98260 官网当前 Noble kernel 已列修复中，不能把已安装 candidate 或重启当成漏洞已关闭。最新 20 条 USN 比对只证明限定范围，不声称主机全无漏洞。SSH / UFW、新 Bot 切换与独立快照 / 同机恢复、旧面板退役、新全备及维护重启均已取得后续收据；本轮云端 age 解密 / 异机启动和真人验收仍未签收。Node 22.23.4 已覆盖官方 10 月 21 日安全发布，系统 Python 仍由 Ubuntu 评估；既有 intel-microcode / cloud-init hold 保持。准确上游状态和待办只取 [OMS Web](../../../oms-web/doc_md/server-agent-security-20261101.md#remaining-security)。
 
-03:18 首期独立 QQ 回调的配置与有限验证仍见 [原日期记录](shiro-qq-webhook-20261101.md)，不覆盖为新版事实。Shiro 当前部署、运行隔离、恢复与真人收发只取 [其部署记录](../../../../shiro-bot/doc_md/mainline/qq-official-deployment.md)。
+03:18 首期独立 QQ 回调的配置与有限验证仍见 [原日期记录](shiro-qq-webhook-20261101.md)，不覆盖为新版事实。Shiro 当前部署、运行隔离、恢复与真人收发只取 [其部署记录](https://github.com/ZDaMexy/Shiro-BOT/blob/364fb1dcf34c6f4ba669dedb1bcd87a34f66b915/doc_md/mainline/qq-official-deployment.md)。
 
-本轮证据位于 F 盘 `shiro-bot/.pytest_cache/server-agent-20261101/`；`python-rollout/final.json` 只描述 **04:57 OMS / BT 解释器切换**，最新全备与重启终态分别取 `full-completion.json`、`maintenance-reboot-verified.json` 及上方 OMS Web 权威入口。配置原件与 DB 快照在受限 `private/`，不进 Git、不展示个人行或密钥。旧 [10 月 22 日维护](shared-security-maintenance-20261022.md)保留原日期及原恢复范围。
+本轮原证据位于完整 ZIP 的 `shiro-bot/.pytest_cache/server-agent-20261101/`；`python-rollout/final.json` 只描述 **04:57 OMS / BT 解释器切换**，最新全备与重启终态分别取 `full-completion.json`、`maintenance-reboot-verified.json` 及上方 OMS Web 权威入口。配置原件与 DB 快照在受限 `private/`，不进 Git、不展示个人行或密钥。旧 [10 月 22 日维护](shared-security-maintenance-20261022.md)保留原日期及原恢复范围。

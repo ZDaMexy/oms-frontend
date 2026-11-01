@@ -1,6 +1,8 @@
 # 2026-11-01 Shiro 官方 QQ 回调共享设施镜像
 
-> 实际证据时间：2026-11-01 03:18 CST（UTC+8）。本页仅记录共享服务器与 Nginx 的变更和保全边界；Shiro 的功能、配置、恢复与后续验收统一取 [Shiro 官方部署指南](../../../../shiro-bot/doc_md/mainline/qq-official-deployment.md)。
+> 证据落点更新（2026-11-01）：旧 Shiro 开发目录已完整 ZIP 校验后移除；下方旧业务文档固定到封存提交，原本地收据从 ZIP 按成员路径查阅，位置与校验身份取[交接](../../../../shiro-bot/doc_md/mainline/legacy-handoff.md)。本次只调整引用，不刷新原验证日期、网站发布或恢复结论。
+
+> 实际证据时间：2026-11-01 03:18 CST（UTC+8）。本页仅记录共享服务器与 Nginx 的变更和保全边界；Shiro 的功能、配置、恢复与后续验收统一取 [Shiro 官方部署指南](https://github.com/ZDaMexy/Shiro-BOT/blob/364fb1dcf34c6f4ba669dedb1bcd87a34f66b915/doc_md/mainline/qq-official-deployment.md)。
 
 Shiro-BOT、Homepage 与 OMS 是独立产品。本次为独立 QQ 官方机器人增加服务和 Homepage 域名下的精确回调路由，不构成 OMS 机器人集成，也不改变 OMS 的阶段或真人验收状态。两站 `other/` 保存相同设施事实，目录入口见 [README](README.md)。
 
@@ -21,7 +23,7 @@ Homepage 和 OMS 的站点内容、发布 hook、TLS / ACME 配置、OMS 数据�
 
 ## 配置保全与激活
 
-修改前的 Homepage vhost 快照保存在 Shiro 本地验证产物 [homepage-vhost.before.conf](../../../../shiro-bot/.pytest_cache/qq-official-20261101/homepage-vhost.before.conf)。这是本次变更前配置的保全入口，不是网站内容发布包。
+修改前的 Homepage vhost 快照保存在 Shiro 本地验证产物 [homepage-vhost.before.conf 的归档入口](../../../../shiro-bot/doc_md/mainline/legacy-handoff.md#完整-zip)（ZIP 内 `shiro-bot/.pytest_cache/qq-official-20261101/homepage-vhost.before.conf`）。这是本次变更前配置的保全入口，不是网站内容发布包。
 
 | Homepage vhost | SHA-256 |
 | --- | --- |
@@ -42,5 +44,5 @@ BT Nginx 的 `/www/server/nginx/sbin/nginx -t` 通过后，使用 `/etc/init.d/n
 | 平台控制台与真人 QQ | 该时点由用户自行配置 `GROUP_AT_MESSAGE_CREATE`、`C2C_MESSAGE_CREATE` 并执行真人收发，尚待反馈；后续结果只更新 Shiro 部署与验证记录 |
 | TLS / 续期 | 本次 HTTPS 读取不代表证书安装、DNS、ACME 任务或实际续期重新验收；此前证据日期保持 |
 
-本次没有把新机器人加入现有备份任务。两站已有全量恢复材料不能据此解释为已覆盖 Shiro 的 release、解释器、服务环境或状态目录；具体备份缺口与恢复步骤沿 [Shiro 部署指南](../../../../shiro-bot/doc_md/mainline/qq-official-deployment.md)接续。双站业务与原恢复预留保持，不提升新 Linux 整机恢复、长期压力或任何产品真人验收结论。
+本次没有把新机器人加入现有备份任务。两站已有全量恢复材料不能据此解释为已覆盖 Shiro 的 release、解释器、服务环境或状态目录；具体备份缺口与恢复步骤沿 [Shiro 部署指南](https://github.com/ZDaMexy/Shiro-BOT/blob/364fb1dcf34c6f4ba669dedb1bcd87a34f66b915/doc_md/mainline/qq-official-deployment.md)接续。双站业务与原恢复预留保持，不提升新 Linux 整机恢复、长期压力或任何产品真人验收结论。
 

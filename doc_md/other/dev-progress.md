@@ -1,12 +1,14 @@
 # OMS Website Other Progress
 
+2026-11-01 Shiro 旧开发线以 `364fb1d` / `pre-custom-20261101` 封存，本地完整 ZIP 已校验并在原路径建立独立新开发线；旧服务继续运行。旧共享设施证据保持原日期，引用已指向固定旧提交或 ZIP；新本地入口与备份身份取[Shiro 交接](../../../../shiro-bot/doc_md/mainline/legacy-handoff.md)。本次没有网站或服务器配置变更。
+
 ## 最新共享设施变更
 
 2026-11-01 接续至 06:37 CST：运行时、SSH / UFW、bwrap、BT 两包补修、Shiro v0.2 切换 / 同机恢复与旧面板 F 保全后退役均已留证。Backend `1de5eab` 的真实 age 组合 108 项通过；新 `d9a42ff093e1799d` 工具 / plan 的全备已完成，42 roots 实际展开 49 对象及 catalog。维护重启和新 boot ID、业务 / 双站 / health 有限检查通过，四 timer enabled / active / waiting；本地 Web 依赖修复 `7000b90625` 已提交未部署。准确事实沿 [设施镜像](shared-agent-security-20261101.md)引用 OMS Web；本轮 cloud age 解密 / 异机演练、真人与两项上游 CVE 边界保持。下段 04:57 记录保留其当时范围。
 
 2026-11-01 04:57 CST，OMS / 固定 helper Python 3.12.16、BT Python 3.13.18 已实际切换，BT init 与源模板同步修复；同库、包版本、三 backup timer 恢复和双站有限检查取 [新设施镜像](shared-agent-security-20261101.md)。闲置服务停用与 Nginx 源树完整 F 保全后退役已完成；新 full plan roots 尚待新全备恢复签收，SSH / UFW、维护重启与新 Bot 结果待后续收据。
 
-2026-11-01 03:18 CST，Shiro 独立服务与 Homepage exact `/shiro-qq/webhook` 已部署，公网 challenge / Ed25519 验证 200、非法 hex 签名头 403；配置保全、独立预算和双站有限验证取 [共享镜像](shiro-qq-webhook-20261101.md)。网站内容、发布 hook、TLS、OMS 业务与阶段保持；QQ 控制台和真人反馈、机器人恢复与未纳入现有任务的备份边界归 [Shiro 部署指南](../../../../shiro-bot/doc_md/mainline/qq-official-deployment.md)。
+2026-11-01 03:18 CST，Shiro 独立服务与 Homepage exact `/shiro-qq/webhook` 已部署，公网 challenge / Ed25519 验证 200、非法 hex 签名头 403；配置保全、独立预算和双站有限验证取 [共享镜像](shiro-qq-webhook-20261101.md)。网站内容、发布 hook、TLS、OMS 业务与阶段保持；QQ 控制台和真人反馈、机器人恢复与未纳入现有任务的备份边界归 [Shiro 部署指南](https://github.com/ZDaMexy/Shiro-BOT/blob/364fb1dcf34c6f4ba669dedb1bcd87a34f66b915/doc_md/mainline/qq-official-deployment.md)。
 
 ## 最新安全维护
 
