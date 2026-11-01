@@ -1,6 +1,6 @@
 # 2026-11-01 Shiro 官方 QQ 回调共享设施镜像
 
-> 证据落点更新（2026-11-01）：旧 Shiro 开发目录已完整 ZIP 校验后移除；下方旧业务文档固定到封存提交，原本地收据从 ZIP 按成员路径查阅，位置与校验身份取[交接](../../../../shiro-bot/doc_md/mainline/legacy-handoff.md)。本次只调整引用，不刷新原验证日期、网站发布或恢复结论。
+> 证据落点更新（2026-11-01）：旧 Shiro 开发目录已完整 ZIP 校验后移除；下方旧业务文档固定到封存提交，原本地收据从 ZIP 按成员路径查阅，位置与校验身份取[交接](../../../../Shiro-Agent/doc_md/mainline/legacy-handoff.md)。本次只调整引用，不刷新原验证日期、网站发布或恢复结论。
 
 > 实际证据时间：2026-11-01 03:18 CST（UTC+8）。本页仅记录共享服务器与 Nginx 的变更和保全边界；Shiro 的功能、配置、恢复与后续验收统一取 [Shiro 官方部署指南](https://github.com/ZDaMexy/Shiro-BOT/blob/364fb1dcf34c6f4ba669dedb1bcd87a34f66b915/doc_md/mainline/qq-official-deployment.md)。
 
@@ -23,7 +23,7 @@ Homepage 和 OMS 的站点内容、发布 hook、TLS / ACME 配置、OMS 数据�
 
 ## 配置保全与激活
 
-修改前的 Homepage vhost 快照保存在 Shiro 本地验证产物 [homepage-vhost.before.conf 的归档入口](../../../../shiro-bot/doc_md/mainline/legacy-handoff.md#完整-zip)（ZIP 内 `shiro-bot/.pytest_cache/qq-official-20261101/homepage-vhost.before.conf`）。这是本次变更前配置的保全入口，不是网站内容发布包。
+修改前的 Homepage vhost 快照保存在 Shiro 本地验证产物 [homepage-vhost.before.conf 的归档入口](../../../../Shiro-Agent/doc_md/mainline/legacy-handoff.md#完整-zip)（ZIP 内 `shiro-bot/.pytest_cache/qq-official-20261101/homepage-vhost.before.conf`）。这是本次变更前配置的保全入口，不是网站内容发布包。
 
 | Homepage vhost | SHA-256 |
 | --- | --- |

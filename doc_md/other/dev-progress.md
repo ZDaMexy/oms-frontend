@@ -1,6 +1,6 @@
 # OMS Website Other Progress
 
-2026-11-01 Shiro 旧开发线以 `364fb1d` / `pre-custom-20261101` 封存，本地完整 ZIP 已校验并在原路径建立独立新开发线；旧服务继续运行。旧共享设施证据保持原日期，引用已指向固定旧提交或 ZIP；新本地入口与备份身份取[Shiro 交接](../../../../shiro-bot/doc_md/mainline/legacy-handoff.md)。本次没有网站或服务器配置变更。
+2026-11-01 Shiro 旧开发线以 `364fb1d` / `pre-custom-20261101` 封存，本地完整 ZIP 已校验并在原路径建立独立新开发线；旧服务继续运行。旧共享设施证据保持原日期，引用已指向固定旧提交或 ZIP；新本地入口与备份身份取[Shiro 交接](../../../../Shiro-Agent/doc_md/mainline/legacy-handoff.md)。本次没有网站或服务器配置变更。
 
 ## 最新共享设施变更
 
