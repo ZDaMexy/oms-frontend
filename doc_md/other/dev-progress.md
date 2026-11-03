@@ -1,5 +1,7 @@
 # OMS Website Other Progress
 
+2026-11-04 OMS / Shiro实际切换的共享设施接续取[本轮镜像](shared-oms-player-services-20261104.md)；Homepage内容与发布保持独立。
+
 2026-11-02 存储维护已完成缓存 / 旧 journal 清理、历史原件冷迁出、阿里云本机客户端退役与新生产全备；日志预算为系统 128 MiB、OMS 32 MiB / 14 天。云端旧恢复点保留，当前应用与 Shiro 进程未切换；准确盘账、收据和恢复边界只取[本轮镜像](shared-storage-offload-20261102.md)所指权威记录。
 
 2026-11-01 21:56～22:05 CST，Shiro 新服务、Homepage exact 新版回调与本人配置 HTTPS 已激活；BT 检查/reload、双站 200、原四服务 active 和配置入口必要健康通过。旧 Bot / snapshot timer 保持停用，网站内容及 OMS 版本未变；共享配置、TLS 与保全只取[共享镜像](shiro-qq-webhook-20261101.md#2156-新版共享入口)，Bot 来源与真人验收只取[Shiro 生产记录](../../../../Shiro-Agent/doc_md/mainline/production.md)。旧线与 ZIP 保持原历史日期。
