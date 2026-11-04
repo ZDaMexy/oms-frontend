@@ -1,5 +1,11 @@
 # Frontend Other Changelog
 
+## 2026-11-05 共享设施文档现状复核
+
+修正页首已记 11 月 4 日发布、正文却仍称最近应用为 10 月 11 日 / 双站检查为 11 月 1 日的冲突；当前备份与盘账指向 11 月 4 日收据，早期停点退出现状。两边镜像同次同步，Homepage 内容 / 页面未发布，旧 OMS Website 仍只保全 / 回退。上轮完整正文保留于[固定提交](https://github.com/ZDaMexy/oms-frontend/blob/d6e52ef0c718a8c36dd805a28b62ff671998cd25/doc_md/other/dev-progress.md)，不删除原历史证据。
+
+本轮仅文档，没有 SSH、Nginx / TLS 修改、网站构建或部署；既有双站 HTTP 不记作本轮重跑。基线和实际检查取[统一审查](../../../../oms-server/dev_bridge_md/doc_md/mainline/changelog.md#2026-11-05-全工作区进度与文档记忆审查)。
+
 ## 2026-11-02 存储清理与百度冷归档
 
 历史发布、旧运行时和维护原件在完整云端校验后迁出，阿里云本机客户端与旧工具退役；用户确认暂停云端计划并保留已有恢复点。系统 / OMS journal 预算接续为 128 / 32 MiB、14 天，网站发布链与应用版本保持。盘账、当前目录及恢复边界通过[本轮镜像](shared-storage-offload-20261102.md)指向 OMS Web 权威，不刷新旧业务或异机恢复验收。

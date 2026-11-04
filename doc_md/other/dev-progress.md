@@ -1,49 +1,33 @@
 # OMS Website Other Progress
 
-2026-11-04 OMS / Shiro实际切换的共享设施接续取[本轮镜像](shared-oms-player-services-20261104.md)；Homepage内容与发布保持独立。
-
-2026-11-02 存储维护已完成缓存 / 旧 journal 清理、历史原件冷迁出、阿里云本机客户端退役与新生产全备；日志预算为系统 128 MiB、OMS 32 MiB / 14 天。云端旧恢复点保留，当前应用与 Shiro 进程未切换；准确盘账、收据和恢复边界只取[本轮镜像](shared-storage-offload-20261102.md)所指权威记录。
-
-2026-11-01 21:56～22:05 CST，Shiro 新服务、Homepage exact 新版回调与本人配置 HTTPS 已激活；BT 检查/reload、双站 200、原四服务 active 和配置入口必要健康通过。旧 Bot / snapshot timer 保持停用，网站内容及 OMS 版本未变；共享配置、TLS 与保全只取[共享镜像](shiro-qq-webhook-20261101.md#2156-新版共享入口)，Bot 来源与真人验收只取[Shiro 生产记录](../../../../Shiro-Agent/doc_md/mainline/production.md)。旧线与 ZIP 保持原历史日期。
+最近已登记的 OMS 应用为 **2026-11-04 05:18 CST 玩家服务发布**；当前运行与回退取 [OMS Web 维护](../../../oms-web/doc_md/production-maintenance.md#当前来源与运行位置)。Homepage 内容与发布独立，Shiro 当前业务来源取[本仓生产记录](../../../../Shiro-Agent/doc_md/mainline/production.md)。本页复用已有收据，没有在本次文档审查中连接生产。
 
 ## 最新共享设施变更
 
-2026-11-01 接续至 06:37 CST：运行时、SSH / UFW、bwrap、BT 两包补修、Shiro v0.2 切换 / 同机恢复与旧面板 F 保全后退役均已留证。Backend `1de5eab` 的真实 age 组合 108 项通过；新 `d9a42ff093e1799d` 工具 / plan 的全备已完成，42 roots 实际展开 49 对象及 catalog。维护重启和新 boot ID、业务 / 双站 / health 有限检查通过，四 timer enabled / active / waiting；本地 Web 依赖修复 `7000b90625` 已提交未部署。准确事实沿 [设施镜像](shared-agent-security-20261101.md)引用 OMS Web；本轮 cloud age 解密 / 异机演练、真人与两项上游 CVE 边界保持。下段 04:57 记录保留其当时范围。
+11 月 4 日四个 OMS 单元与 Nginx include 的发布 / 缓存路径随应用切换，受修复运行时、安全限制、TLS / ACME 与 Homepage 源码 / 主进程保持；实际配置核验、重载及双站读取取[共享镜像](shared-oms-player-services-20261104.md)。
 
-2026-11-01 04:57 CST，OMS / 固定 helper Python 3.12.16、BT Python 3.13.18 已实际切换，BT init 与源模板同步修复；同库、包版本、三 backup timer 恢复和双站有限检查取 [新设施镜像](shared-agent-security-20261101.md)。闲置服务停用与 Nginx 源树完整 F 保全后退役已完成；新 full plan roots 尚待新全备恢复签收，SSH / UFW、维护重启与新 Bot 结果待后续收据。
-
-2026-11-01 03:18 CST，Shiro 独立服务与 Homepage exact `/shiro-qq/webhook` 已部署，公网 challenge / Ed25519 验证 200、非法 hex 签名头 403；配置保全、独立预算和双站有限验证取 [共享镜像](shiro-qq-webhook-20261101.md)。网站内容、发布 hook、TLS、OMS 业务与阶段保持；QQ 控制台和真人反馈、机器人恢复与未纳入现有任务的备份边界归 [Shiro 部署指南](https://github.com/ZDaMexy/Shiro-BOT/blob/364fb1dcf34c6f4ba669dedb1bcd87a34f66b915/doc_md/mainline/qq-official-deployment.md)。
+11 月 1 日新版 Shiro 的 Homepage exact 回调与私人 HTTPS 沿[入口镜像](shiro-qq-webhook-20261101.md#2156-新版共享入口)。当天早期旧 Bot 的部署、维护重启与后来新 Bot 的切换属于不同操作；旧线不作为当前运行入口。
 
 ## 最新安全维护
 
-最近运行时与主机安全增量取上方 2026-11-01 记录，系统 Python / 内核尚有上游待跟踪项，不声称全无漏洞。2026-10-22晚间安全修复、实际服务核对及当次云备份/F盘恢复仍见[原日期镜像](shared-security-maintenance-20261022.md)。Homepage仅安全依赖增量`7d71c1f`已循原hook发布；本地Header/CSS与文档源码推送不代表这些页面改动已部署，OMS原真人门保持。
+最近已登记的运行时与主机安全维护取 [11 月 1 日镜像](shared-agent-security-20261101.md)，10 月 22 日修复 / 恢复材料取[原日期镜像](shared-security-maintenance-20261022.md)。当时“Web npm 修复已提交未部署”、新全备待完成和四 timer 的读数保留在原报告，不作为后续应用发布或现行定时器清单。系统 / 上游未完成项依原证据保留，本次没有重做漏洞扫描。
 
 ## 最新存储维护
 
-2026-10-17 本人网盘的数据库日备份与[OMS / Homepage 全量恢复材料备份](../../../../oms-server/oms-backend/doc_md/other/full-backup-20261017.md)均已启用，当前目录、准确工具、新旧引用、真实取回 / 数据库恢复和清理闭环统一取[分层归档](../../../../oms-server/oms-backend/doc_md/other/netdisk-layout-20261017.md)。原HTTP、三业务进程、本地备份与双站内容保持；当前共享设施摘要取[本地镜像](oms-netdisk-backup-20261017.md)。
+11 月 2 日日志预算调整与历史原件冷迁出取[存储镜像](shared-storage-offload-20261102.md)；11 月 4 日新应用全备、临时发布物清理及最近已登记盘账取 [OMS Web 收据](../../../oms-web/doc_md/oms-player-services-20261104.md#云备份与发布清理)。10 月 17 日[分层归档](../../../../oms-server/oms-backend/doc_md/other/netdisk-layout-20261017.md)维护目录 / 定位方法及原恢复证据，不能继续当作最新成功批次。
 
-[ECS CDT升级](aliyun-backup-cost-20261017.md)已完成，北京适用内地20 GB/月账号共享额度；首次读取用量暂无数据，实际抵扣仍待出账核对。没有购买 / 续费或网站内容发布，新Linux整机启动及原真人门仍待。
-
-2026-10-16 [OMS闲置材料清理](oms-storage-cleanup-20261016.md)已完成，完整F保全后释放空间、保持正式服务和原恢复预留，实际双站有限读取成功；本轮没有应用发布，当前应用/回退来源仍取下方维护入口。
-
-## 当前 OMS 维护入口
-
-OMS应用最近正式发布仍为2026-10-11原生服务配套，本次独立备份维护取上节；当前精确源、三服务往返、双站 / 资源、两备份与安全清理只取[本轮镜像](oms-native-services-20261011.md)。当前来源 / 固定维护 / 回退沿[现行维护](../../../oms-web/doc_md/production-maintenance.md#当前来源与运行位置)，旧网络与更早发布保留原日期。
-
-上述发布保持 Homepage 原内容，未包含其本地内容改动。OMS 仍记录为“已部署待验收”；线上普通浏览器、真实下载 / 账号 / OMS 与 P/C 的未完成范围取 [真人验收](../../../oms-web/doc_md/production-maintenance.md#真人验收)，2026-10-11 新增运行 / 公开核验和备份沿上方镜像，真人门不提升。
+[ECS CDT 升级](aliyun-backup-cost-20261017.md)已登记，实际抵扣仍待出账核对；新 Linux 整机启动及云端新范围解密也各有独立未完成门。上传 / 密文回读或 timer waiting 不能关闭这些门，Shiro 认知不进入追加式全备。
 
 ## 双站观察与证据日期
 
-最近双站 HTTPS 根页、双 health、QQ challenge 和业务服务有限检查接续至 **2026-11-01 06:37** 的[重启后收据](shared-agent-security-20261101.md#0637-重启与依赖复核)，当前网站应用来源保持；短 startup 资源观察不签长期性能。
+最近共享应用发布的双站 HTTPS 200 与 CSS 完整 SHA 核对为 **2026-11-04**，[镜像](shared-oms-player-services-20261104.md)链接准确来源。11 月 1 日两次 Bot 入口切换和维护重启、10 月 22 日安全维护及更早公开检查只证明各自时点；有限读取不签普通浏览器、长期性能或真实用户路径。
 
-04:57 阶段双站 HTTPS 根页、双 health 与既有服务有限读取取 2026-11-01 04:57 的 [运行时维护](shared-agent-security-20261101.md#实际验证与边界)；03:18 的 [首期 Shiro 回调](shiro-qq-webhook-20261101.md#实际验证与仍未验收范围)、2026-10-22 [晚间安全维护](shared-security-maintenance-20261022.md)和 10 月 16～17 日存储 / 备份观察保留原时点，完整原生配套公开资源范围仍取 2026-10-11 [记录](oms-native-services-20261011.md)。静态 ACME 路径沿 2026-10-08 [正式收尾](../../../oms-web/doc_md/production-deployment-20261007.md#正式发布与收尾)，不以 HTTPS 读取代签实际续期。
-
-服务器版本、站点权属及已安装证书元信息仍取2026-09-09的[历史观察](changelog.md#2026-09-09-双站观察与版本差异)；后续实际运行 / 配置和双站TLS读取没有重验DNS、证书安装或续期。本次文档同步不刷新这些证据日期，下一次运维按[计划](dev-plan.md#后续维护)复核受影响范围。
+静态 ACME 路径保留 10 月 8 日[正式收尾](../../../oms-web/doc_md/production-deployment-20261007.md#正式发布与收尾)范围；Shiro 子域的首次签发 / 续期配置取 11 月 1 日入口镜像。证书可用、安装、DNS 与实际续期是不同证据，不因本轮整理刷新。后续按[计划](dev-plan.md#后续维护)核受影响项。
 
 ## 本地与生产版本
 
-旧HEAD和公开资源差异保留于[2026-09-09原观察](changelog.md#2026-09-09-双站观察与版本差异)。当前OMS来源取顶部维护入口；Homepage生产为10月22日安全增量`7d71c1f`，本地页面/脚本范围与验证取其[主线状态](../../../homepage-website/doc_md/mainline/dev-progress.md)。后续发布仍先核实际来源，文档或origin推送不改变部署hook水位。
+Homepage 最近已登记生产为 10 月 22 日安全增量 `7d71c1f`；本地页面 / 脚本与原验证取 [Homepage 主线状态](../../../homepage-website/doc_md/mainline/dev-progress.md)。源码推送不改变部署 hook 水位。OMS 已发布来源与客户端开发源码、旧设计保全分别维护；后续发布仍先核实际 current。
 
 ## 运行约定与历史
 
-部署、SSH、Nginx 与续期边界见 [constraints](constraints.md)。2026-10-08 接续及 2026-10-09 各次发布摘要见 [原日期历史](changelog.md#2026-10-09-oms-发布摘要历史)，详细记录从 [other 索引](README.md) 进入；历次本地职责与镜像核对见 [运维历史](changelog.md)，文档治理验证统一见 [Dev Bridge](../../../../oms-server/dev_bridge_md/doc_md/mainline/dev-progress.md#文档治理验证)。
+部署、SSH、Nginx 与续期边界见 [constraints](constraints.md)。日期化设施证据从 [other 索引](README.md)进入；被本页取代的旧现状和本轮修正取[运维历史](changelog.md#2026-11-05-共享设施文档现状复核)。本次同步不改变共享配置或网站产物，治理总范围取 [Dev Bridge](../../../../oms-server/dev_bridge_md/doc_md/mainline/changelog.md#2026-11-05-全工作区进度与文档记忆审查)。
