@@ -1,5 +1,9 @@
 # Frontend Other Changelog
 
+## 2026-11-12 共享主机安全体检与补丁
+
+体检确认应用层关键组件已在近期安全修复版（PHP 8.5.12、Nginx 1.30.6、系统 OpenSSL/OpenSSH backport、Laravel 13.35.0）。实施内核 6.8.0-147→149（修 CVE-2026-98432 CVSS 9.8）、关闭并持久化 MPTCP、Node 22.23.5 及 glib/krb5/sqlite/snapd 等 apt 安全更新，重启约 15 秒恢复并全面验证；修复迁移遗留的 shiro-agent 自启。intel-microcode/cloud-init 沿用既有 hold，BT 面板未动。当前状态与待办（Shiro 内置 Node 24.22.3、BT 面板评估）取[本次镜像](shared-server-security-20261112.md)；应用身份与真人门不变。
+
 ## 2026-11-12 共享主机整机迁移
 
 共享主机从旧 ECS `39.105.55.78`（2026-11-21 到期）整机迁移到新 ECS `47.95.29.3`（99 计划 1 年，2027-11-12 到期），同 VPC 内网同步。镜像克隆 + 安静窗口最终 rsync + SSH 端口隧道过渡 + DNS 四记录切换，写入冻结约 70 秒，用户真人验收（三站 + QQ）通过，旧机停止、数据零丢失。当前 IP / SSH 别名 / 运行位置 / 备份链与数据安全取[迁移镜像](shared-server-migration-20261112.md)；应用身份、网站内容与真人门不变，未改应用代码或 TLS 续期配置。
