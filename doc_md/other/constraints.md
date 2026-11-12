@@ -1,5 +1,7 @@
 # OMS Website Other Constraints
 
+2026-11-12 共享主机整机迁移至 `47.95.29.3`（旧 `39.105.55.78` 已停止）；当前 IP、SSH 别名、运行位置与数据安全以[迁移记录](shared-server-migration-20261112.md)为准，下方旧 IP 表述除该记录外不再代表当前主机。
+
 2026-11-02 日志预算与退役材料的主机保留规则接续为[存储维护镜像](shared-storage-offload-20261102.md)：系统 journal 128 MiB、OMS namespace 32 MiB，均 14 天；历史原件经完整云端校验后迁出。下方旧日志预算保留原日期，不再是当前预算。
 
 2026-10-22 起共享主机安全配置和恢复范围取[安全维护镜像](shared-security-maintenance-20261022.md)。Nginx 的 systemd 服务现已绑定 BT binary / config / PID；下方“未升级 BT PHP”等表述属于 10 月 8 日当次范围，当前旧 PHP8.2 已停用。禁止以应用回退覆盖受修复运行时或安全配置。
@@ -13,8 +15,8 @@
 ## 共享运维边界
 
 - `other/` 中的调研或杂项不能替代主线结论；一旦影响计划、状态、约束或验证，按实际受影响项目回写主线，当前官网结论归 OMS Web。
-- 服务器 `39.105.55.78` 同时承载 OMS 官网与 Homepage；两者网站根、部署仓库和发布流程独立。
-- 服务器连接只使用 SSH 别名 `ssh zdamexy-srv`，不得改用裸 IP 直连。
+- 服务器 `47.95.29.3`（2026-11-12 迁移自 `39.105.55.78`）同时承载 OMS 官网与 Homepage；两者网站根、部署仓库和发布流程独立。
+- 服务器连接只使用 SSH 别名 `ssh zdamexy-srv`（现指向新机 47.95.29.3），不得改用裸 IP 直连。旧机回退别名 `zdamexy-old`（39.105.55.78，已停止）。
 - 2026-10-04旧静态社区与IR共用Backend不可变目录，Nginx从 `/opt/oms-ir/current/web` 提供指定页面和资源，来源见[当次社区记录](community-infrastructure-20261004.md)。该位置不代表现原版PHP路由；旧 `git push deploy main` 整站检出链只保留历史，不用于当前官网。
 - 生产 push 必须由用户明确授权；修改共享 Nginx、TLS 或服务配置前必须备份，配置变更后、重载前执行对应配置检查（BT Nginx 使用 `/www/server/nginx/sbin/nginx -t`），并在变更前后同时验证两个站点。
 - BT 的 Nginx 重载使用 `/etc/init.d/nginx reload`，其二进制与主配置是 `/www/server/nginx/sbin/nginx`、`/www/server/nginx/conf/nginx.conf`，不得误用系统另一套 `/usr/sbin/nginx`。
