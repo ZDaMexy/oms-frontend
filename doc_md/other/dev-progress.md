@@ -16,7 +16,7 @@
 
 11 月 12 日安全体检与补丁：内核升至 6.8.0-149（修 CVE-2026-98432）、MPTCP 关闭并持久化、Node 22.23.5 及 glib/krb5/sqlite 等 apt 安全更新，应用层确认已在修复版，取[本次镜像](shared-server-security-20261112.md)。
 
-最近已登记的运行时与主机安全维护取 [11 月 1 日镜像](shared-agent-security-20261101.md)，10 月 22 日修复 / 恢复材料取[原日期镜像](shared-security-maintenance-20261022.md)。当时“Web npm 修复已提交未部署”、新全备待完成和四 timer 的读数保留在原报告，不作为后续应用发布或现行定时器清单。历史未完成项及适用范围保留原日期。
+最近已登记的主机与运行时安全维护取 [11 月 19 日镜像](shared-server-security-20261119.md)。Python 运行时来源取 [11 月 1 日镜像](shared-agent-security-20261101.md)，既有 PHP 运行时与修复恢复材料取 [10 月 22 日镜像](shared-security-maintenance-20261022.md)。旧发布停点、备份与 timer 读数仍按各自报告的日期和范围读取。
 
 ## 最新存储维护
 
@@ -36,4 +36,4 @@ Homepage 最近已登记生产为 10 月 22 日安全增量 `7d71c1f`；本地�
 
 ## 运行约定与历史
 
-部署、SSH、Nginx 与续期边界见 [constraints](constraints.md)。日期化设施证据从 [other 索引](README.md)进入；被本页取代的旧现状和本轮修正取[运维历史](changelog.md#2026-11-05-共享设施文档现状复核)。本次同步不改变共享配置或网站产物，治理总范围取 [Dev Bridge](../../../../oms-server/dev_bridge_md/doc_md/mainline/changelog.md#2026-11-05-全工作区进度与文档记忆审查)。
+部署、SSH、Nginx 与续期边界见 [constraints](constraints.md)。设施证据按日期从 [other 索引](README.md)读取，旧状态取[运维历史](changelog.md)。最近一次文档核对取 [11 月 19 日工作区记录](../../../../oms-server/dev_bridge_md/doc_md/mainline/changelog.md#2026-11-19全工作区进度与记忆同步)。
