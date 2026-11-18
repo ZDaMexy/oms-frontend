@@ -1,5 +1,6 @@
 # 调研与运维
 
+- [2026-11-19 共享主机安全维护](shared-server-security-20261119.md)。Nginx、OMS Web、Shiro 和 glibc 补丁及重启后实测。
 - [2026-11-12 共享主机安全体检与补丁](shared-server-security-20261112.md)：内核 149（CVE-2026-98432）、MPTCP 关闭、Node 22.23.5 等 apt 安全更新；应用层已在修复版。
 
 - [2026-11-12 共享主机整机迁移](shared-server-migration-20261112.md)：阿里云 ECS 换机，镜像克隆 + 内网同步 + 隧道过渡 + DNS 切换，旧机停止、数据零丢失；当前 IP / 别名 / 运行位置权威。
