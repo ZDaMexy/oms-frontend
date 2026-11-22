@@ -1,22 +1,14 @@
 # OMS Website Other Progress
 
-最近已登记的 OMS 生产切换为 **2026-11-19 00:55 CST 依赖安全维护**，功能发布沿用 11 月 4 日玩家服务。当前运行与回退取 [OMS Web 维护](../../../oms-web/doc_md/production-maintenance.md#当前来源与运行位置)。Homepage 内容与发布独立，Shiro 当前业务来源取[本仓生产记录](../../../../Shiro-Agent/doc_md/mainline/production.md)。
+现官网运行与回退取 [OMS Web 维护](../../../oms-web/doc_md/production-maintenance.md#当前来源与运行位置)，Shiro 当前来源和功能取 [Shiro 生产记录](../../../../Shiro-Agent/doc_md/mainline/production.md)。Homepage 内容和发布独立，线上身份见本页版本记录。
 
 ## 最新共享设施变更
 
-11 月 12 日共享主机整机迁移至 `47.95.29.3`（旧 `39.105.55.78` 已停止），DNS 四记录切换、用户真人验收通过、数据零丢失；当前 IP / SSH 别名 / 运行位置 / 备份链取[迁移镜像](shared-server-migration-20261112.md)，应用身份与真人门不变。
-
-11 月 4 日四个 OMS 单元与 Nginx include 的发布 / 缓存路径随应用切换，受修复运行时、安全限制、TLS / ACME 与 Homepage 源码 / 主进程保持；实际配置核验、重载及双站读取取[共享镜像](shared-oms-player-services-20261104.md)。
-
-11 月 1 日新版 Shiro 的 Homepage exact 回调与私人 HTTPS 沿[入口镜像](shiro-qq-webhook-20261101.md#2156-新版共享入口)。当天早期旧 Bot 的部署、维护重启与后来新 Bot 的切换属于不同操作；旧线不作为当前运行入口。
+共享主机、SSH 别名、运行位置和备份链沿 [11 月 12 日迁移镜像](shared-server-migration-20261112.md)。OMS 当前路由取现官网维护，新版 Shiro 的 Homepage 精确回调与私人 HTTPS 取 [11 月 1 日入口镜像](shiro-qq-webhook-20261101.md#2156-新版共享入口)。各版本如何切换按 [日期化运维索引](README.md) 追溯。
 
 ## 最新安全维护
 
-11 月 19 日更新 Nginx stable 1.30.7、OMS Web 依赖及 Shiro 运行时，重启后实际加载 glibc 修复。双站 HTTPS、协议与备份结果取[本轮镜像](shared-server-security-20261119.md)。
-
-11 月 12 日安全体检与补丁：内核升至 6.8.0-149（修 CVE-2026-98432）、MPTCP 关闭并持久化、Node 22.23.5 及 glib/krb5/sqlite 等 apt 安全更新，应用层确认已在修复版，取[本次镜像](shared-server-security-20261112.md)。
-
-最近已登记的主机与运行时安全维护取 [11 月 19 日镜像](shared-server-security-20261119.md)。Python 运行时来源取 [11 月 1 日镜像](shared-agent-security-20261101.md)，既有 PHP 运行时与修复恢复材料取 [10 月 22 日镜像](shared-security-maintenance-20261022.md)。旧发布停点、备份与 timer 读数仍按各自报告的日期和范围读取。
+最新已登记的共享主机安全维护为 [11 月 19 日镜像](shared-server-security-20261119.md)，覆盖 Nginx、OMS Web、Shiro 运行时和重启后 glibc。更早的内核与 MPTCP 措施取 [11 月 12 日镜像](shared-server-security-20261112.md)，现用 Python 与 PHP 来源分别沿 [11 月 1 日](shared-agent-security-20261101.md)和 [10 月 22 日](shared-security-maintenance-20261022.md)记录。
 
 ## 最新存储维护
 
@@ -26,14 +18,12 @@
 
 ## 双站观察与证据日期
 
-最近四域名 HTTPS、OMS 两个健康地址和协议复核为 **2026-11-19**，见[本轮镜像](shared-server-security-20261119.md)。11 月 4 日应用发布的 CSS 完整 SHA 核对取[原镜像](shared-oms-player-services-20261104.md)。11 月 1 日两次 Bot 入口切换和维护重启、10 月 22 日安全维护及更早公开检查只证明各自时点；有限读取不签普通浏览器、长期性能或真实用户路径。
-
-静态 ACME 路径保留 10 月 8 日[正式收尾](../../../oms-web/doc_md/production-deployment-20261007.md#正式发布与收尾)范围；Shiro 子域的首次签发 / 续期配置取 11 月 1 日入口镜像。证书可用、安装、DNS 与实际续期是不同证据，不因本轮整理刷新。后续按[计划](dev-plan.md#后续维护)核受影响项。
+2026-11-22 最近一次有限公开读取和生产水位取[只读复核](changelog.md#2026-11-22-双站只读复核)。四域名、OMS 两个健康地址和协议的完整范围仍取 [11 月 19 日镜像](shared-server-security-20261119.md)。静态 ACME 路径及实际续期各按原证据，后续见[维护计划](dev-plan.md#后续维护)。
 
 ## 本地与生产版本
 
-Homepage 最近已登记生产为 10 月 22 日安全增量 `7d71c1f`；本地页面 / 脚本与原验证取 [Homepage 主线状态](../../../homepage-website/doc_md/mainline/dev-progress.md)。源码推送不改变部署 hook 水位。OMS 已发布来源与客户端开发源码、旧设计保全分别维护；后续发布仍先核实际 current。
+Homepage 最新实核部署裸仓仍为 10 月 22 日安全增量，公开文件证据见[只读复核](changelog.md#2026-11-22-双站只读复核)；本地页面和脚本取 [Homepage 主线状态](../../../homepage-website/doc_md/mainline/dev-progress.md)。OMS 的现运行包、旧设计保全和客户端代码各从所属入口读取，后续发布先核实际 current。
 
 ## 运行约定与历史
 
-部署、SSH、Nginx 与续期边界见 [constraints](constraints.md)。设施证据按日期从 [other 索引](README.md)读取，旧状态取[运维历史](changelog.md)。最近一次文档核对取 [11 月 19 日工作区记录](../../../../oms-server/dev_bridge_md/doc_md/mainline/changelog.md#2026-11-19全工作区进度与记忆同步)。
+部署、SSH、Nginx 与续期边界见 [constraints](constraints.md)。设施证据按日期从 [other 索引](README.md)读取，旧状态取[运维历史](changelog.md)，总工作区文档同步沿 [Dev Bridge 历史](../../../../oms-server/dev_bridge_md/doc_md/mainline/changelog.md)。

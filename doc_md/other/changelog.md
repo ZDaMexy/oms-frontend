@@ -1,5 +1,11 @@
 # Frontend Other Changelog
 
+## 2026-11-22 双站只读复核
+
+上海时间 18:48 左右，通过既有 SSH 别名读取 Homepage 部署裸仓 `main` 为 `7d71c1f`，OMS current 为 `909f8ff7d4de-c26b894f9f53`，Shiro current 为 `0d7d8dd`，与各自已登记的发布记录一致。BT Nginx 为 1.30.7，Nginx、OMS IR、目录、OMS Web 和 Shiro 服务均为 active。Homepage、OMS 两首页及 Shiro 登录页 HTTPS GET 均为 200，TLS 校验正常；Homepage 公网首页与实际网站根 `index.html` 的 SHA-256 比对一致。
+
+这次只读核对不执行部署、重载或续期。登录后、真实玩家路径、协议专项、备份和恢复继续按各自原证据。11 月 19 日安全维护及其完整范围取 [原镜像](shared-server-security-20261119.md)。
+
 ## 2026-11-12 共享主机安全体检与补丁
 
 体检确认应用层关键组件已在近期安全修复版（PHP 8.5.12、Nginx 1.30.6、系统 OpenSSL/OpenSSH backport、Laravel 13.35.0）。实施内核 6.8.0-147→149（修 CVE-2026-98432 CVSS 9.8）、关闭并持久化 MPTCP、Node 22.23.5 及 glib/krb5/sqlite/snapd 等 apt 安全更新，重启约 15 秒恢复并全面验证；修复迁移遗留的 shiro-agent 自启。intel-microcode/cloud-init 沿用既有 hold，BT 面板未动。当前状态与待办（Shiro 内置 Node 24.22.3、BT 面板评估）取[本次镜像](shared-server-security-20261112.md)；应用身份与真人门不变。

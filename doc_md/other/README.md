@@ -1,5 +1,6 @@
 # 调研与运维
 
+- [2026-11-22 双站只读复核](changelog.md#2026-11-22-双站只读复核)。当前裸仓 / current 水位及有限 HTTPS。
 - [2026-11-19 共享主机安全维护](shared-server-security-20261119.md)。Nginx、OMS Web、Shiro 和 glibc 补丁及重启后实测。
 - [2026-11-12 共享主机安全体检与补丁](shared-server-security-20261112.md)：内核 149（CVE-2026-98432）、MPTCP 关闭、Node 22.23.5 等 apt 安全更新；应用层已在修复版。
 
@@ -7,7 +8,7 @@
 
 - [2026-11-04 OMS玩家服务发布](shared-oms-player-services-20261104.md)：共享路径切换、原安全配置 / 同库保持及双站核对镜像。
 
-- [2026-11-02 存储清理与冷归档](shared-storage-offload-20261102.md)：当前日志预算、百度网盘迁出、恢复索引与主机空间盘账的共享镜像。
+- [2026-11-02 存储清理与冷归档](shared-storage-offload-20261102.md)：当次日志预算、百度网盘迁出、恢复索引与主机空间盘账。
 
 - [2026-11-01 共享主机运行时与安全维护](shared-agent-security-20261101.md)：运行时、安全加固、Bot 切换 / 同机恢复、旧面板退役、新全备与维护重启均有收据；四 timer waiting。当时的本地 Web 依赖修复已提交未部署；后续应用状态取现行维护，云端解密 / 异机演练、上游待修及真人边界只取 OMS Web 权威记录。
 - [2026-11-01 Shiro QQ 与配置域名](shiro-qq-webhook-20261101.md)：独立服务、Homepage 精确回调、私人 HTTPS、保全与双站有限验证；机器人功能与真人验收归 Shiro。
