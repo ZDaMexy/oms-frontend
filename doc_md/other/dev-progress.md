@@ -12,7 +12,7 @@
 
 ## 最新存储维护
 
-最近全备回读、临时文件清理及盘账取 [11 月 19 日 OMS Web 收据](../../../oms-web/doc_md/production-maintenance.md#2026-11-19-依赖安全维护)。11 月 2 日的日志预算与历史原件冷迁出取[存储镜像](shared-storage-offload-20261102.md)。10 月 17 日[分层归档](../../../../oms-server/oms-backend/doc_md/other/netdisk-layout-20261017.md)维护目录 / 定位方法及原恢复证据，不能继续当作最新成功批次。
+共享根盘余量、备份任务退出状态、全备对象数及各对象最近核验日期见 [11 月 22 日只读记录](../../../oms-web/doc_md/production-maintenance.md#2026-11-22-只读运行复核)。发布时的临时文件清理和新增对象密文回读见 [11 月 19 日发布收据](../../../oms-web/doc_md/production-maintenance.md#2026-11-19-依赖安全维护)。11 月 2 日的日志预算与历史原件冷迁出取[存储镜像](shared-storage-offload-20261102.md)。10 月 17 日[分层归档](../../../../oms-server/oms-backend/doc_md/other/netdisk-layout-20261017.md)维护目录 / 定位方法及原恢复证据，不能继续当作最新成功批次。
 
 [ECS CDT 升级](aliyun-backup-cost-20261017.md)已登记，实际抵扣仍待出账核对；新 Linux 整机启动及云端新范围解密也各有独立未完成门。上传 / 密文回读或 timer waiting 不能关闭这些门，Shiro 认知不进入追加式全备。
 
