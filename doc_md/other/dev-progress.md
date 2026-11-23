@@ -12,13 +12,13 @@
 
 ## 最新存储维护
 
-共享根盘余量、备份任务退出状态、全备对象数及各对象最近核验日期见 [11 月 22 日只读记录](../../../oms-web/doc_md/production-maintenance.md#2026-11-22-只读运行复核)。发布时的临时文件清理和新增对象密文回读见 [11 月 19 日发布收据](../../../oms-web/doc_md/production-maintenance.md#2026-11-19-依赖安全维护)。11 月 2 日的日志预算与历史原件冷迁出取[存储镜像](shared-storage-offload-20261102.md)。10 月 17 日[分层归档](../../../../oms-server/oms-backend/doc_md/other/netdisk-layout-20261017.md)维护目录 / 定位方法及原恢复证据，不能继续当作最新成功批次。
+最近共享根盘读数及 OMS 发布前后本地备份见 [11 月 24 日官网发布](../../../oms-web/doc_md/site-design-20261124.md#生产发布)。当时已核的全备目录取 [11 月 22 日只读记录](../../../oms-web/doc_md/production-maintenance.md#2026-11-22-只读运行复核)，11 月 19 日对象密文回读取 [原收据](../../../oms-web/doc_md/production-maintenance.md#2026-11-19-依赖安全维护)。日志预算、冷迁出与历史对象定位从 [存储镜像](shared-storage-offload-20261102.md) 和 [分层归档](../../../../oms-server/oms-backend/doc_md/other/netdisk-layout-20261017.md) 进入。
 
 [ECS CDT 升级](aliyun-backup-cost-20261017.md)已登记，实际抵扣仍待出账核对；新 Linux 整机启动及云端新范围解密也各有独立未完成门。上传 / 密文回读或 timer waiting 不能关闭这些门，Shiro 认知不进入追加式全备。
 
 ## 双站观察与证据日期
 
-2026-11-22 最近一次有限公开读取和生产水位取[只读复核](changelog.md#2026-11-22-双站只读复核)。四域名、OMS 两个健康地址和协议的完整范围仍取 [11 月 19 日镜像](shared-server-security-20261119.md)。静态 ACME 路径及实际续期各按原证据，后续见[维护计划](dev-plan.md#后续维护)。
+11 月 24 日 OMS Web 发布后，OMS 和 Homepage 根地址的 HTTPS 检查通过。裸仓与 Homepage 文件身份仍取 [11 月 22 日只读复核](changelog.md#2026-11-22-双站只读复核)。四域名、OMS 两个健康地址和协议的完整范围取 [11 月 19 日镜像](shared-server-security-20261119.md)。静态 ACME 路径及实际续期按各自证据，后续见[维护计划](dev-plan.md#后续维护)。
 
 ## 本地与生产版本
 
